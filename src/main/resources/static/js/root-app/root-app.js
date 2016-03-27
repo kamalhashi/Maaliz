@@ -9,7 +9,6 @@ var rootApp = angular
 rootApp.config(function($stateProvider, $urlRouterProvider, $httpProvider,
 		$locationProvider, $translateProvider, $sceDelegateProvider,
 		$facebookProvider) {
-	console.log('initialzing');
 	$locationProvider.html5Mode(true);
 
 	$translateProvider.useStaticFilesLoader({
@@ -23,10 +22,10 @@ rootApp.config(function($stateProvider, $urlRouterProvider, $httpProvider,
 	$urlRouterProvider.otherwise("root");
 	// Now set up the states
 
-	$stateProvider.state('root', {
-		url : '/root',
+	$stateProvider.state('root_index', {
+		url : '/root_index',
 		controller : 'RootController',
-		templateUrl : 'root.html',
+		templateUrl : 'root_index.html',
 	});
 });
 
