@@ -441,7 +441,7 @@ hashiApp.run(function(auth, $rootScope, $state, editableOptions, $http, $locatio
 	
 	 auth.init('/', 'login', 'logout');
 	 editableOptions.theme = 'bs3';
-	 // If we've already installed the SDK, we're done
+	 // If we've already installed the SDK, we're done.
      if (document.getElementById('facebook-jssdk')) {return;}
 
      // Get the first script element, which we'll use to find the parent nod
