@@ -1,0 +1,799 @@
+<div class="container">
+	<br /> <br />
+
+	<div class="row">
+		<div class="col-md-3 visible-md visible-lg">
+
+
+			<div class="well sidebar-form">
+				<h3 style="margin-top: 0">
+					<strong>Find the product</strong>
+				</h3>
+			
+					<div class="form-group">
+						<select class="form-control" ng-model="selectedCityId" 
+							ng-options="city.cityId as city.cityName for city in listCities">
+						</select>
+					</div>
+					<div class="form-group">
+						<select  class="form-control"  ng-model="categoryLevelOneObject" 
+							ng-options="category as category.categoryName for category in listSubCategoriesLevelOne"
+							 ng-change="getSubCategoriesLevelTwo(categoryLevelOneObject)">
+						</select>
+					</div>
+					<div class="form-group" ng-show="showSubCategoryLevelTwo">
+						<select  class="form-control"  ng-model="categoryLevelTwoObject" 
+							ng-options="category as category.categoryName for category in listSubCategoriesLevelTwo"
+							 ng-change="getSubCategoriesLevelThree(categoryLevelTwoObject)">
+						</select>
+					</div>
+					
+					<div class="form-group" ng-show="showSubCategoryLevelThree">
+						<select  class="form-control"  ng-model="categoryLevelThreeObject" 
+							ng-options="category as category.categoryName for category in listSubCategoriesLevelThree"
+							 ng-change="getSubCategoriesLevelFour(categoryLevelThreeObject)">
+						</select>
+					</div>
+					
+					<div class="form-group" ng-show="showSubCategoryLevelFour">
+						<select  class="form-control"  ng-model="categoryLevelFourObject" 
+							ng-options="category as category.categoryName for category in listSubCategoriesLevelFour"
+							 ng-change="getSubCategoriesLevelFive(categoryLevelFourObject)">
+						</select>
+					</div>
+					
+					<!-- advance seach car div, only show when user selects car -->
+					<div class="form-group" ng-show="showAdvanceSearchCarDiv || showAdvanceSearchHeavyVehicleDiv">
+						<span>Price ($) </span> 
+						<div class="row">
+							<div class="col-xs-6">
+								<input name="inputPriceFrom" class="form-control"
+									ng-model="priceFrom" placeholder="Price from">
+							</div>
+							<div class="col-xs-6">
+								<input name="inputPriceTo" class="form-control"
+									ng-model="priceTo" placeholder="Price to">
+							</div>
+						</div>
+
+						<span> Year (Min/Max) </span>
+						<div class="row">
+							<div class="col-xs-6">
+								<select class="form-control" name="selectYearMin"
+									ng-model="yearMin" ng-options="year for year in years">
+								</select>
+							</div>
+							<div class="col-xs-6">
+								<select class="form-control" name="selectYearMax"
+									ng-model="yearMax" ng-options="year for year in years">
+								</select>
+							</div>
+						</div>
+
+						<span>Kilometers ( Km )</span>
+						<div class="row">
+							<div class="col-xs-6">
+								<input type="text" class="form-control"
+									name="inputKilometersFrom" placeholder="KM from" ng-model="KMFrom">
+							</div>
+							<div class="col-xs-6">
+								<input type="text" class="form-control" id="inputKilometersTo"
+									placeholder="KM to" ng-model="KMTo">
+							</div>
+						</div>
+
+						<span>Seller Type</span>
+						<div class="row">
+							<div class="col-xs-6">
+								<select ng-model="sellerType" class="form-control"
+									name="selectedSellerType"
+									ng-options="sellerType.id as sellerType.name for  sellerType in listSellerTypes">
+
+								</select>
+							</div>
+						</div>
+					</div>
+					<!-- sale residential search  -->
+				<div class="form-group" ng-show="showAdvanceSearchSaleResDiv || showAdvanceSearchRentResDiv
+				|| showAdvanceSearchRentShortMonthlyDiv">
+					<span>Price ($) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input name="inputPriceFrom" class="form-control"
+								ng-model="priceFrom" placeholder="Price from">
+						</div>
+						<div class="col-xs-6">
+							<input name="inputPriceTo" class="form-control"
+								ng-model="priceTo" placeholder="Price to">
+						</div>
+					</div>
+					
+					<span>Rooms (Min/Max)</span>
+					<div class="row">
+						<div class="col-xs-6">
+							<select ng-model="bedroomMin" class="form-control"
+								name="selectedBedroomMin"
+								ng-options="bedrooms.id as bedrooms.name for  bedrooms in constantNoBedrooms">
+							</select>
+						</div>
+						<div class="col-xs-6">
+							<select ng-model="bedroomMax" class="form-control"
+								name="selectedBedroomMax"
+								ng-options="bedrooms.id as bedrooms.name for  bedrooms in constantNoBedrooms">
+							</select>
+						</div>
+					</div>
+				</div>
+				<!-- sale commercial search  -->
+				<div class="form-group" ng-show="showAdvanceSearchSaleCommDiv || showAdvanceSearchSaleUnitsDiv || showAdvanceSearchSaleLandDiv
+				 || showAdvanceSearchRentCommDiv || showAdvanceSearchRentRoomDiv || showAdvanceSearchRentHotelDiv 
+				 || showAdvanceSearchClassifiedDiv || showAdvanceSearchClassifiedCameraDiv">
+					<span>Price ($) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input name="inputPriceFrom" class="form-control"
+								ng-model="priceFrom" placeholder="Price from">
+						</div>
+						<div class="col-xs-6">
+							<input name="inputPriceTo" class="form-control"
+								ng-model="priceTo" placeholder="Price to">
+						</div>
+					</div>
+				</div>
+				<!-- car parts & accessories search  -->
+				<div class="form-group" ng-show="showAdvanceSearchCarPartsDiv || showAdvanceSearchBoatsDiv || 
+						showAdvanceSearchMotorcycleDiv">
+						<span>Price ($) </span>
+						<div class="row">
+							<div class="col-xs-6">
+								<input name="inputPriceFrom" class="form-control"
+									ng-model="priceFrom" placeholder="Price from">
+							</div>
+							<div class="col-xs-6">
+								<input name="inputPriceTo" class="form-control"
+									ng-model="priceTo" placeholder="Price to">
+							</div>
+					</div>
+					
+					<span>Seller Type</span>
+					<div class="row">
+						<div class="col-xs-6">
+							<select ng-model="sellerType" class="form-control"
+								name="selectedSellerType"
+								ng-options="sellerType.id as sellerType.name for  sellerType in listSellerTypes">
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+						<input type="text" class="form-control" id="inputSearchText"
+							placeholder="search....." ng-model="searchText"
+							onfocus="this.placeholder=''"
+							onblur="this.placeholder='search...'">
+				</div>
+					
+
+				<button type="submit" class="btn btn-primary btn-block" ng-click="search()">Submit</button>
+			</div>
+
+			<div class="row visible-md visible-lg">
+				<div class="col-xs-12 text-center" style="overflow: hidden">
+					<script async
+						src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- Home left div Large Skyscraper -->
+					<ins class="adsbygoogle"
+						style="display: inline-block; width: 300px; height: 600px"
+						data-ad-client="ca-pub-6780500882096971" data-ad-slot="3973066244"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+			</div>
+		</div>
+        
+        <div  ng-show="!ads" cg-busy="{promise:myPromise,backdrop:true, message:'Searching...please wait'}" >  
+        </div>
+		<div class="col-md-9 listings" ng-show="ads.content.length" cg-busy="{promise:myPromise,backdrop:true, message:'Searching...please wait'}" >
+			<div class="row">
+				<div class="col-sm-12">
+
+					<h1 class="text-center">Found {{ads.totalElements}} ads in
+						{{cityName}}</h1>
+
+				</div>
+			</div>
+		
+
+			<div class="row">
+				<div class="col-xs-9">
+					<div class="col-sm-4 hidden-xs" ng-repeat="(key, val) in countProductByDepth">
+							 {{val[0]}} ({{val[1]}})
+					</div>
+				</div>
+
+				<div class="col-sm-3 sort-options">
+					<div class="pull-right">
+						<span>Sort by:&nbsp;&nbsp;&nbsp;</span> 
+						
+						<select
+							ng-model="orderProp" 
+							ng-change="resetSorting()"
+							class="form-control">
+							<option value="productPriority">Featured ads</option>
+							<option value="-created">Newest to oldest</option>
+							<option value="created">Oldest to newest</option>
+							<option value="productPrice">Price lowest to highest</option>
+							<option value="-productPrice">Price highest to lowest</option>
+						</select>
+
+					</div>
+					
+				</div>
+
+			</div>
+
+			
+			<br />
+			<hr/>
+
+			
+
+			<div id="div1" class="row"
+				ng-repeat="ad in ads.content | orderBy:orderProp">
+				<div class="col-xs-12">
+					<div class="listing-row"
+						ng-class="{premium : ad.productPriority=='PRIORITY_FEATURED'}">
+						<div class="row">
+							<div class="ribbon-wrapper-red"
+								ng-show="ad.productPriority=='PRIORITY_FEATURED'">
+								<div class="ribbon-red">
+									&nbsp;<span>Featured</span>
+								</div>
+							</div>
+							<div class="col-sm-9">
+								<div class="row">
+									<div class="col-sm-8">
+										<h2>
+										   <a  href ng-click="forwardToDetailsPage(ad.productId, ad.categoriesEntity.categoryId, ad.categoriesEntity.lft, ad.categoriesEntity.rgt)" >{{ad.productTitle}}</a>
+										</h2>
+									</div>
+									<div class="col-sm-4"
+									  ng-hide="ad.categoriesEntity.lft >= categoryRange.JOB_MIN && ad.categoriesEntity.rgt <= categoryRange.JOB_MAX
+									   || ad.categoriesEntity.lft >= categoryRange.COMMUNITY_MIN && ad.categoriesEntity.rgt <= categoryRange.COMMUNITY_MAX ">
+									
+										<h2 class="price text-right">{{ad.productPrice |
+											currency:"$":0}}</h2>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+						<div class="row">
+							<div class="col-sm-3" ng-show="ad.coverPhoto.length > 0 ">
+								 <a  href ng-click="forwardToDetailsPage(ad.productId, ad.categoriesEntity.categoryId, ad.categoriesEntity.lft,  ad.categoriesEntity.rgt)" >
+								    <img alt="176 * 120"
+									  class="listing-photo"
+									  ng-src="{{ad.imageStatus == 'IMAGE_LIVE' && bucketName.productImages + ad.productId + '/' + ad.coverPhoto ||  bucketName.otherImage + 'not_approved.png'}}"
+									  ng-if="ad.coverPhoto.length > 0">
+								</a>
+							</div>
+
+							<div class="col-sm-9">
+
+								<div class="row">
+									<div class="col-sm-8">
+
+										<p class="muted">
+											Posted: <strong style="margin-right: 20px">
+												{{ad.created | date:'dd MMMM yyyy'}} </strong>
+										</p>
+										<br />
+									</div>
+								</div>
+								<!-- motor cars , show only fields related to cars -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.MOTOR_CAR_MIN && ad.categoriesEntity.rgt <= categoryRange.MOTOR_CAR_MAX">
+									<div class="row">
+									<div class="col-sm-5">
+											Model: <strong style="margin-right: 20px">
+												{{ad.model }}</strong>
+										</div>
+										<div class="col-sm-5">
+											Year: <strong style="margin-right: 20px">
+												{{ad.yearMade}}</strong>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-5">
+											Kilometers: <strong style="margin-right: 20px">
+												{{ad.kilometers}}</strong>
+										</div>
+										<div class="col-sm-5">
+											Color: <strong style="margin-right: 20px">
+												{{colourConstant[ad.colour-1].name }}</strong>
+										</div>									
+									</div>
+								</div>
+									<!-- motor cars , show only fields related to heavy vehic -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.MOTOR_HEAVY_VEHICLE_MIN && ad.categoriesEntity.rgt <= categoryRange.MOTOR_HEAVY_VEHICLE_MAX">
+									<div class="row">
+										<div class="col-sm-5">
+											Make: <strong style="margin-right: 20px">
+												{{ad.make }}</strong>
+										</div>
+									    <div class="col-sm-5">
+											Model: <strong style="margin-right: 20px">
+												{{ad.model }}</strong>
+										</div>
+											
+									</div>
+									<div class="row">
+										<div class="col-sm-5">
+											Year: <strong style="margin-right: 20px">
+												{{ad.yearMade}}</strong>
+										</div>
+										<div class="col-sm-5">
+											Kilometers: <strong style="margin-right: 20px">
+												{{ad.kilometers}}</strong>
+										</div>
+																		
+									</div>
+								</div>
+								
+								<!-- show only fields related to motorcycle -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.MOTOR_MOTORCYCLES_MIN && ad.categoriesEntity.rgt <= categoryRange.MOTOR_MOTORCYCLES_MAX">
+									<div class="row">
+										<div class="col-sm-10">
+											Age: <strong style="margin-right: 20px">
+												{{ageConstant[ad.ageItem-1].name}}</strong>
+										</div>		
+									</div>
+									<div class="row">
+										<div class="col-md-10">
+											Seller type: <strong style="margin-right: 20px">
+										 	{{sellerTypeConstant[ad.sellerType-1].name}}</strong>
+										 </div>
+									</div>
+								</div>	
+								<!-- show only fields related to car parts -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.MOTOR_CAR_PARTS_MIN && ad.categoriesEntity.rgt <= categoryRange.MOTOR_CAR_PARTS_MAX">
+									<div class="row">
+										<div class="col-sm-10">
+											Age: <strong style="margin-right: 20px">
+												{{ageConstant[ad.ageItem-1].name}}</strong>
+										</div>		
+									</div>
+									<div class="row">
+										<div class="col-md-10">
+											Seller type: <strong style="margin-right: 20px">
+										 	{{sellerTypeConstant[ad.sellerType-1].name}}</strong>
+										 </div>
+									</div>
+								</div>	
+								
+								<!-- show only fields related to boats -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.MOTOR_BOATS_MIN && ad.categoriesEntity.rgt <= categoryRange.MOTOR_BOATS_MAX">
+									<div class="row">
+										
+										<div class="col-sm-5">
+											Age: <strong style="margin-right: 20px">
+												{{ageConstant[ad.ageItem-1].name}}</strong>
+										</div>									
+										<div class="col-sm-5">
+											Warranty: <strong style="margin-right: 20px">
+												{{warrantyConstant[ad.warrantyItem-1].name}}</strong>
+										</div>		
+									</div>	
+									<div class="row">
+										<div class="col-md-5">
+											Seller type: <strong style="margin-right: 20px">
+										 	{{sellerTypeConstant[ad.sellerType-1].name}}</strong>
+										 </div>
+										 <div class="col-md-5">
+											Length: <strong style="margin-right: 20px">
+										 	{{lengthConstant[ad.length-1].name}}</strong>
+										 </div>
+									</div>
+								</div>	
+								
+								<!-- show only fields related to property residential sale -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_RES_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_RES_MAX">
+									<div class="row">
+										<div class="col-sm-5">
+											Property size: <strong style="margin-right: 20px">
+												{{ad.propertySize}} Square metre</strong>
+										</div>
+										<div class="col-sm-5">
+											Listed by: <strong style="margin-right: 20px">
+												{{constantOwnerType[ad.ownerType-1].name}}</strong>
+										</div>			
+									</div>
+									<div class="row">
+										<div class="col-md-5">
+											Number of rooms: <strong style="margin-right: 20px">
+										 	{{constantNoBedrooms[ad.noBedrooms-1].name}}</strong>
+										 </div>
+										 <div class="col-md-5">
+											Number of Bathrooms: <strong style="margin-right: 20px">
+										 	{{constantNoBathrooms[ad.noBathrooms-1].name}}</strong>
+										 </div>
+									</div>
+								</div>	
+								
+								<!-- show only fields related to property commision sale -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_COMM_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_COMM_MAX">
+									<div class="row">
+										<div class="col-sm-5">
+											Property size: <strong style="margin-right: 20px">
+												{{ad.propertySize}} Square metre</strong>
+										</div>
+										<div class="col-sm-5">
+											Listed by: <strong style="margin-right: 20px">
+												{{constantOwnerType[ad.ownerType-1].name}}</strong>
+										</div>			
+									</div>
+								</div>	
+								<!-- show only fields related to property units sale -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_UNITS_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_UNITS_MAX">
+									<div class="row">
+										<div class="col-sm-5">
+											Property size: <strong style="margin-right: 20px">
+												{{ad.propertySize}} Square metre</strong>
+										</div>
+										<div class="col-sm-5">
+											Listed by: <strong style="margin-right: 20px">
+												{{constantOwnerType[ad.ownerType-1].name}}</strong>
+										</div>			
+									</div>
+								</div>	
+								<!-- show only fields related to property residential sale -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_LAND_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_LAND_MAX">
+									<div class="row">
+										<div class="col-sm-5">
+											Property size: <strong style="margin-right: 20px">
+												{{ad.propertySize}} Square metre</strong>
+										</div>
+										<div class="col-sm-5">
+											Listed by: <strong style="margin-right: 20px">
+												{{constantOwnerType[ad.ownerType-1].name}}</strong>
+										</div>			
+									</div>
+								</div>	
+								
+								<!-- show only fields related to property residential rent -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_RES_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_RES_MAX
+									 ">
+									<div class="row">
+										<div class="col-sm-5">
+											Property size: <strong style="margin-right: 20px">
+												{{ad.propertySize}} Square metre</strong>
+										</div>
+										<div class="col-sm-5">
+											Listed by: <strong style="margin-right: 20px">
+												{{constantOwnerType[ad.ownerType-1].name}}</strong>
+										</div>			
+									</div>
+									<div class="row">
+										<div class="col-md-5">
+											Number of rooms: <strong style="margin-right: 20px">
+										 	{{constantNoBedrooms[ad.noBedrooms-1].name}}</strong>
+										 </div>
+										 <div class="col-md-5">
+											Rent paid: <strong style="margin-right: 20px">
+										 	{{constantRentTime[ad.rentTime-1].name}}</strong>
+										 </div>
+									</div>
+								</div>	
+								
+								<!-- show only fields related to property RENT commercial -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_COMM_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_COMM_MAX">
+									<div class="row">
+										<div class="col-sm-5">
+											Property size: <strong style="margin-right: 20px">
+												{{ad.propertySize}} Square metre</strong>
+										</div>
+										<div class="col-sm-5">
+											Listed by: <strong style="margin-right: 20px">
+												{{constantOwnerType[ad.ownerType-1].name}}</strong>
+										</div>			
+									</div>
+									<div class="row">
+										<div class="col-md-5">
+											Rent paid: <strong style="margin-right: 20px">
+										 	{{constantRentTime[ad.rentTime-1].name}}</strong>
+										 </div>
+										 <div class="col-md-5">
+											Furnished: <strong style="margin-right: 20px">
+										 	{{constantFurnished[ad.furnished-1].name}}</strong>
+										 </div>
+									</div>
+								</div>	
+								
+								
+								<!-- show only fields related to property RENT commercial -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_ROOM_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_ROOM_MAX">
+									<div class="row">
+										<div class="col-sm-5">
+											Listed by: <strong style="margin-right: 20px">
+												{{constantOwnerType[ad.ownerType-1].name}}</strong>
+										</div>
+										 <div class="col-md-5">
+											Number of Bathrooms: <strong style="margin-right: 20px">
+										 	{{constantNoBathrooms[ad.noBathrooms-1].name}}</strong>
+										 </div>			
+									</div>
+									<div class="row">
+										<div class="col-md-5">
+											Rent paid: <strong style="margin-right: 20px">
+										 	{{constantRentTime[ad.rentTime-1].name}}</strong>
+										 </div>
+										 <div class="col-md-5">
+											Furnished: <strong style="margin-right: 20px">
+										 	{{constantFurnished[ad.furnished-1].name}}</strong>
+										 </div>
+									</div>
+								</div>	
+								
+								<!-- show only fields related to property residential rent short monthly -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MIN && 
+										ad.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MAX">
+									<div class="row">
+										<div class="col-sm-5">
+											Property size: <strong style="margin-right: 20px">
+												{{ad.propertySize}} Square metre</strong>
+										</div>
+										<div class="col-sm-5">
+											Listed by: <strong style="margin-right: 20px">
+												{{constantOwnerType[ad.ownerType-1].name}}</strong>
+										</div>			
+									</div>
+									<div class="row">
+										<div class="col-md-5">
+											Number of rooms: <strong style="margin-right: 20px">
+										 	{{constantNoBedrooms[ad.noBedrooms-1].name}}</strong>
+										 </div>
+										 <div class="col-md-5">
+											Rent paid: <strong style="margin-right: 20px">
+										 	{{constantRentTime[ad.rentTime-1].name}}</strong>
+										 </div>
+									</div>
+								</div>	
+								
+								
+								<!-- show only fields related to property rent hotel -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_HOTEL_MIN && 
+										ad.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_HOTEL_MAX">
+									<div class="row">
+										<div class="col-sm-5">
+											Wifi: <strong style="margin-right: 20px">
+												{{ad.wiFi? "Yes" : "No"}}</strong>
+										</div>
+										
+										<div class="col-sm-5">
+											Parking: <strong style="margin-right: 20px">
+												{{ad.parking? "Yes" : "No"}}</strong>
+										</div>	
+										<div class="col-sm-5">
+											24hr Reception: <strong style="margin-right: 20px">
+												{{ad.reception? "Yes" : "No"}}</strong>
+										</div>
+										<div class="col-sm-5">
+											Restaurant: <strong style="margin-right: 20px">
+												{{ad.restaurant? "Yes" : "No"}}</strong>
+										</div>		
+											
+									</div>
+								</div>	
+								
+								<!-- show only fields related to property residential rent short daily -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_SHORT_DAILY_MIN && 
+										ad.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_SHORT_DAILY_MAX">
+									<div class="row">
+										<div class="col-sm-5">
+											Property size: <strong style="margin-right: 20px">
+												{{ad.propertySize}} Square metre</strong>
+										</div>
+										<div class="col-sm-5">
+											Listed by: <strong style="margin-right: 20px">
+												{{constantOwnerType[ad.ownerType-1].name}}</strong>
+										</div>			
+									</div>
+									<div class="row">
+										<div class="col-md-5">
+											Number of rooms: <strong style="margin-right: 20px">
+										 	{{constantNoBedrooms[ad.noBedrooms-1].name}}</strong>
+										 </div>
+										 <div class="col-md-5">
+											Rent paid: <strong style="margin-right: 20px">
+										 	{{constantRentTime[ad.rentTime-1].name}}</strong>
+										 </div>
+									</div>
+								</div>	
+								
+								<!-- show only fields related to classified baby items -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_MAX
+									    && !(ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_CAMERA_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_CAMERA_MAX)
+									    && !(ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_COMPUTER_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_COMPUTER_MAX)
+									    && !(ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_LOST_FOUND_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_LOST_FOUND_MAX)
+									    && !(ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_PETS_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_PETS_MAX)									    
+									    ">
+									<div class="row">
+										<div class="col-sm-10">
+											Age: <strong style="margin-right: 20px">
+												{{ageConstant[ad.ageItem-1].name}}</strong>
+										</div>		
+									</div>
+									<div class="row">
+										<div class="col-md-10">
+											Condition: <strong style="margin-right: 20px">
+										 	{{constantCondition[ad.conditionItem-1].name}}</strong>
+										 </div>
+									</div>
+								</div>
+								
+								<!-- show only fields related to classified camera -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_CAMERA_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_CAMERA_MAX">
+									<div class="row">
+										<div class="col-sm-5">
+											Age: <strong style="margin-right: 20px">
+												{{ageConstant[ad.ageItem-1].name}}</strong>
+										</div>	
+										<div class="col-md-5">
+											Warranty: <strong style="margin-right: 20px">
+										 	{{warrantyConstant[ad.warrantyItem-1].name}}</strong>
+										 </div>	
+									</div>
+									<div class="row">
+										<div class="col-md-5">
+											Condition: <strong style="margin-right: 20px">
+										 	{{constantCondition[ad.conditionItem-1].name}}</strong>
+										 </div>
+										
+									</div>
+								</div>			
+								
+								
+								<!-- show only fields related to classified computer -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_COMPUTER_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_COMPUTER_MAX">
+									<div class="row">
+										<div class="col-sm-5">
+											Age: <strong style="margin-right: 20px">
+												{{ageConstant[ad.ageItem-1].name}}</strong>
+										</div>	
+										<div class="col-md-5">
+											Warranty: <strong style="margin-right: 20px">
+										 	{{warrantyConstant[ad.warrantyItem-1].name}}</strong>
+										 </div>	
+									</div>
+									<div class="row">
+										<div class="col-md-5">
+											Condition: <strong style="margin-right: 20px">
+										 	{{constantCondition[ad.conditionItem-1].name}}</strong>
+										 </div>
+										 
+									</div>
+									<div class="row">
+										<div class="col-md-5">
+											Brand: <strong style="margin-right: 20px">
+										 	{{constantComputerBrand[ad.brandItem-1].name}}</strong>
+										 </div>
+										 <div class="col-md-5">
+											Hard drive: <strong style="margin-right: 20px">
+										 	{{constantComputerHardDrive[ad.hardDrive-1].name}}</strong>
+										 </div>
+									</div>
+								</div>
+								
+								<!-- show only fields related to classified camera -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.JOB_MIN && ad.categoriesEntity.rgt <= categoryRange.JOB_MAX">
+									<div class="row">
+										<div class="col-sm-8">
+										   <table>
+										     <tr>
+										         <td> 
+												    Monthly Salary ($) : <strong>
+												    {{constantMonthSalary[ad.monthSalary-1].name}}</strong>
+										          </td>
+										          <td>
+												  	Work Experience: <strong>
+										 		  	{{constantWorkExperience[ad.workExperience-1].name}}</strong>
+										 	      </td>
+										      </tr>
+										      <tr >
+										         <td style="margin-right: 20px">
+													 Education Level: <strong style="margin-right: 20px">
+										 			 {{constantEducationLevel[ad.educationLevel-1].name}}</strong>
+										 	      </td>
+										 	      <td style="margin-right: 20px">
+										 	         Employment Type: <strong style="margin-right: 20px">
+										 			 {{constantEmploymentType[ad.employmentType-1].name}}</strong>
+										 	      </td>
+										 	  </tr>
+										 	</table>
+										 </div>	
+										<div class="col-sm-4" ng-show="ad.logoPhoto.length > 0 ">
+							           		<img class="logo-photo" 
+							           		   ng-src="{{bucketName.productLogo + ad.productId + '/' + ad.logoPhoto}}"
+							           		   ng-if="ad.logoPhoto.length > 0">
+						           		</div>
+									 </div>	
+							    </div>	
+								<!-- show only fields related to classified camera -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.COMMUNITY_MIN && ad.categoriesEntity.rgt <= categoryRange.COMMUNITY_MAX">
+									<div class="row">
+										<div class="col-sm-10">
+												{{ad.productTitle}}
+										</div>	
+									
+									</div>
+							</div>			
+								
+								
+										
+                              <!-- end of the whole div -->
+							</div> 
+						</div>
+						<br />
+						<div class="row">
+							<div class="col-sm-8">
+								<p class="muted">
+									<i class="fa fa-map-marker"> </i> <strong> Located: </strong>
+									{{ad.location.region}} , {{ad.location.city}} ,
+									{{ad.location.country}}
+								</p>
+							</div>
+						</div>
+
+					</div>
+					<hr class="no-padding" />
+				</div>
+			</div>
+
+			<div ng-show="ads.totalPages > 1">
+				<div class="text-center">
+					 <uib-pagination total-items="ads.totalElements" ng-model="currentPage" max-size="5" class="pagination" boundary-links="true" 
+    					rotate="false" ng-change="getNextPageAds(ads.totalPages-1)">
+    				 </uib-pagination>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-md-9 listings" ng-show="ads.content.length==0">
+			<div class="row">
+				<div class="col-sm-12">
+
+					<div>
+						<div class="alert alert-info">
+							<strong> No results found</strong> .
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+</div>

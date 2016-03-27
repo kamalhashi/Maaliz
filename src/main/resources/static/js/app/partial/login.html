@@ -1,0 +1,152 @@
+<div class="container">
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <br />
+            <ol class="breadcrumb">
+                <li>
+                    <a ui-sref="/">Home</a>
+                </li>
+                <li class="active">Login</li>
+            </ol>
+            
+            <div class="row">
+                <div class="col-sm-12" cg-busy="{promise:myPromise,backdrop:true, message:'Logging...please wait'}">
+                    <div>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist" style="border-bottom: 0">
+                            <li role="presentation" class="active">
+                                <a ui-sref="login"
+								aria-controls="home">Sign in</a>
+                            </li>
+                            <li role="presentation">
+                                <a ui-sref="register"
+								aria-controls="registration">Register</a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content" style="border-top: 0;">
+                            <div role="tabpanel" class="tab-pane " id="login"></div>
+                            <div role="tabpanel" class="tab-pane active" id="registration">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="padnel panel-defaudlt" style="border-top: 0">
+                                            <div class="well"
+												style="margin-bottom: 0; border: 1px solid #e2e2e2; border-top: 0; border-radius: 0;">
+                                                <div class="padnel-body">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div
+																style="border-right: 1px solid #e2e2e2; padding-right: 30px; padding-left: 0px;">
+                                                                <h2 style="margin-bottom: 5px;">Returning user?</h2>
+                                                                <p>If you have an account with us, please log in.</p>
+                                                                <div class="alert alert-danger" ng-show="loginError">
+                                                              			  {{loginMessage}}
+																</div>
+																
+																
+                                                                <form role="form" name="loginForm"  data-ng-submit="login(loginForm.$valid) " novalidate>                                                                    
+                                                                
+                                                                    <div class="form-group has-feedback"  ng-class="{ 'has-error': loginForm.inputUsername.$touched && 
+                                                                         loginForm.inputUsername.$invalid || 
+																	 	 loginForm.$submitted  && loginForm.inputUsername.$invalid,
+																	 	 'has-success': !loginForm.inputUsername.$invalid}">
+                                                                        <label for="inputUsername" class="control-label">Email address</label>
+                                                                        <input type="email"
+                                                                            name="inputUsername"
+																			class="form-control " placeholder="Enter email"
+																			ng-model="credentials.username"
+																			required>
+																			
+																		<span class="glyphicon glyphicon-ok form-control-feedback" ng-show="loginForm.inputUsername.$touched && !loginForm.inputUsername.$invalid"></span>
+																		<span class="glyphicon glyphicon-remove form-control-feedback" ng-show="loginForm.inputUsername.$touched && loginForm.inputUsername.$invalid"></span>
+																			
+																		<div class="help-block with-errors" ng-messages="loginForm.inputUsername.$error" ng-show="loginForm.inputUsername.$touched || loginForm.$submitted">
+    																		<div  ng-messages-include="messages.html" ></div>
+																		</div> 		
+																		 		
+                                                                    </div>
+                                                                       
+                                                                        
+                                                                   <div class="form-group has-feedback"  ng-class="{ 'has-error': loginForm.inputPassword.$touched && 
+                                                                        loginForm.inputPassword.$invalid ||
+																	 	loginForm.$submitted  && loginForm.inputPassword.$invalid ,
+																	 	'has-success': !loginForm.inputPassword.$invalid}">
+                                                                            <label for="inputPassword" class="control-label">Password</label>
+                                                                            <input type="password"
+																			name="inputPassword"
+																			class="form-control" 
+																			placeholder="Password"
+																			ng-model="credentials.password"																			
+																			required>
+																			
+																			<span class="glyphicon glyphicon-ok form-control-feedback" ng-show="loginForm.inputPassword.$touched && !loginForm.inputPassword.$invalid"></span>
+																		    <span class="glyphicon glyphicon-remove form-control-feedback" ng-show="loginForm.inputPassword.$touched && loginForm.inputPassword.$invalid"></span>
+																		
+																			
+																			<div class="help-block with-errors" ng-messages="loginForm.inputPassword.$error" ng-show="loginForm.inputPassword.$touched || loginForm.$submitted">
+    																			<div  ng-messages-include="messages.html" ></div>
+																			</div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-6">
+                                                                            <div class="checkbox">
+                                                                                <label>
+                                                                                            <input type="checkbox">
+																					           Remember me
+																				
+                                                                                  </label>
+                                                                              </div>
+                                                                          </div>
+                                                                          <div class="col-sm-6">
+                                                                                        <button class="btn btn-primary btn-block">Sign in</button>
+                                                                           </div>
+                                                                           </div>
+                                                                                <br />
+                                                                                <p>
+                                                                                    <a ui-sref="forgot_password"  class="text-info text-center">Forgotten your username or password?</a>
+                                                                                </p>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-sm-6">
+                                                                        <div style="padding-right: 20px; padding-left: 0px;">
+                                                                            <h2 style="margin-bottom: 5px;">Login with Facebook?</h2>
+                                                                            <p>
+                                                                                Login to Xaashi.com with one click. No need to register or fill out 
+                                                                                out long forms or remember yet another username and password
+																	        </p>
+                                                                            <br />
+                                                                            <div class="row">
+                                                                                <div class="col-sm-12">
+                                                                                  <button class="btn btn-primary btn-block" type="button" ng-click="socialLogin()" ng-hide="isLoggedIn" >
+                                                                                  		  <span class="fa-stack  fa-pull-left">
+                                                                                  		    <i class="fa fa-square-o fa-stack-2x"></i>
+                                                                                  		    <i class="fa fa-facebook "></i> 
+                                                                                  		</span>
+                                                                                  		Login with Facebook
+                                                                                   </button>
+                                                                                   
+                                                                                </div>
+                                                                            </div>
+                                                                            <br/>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </div>

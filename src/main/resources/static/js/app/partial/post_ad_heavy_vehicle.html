@@ -1,0 +1,769 @@
+<br />
+<br />
+<div class="container post-ad-form" cg-busy="{promise:myPromise,backdrop:true, message:'Saving...please wait'}">
+
+		<div class="row">
+			<form role="form" class="form-horizontal" name="postAdForm" novalidate>
+
+				<div class="col-sm-12 col-lg-8">
+					<ol class="breadcrumb">
+						<li><a ui-sref="/" >Home</a></li>
+						<li><a ui-sref="post_ad" >Post an ad</a></li>
+						<li class="active">Heavy vehicle for sale</li>
+					</ol>
+
+					<h1>Post an Ad</h1>
+
+					<div class="alert alert-danger" ng-show="postAdError">
+						{{postAdErrorMessage}}</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<i class="fa fa-check-circle fa-fw"></i> Selected a category
+							</h3>
+						</div>
+
+						<div class="panel-body">
+
+
+							<div class="row">
+								<div class="col-sm-10">
+									<ol class="breadcrumb"
+										style="font-size: 16px; font-weight: bold; margin-bottom: 0">
+										<li ng-repeat="category in listRootCategories">
+											{{category.categoryName}} 
+										</li>
+									</ol>
+								</div>
+
+								<div class="col-sm-2 pull-right">
+									<a ui-sref="post_ad" class="btn btn-default btn-block">edit</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Ad details</h3>
+						</div>
+						<div class="panel-body">
+
+
+							<div class="form-group has-feedback"
+								ng-class="{ 'has-error': postAdForm.inputTitle.$touched && 
+								postAdForm.inputTitle.$invalid ||
+						        postAdForm.$submitted && postAdForm.inputTitle.$invalid ,
+						        'has-success': !postAdForm.inputTitle.$invalid}">
+								<label for="inputTitle" class="control-label">Title</label> 
+								<input
+									type="text" class="form-control" name="inputTitle"
+									placeholder="" 
+									ng-model="ad.productTitle" 
+									ng-maxlength="100"
+									required> 
+								<span
+									class="glyphicon glyphicon-ok form-control-feedback"
+									ng-show="postAdForm.inputTitle.$touched && !postAdForm.inputTitle.$invalid">
+								</span> <span class="glyphicon glyphicon-remove form-control-feedback"
+									ng-show="postAdForm.inputTitle.$touched && postAdForm.inputTitle.$invalid || postAdForm.$submitted && postAdForm.inputTitle.$invalid">
+								</span>
+								<div class="help-block with-errors"
+									ng-messages="postAdForm.inputTitle.$error"
+									ng-show="postAdForm.inputTitle.$touched || postAdForm.$submitted">
+									<div ng-messages-include="messages.html"></div>
+								</div>
+							</div>
+
+							<div class="form-group has-feedback"
+								ng-class="{ 'has-error': postAdForm.inputPrice.$touched && 
+								postAdForm.inputPrice.$invalid ||
+						        postAdForm.$submitted && postAdForm.inputPrice.$invalid ,
+						        'has-success': !postAdForm.inputPrice.$invalid && postAdForm.inputPrice.$touched}">
+								<label for="inputPrice" class="control-label">Price($)</label> <input
+									type="text" class="form-control" name="inputPrice"
+									placeholder="" ng-model="ad.productPrice" ng-currency
+									fraction="0" required> <span
+									class="glyphicon glyphicon-ok form-control-feedback"
+									ng-show="postAdForm.inputPrice.$touched && !postAdForm.inputPrice.$invalid"></span>
+								<span class="glyphicon glyphicon-remove form-control-feedback"
+									ng-show="postAdForm.inputPrice.$touched && postAdForm.inputPrice.$invalid || postAdForm.$submitted && postAdForm.inputPrice.$invalid"></span>
+								<div class="help-block with-errors"
+									ng-messages="postAdForm.inputPrice.$error"
+									ng-show="postAdForm.inputPrice.$touched || postAdForm.$submitted">
+									<div ng-messages-include="messages.html"></div>
+								</div>
+							</div>
+
+
+							<div class="form-group has-feedback"
+								ng-class="{ 'has-error': postAdForm.inputTelephone.$touched && 
+								postAdForm.inputTelephone.$invalid ||
+						        postAdForm.$submitted && postAdForm.inputTelephone.$invalid ,
+						        'has-success': !postAdForm.inputTelephone.$invalid && postAdForm.inputTelephone.$touched}">
+								<label for="inputTelephone" class="control-label">Telephone</label>
+								<input type="text" class="form-control" name="inputTelephone"
+									ng-model="telephone" required> 
+								
+								<span
+									class="glyphicon glyphicon-ok form-control-feedback"
+									ng-show="postAdForm.inputTelephone.$touched && !postAdForm.inputTelephone.$invalid">
+								</span>
+								<span class="glyphicon glyphicon-remove form-control-feedback"
+									ng-show="postAdForm.inputTelephone.$touched && postAdForm.inputTelephone.$invalid || postAdForm.$submitted && postAdForm.inputTelephone.$invalid"></span>
+								<div class="help-block with-errors"
+									ng-messages="postAdForm.inputTelephone.$error"
+									ng-show="postAdForm.inputTelephone.$touched || postAdForm.$submitted">
+									<div ng-messages-include="messages.html"></div>
+								</div>
+							</div>
+		
+ 							<div class="form-group has-feedback"
+								ng-class="{ 'has-error': postAdForm.inputDescription.$touched && 
+								postAdForm.inputDescription.$invalid ||
+						        postAdForm.$submitted && postAdForm.inputDescription.$invalid ,
+						        'has-success': !postAdForm.inputDescription.$invalid}">
+								<label for="inputDescription" class="control-label">Description</label>
+								<div  name="inputDescription" class="form-control editable"
+									 contenteditable ng-model="ad.productDescription" required>
+						    	 </div>
+								<span class="glyphicon glyphicon-ok form-control-feedback"
+									ng-show="postAdForm.inputDescription.$touched && !postAdForm.inputDescription.$invalid"></span>
+								<span class="glyphicon glyphicon-remove form-control-feedback"
+									ng-show="postAdForm.inputDescription.$touched && postAdForm.inputDescription.$invalid"></span>
+								<div class="help-block with-errors"
+									ng-messages="postAdForm.inputDescription.$error"
+									ng-show="postAdForm.inputDescription.$touched || postAdForm.$submitted">
+									<div ng-messages-include="messages.html"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Car information</h3>
+						</div>
+						<div class="panel-body">
+							<div class="row">
+							    <div class="col-sm-5">
+									<div class="form-group has-feedback"
+										ng-class="{ 'has-error': postAdForm.inputMake.$touched && 
+										 postAdForm.inputMake.$invalid ||
+						        		 postAdForm.$submitted && postAdForm.inputMake.$invalid ,
+						         		'has-success': !postAdForm.inputMake.$invalid}">
+
+										<label for="inputMake" class="control-label">Make</label> 
+										<input  type="text"
+											ng-model="ad.make"
+											name="inputMake" 
+											class="form-control" 
+											required>
+										 
+										<span class="glyphicon glyphicon-ok form-control-feedback"
+											ng-show="postAdForm.inputMake.$touched && !postAdForm.inputMake.$invalid">
+										</span> 
+										<span
+											class="glyphicon glyphicon-remove form-control-feedback"
+											ng-show="postAdForm.inputMake.$touched && postAdForm.inputMake.$invalid || postAdForm.$submitted && postAdForm.inputMake.$invalid">
+										</span>
+										<div class="help-block with-errors"
+											ng-messages="postAdForm.inputMake.$error"
+											ng-show="postAdForm.inputMake.$touched || postAdForm.$submitted">
+											<div ng-messages-include="messages.html"></div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-5 col-xs-offset-2"">
+									<div class="form-group has-feedback"
+										ng-class="{ 'has-error': postAdForm.inputModelComplete.$touched && 
+										 postAdForm.inputModel.$invalid ||
+						        		 postAdForm.$submitted && postAdForm.inputModel.$invalid ,
+						         		'has-success': !postAdForm.inputModel.$invalid}">
+
+										<label for="inputModel" class="control-label">Model</label> 
+										 <input
+											type="text" 
+											ng-model="ad.model" 
+											name="inputModel"
+											class="form-control" 
+											required>
+
+									
+										<span class="glyphicon glyphicon-ok form-control-feedback"
+											ng-show="postAdForm.inputModelComplete.$touched && !postAdForm.inputModel.$invalid">
+										</span> <span
+											class="glyphicon glyphicon-remove form-control-feedback"
+											ng-show="postAdForm.inputModelComplete.$touched && postAdForm.inputModel.$invalid || postAdForm.$submitted  && postAdForm.inputModel.$invalid ">
+										</span>
+										<div class="help-block with-errors"
+											ng-messages="postAdForm.inputModel.$error"
+											ng-show="postAdForm.inputModelComplete.$touched || postAdForm.$submitted">
+											<div ng-messages-include="messages.html"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							
+							<div class="row">
+								<div class="col-sm-5">
+									<div class="form-group has-feedback"
+										ng-class="{ 'has-error': postAdForm.selectYear.$touched && 
+										 postAdForm.selectYear.$invalid ||
+						        		 postAdForm.$submitted && postAdForm.selectYear.$invalid ,
+						         		'has-success': !postAdForm.selectYear.$invalid}">
+
+										<label for="selectYear" class="control-label">Year</label> <select
+											ng-options="year for year in years" ng-model="ad.yearMade"
+											name="selectYear" class="form-control" required>
+										</select> <span class="glyphicon glyphicon-ok form-control-feedback"
+											ng-show="postAdForm.selectYear.$touched && !postAdForm.selectYear.$invalid">
+										</span> <span
+											class="glyphicon glyphicon-remove form-control-feedback"
+											ng-show="postAdForm.selectYear.$touched && postAdForm.selectYear.$invalid || postAdForm.$submitted && postAdForm.selectYear.$invalid">
+										</span>
+										<div class="help-block with-errors"
+											ng-messages="postAdForm.selectYear.$error"
+											ng-show="postAdForm.selectYear.$touched || postAdForm.$submitted">
+											<div ng-messages-include="messages.html"></div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-sm-5 col-xs-offset-2">
+									<div class="form-group has-feedback"
+										ng-class="{ 'has-error': postAdForm.inputKilometers.$touched && 
+									    postAdForm.inputKilometers.$invalid ||
+						        		postAdForm.$submitted && postAdForm.inputKilometers.$invalid ,
+						         		'has-success': !postAdForm.inputKilometers.$invalid}">
+
+										<label for="inputKilometers" class="control-label">Kilometers</label>
+										<input type="number" class="form-control"
+											ng-model="ad.kilometers" name="inputKilometers"
+											ng-pattern="/^(0|[1-9][0-9]*)$/" required> <span
+											class="glyphicon glyphicon-ok form-control-feedback"
+											ng-show="postAdForm.inputKilometers.$touched && !postAdForm.inputKilometers.$invalid">
+										</span> <span
+											class="glyphicon glyphicon-remove form-control-feedback"
+											ng-show="postAdForm.inputKilometers.$touched && postAdForm.inputKilometers.$invalid || postAdForm.$submitted &&  postAdForm.inputKilometers.$invalid">
+										</span>
+										<div class="help-block with-errors"
+											ng-messages="postAdForm.inputKilometers.$error"
+											ng-show="postAdForm.inputKilometers.$touched || postAdForm.$submitted">
+											<p ng-if="postAdForm.inputKilometers.$error.pattern">Kilometers
+												must be number and above zero</p>
+
+											<div ng-messages-include="messages.html"></div>
+										</div>
+									</div>
+								</div>		
+							</div>
+							
+							
+							
+							
+							<div class="row">
+								<div class="col-sm-5">
+									<div class="form-group has-feedback"
+										ng-class="{ 'has-error': postAdForm.selectCylinders.$touched && 
+										 postAdForm.selectCylinders.$invalid ||
+						        		 postAdForm.$submitted && postAdForm.selectCylinders.$invalid ,
+						         		'has-success': !postAdForm.selectCylinders.$invalid}">
+
+										<label for="selectCylinders" class="control-label">Number of Cylinders</label> 
+										<select
+											 ng-model="ad.noCylinders"
+											name="selectCylinders" 
+											class="form-control" 
+											ng-options="noCylinders.id as noCylinders.name for noCylinders in constantNoCylinders"
+											required>
+										</select> 
+										
+										<span class="glyphicon glyphicon-ok form-control-feedback"
+											ng-show="postAdForm.selectCylinders.$touched && !postAdForm.selectCylinders.$invalid">
+										</span> 
+										<span
+											class="glyphicon glyphicon-remove form-control-feedback"
+											ng-show="postAdForm.selectCylinders.$touched && postAdForm.selectCylinders.$invalid || postAdForm.$submitted && postAdForm.selectCylinders.$invalid">
+										</span>
+										<div class="help-block with-errors"
+											ng-messages="postAdForm.selectCylinders.$error"
+											ng-show="postAdForm.selectCylinders.$touched || postAdForm.$submitted">
+											<div ng-messages-include="messages.html"></div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="col-sm-5 col-xs-offset-2">
+									<div class="form-group has-feedback"
+										ng-class="{ 'has-error': postAdForm.selectHorsePower.$touched && 
+										 postAdForm.selectHorsePower.$invalid ||
+						        		 postAdForm.$submitted && postAdForm.selectHorsePower.$invalid ,
+						         		'has-success': !postAdForm.selectHorsePower.$invalid}">
+
+										<label for="selectHorsePower" class="control-label">Horse Power</label> 
+										<select
+											  ng-model="ad.horsePower"
+											  name="selectHorsePower" 
+											  ng-options="horsePower.id as horsePower.name for horsePower in constantHorsePower"
+											  class="form-control"
+											  required>
+										</select> <span class="glyphicon glyphicon-ok form-control-feedback"
+											ng-show="postAdForm.selectHorsePower.$touched && !postAdForm.selectHorsePower.$invalid">
+										</span> <span
+											class="glyphicon glyphicon-remove form-control-feedback"
+											ng-show="postAdForm.selectHorsePower.$touched && postAdForm.selectHorsePower.$invalid || postAdForm.$submitted && postAdForm.selectHorsePower.$invalid">
+										</span>
+										<div class="help-block with-errors"
+											ng-messages="postAdForm.selectHorsePower.$error"
+											ng-show="postAdForm.selectHorsePower.$touched || postAdForm.$submitted">
+											<div ng-messages-include="messages.html"></div>
+										</div>
+									</div>
+								</div>		
+							</div>
+					
+							<div class="row">
+								<div class="col-sm-5">
+									<div class="form-group has-feedback"
+										ng-class="{ 'has-error': postAdForm.selectFuelType.$touched && 
+									    postAdForm.selectFuelType.$invalid ||
+						        		postAdForm.$submitted && postAdForm.selectFuelType.$invalid ,
+						         		'has-success': !postAdForm.selectFuelType.$invalid}">
+
+										<label for="selectFuelType" class="control-label">Fuel
+											Type</label> <select ng-model="ad.fuelType" name="selectFuelType"
+											class="form-control"
+											ng-options="fuelType.id as fuelType.name for fuelType in constantFuelType"
+											required>
+										</select> <span class="glyphicon glyphicon-ok form-control-feedback"
+											ng-show="postAdForm.selectFuelType.$touched && !postAdForm.selectFuelType.$invalid">
+										</span> <span
+											class="glyphicon glyphicon-remove form-control-feedback"
+											ng-show="postAdForm.selectFuelType.$touched && postAdForm.selectFuelType.$invalid || postAdForm.$submitted &&  postAdForm.selectFuelType.$invalid">
+										</span>
+										<div class="help-block with-errors"
+											ng-messages="postAdForm.selectFuelType.$error"
+											ng-show="postAdForm.selectFuelType.$touched || postAdForm.$submitted">
+											<div ng-messages-include="messages.html"></div>
+
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-5 col-xs-offset-2">
+									<div class="form-group has-feedback"
+										ng-class="{ 'has-error': postAdForm.selectSellerType.$touched && 
+									    postAdForm.selectSellerType.$invalid ||
+						        		postAdForm.$submitted && postAdForm.selectSellerType.$invalid ,
+						         		'has-success': !postAdForm.selectSellerType.$invalid}">
+
+										<label for="selectSellerType" class="control-label">Seller
+											Type</label> <select class="form-control" ng-model="ad.sellerType"
+											name="selectSellerType"
+											ng-options="sellerType.id as sellerType.name for  sellerType in constantSellerType"
+											required>
+
+										</select> <span class="glyphicon glyphicon-ok form-control-feedback"
+											ng-show="postAdForm.selectSellerType.$touched && !postAdForm.selectSellerType.$invalid">
+										</span> <span
+											class="glyphicon glyphicon-remove form-control-feedback"
+											ng-show="postAdForm.selectSellerType.$touched && postAdForm.selectSellerType.$invalid || postAdForm.$submitted &&  postAdForm.selectSellerType.$invalid">
+										</span>
+										<div class="help-block with-errors"
+											ng-messages="postAdForm.selectSellerType.$error"
+											ng-show="postAdForm.selectSellerType.$touched || postAdForm.$submitted">
+											<div ng-messages-include="messages.html"></div>
+										</div>
+									</div>
+								</div>	
+							</div>
+
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Images</h3>
+						</div>
+						<div class="panel-body" style="background: #fff">
+                            
+							<div class="row">
+								<div class="col-sm-4 text-center"
+									cg-busy="{promise:promiseExistingImageObjectZero, message:'Loading images'}"
+									flow-object="existingImageObjectZero"
+									flow-init
+									flow-image-resize
+									flow-btn 
+									flow-attrs="{accept:['image/png','image/jpeg']}" 
+								    flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
+									flow-file-success="fileUploadedSuccessfully($file, 0 )"
+									flow-files-submitted="$flow.upload()">
+									
+									
+                                      
+
+									<div ng-hide="$flow.files.length"
+										style="border: 3px dashed #CCCCCC; height: 350px; display: block; background: #f7f7f7; padding: 10px;">
+										<a href="" style="font-size: 36px; color: #ddd; padding: 30px"><i
+											class="fa fa-camera"></i></a><br /> <a href="" class="text-info"
+											style="font-size: 14px;">Add image</a>										
+									</div>
+								
+									<div style="background: #f7f7f7;">
+										<div class="thumbnail" ng-show="$flow.files.length" 
+											style="background: #f7f7f7; height: 350px; margin-bottom: 10px; text-align: center;">
+											<img my-flow-img="$flow.files[0]" style="height: 290px;" width="100%;" /> 
+											<a href="" class="text-info" style="font-size: 14px;" ng-show="$flow.files.length"
+												ng-click="$flow.cancel();removeFile(0)"> Remove 
+											</a>
+										</div>
+										
+										<div class="progress" ng-class="{active: $flow.isUploading()}"
+											style="position: absolute; bottom: 0; width: 255px;">
+											<div class="progress-bar progress-bar-striped active"
+												role="progressbar"
+												ng-style="{'width' : ($flow.files[0].sizeUploaded() / $flow.files[0].size * 100) + '%'}">{{$flow.files[0].sizeUploaded()}}
+												/ {{$flow.files[0].size}} kB |
+												{{$flow.files[0].sizeUploaded() / $flow.files[0].size * 100
+												| number:0}}%</div>
+										</div>
+									</div>
+								</div>
+
+
+
+								<div class="col-sm-8">
+
+									<div class="row">
+										<div class="col-sm-4" 
+											cg-busy="{promise:promiseExistingImageObjectOne, message:'Loading images'}" 
+											flow-object="existingImageObjectOne"
+											flow-init
+											flow-image-resize
+										    flow-btn
+										    flow-attrs="{accept:['image/png','image/jpeg']}" 	     
+											flow-file-success="fileUploadedSuccessfully($file, 1)"
+											data-flow-files-submitted="$flow.upload()">
+											<div ng-hide="$flow.files.length"
+												style="z-index: 1; top: 0px; left: 10px; background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center; padding: 10px;">
+												<a href="" style="font-size: 36px; color: #ddd;"><i
+													class="fa fa-camera"></i></a><br /> <a href=""
+													class="text-info" style="font-size: 14px;">Add image</a>
+												
+											</div>
+											<div style="background: #f7f7f7;">
+												<div class="thumbnail" ng-show="$flow.files.length"
+													style="background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center;">
+													<img my-flow-img="$flow.files[0]" style="height: 115px;" width="100%;" /> 
+												
+													<a
+														href="" class="text-info" style="font-size: 14px;"
+														ng-show="$flow.files.length"
+														ng-click="$flow.cancel(); removeFile(1)">
+														
+	
+														 Remove 
+														 
+													</a>
+														
+														
+												</div>
+
+												<div class="progress"
+													ng-class="{active: $flow.isUploading()}"
+													style="position: absolute; bottom: 0; width: 160px;"">
+													<div class="progress-bar progress-bar-striped active"
+														role="progressbar"
+														ng-style="{'width' : ($flow.files[0].sizeUploaded() / $flow.files[0].size * 100) + '%'}">{{$flow.files[0].sizeUploaded()}}
+														/ {{$flow.files[0].size}} kB |
+														{{$flow.files[0].sizeUploaded() / $flow.files[0].size *
+														100 | number:0}}%</div>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="col-sm-4"
+											cg-busy="{promise:promiseExistingImageObjectTwo, message:'Loading images'}"
+										    flow-object="existingImageObjectTwo"
+										    flow-init 
+										    flow-image-resize
+										    flow-btn 
+										    flow-attrs="{accept:['image/png','image/jpeg']}" 	    
+											flow-file-success="fileUploadedSuccessfully($file, 2 )"
+											data-flow-files-submitted="$flow.upload()">
+											<div ng-hide="$flow.files.length"
+												style="z-index: 1; top: 0px; left: 10px; background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center; padding: 10px;">
+												<a href="" style="font-size: 36px; color: #ddd;"><i
+													class="fa fa-camera"></i></a><br /> <a href=""
+													class="text-info" style="font-size: 14px;">Add image</a>
+													
+											</div>
+											<div style="background: #f7f7f7;">
+												<div class="thumbnail" ng-show="$flow.files.length"
+													style="background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center;">
+													<img my-flow-img="$flow.files[0]" style="height: 115px;" width="100%;" /> <a
+														href="" class="text-info" style="font-size: 14px;"
+														ng-show="$flow.files.length"
+														ng-click="$flow.cancel(); removeFile(2)"> Remove </a>
+												</div>
+
+												<div class="progress"
+													ng-class="{active: $flow.isUploading()}"
+													style="position: absolute; bottom: 0; width: 160px;">
+													<div class="progress-bar progress-bar-striped active"
+														role="progressbar"
+														ng-style="{'width' : ($flow.files[0].sizeUploaded() / $flow.files[0].size * 100) + '%'}">{{$flow.files[0].sizeUploaded()}}
+														/ {{$flow.files[0].size}} kB |
+														{{$flow.files[0].sizeUploaded() / $flow.files[0].size *
+														100 | number:0}}%</div>
+												</div>
+											</div>
+
+										</div>
+
+
+										<div class="col-sm-4" 
+											cg-busy="{promise:promiseExistingImageObjectThree, message:'Loading images'}"
+											flow-object="existingImageObjectThree"
+											flow-init
+											flow-image-resize
+											flow-btn 
+											flow-attrs="{accept:['image/png','image/jpeg']}" 		
+											flow-file-success="fileUploadedSuccessfully($file, 3 )"
+											data-flow-files-submitted="$flow.upload()">
+											<div ng-hide="$flow.files.length"
+												style="z-index: 1; top: 0px; left: 10px; background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center; padding: 10px;">
+												<a href="" style="font-size: 36px; color: #ddd;"><i
+													class="fa fa-camera"></i></a><br /> <a href=""
+													class="text-info" style="font-size: 14px;">Add image</a>
+													
+											</div>
+											<div style="background: #f7f7f7;">
+												<div class="thumbnail" ng-show="$flow.files.length"
+													style="background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center;">
+													<img my-flow-img="$flow.files[0]" style="height: 115px;" width="100%;" /> <a
+														href="" class="text-info" style="font-size: 14px;"
+														ng-show="$flow.files.length"
+														ng-click="$flow.cancel(); removeFile(3 )"> Remove </a>
+												</div>
+
+												<div class="progress"
+													ng-class="{active: $flow.isUploading()}"
+													style="position: absolute; bottom: 0; width: 160px;">
+													<div class="progress-bar progress-bar-striped active"
+														role="progressbar"
+														ng-style="{'width' : ($flow.files[0].sizeUploaded() / $flow.files[0].size * 100) + '%'}">{{$flow.files[0].sizeUploaded()}}
+														/ {{$flow.files[0].size}} kB |
+														{{$flow.files[0].sizeUploaded() / $flow.files[0].size *
+														100 | number:0}}%</div>
+												</div>
+											</div>
+
+										</div>
+
+
+
+										<div class="col-sm-4" 
+											cg-busy="{promise:promiseExistingImageObjectFour, message:'Loading images'}"
+											flow-object="existingImageObjectFour"
+											flow-init
+											flow-image-resize
+											flow-btn 
+											flow-attrs="{accept:['image/png','image/jpeg']}" 		
+											flow-file-success="fileUploadedSuccessfully($file, 4)"
+											data-flow-files-submitted="$flow.upload()">
+											<div ng-hide="$flow.files.length"
+												style="z-index: 1; top: 0px; left: 10px; background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center; padding: 10px;">
+												<a href="" style="font-size: 36px; color: #ddd;"><i
+													class="fa fa-camera"></i></a><br /> <a href=""
+													class="text-info" style="font-size: 14px;">Add image</a>
+													
+											</div>
+											<div style="background: #f7f7f7;">
+												<div class="thumbnail" ng-show="$flow.files.length"
+													style="background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center;">
+													<img my-flow-img="$flow.files[0]" style="height: 115px;" width="100%;" /> <a
+														href="" class="text-info" style="font-size: 14px;"
+														ng-show="$flow.files.length"
+														ng-click="$flow.cancel(); removeFile(4)"> Remove </a>
+												</div>
+
+												<div class="progress"
+													ng-class="{active: $flow.isUploading()}"
+													style="position: absolute; bottom: 0; width: 160px;">
+													<div class="progress-bar progress-bar-striped active"
+														role="progressbar"
+														ng-style="{'width' : ($flow.files[0].sizeUploaded() / $flow.files[0].size * 100) + '%'}">{{$flow.files[0].sizeUploaded()}}
+														/ {{$flow.files[0].size}} kB |
+														{{$flow.files[0].sizeUploaded() / $flow.files[0].size *
+														100 | number:0}}%</div>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="col-sm-4"
+											cg-busy="{promise:promiseExistingImageObjectFive, message:'Loading images'}" 
+										    flow-object="existingImageObjectFive"
+										    flow-init
+										    flow-image-resize
+											flow-btn 
+											flow-attrs="{accept:['image/png','image/jpeg']}" 			
+											flow-file-success="fileUploadedSuccessfully($file, 5 )"
+											data-flow-files-submitted="$flow.upload()">
+											<div ng-hide="$flow.files.length"
+												style="z-index: 1; top: 0px; left: 10px; background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center; padding: 10px;">
+												<a href="" style="font-size: 36px; color: #ddd;"><i
+													class="fa fa-camera"></i></a><br /> <a href=""
+													class="text-info" style="font-size: 14px;">Add image</a>
+											</div>
+											<div style="background: #f7f7f7;">
+												<div class="thumbnail" ng-show="$flow.files.length"
+													style="background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center;">
+													<img my-flow-img="$flow.files[0]" style="height: 115px;" width="100%;" /> <a
+														href="" class="text-info" style="font-size: 14px;"
+														ng-show="$flow.files.length"
+														ng-click="$flow.cancel(); removeFile(5)"> Remove </a>
+												</div>
+
+												<div class="progress"
+													ng-class="{active: $flow.isUploading()}"
+													style="position: absolute; bottom: 0; width: 160px;">
+													<div class="progress-bar progress-bar-striped active"
+														role="progressbar"
+														ng-style="{'width' : ($flow.files[0].sizeUploaded() / $flow.files[0].size * 100) + '%'}">{{$flow.files[0].sizeUploaded()}}
+														/ {{$flow.files[0].size}} kB |
+														{{$flow.files[0].sizeUploaded() / $flow.files[0].size *
+														100 | number:0}}%</div>
+												</div>
+											</div>
+
+										</div>
+
+
+										<div class="col-sm-4"  
+											cg-busy="{promise:promiseExistingImageObjectSix, message:'Loading images'}"
+											flow-object="existingImageObjectSix"
+											flow-init
+											flow-image-resize
+											flow-btn 
+											flow-attrs="{accept:['image/png','image/jpeg']}" 				
+											flow-file-success="fileUploadedSuccessfully($file, 6 )"
+											data-flow-files-submitted="$flow.upload()">
+											<div ng-hide="$flow.files.length"
+												style="z-index: 1; top: 0px; left: 10px; background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center; padding: 10px;">
+												<a href="" style="font-size: 36px; color: #ddd;"><i
+													class="fa fa-camera"></i></a><br /> <a href=""
+													class="text-info" style="font-size: 14px;">Add image</a>
+													
+											</div>
+											<div style="background: #f7f7f7;">
+												<div class="thumbnail" ng-show="$flow.files.length"
+													style="background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center;">
+													<img my-flow-img="$flow.files[0]" style="height: 115px;" width="100%;" /> <a
+														href="" class="text-info" style="font-size: 14px;"
+														ng-show="$flow.files.length"
+														ng-click="$flow.cancel(); removeFile(6)"> Remove </a>
+												</div>
+
+												<div class="progress"
+													ng-class="{active: $flow.isUploading()}"
+													style="position: absolute; bottom: 0; width: 160px;">
+													<div class="progress-bar progress-bar-striped active"
+														role="progressbar"
+														ng-style="{'width' : ($flow.files[0].sizeUploaded() / $flow.files[0].size * 100) + '%'}">{{$flow.files[0].sizeUploaded()}}
+														/ {{$flow.files[0].size}} kB |
+														{{$flow.files[0].sizeUploaded() / $flow.files[0].size *
+														100 | number:0}}%</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Location</h3>
+						</div>
+						<div class="panel-body">
+
+						<div class="form-horizontal">
+								
+							<div>
+								<map center="{{ad.location.latitude}}, {{ad.location.longtitude}}" zoom="7"
+									on-click="addMarker()">
+									<marker
+										position="{{ad.location.latitude}}, {{ad.location.longtitude}}"></marker>
+								</map>
+							</div>
+
+							<br />
+							<p>
+								<strong class="text-primary">You have selected:</strong>
+								{{ad.location.country}}, {{ad.location.city}}, {{ad.location.region}},
+								{{ad.location.routeName}}
+							</p>
+						</div>
+					</div>
+				</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Language of the ad</h3>
+						</div>
+						<div class="panel-body">
+
+							<div class="checkbox">
+								<label> <input type="checkbox"
+									ng-model="ad.productLanguage" ng-true-value="'so_SO'" />
+
+									Somali Language
+								</label> <label> <input type="checkbox"
+									ng-model="ad.productLanguage" ng-true-value="'en_US'" />
+									Eglish Language
+								</label>
+							</div>
+
+							<button class="btn btn-primary pull-right" ng-click="saveProduct(postAdForm.$valid)" ng-hide="updateButton">Publish ad</button>
+							<button class="btn btn-primary pull-right" ng-show="updateButton" ng-click="updateProduct(postAdForm.$valid)">Update ad</button>
+							
+						</div>
+					</div>
+				</div>
+
+			</form>
+
+
+			<div class="col-sm-4 visible-lg">
+				<br /> <br /> <br /> <br /> <br />
+				<div class="row">
+					<div class="col-sm-11 col-sm-offset-1">
+						<div class="well">
+							<strong class="text-muted"><i
+								class="fa fa-info-circle fa-fw text-muted"></i> Information</strong><br />
+							<br />
+							<p>This website is visited by millions of people everyday,
+								make sure you add the relevent descriptions and keywords to
+								increase visibility of your ad. You'll get alerts by email
+								everytime somone replies to your ad</p>
+							<p>Also, don't forget - you can always edit your ad and the
+								images after posting</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+

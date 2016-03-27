@@ -1,0 +1,120 @@
+<div class="container">
+
+
+    <div class="row">
+
+        <div class="col-sm-8">
+            <ol class="breadcrumb">
+                <li><a ui-sref="/">Home</a></li>
+                <li class="active">My Ads</li>
+            </ol>
+
+
+            <h1>My Ads</h1>
+            <br />
+
+            <div class="row">
+                <div class="col-sm-12 ">
+
+                    <div>
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation">
+                            	<a ui-sref="account_profile" aria-controls="home" >My profile</a>
+                            </li>
+                            <li role="presentation" class="active">
+                            	<a ui-sref="account_ads" aria-controls="home" >My Ads</a>
+                            </li>
+                            <li role="presentation">
+                            	<a ui-sref="account_settings" aria-controls="registration" >Account settings</a>
+                           	</li>
+                           	 <li role="presentation">
+                            	<a ui-sref="applicants" >Job Board</a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div cg-busy="{promise:myPromise,backdrop:true}">
+                        
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane " id="login"></div>
+                            <div role="tabpanel" class="tab-pane active" id="my_profile">
+                               <div class="panel panel-default">
+                                  <div class="panel-heading">
+										<h3 class="panel-title">My Ads</h3>
+									</div>
+                                   <div class="panel-body" ng-show="products.length > 0 ">
+                                      <table class="table edit-listings table-striped">
+                                        <thead>
+                                            <tr>
+                                            	<th>Ad ref</th>
+                                                <th>Date posted</th>
+                                                <th>Title</th>
+                                                <th>Location</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="product in products">
+                                                <td>{{product.productId}}</td>
+                                                <td>{{product.created | date:'dd MMMM yy'}}</td>
+                                                <td>{{product.productTitle}}</td>
+                                                <td>{{product.location.city}},  {{product.location.region}}</td>
+                                                 <td>
+                                                    <a class="edit-ad btn btn-warning btn-xs" style="padding-right: 20px; padding-left: 20px;" 
+                                                     href ng-click="forwardToPostAdNext(product.productId, product.categoriesEntity.categoryId, 
+                                                       product.categoriesEntity.lft, 
+                                                       product.categoriesEntity.rgt)">
+                                                      <i class="fa fa-pencil-square-o"></i>
+                                                      Edit
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a class="edit-ad btn btn-warning btn-xs" style="padding-right: 20px; padding-left: 20px;" ng-click="deleteProduct(product.productId, $index)">
+                                                     	<i class="fa fa-remove fa-fw"></i>
+                                                     	Delete
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                           
+                                        </tbody>
+                                    </table>
+                                  </div>
+                                  <div class="panel-body" ng-show="!products || products.length ==0">
+                                    Currently you don't have any active ads 
+                                  </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+
+
+
+            </div>
+
+        </div>
+
+        
+        
+        <div class="col-sm-4">
+            <div class="row" style="margin-top: 170px;">
+                <div class="col-sm-11 col-sm-offset-1">
+                    <div class="well">
+                        <strong class="text-muted"><i class="fa fa-info-circle fa-fw text-muted"></i> Information</strong><br /><br />
+                        <p>This website is visited by millions of people everyday, make sure you add the relevent descriptions and keywords to increase visibility of your ad. You'll get alerts by email everytime somone replies to your ad</p>
+                        <p>Also, don't forget - you can always edit your ad and the images after posting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <br />
+
+</div>

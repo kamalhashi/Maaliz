@@ -1,0 +1,15 @@
+  <p>Hello {{name}}!</p>
+    <div 
+    flow-init='{singleFile:true}' 
+    
+    flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
+    flow-file-success="fileUploadedSuccessfully($flow.upload(), 1)"
+    flow-files-submitted="$flow.upload()"
+    flow-image-resize>
+      <span flow-btn flow-attrs="{'accept': 'image/*'}" >Click to Upload Image</span>
+      <div class="thumbnail" ng-show="$flow.files.length">
+        <img my-flow-img="$flow.files[0]" />
+        Size: {{$flow.files[0].size/1024}}Kb
+        Size: {{$flow.files[0].size}}
+      </div>
+	  

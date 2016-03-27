@@ -1,0 +1,341 @@
+<div class="container">
+
+
+
+
+	<div class="row">
+
+		<div class="col-sm-8">
+			<ol class="breadcrumb">
+				<li><a ui-sref="/">Home</a></li>
+				<li class="active">My settings</li>
+			</ol>
+
+
+			<h1>My settings</h1>
+			<br />
+
+			<div class="row">
+				<div class="col-sm-12 ">
+
+					<div>
+
+						<!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation">
+								<a ui-sref="account_profile" aria-controls="home">My profile</a>
+							</li>
+							<li role="presentation">
+								<a ui-sref="account_ads" aria-controls="home">My Ads</a>
+							</li>
+							<li role="presentation" class="active">
+								<a ui-sref="account_settings" aria-controls="registration">Account settings</a>
+							</li>
+							 <li role="presentation">
+                            	<a ui-sref="applicants" >Job Board</a>
+                            </li>
+						</ul>
+
+						<!-- Tab panes -->
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane " id="login"></div>
+							<div role="tabpanel" class="tab-pane active" id="my_profile">
+
+
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h3 class="panel-title">Account settings</h3>
+									</div>
+									<div class="panel-body">
+										<br />
+
+										<!-- div for firstname -->
+										<div class="row">
+											<div class="col-sm-9">
+												<div class="form-group has-feedback">
+												  	<div class="col-sm-3">
+														<label for="firstname" class="control-label"><strong class="text-info"> First name: </strong></label>
+													</div>
+													 <span editable-text="user.firstname" e-name="firstname" e-form="rowformOne"
+															onbeforesave="checkInput($data, user.userId)" e-required>
+														{{ user.firstname }}
+												     </span>
+												   </div>
+											   </div>
+											   <div class="col-sm-3">
+													<div class="form-group has-feedback">
+									
+														<!-- form -->
+													<form editable-form name="rowformOne" onbeforesave="updateUser($data.firstname, user.userId, 'firstname')"
+														ng-show="rowformOne.$visible" class="form-buttons form-inline" >
+														
+														<button type="button" 
+														  class="edit-ad btn btn-warning btn-xs" 
+														  style="padding-right: 20px; padding-left: 20px;"  
+														  ng-disabled="rowformOne.$waiting"
+														  ng-click="rowformOne.$cancel()" class="btn btn-default">
+															cancel
+														</button>
+														
+														<button type="submit" 
+														    ng-disabled="rowformOne.$waiting"
+															class="edit-ad btn btn-warning btn-xs" 
+															style="padding-right: 20px; padding-left: 20px;" >
+															save
+														</button>
+														
+													</form>
+													
+													<div class="buttons" ng-show="!rowformOne.$visible">
+														<button class="edit-ad btn btn-warning btn-xs" 
+														  style="padding-right: 20px; padding-left: 20px;" 
+														  ng-click="rowformOne.$show()">
+														  edit
+														</button>
+													</div>
+												</div>
+											</div>					
+										</div> <!-- end of div first edit -->
+										
+										<!-- div for surname -->
+										<div class="row">
+											<div class="col-sm-9">
+												<div class="form-group has-feedback">
+													<div class="col-sm-3">
+														<label for="surname" class="control-label"> <strong class="text-info"> Surname: </strong></label>
+													</div>
+													 <span editable-text="user.surname" e-name="surname" e-form="rowformTwo"
+															onbeforesave="checkInput($data, user.userId)" e-required>
+														{{ user.surname }}
+												     </span>
+												   </div>
+											   </div>
+											   <div class="col-sm-3">
+													<div class="form-group has-feedback">
+									
+														<!-- form -->
+													<form editable-form name="rowformTwo" onbeforesave="updateUser($data.surname, user.userId, 'surname')"
+														ng-show="rowformTwo.$visible" class="form-buttons form-inline" >
+														
+														
+														<button type="button" 
+															class="edit-ad btn btn-warning btn-xs" 
+															style="padding-right: 20px; padding-left: 20px;" 
+														  	ng-disabled="rowformTwo.$waiting"
+														  	ng-click="rowformTwo.$cancel()">
+															cancel
+														</button>
+														
+														<button type="submit" 
+															ng-disabled="rowformTwo.$waiting"
+															class="edit-ad btn btn-warning btn-xs" 
+															style="padding-right: 20px; padding-left: 20px;">
+														   save
+														</button>
+														
+													</form>
+													
+													<div class="buttons" ng-show="!rowformTwo.$visible">
+														<button 
+														   class="edit-ad btn btn-warning btn-xs" 
+														   style="padding-right: 20px; padding-left: 20px;" 
+														   ng-click="rowformTwo.$show()">
+														   edit
+														</button>
+													</div>
+												</div>
+											</div>		
+										</div> <!-- end of div surname edit -->
+										
+										
+										<!-- div for telephone -->
+										<div class="row">
+											<div class="col-sm-9">
+												<div class="form-group has-feedback">
+												 	<div class="col-sm-3">
+														<label for="telephone" class="control-label"> <strong class="text-info"> Telephone: </strong></label>
+													</div>
+													 <span editable-text="user.telephone" e-name="telephone" e-form="rowformThree"
+															onbeforesave="checkInput($data, user.userId)" e-required>
+														{{ user.telephone}}
+												     </span>
+												   </div>
+											   </div>
+											   <div class="col-sm-3">
+													<div class="form-group has-feedback">
+									
+														<!-- form -->
+													<form editable-form name="rowformThree" onbeforesave="updateUser($data.telephone, user.userId, 'telephone')"
+														ng-show="rowformThree.$visible" class="form-buttons form-inline" >
+														
+														
+														<button type="button" 
+														  class="edit-ad btn btn-warning btn-xs" 
+														  style="padding-right: 20px; padding-left: 20px;" 
+														  ng-disabled="rowformThree.$waiting"
+														  ng-click="rowformThree.$cancel()" class="btn btn-default">
+															cancel
+														</button>
+														
+														<button type="submit" ng-disabled="rowformThree.$waiting"
+															class="edit-ad btn btn-warning btn-xs" 
+															style="padding-right: 20px; padding-left: 20px;" >
+															save
+														</button>
+														
+													</form>
+													
+													<div class="buttons" ng-show="!rowformThree.$visible">
+														<button 
+														  class="edit-ad btn btn-warning btn-xs" 
+														  style="padding-right: 20px; padding-left: 20px;" 
+														   ng-click="rowformThree.$show()">
+														   edit
+														</button>
+													</div>
+												</div>
+											</div>		
+										</div> <!-- end of div telephone edit -->
+										
+										<!-- div for telephone -->
+										<div class="row">
+											<div class="col-sm-9">
+												<div class="form-group has-feedback">
+												 	<div class="col-sm-3">
+														<label for="email" class="control-label"> <strong class="text-info"> Email: </strong></label>
+													</div>
+													 <span editable-text="user.email" e-name="email" e-form="rowformFour"
+															onbeforesave="checkInput($data, user.userId)" e-required>
+														{{ user.email}}
+												     </span>
+												   </div>
+											   </div>
+											   <div class="col-sm-3">
+													<div class="form-group has-feedback">
+									
+														<!-- form -->
+													<form editable-form name="rowformFour" onbeforesave="updateUser($data.email, user.userId, 'email')"
+														ng-show="rowformFour.$visible" class="form-buttons form-inline" >
+																								
+														<button type="button" 
+														  class="edit-ad btn btn-warning btn-xs" 
+														  style="padding-right: 20px; padding-left: 20px;" 
+														  ng-disabled="rowformFour.$waiting"
+														  ng-click="rowformFour.$cancel()" class="btn btn-default">
+															cancel
+														</button>
+														
+														<button type="submit" ng-disabled="rowformFour.$waiting"
+															class="edit-ad btn btn-warning btn-xs" 
+															style="padding-right: 20px; padding-left: 20px;" >
+															save
+														</button>
+														
+														
+													</form>
+													
+													<div class="buttons" ng-show="!rowformFour.$visible">
+													  <button
+														class="edit-ad btn btn-warning btn-xs" 
+														style="padding-right: 20px; padding-left: 20px;"  
+														 ng-click="rowformFour.$show()">
+														 edit
+													 </button>
+													</div>
+												</div>
+											</div>		
+										</div> <!-- end of div email edit -->
+										
+										
+										<!-- div for password -->
+										<div class="row">
+											<div class="col-sm-9">
+												<div class="form-group has-feedback">
+												 	<div class="col-sm-3">
+														<label for="password" class="control-label"> <strong class="text-info" ng-show="!rowformFive.$visible"> Password: </strong></label>
+														<label for="oldPassword" class="control-label"> <strong class="text-info" ng-show="rowformFive.$visible">Old Password:</strong> </label>
+													
+													</div>
+													 <span editable-text="user.oldPassword" e-type="password" e-name="oldPassword" e-form="rowformFive"
+															onbeforesave="checkOldPassword($data, user.userId)" e-required e-placeholder="Old password"
+															e-style="width: 130px; font-size: 12px;">
+														******** 
+													</span>
+												    
+												     <span editable-text="user.newPassword" e-type="password" e-name="newPassword" e-form="rowformFive"
+															onbeforesave="checkInput($data, user.userId)" e-required  e-placeholder="New password"
+															e-style="width: 130px; font-size: 12px;">
+													 
+													</span>
+													<span editable-text="user.confirmPassword" e-type="password"  e-name="confirmPassword" e-form="rowformFive"
+															onbeforesave="confirmPassword($data, rowformFive.$data.newPassword, user.userId)" e-required e-placeholder="Confirm password"
+															e-style="width: 150px; font-size: 12px;">
+													</span>
+												   </div>
+											   </div>
+											   <div class="col-sm-3">
+													<div class="form-group has-feedback">
+									
+														<!-- form -->
+													<form editable-form name="rowformFive" onbeforesave="updateUser($data.newPassword , user.userId, 'password')"
+														ng-show="rowformFive.$visible" class="form-buttons form-inline" >
+														
+														
+														<button type="button"
+														  ng-disabled="rowformFive.$waiting"
+														  ng-click="rowformFive.$cancel()" 
+														  class="edit-ad btn btn-warning btn-xs" 
+														  style="padding-right: 20px; padding-left: 20px;" >
+															cancel
+														</button>
+														
+														<button type="submit" ng-disabled="rowformFive.$waiting"
+															class="edit-ad btn btn-warning btn-xs" 
+															style="padding-right: 20px; padding-left: 20px;" >
+															save
+														</button>
+														
+													</form>
+													
+													<div class="buttons" ng-show="!rowformFive.$visible">
+														<button class="edit-ad btn btn-warning btn-xs" 
+															style="padding-right: 20px; padding-left: 20px;"  
+															ng-click="rowformFive.$show()">
+															edit
+														</button>
+													</div>
+												</div>
+											</div>		
+										</div> <!-- end of div password edit -->			
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-sm-4">
+			<div class="row" style="margin-top: 170px;">
+				<div class="col-sm-11 col-sm-offset-1">
+					<div class="well">
+						<strong class="text-muted"><i
+							class="fa fa-info-circle fa-fw text-muted"></i> Information</strong><br />
+						<br />
+						<p>This website is visited by millions of people everyday,
+							make sure you add the relevent descriptions and keywords to
+							increase visibility of your ad. You'll get alerts by email
+							everytime somone replies to your ad</p>
+						<p>Also, don't forget - you can always edit your ad and the
+							images after posting</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<br />
+</div>
+

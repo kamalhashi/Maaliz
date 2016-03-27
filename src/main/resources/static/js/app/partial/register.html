@@ -1,0 +1,318 @@
+<div class="container">
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <br />
+            <ol class="breadcrumb">
+                <li>
+                    <a ui-sref="/">Home</a>
+                </li>
+                <li class="active">Register</li>
+            </ol>
+            <div class="row">
+                <div class="col-sm-12 ">
+                    <div>
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist" style="border-bottom: 0">
+                            <li role="presentation">
+                                <a ui-sref="login"
+								aria-controls="home">Sign in</a>
+                            </li>
+                            <li role="presentation" class="active">
+                                <a ui-sref="register"
+								aria-controls="registration">Register</a>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content" style="border-top: 0;">
+                            <div role="tabpanel" class="tab-pane " id="login"></div>
+                            <div role="tabpanel" class="tab-pane active" id="registration">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="padnel panel-defaudlt" style="border-top: 0">
+                                            <div class="well"
+												style="margin-bottom: 0; border: 1px solid #e2e2e2; border-top: 0; border-radius: 0;">
+                                                <div class="padnel-body">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <br />
+                                                            <br />
+                                                            <div class="alert alert-danger" ng-show="regError">
+															      {{regMessage}}
+															</div>
+                                                         
+                                                            <form role="form" class="form-horizontal" name="registrationForm" data-ng-submit="submit(registrationForm.$valid)" novalidate>
+                                                             
+                                                                <div class="form-group has-feedback"
+																	 ng-class="{ 'has-error': registrationForm.inputEmail.$touched && 
+																	 registrationForm.inputEmail.$invalid ||
+																	 registrationForm.$submitted && registrationForm.inputEmail.$invalid ,
+																	 'has-success': !registrationForm.inputEmail.$invalid}">
+                                                                    <label for="inputEmail" class="col-sm-3 control-label">
+																		Email address</label>
+                                                                    <div class="col-sm-9">
+                                                                        <input type="email" 
+                                                                            class="form-control"
+																			name="inputEmail" 
+																			placeholder="" 
+																			ng-model="user.email"
+																			email-available required
+																			ng-model-options="{ updateOn: 'blur' }">
+																			
+																			<span class="glyphicon glyphicon-ok form-control-feedback" ng-show="registrationForm.inputEmail.$touched && !registrationForm.inputEmail.$invalid"></span>
+																		    <span class="glyphicon glyphicon-remove form-control-feedback" 
+																		       ng-show="registrationForm.inputEmail.$touched && registrationForm.inputEmail.$invalid
+																		       || registrationForm.$submitted  && registrationForm.inputEmail.$invalid"></span>
+																			    																																						
+                                                                            <div ng-if="registrationForm.$pending.emailExists">checking....</div>
+                                                                            <div class="help-block with-errors" ng-messages="registrationForm.inputEmail.$error" ng-show="registrationForm.inputEmail.$touched || registrationForm.$submitted">
+                                                                                <div ng-messages-include="messages.html"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                    <div class="form-group has-feedback"
+																	    ng-class="{ 'has-error': registrationForm.inputConfirmEmail.$touched 
+																	    && registrationForm.inputConfirmEmail.$invalid || 
+																	    registrationForm.$submitted && registrationForm.inputConfirmEmail.$invalid,				
+																	   'has-success': !registrationForm.inputConfirmEmail.$invalid}">
+                                                                  
+                                                                           <label for="confirmEmail"
+																		       class="col-sm-3 control-label">Confirm email</label>
+                                                                        
+                                                                           <div class="col-sm-9">
+                                                                                <input type="text" 
+                                                                                       class="form-control"
+																		               name="inputConfirmEmail" 
+																		               placeholder=""
+																		               ng-model="user.confirmEmail"
+																		               compare-to="user.email" 
+																		               required>
+																		            
+																		            <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="registrationForm.inputConfirmEmail.$touched && !registrationForm.inputConfirmEmail.$invalid"></span>
+																		         	<span class="glyphicon glyphicon-remove form-control-feedback" 
+																		         		ng-show="registrationForm.inputConfirmEmail.$touched && registrationForm.inputConfirmEmail.$invalid
+																		         		|| registrationForm.$submitted  && registrationForm.inputConfirmEmail.$invalid"></span>
+																		         <div class="help-block with-errors" ng-messages="registrationForm.inputConfirmEmail.$error" ng-show="registrationForm.inputConfirmEmail.$touched || registrationForm.$submitted">
+                                                                                       <div ng-messages-include="messages.html"></div>
+                                                                                </div>														               
+                                                                            </div>                                   
+                                                                        </div>
+                                                                    <div class="form-group has-feedback"
+																	    ng-class="{ 'has-error': registrationForm.inputPassword.$touched && 
+																	    registrationForm.inputPassword.$invalid || 
+																	    registrationForm.$submitted && registrationForm.inputPassword.$invalid ,
+																	    'has-success': !registrationForm.inputPassword.$invalid}">
+																	    
+                                                                  
+                                                                            <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+                                                                            <div class="col-sm-9">
+                                                                                <input type="password" 
+                                                                                       class="form-control"
+																			           name="inputPassword" 
+																			           placeholder=""
+																			           ng-model="user.password"
+																			           ng-minlength="4" 
+																		               required >
+																		               
+																		               <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="registrationForm.inputPassword.$touched && !registrationForm.inputPassword.$invalid"></span>
+																		         	  <span class="glyphicon glyphicon-remove form-control-feedback" 
+																		         	  	ng-show="registrationForm.inputPassword.$touched && registrationForm.inputPassword.$invalid
+																		         	  	|| registrationForm.$submitted  && registrationForm.inputPassword.$invalid"></span>
+																		              	
+																		           
+																		              <div class="help-block with-errors" ng-messages="registrationForm.inputPassword.$error" ng-show="registrationForm.inputPassword.$touched || registrationForm.$submitted">
+                                                                                         <div ng-messages-include="messages.html"></div>
+                                                                                      </div> 
+																		            
+                                                                                </div>
+                                                                           </div>
+                                                                           
+                                                                           <div class="form-group has-feedback"
+																	   			 ng-class="{ 'has-error': registrationForm.inputConfirmPassword.$touched && 
+																	   			 registrationForm.inputConfirmPassword.$invalid || 
+																	   			 registrationForm.$submitted && registrationForm.inputConfirmPassword.$invalid,
+																	   			 'has-success': !registrationForm.inputConfirmPassword.$invalid}">                 
+                                                                    
+                                                                                <label for="inputConfirmPassword" class="col-sm-3 control-label">Confirm password</label>
+                                                                                <div class="col-sm-9">
+                                                                                    <input type="password" 
+                                                                                           class="form-control"
+																						   name="inputConfirmPassword" 
+																						   placeholder=""
+																						    ng-model="user.confirmPassword"
+																			           		ng-minlength="4"
+																			           		compare-to="user.password"  
+																		              		required >
+																		              
+																		              <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="registrationForm.inputConfirmPassword.$touched && !registrationForm.inputConfirmPassword.$invalid"></span>
+																		         	  <span class="glyphicon glyphicon-remove form-control-feedback" 
+																		         	  	ng-show="registrationForm.inputConfirmPassword.$touched && registrationForm.inputConfirmPassword.$invalid
+																		         	  	|| registrationForm.$submitted  && registrationForm.inputConfirmPassword.$invalid"></span>
+																		              		
+																		             <div class="help-block with-errors" ng-messages="registrationForm.inputConfirmPassword.$error" ng-show="registrationForm.inputConfirmPassword.$touched || registrationForm.$submitted">
+                                                                                         <div ng-messages-include="messages.html"></div>
+                                                                                      </div>
+                                                                                  </div>
+                                                                              </div>
+                                                                              
+                                                                               <div class="form-group">
+																	   			                                             
+                                                                                    <label for="selectGender" class="col-sm-3 control-label">Your name</label>
+                                                                                    <div class="col-sm-9" >
+                                                                                        <div class="row">                                                                                        
+                                                                                            <div class="col-sm-3 has-feedback"   
+                                                                                            	 ng-class="{ 'has-error': (registrationForm.selectGender.$touched && 
+                                                                                            	 registrationForm.selectGender.$invalid) || 
+																	   							 registrationForm.$submitted && registrationForm.selectGender.$invalid,
+																	   			 				 'has-success': !registrationForm.selectGender.$invalid}"> 
+																	   		 
+                                                                                            
+                                                                                            
+                                                                                                <select class="form-control" 
+                                                                                                		ng-model="user.gender" 
+                                                                                                		name="selectGender" 
+                                                                                                		required>
+                                                                                                		
+                                                                                                    <option value="0">Mr</option>
+                                                                                                    <option value="1">Mrs</option>
+                                                                                                </select>
+                                                                                                
+                                                                                                 <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="registrationForm.selectGender.$touched && !registrationForm.selectGender.$invalid"></span>
+																		         			     <span class="glyphicon glyphicon-remove form-control-feedback" 
+																		         			     	ng-show="registrationForm.selectGender.$touched && registrationForm.selectGender.$invalid
+																		         			     	|| registrationForm.$submitted  && registrationForm.selectGender.$invalid"></span>
+
+																		              		
+                                                                                                 
+                                                                                                 <div class="help-block with-errors" ng-messages="registrationForm.selectGender.$error" ng-show="registrationForm.selectGender.$touched || registrationForm.$submitted">
+                                                                                        			 <div ng-messages-include="messages.html"></div>
+                                                                                      			</div>
+                                                                                            </div>
+                                                                                            
+                                                                                            <div class="col-sm-4 has-feedback" 
+                                                                                               ng-class="{ 'has-error': (registrationForm.inputFirstname.$touched && 
+                                                                                            	 registrationForm.inputFirstname.$invalid) || 
+																	   							 registrationForm.$submitted && registrationForm.inputFirstname.$invalid,
+																	   			 				 'has-success': !registrationForm.inputFirstname.$invalid}"> 
+																	   		 
+                                                                                                <input type="text" 
+                                                                                                        class="form-control " 
+                                                                                                		name="inputFirstname" 
+                                                                                                		placeholder="First name"
+                                                                                                		ng-model="user.firstname" 
+                                                                                                		required>
+                                                                                                	
+                                                                                                  <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="registrationForm.inputFirstname.$touched && !registrationForm.inputFirstname.$invalid"></span>
+																		         			      <span class="glyphicon glyphicon-remove form-control-feedback" 
+																		         			      	ng-show="registrationForm.inputFirstname.$touched && registrationForm.inputFirstname.$invalid
+																		         			      	|| registrationForm.$submitted  && registrationForm.inputFirstname.$invalid"></span>
+
+																		              		
+                                                                                                		
+                                                                                                  <div class="help-block with-errors" ng-messages="registrationForm.inputFirstname.$error" ng-show="registrationForm.inputFirstname.$touched || registrationForm.$submitted">
+                                                                                        			 <div ng-messages-include="messages.html"></div>
+                                                                                      			 </div>
+                                                                                             </div>
+                                                                                             
+                                                                                             <div class="col-sm-5 has-feedback"
+                                                                                                 ng-class="{ 'has-error': (registrationForm.inputSurname.$touched && 
+                                                                                            	 registrationForm.inputSurname.$invalid) || 
+																	   							 registrationForm.$submitted && registrationForm.inputSurname.$invalid,
+																	   			 				 'has-success': !registrationForm.inputSurname.$invalid}"> 
+																	   		 
+                                                                                                <input type="text" 
+                                                                                                       class="form-control "
+																										name="inputSurname" 
+																										placeholder="surname"
+																										ng-model="user.surname" 
+                                                                                                		required>
+                                                                                                		
+                                                                                                	 <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="registrationForm.inputSurname.$touched && !registrationForm.inputSurname.$invalid"></span>
+																		         			      	 <span class="glyphicon glyphicon-remove form-control-feedback" 
+																		         			      	 	ng-show="registrationForm.inputSurname.$touched && registrationForm.inputSurname.$invalid
+																		         			      	 	|| registrationForm.$submitted  && registrationForm.inputSurname.$invalid"></span>
+
+																		              		
+																		              		
+                                                                                                   <div class="help-block with-errors" ng-messages="registrationForm.inputSurname.$error" ng-show="registrationForm.inputSurname.$touched || registrationForm.$submitted">
+                                                                                        			 <div ng-messages-include="messages.html"></div>
+                                                                                      			 </div>
+                                                                                             </div>
+                                                                                            
+                                                                                         </div>
+                                                                                       </div>
+                                                                                     </div>
+                                                                                    
+                                                                                    
+                                                                               <div class="form-group has-feedback"
+																	   			 ng-class="{ 'has-error': registrationForm.inputTelephone.$touched && 
+																	   			 registrationForm.inputTelephone.$invalid || 
+																	   			 registrationForm.$submitted && registrationForm.inputTelephone.$invalid,
+																	   			 'has-success': !registrationForm.inputTelephone.$invalid}">                 
+                                                                    
+                                                                                <label for="inputTelephone" class="col-sm-3 control-label">Telephone</label>
+                                                                                <div class="col-sm-9">
+                                                                                    <input type="text" 
+                                                                                           class="form-control"
+																						   name="inputTelephone" 
+																						   placeholder="00252"
+																						    ng-model="user.telephone"														           		
+																		              		required >
+																		              		<span class="glyphicon glyphicon-ok form-control-feedback" ng-show="registrationForm.inputTelephone.$touched && !registrationForm.inputTelephone.$invalid"></span>
+																		         			<span class="glyphicon glyphicon-remove form-control-feedback" 
+																		         				ng-show="registrationForm.inputTelephone.$touched && registrationForm.inputTelephone.$invalid
+																		         				|| registrationForm.$submitted  && registrationForm.inputTelephone.$invalid"></span>
+
+																		              		
+																		             <div class="help-block with-errors" ng-messages="registrationForm.inputTelephone.$error" ng-show="registrationForm.inputTelephone.$touched || registrationForm.$submitted">
+                                                                                         <div ng-messages-include="messages.html"></div>
+                                                                                      </div>
+                                                                                  </div>
+                                                                              </div>
+                                                                 
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                            <div class="form-group">
+                                                                                            <label for="inputPassword3"
+																		class="col-sm-3 control-label">&nbsp;</label>
+                                                                                            <div class="col-sm-4">
+                                                                                                <button
+																			class="btn btn-primary btn-block">Register</button>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group">
+                                                                                            <label for="inputPassword3"
+																		class="col-sm-3 control-label">&nbsp;</label>
+                                                                                            <div class="col-sm-9">
+                                                                                                <br />
+                                                                                                <p>
+                                                                                                    <strong>Terms and conditions</strong>
+                                                                                                    <br /> By
+																			clicking on register, you agree to the Hashi Terms
+																			and conditions and the Hashi Privacy policy
+																		
+                                                                                                </p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <br />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <br />
+                                </div>
+                            </div>
+                          </div>

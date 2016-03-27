@@ -1,0 +1,237 @@
+<br />
+<div class="container">
+
+
+    <div class="row">
+
+        <div class="col-sm-8">
+            <ol class="breadcrumb">
+                <li><a ui-sref="/">Home</a></li>
+                <li class="active">My profile</li>
+            </ol>
+
+
+            <h1>My profile</h1>
+            <br />
+          <div cg-busy="{promise:promiseSubmit, message:'Saving...please wait'}">
+
+            <div class="row">
+                <div class="col-sm-12 ">
+
+                    <div>
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                            		<a ui-sref="account_profile"  aria-controls="home" >My profile</a>
+                            </li>
+                            <li role="presentation">
+                            		<a ui-sref="account_ads" aria-controls="home" >My Ads</a>
+                            </li>
+                            <li role="presentation">
+                            	<a ui-sref="account_settings" >Account settings</a>
+                            </li>
+                            <li role="presentation" >
+                            	<a ui-sref="applicants" >Job Board</a>
+                            </li>
+                        </ul>
+                       
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane " id="login"></div>
+                            <div role="tabpanel" class="tab-pane active" id="my_profile">
+
+                              <form class="form-horizontal" data-ng-submit="submit(profileForm.$valid) " role="form" name="profileForm"  novalidate>                                                                    
+
+                                    <div class="row">  
+                                        <div class="col-sm-12" >
+
+                                            <div class="panel panel-default">
+                                               <div class="panel-heading">
+										           <h3 class="panel-title">My profile</h3>
+									            </div>   
+                                                <div class="panel-body">
+                                                   <div class="form-group">                                                        
+                                                        <div class="col-sm-4">
+                                                            <div class="form-group">
+                                                               <div cg-busy="{promise:promiseExistingImageObjectZero, message:'Loading photo'}" style="width: 300px; height: 380px">
+                                                            
+                                                               <div class="col-sm-11"  
+                                                               		flow-object="existingImageObjectZero"
+																	flow-init
+																	flow-btn 
+																	flow-attrs="{accept:['image/png','image/jpeg']}"
+																	flow-file-success="fileImageUploadedSuccessfully($file, 0 )"
+																	flow-files-submitted="$flow.upload()">
+                                                                   
+                                                                    <div>
+                                                                   	    <img ng-show="$flow.files.length" flow-img="$flow.files[0]" width="250" height="250"/>
+                                                                   		<img ng-hide="$flow.files.length"  ng-src="{{bucketOtherImage +'people.png' }}"  width="250" height="250" /><br />
+                                                                    
+                                               					    </div>
+                                               					    
+                                               					    <br/>
+																	<a href="#" class="btn btn-warning btn-xs">Select image</a>
+     																<a href="#" class="btn btn-warning btn-xs" ng-show="$flow.files.length" ng-click="$flow.cancel(); removeProfileImageFile()"> Remove </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                      </div>
+                                                        <div class="col-sm-8">
+                                                            <br />                     
+                                                            <div class="form-group has-feedback">
+																	
+                                                                <label for="inputNationality" class="col-sm-4 control-label"> Nationality</label>
+																<div class="col-sm-8">
+                                                                    <input type="text" 
+                                                                        class="form-control" 
+                                                                    	name="inputNationality" 
+                                                                    	ng-model="profile.nationality"
+                                                                    	placeholder="English"> 
+         
+                                                                </div>
+                                                            </div>
+
+                                                            
+
+                                                        <div class="form-group has-feedback">
+															<label for="selectCareerLevel" class="col-sm-4 control-label">Career Level</label>
+															<div class="col-sm-8">
+																<select ng-model="profile.careerLevel" name="selectCareerLevel"
+																	class="form-control"
+																	ng-options="careerLevel.id as careerLevel.name for  careerLevel in constantCareerLevel">
+																	
+
+																</select>
+																
+															</div>
+														</div>
+
+													   <div class="form-group has-feedback">
+																 
+                                                                <label for="inputCurrentLocation" class="col-sm-4 control-label"> Current location</label>
+																<div class="col-sm-8">
+                                                                    <input type="text" 
+                                                                        class="form-control" 
+                                                                    	name="inputCurrentLocation" 
+                                                                    	ng-model="profile.currentLocation"
+                                                                    	placeholder="Current location">
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                           
+                                                            
+                                                            <div class="form-group has-feedback">
+															  		 
+                                                                <label for="inputCurrentPosition" class="col-sm-4 control-label"> Current position</label>
+																<div class="col-sm-8">
+                                                                    <input type="text" 
+                                                                        class="form-control" 
+                                                                    	name="inputCurrentPosition" 
+                                                                    	ng-model="profile.currentPosition"
+                                                                    	placeholder="Current postion">
+                                                                    	
+                                                                </div>
+                                                            </div>
+                                                             
+                                                            <div class="form-group has-feedback">
+															   	 
+                                                                <label for="inputCurrentCompany" class="col-sm-4 control-label"> Current company</label>
+																<div class="col-sm-8">
+                                                                    <input type="text" 
+                                                                        class="form-control" 
+                                                                    	name="inputCurrentCompany" 
+                                                                    	ng-model="profile.currentCompany"
+                                                                    	placeholder="Current company">
+                                                                </div>
+                                                            </div>
+                                                            
+                                                             <div class="form-group has-feedback">
+															   	 
+                                                                <label for="inputAge" class="col-sm-4 control-label"> Age</label>
+																<div class="col-sm-8">
+                                                                    <input type="text"                                                                        class="form-control" 
+                                                                    	name="inputAge" 
+                                                                    	ng-model="profile.age"
+                                                                    	placeholder="Age">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <hr />
+                                                    <h2>Your CV                                                       
+                                                    	 <a ng-show="existingImageObjectOne.files.length"  download
+                                                    	 	ng-href="{{linkCVDownload}}" style="font-size: 16px; font-weight: bold; color: #86A6C1; ">
+                                                    	 		{{existingImageObjectOne.files[0].file.name}}
+                                                    	 		<i  ng-show="existingImageObjectOne.files[0].getExtension() =='docx' || 
+                                                    	 			existingImageObjectOne.files[0].getExtension() =='doc'" class="fa fa-file-word-o"></i>
+                                                    	 		<i ng-show="existingImageObjectOne.files[0].getExtension() =='pdf'" class="fa fa-file-pdf-o"></i>                                                    	
+                                                    	 		<i ng-show="existingImageObjectOne.files[0].getExtension() =='jpg' || 
+                                                    	 		 existingImageObjectOne.files[0].getExtension() =='png' || 
+                                                    	 		 existingImageObjectOne.files[0].getExtension() =='gif'" class="fa fa-file-image-o"></i>
+                                                    	</a>
+                                                    	 &nbsp;&nbsp;
+                                                    	<a href="" style="font-size: 16px; font-weight: bold; color: #86A6C1;" 
+                                                    		ng-show="existingImageObjectOne.files.length" ng-click="existingImageObjectOne.cancel(); removeProfileCVFile()">Remove </a>
+                                                    	
+                                                    </h2>
+                                                    <div cg-busy="{promise:promiseExistingImageObjectOne, message:'Loading CV'}" style="height: 160px;">
+                                                    
+                                                    <div style="border: 3px dashed #86A6C1; height: 150px; display: block; background: #F3F7FA; text-align: center;"
+                                                       flow-object="existingImageObjectOne"
+                                                       flow-drop
+													   flow-init
+													   flow-btn 
+													   flow-file-success="fileCVUploadedSuccessfully($file, 0 )"
+													   flow-files-submitted="$flow.upload()">
+                                                       <a href="" style="font-size: 16px; font-weight: bold; line-height: 150px; color: #86A6C1;">CLICK HERE OR DRAG &amp; DROP YOUR FILES HERE</a>
+                                                 	   <br />
+                                                    </div>
+                                                    </div>
+                                                    <br />
+                                                    <p><strong>Note:</strong> Files should only be PDF and JPEG, should not exceed 2MB</p>
+                                                    
+                                                     <hr />
+                                         			 <h2>Your Cover letter</h2>
+                                        			 <textarea class="form-control" rows="8" ng-model="profile.coverLetter"></textarea>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    
+                                    <br />
+
+                                    <button type="submit"   class="btn btn-primary" style="padding-left: 50px; padding-right: 50px;">Submit</button>                                    
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+          </div>
+        </div>
+
+
+
+        <div class="col-sm-4">
+            <div class="row" style="margin-top: 170px;">
+                <div class="col-sm-11 col-sm-offset-1">
+                    <div class="well">
+                        <strong class="text-muted"><i class="fa fa-info-circle fa-fw text-muted"></i> Information</strong><br /><br />
+                        <p>This website is visited by millions of people everyday, make sure you add the relevent descriptions and keywords to increase visibility of your ad. You'll get alerts by email everytime somone replies to your ad</p>
+                        <p>Also, don't forget - you can always edit your ad and the images after posting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br />
+</div>

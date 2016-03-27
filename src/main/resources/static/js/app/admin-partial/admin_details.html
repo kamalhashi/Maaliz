@@ -1,0 +1,960 @@
+<div class="container" id="listings-page">
+	<div class="row">
+
+		<div class="col-xs-3 hidden-xs">
+
+			<br /> <br />
+			<div class="well sidebar-form">
+				<h3 style="margin-top: 0">
+					<strong>Find the product</strong>
+				</h3>
+
+
+				<div class="form-group">
+					<select class="form-control" ng-model="advSelectedCityId"
+						ng-options="city.cityId as city.cityName for city in listCities">
+					</select>
+				</div>
+
+				<div class="form-group">
+					<select class="form-control" ng-model="advCategoryLevelOneObject"
+						ng-options="category as category.categoryName for category in categories"
+						ng-change="getSubCategoriesLevelTwo(advCategoryLevelOneObject)">
+					</select>
+				</div>
+
+				<div class="form-group" ng-show="showSubCategoryLevelTwo">
+					<select class="form-control" ng-model="advCategoryLevelTwoObject"
+						ng-options="category as category.categoryName for category in listSubCategoriesLevelTwo"
+						ng-change="getSubCategoriesLevelThree(advCategoryLevelTwoObject)">
+					</select>
+				</div>
+
+				<div class="form-group" ng-show="showSubCategoryLevelThree">
+					<select class="form-control" ng-model="advCategoryLevelThreeObject"
+						ng-options="category as category.categoryName for category in listSubCategoriesLevelThree"
+						ng-change="getSubCategoriesLevelFour(advCategoryLevelThreeObject)">
+					</select>
+				</div>
+
+				<div class="form-group" ng-show="showSubCategoryLevelFour">
+					<select class="form-control" ng-model="advCategoryLevelFourObject"
+						ng-options="category as category.categoryName for category in listSubCategoriesLevelFour"
+						ng-change="getSubCategoriesLevelFive(advCategoryLevelFourObject)">
+					</select>
+				</div>
+
+				<div class="form-group" ng-show="showAdvanceSearchCarDiv || showAdvanceSearchHeavyVehicleDiv">
+					<span>Price ($) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input name="inputPriceFrom" class="form-control"
+								ng-model="priceFrom" placeholder="Price from">
+						</div>
+						<div class="col-xs-6">
+							<input name="inputPriceTo" class="form-control"
+								ng-model="priceTo" placeholder="Price to">
+						</div>
+					</div>
+
+					<span> Year (Min/Max) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<select class="form-control" name="selectYearMin"
+								ng-model="yearMin" ng-options="year for year in years">
+							</select>
+						</div>
+						<div class="col-xs-6">
+							<select class="form-control" name="selectYearMax"
+								ng-model="yearMax" ng-options="year for year in years">
+							</select>
+						</div>
+					</div>
+
+					<span>Kilometers ( Km )</span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input type="text" class="form-control"
+								name="inputKilometersFrom" placeholder="KM from"
+								ng-model="KMFrom">
+						</div>
+						<div class="col-xs-6">
+							<input type="text" class="form-control" id="inputKilometersTo"
+								placeholder="KM to" ng-model="KMTo">
+						</div>
+					</div>
+
+					<span>Seller Type</span>
+					<div class="row">
+						<div class="col-xs-6">
+							<select ng-model="selectedSellerType" class="form-control"
+								name="selectedSellerType"
+								ng-options="sellerType.id as sellerType.name for  sellerType in listSellerTypes">
+
+							</select>
+						</div>
+
+					</div>
+				</div>
+				
+				<!-- sale residential search  -->
+				<div class="form-group" ng-show="showAdvanceSearchSaleResDiv || showAdvanceSearchRentResDiv 
+				  || showAdvanceSearchRentShortDailyDiv || showAdvanceSearchRentShortMonthlyDiv">
+					<span>Price ($) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input name="inputPriceFrom" class="form-control"
+								ng-model="priceFrom" placeholder="Price from">
+						</div>
+						<div class="col-xs-6">
+							<input name="inputPriceTo" class="form-control"
+								ng-model="priceTo" placeholder="Price to">
+						</div>
+					</div>
+					
+					<span>Bedrooms (Min/Max)</span>
+					<div class="row">
+						<div class="col-xs-6">
+							<select ng-model="bedroomMin" class="form-control"
+								name="selectedBedroomMin"
+								ng-options="bedrooms.id as bedrooms.name for  bedrooms in constantNoBedrooms">
+							</select>
+						</div>
+						<div class="col-xs-6">
+							<select ng-model="bedroomMax" class="form-control"
+								name="selectedBedroomMax"
+								ng-options="bedrooms.id as bedrooms.name for  bedrooms in constantNoBedrooms">
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				<!-- sale commercial house search  -->
+				<div class="form-group" ng-show="showAdvanceSearchSaleCommDiv || showAdvanceSearchSaleUnitsDiv 
+					|| showAdvanceSearchSaleLandDiv || showAdvanceSearchRentCommDiv || showAdvanceSearchRentRoomDiv
+					|| showAdvanceSearchClassifiedDiv">
+					<span>Price ($) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input name="inputPriceFrom" class="form-control"
+								ng-model="priceFrom" placeholder="Price from">
+						</div>
+						<div class="col-xs-6">
+							<input name="inputPriceTo" class="form-control"
+								ng-model="priceTo" placeholder="Price to">
+						</div>
+					</div>
+				</div>
+				
+				<!-- car parts, motorcycle -->
+				<div class="form-group" ng-show="showAdvanceSearchCarPartsDiv || showAdvanceSearchBoatsDiv || showAdvanceSearchMotorcycleDiv">
+					<span>Price ($) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input name="inputPriceFrom" class="form-control"
+								ng-model="priceFrom" placeholder="Price from">
+						</div>
+						<div class="col-xs-6">
+							<input name="inputPriceTo" class="form-control"
+								ng-model="priceTo" placeholder="Price to">
+						</div>
+					</div>
+					
+					<span>Seller Type</span>
+					<div class="row">
+						<div class="col-xs-6">
+							<select ng-model="selectedSellerType" class="form-control"
+								name="selectedSellerType"
+								ng-options="sellerType.id as sellerType.name for  sellerType in listSellerTypes">
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="form-group">
+					<input type="text" class="form-control" id="inputAdvSearchText"
+						placeholder="search..." onfocus="this.placeholder=''"
+						onblur="this.placeholder='search...'" ng-model="advTextSearch">
+				</div>
+
+				<button type="submit" class="btn btn-primary btn-block"
+					ng-click="advanceSearch()">Submit</button>
+			</div>
+
+			<div class="row visible-md visible-lg">
+				<div class="col-xs-12 text-center" style="overflow: hidden">
+					<script async
+						src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- Home left div Large Skyscraper -->
+					<ins class="adsbygoogle"
+						style="display: inline-block; width: 300px; height: 600px"
+						data-ad-client="ca-pub-6780500882096971" data-ad-slot="3973066244"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-6">
+			<br /> <br />
+			<div class="row">
+				<div class="col-sm-12">
+					<ol class="breadcrumb">
+						<li ng-repeat="category in listRootCategories"><a
+							ng-hide="$last"> {{category.categoryName}} </a> <span
+							ng-show="$last" class="active">
+								{{category.categoryName}} </span></li>
+					</ol>
+				</div>
+			</div>
+
+
+			<div class="row">
+			    <div class="{{styleMessage}}" ng-show="showReplyMessage">
+					<strong> {{replyMessage}} </strong>
+				</div>
+
+				<div class="col-sm-12">
+					<h1>{{product.productTitle}}</h1>
+					<div class="row">	
+					    <div class="col-xs-12 col-xs-offset-2">
+					    	<a  class="property-img fancybox"  href ng-href="{{mainImageUrl}}"  fancyboxable="mainImage">
+								<img alt="" ng-src="{{mainImageUrl}}"  class="phone" width="100%;" >	
+								<span class="property-caption2">Click here to enlarge</span>
+															
+							</a>
+					
+						</div>
+						
+						
+					</div>
+						<slick  lazy-load="ondemand" autoplay=true autoplay-speed=2000  slides-to-show=4 slides-to-scroll=1  init-onload=true data="product" class="slider multiple-items">
+                    		 <div class="col-xs-3 phone-thumbs" ng-repeat="image in images track by $index"  ng-if="images.length > 1">
+                                <a   ng-href="{{image}}" rel="example_group" fancyboxable="image" >
+                                	 <img    ng-src="{{image}}"  class="phone-thumbs"  width="100%;" height="80" ng-click="setImage(image)"></img>
+                        		</a>
+                        	</div>
+                        	
+                        	
+                       </slick>
+                   
+
+                   
+					<h2>Details:</h2>
+					<div class="row">	
+					    <div class="col-xs-12" 
+					   		 ng-show="product.categoriesEntity.lft >= categoryRange.MOTOR_HEAVY_VEHICLE_MIN 
+							&& product.categoriesEntity.rgt <= categoryRange.MOTOR_HEAVY_VEHICLE_MAX"> 
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Make:</div>
+								<div class="col-md-6">{{product.make}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Model:</div>
+								<div class="col-md-6">{{product.model}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Year:</div>
+								<div class="col-md-6">{{product.yearMade}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Kilometers:</div>
+								<div class="col-md-6">{{product.kilometers}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Horse power:</div>
+								<div class="col-md-6">{{horsePowerConstant[product.horsePower-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Number of cylinders:</div>
+								<div class="col-md-6">{{noCylindersConstant[product.noCylinders-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Seller type:</div>
+								<div class="col-md-6">{{sellerTypeCarConstant[product.sellerType-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Fuel type:</div>
+								<div class="col-md-6">{{fuelTypeCarConstant[product.fuelType-1].name}}</div>
+							</div>		
+						</div>
+                        <!-- show car related fields -->
+						<div class="col-xs-12"
+						 ng-show="product.categoriesEntity.lft >= categoryRange.MOTOR_CAR_MIN 
+							&& product.categoriesEntity.rgt <= categoryRange.MOTOR_CAR_MAX"> 
+							
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Body Type:</div>
+								<div class="col-md-6">{{bodyTypeCarConstant[product.bodyType-1].name}}</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-6">Make:</div>
+								<div class="col-md-6">{{product.categoriesEntity.categoryName}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Model:</div>
+								<div class="col-md-6">{{product.model}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Year:</div>
+								<div class="col-md-6">{{product.yearMade}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Kilometers:</div>
+								<div class="col-md-6">{{product.kilometers}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Seller type:</div>
+								<div class="col-md-6">{{sellerTypeConstant[product.sellerType-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Fuel type:</div>
+								<div class="col-md-6">{{fuelTypeCarConstant[product.fuelType-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Transmission :</div>
+								<div class="col-md-6">{{transmissionCarConstant[product.transmissionType-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Colour:</div>
+								<div class="col-md-6">{{coloursCarConstant[product.colour-1].name}}</div>
+							</div>
+						</div>
+						
+						<!-- show car parts div -->
+						<div class="col-xs-12" 
+						 ng-show="product.categoriesEntity.lft >= categoryRange.MOTOR_CAR_PARTS_MIN
+							&& product.categoriesEntity.rgt <= categoryRange.MOTOR_CAR_PARTS_MAX"> 
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Seller type:</div>
+								<div class="col-md-6">{{sellerTypeConstant[product.sellerType-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Age of item:</div>
+								<div class="col-md-6">{{ageItemConstant[product.ageItem-1].name}}</div>
+							</div>
+						</div>
+						<!-- show motorcycle div -->
+						<div class="col-xs-12" 
+							ng-show="product.categoriesEntity.lft >= categoryRange.MOTOR_MOTORCYCLES_MIN
+							&& product.categoriesEntity.rgt <= categoryRange.MOTOR_MOTORCYCLES_MAX"> 
+							
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Seller type:</div>
+								<div class="col-md-6">{{sellerTypeConstant[product.sellerType-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Age of item:</div>
+								<div class="col-md-6">{{ageItemConstant[product.ageItem-1].name}}</div>
+							</div>
+						</div>
+						<!-- show boats div -->
+						<div class="col-xs-12" 
+							ng-show="product.categoriesEntity.lft >= categoryRange.MOTOR_BOATS_MIN
+							&& product.categoriesEntity.rgt <= categoryRange.MOTOR_BOATS_MAX"> 
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Age of item:</div>
+								<div class="col-md-6">{{ageItemConstant[product.ageItem-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Length:</div>
+								<div class="col-md-6">{{lengthBoatsConstant[product.length-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Seller type:</div>
+								<div class="col-md-6">{{sellerTypeConstant[product.sellerType-1].name}}</div>
+							</div>
+						</div>
+						<!-- show only fields related to property residential sale -->
+						<div class="col-xs-12"
+							ng-show="product.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_RES_MIN
+							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_RES_MAX"> 
+							
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							 <div class="row">
+								 <div class="col-sm-6"> Property size: </div>
+								 <div class="col-sm-6">	{{product.propertySize | number  : fractionSize}} Square metre  </div>
+							 </div>
+							 <div class="row">
+								 <div class="col-sm-6"> Owner type: </div>
+								 <div class="col-sm-6"> {{constantOwnerType[product.ownerType-1].name}}</div>			
+							 </div>
+							 <div class="row">
+								 <div class="col-md-6"> Number of Bedrooms: </div>
+								 <div class="col-md-6"> {{constantNoBedrooms[product.noBedrooms-1].name}}</div>
+							 </div>
+							<div class="row">
+						     	<div class="col-md-6"> Number of Bathrooms: </div>
+							 	<div class="col-md-6"> {{constantNoBathrooms[product.noBathrooms-1].name}}</div>
+							</div>
+							<div class="row">
+						     	<div class="col-md-6"> Neighbourhood: </div>
+							 	<div class="col-md-6"> {{product.neighbourhood}}</div>
+							</div>
+						</div>
+						<!-- show only fields related to commercial property  sale  -->
+						<div class="col-xs-12"
+							ng-show="(product.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_COMM_MIN
+							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_COMM_MAX)
+							||
+							(product.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_UNITS_MIN
+							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_UNITS_MAX)
+							||
+							(product.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_LAND_MIN
+							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_LAND_MAX)"> 
+						
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							 <div class="row">
+								 <div class="col-sm-6"> Property size: </div>
+								 <div class="col-sm-6">	{{product.propertySize | number  : fractionSize}} Square metre </div>
+							 </div>
+							 <div class="row">
+								 <div class="col-sm-6"> Owner type: </div>
+								 <div class="col-sm-6"> {{constantOwnerType[product.ownerType-1].name}}</div>			
+							 </div>
+							 <div class="row">
+						     	<div class="col-md-6"> Neighbourhood: </div>
+							 	<div class="col-md-6"> {{product.neighbourhood}}</div>
+							</div>
+						</div>
+						<!-- show only fields related to property residential rent -->
+						
+						<div class="col-xs-12"
+							ng-show="(product.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_RES_MIN
+							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_RES_MAX)
+							||
+							(product.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_SHORT_DAILY_MIN
+							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_SHORT_DAILY_MAX)
+							||
+							(product.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MIN
+							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MAX)"> 
+						
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							 <div class="row">
+								 <div class="col-sm-6"> Property size: </div>
+								 <div class="col-sm-6">	{{product.propertySize | number  : fractionSize }} Square metre </div>
+							 </div>
+							 <div class="row">
+								 <div class="col-sm-6"> Owner type: </div>
+								 <div class="col-sm-6"> {{constantOwnerType[product.ownerType-1].name}}</div>			
+							 </div>
+							 <div class="row">
+								 <div class="col-md-6"> Number of Bedrooms: </div>
+								 <div class="col-md-6"> {{constantNoBedrooms[product.noBedrooms-1].name}}</div>
+							 </div>
+							<div class="row">
+						     	<div class="col-md-6"> Number of Bathrooms: </div>
+							 	<div class="col-md-6"> {{constantNoBathrooms[product.noBathrooms-1].name}}</div>
+							</div>
+							<div class="row">
+						     	<div class="col-md-6"> Rent paid: </div>
+							 	<div class="col-md-6"> {{constantRentTime[product.rentTime-1].name}}</div>
+							</div>
+							<div class="row">
+						     	<div class="col-md-6"> Furnished: </div>
+							 	<div class="col-md-6"> {{constantFurnished[product.furnished-1].name}}</div>
+							</div>
+							<div class="row">
+						     	<div class="col-md-6"> Neighbourhood: </div>
+							 	<div class="col-md-6"> {{product.neighbourhood}}</div>
+							</div>
+						</div>
+						
+						
+						<!-- show only fields related to property commercial rent -->
+						<div class="col-xs-12"
+							ng-show="product.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_COMM_MIN
+							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_COMM_MAX"> 
+						
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							 <div class="row">
+								 <div class="col-sm-6"> Property size: </div>
+								 <div class="col-sm-6">	{{product.propertySize | number  : fractionSize}} Square metre </div>
+							 </div>
+							 <div class="row">
+								 <div class="col-sm-6"> Owner type: </div>
+								 <div class="col-sm-6"> {{constantOwnerType[product.ownerType-1].name}}</div>			
+							 </div>
+							<div class="row">
+						     	<div class="col-md-6"> Rent paid: </div>
+							 	<div class="col-md-6"> {{constantRentTime[product.rentTime-1].name}}</div>
+							</div>
+							<div class="row">
+						     	<div class="col-md-6"> Furnished: </div>
+							 	<div class="col-md-6"> {{constantFurnished[product.furnished-1].name}}</div>
+							</div>
+							<div class="row">
+						     	<div class="col-md-6"> Neighbourhood: </div>
+							 	<div class="col-md-6"> {{product.neighbourhood}}</div>
+							</div>
+						</div>
+						
+						
+						<!-- show only fields related to property room rent -->
+						<div class="col-xs-12"
+							ng-show="product.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_ROOM_MIN
+							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_ROOM_MAX"> 
+						
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							 <div class="row">
+						     	<div class="col-md-6"> Number of Bathrooms: </div>
+							 	<div class="col-md-6"> {{constantNoBathrooms[product.noBathrooms-1].name}}</div>
+							</div>
+							 <div class="row">
+								 <div class="col-sm-6"> Owner type: </div>
+								 <div class="col-sm-6"> {{constantOwnerType[product.ownerType-1].name}}</div>			
+							 </div>
+							<div class="row">
+						     	<div class="col-md-6"> Rent paid: </div>
+							 	<div class="col-md-6"> {{constantRentTime[product.rentTime-1].name}}</div>
+							</div>
+							<div class="row">
+						     	<div class="col-md-6"> Furnished: </div>
+							 	<div class="col-md-6"> {{constantFurnished[product.furnished-1].name}}</div>
+							</div>
+							<div class="row">
+						     	<div class="col-md-6"> Neighbourhood: </div>
+							 	<div class="col-md-6"> {{product.neighbourhood}}</div>
+							</div>
+						</div>	
+						
+						<!-- show classifed div -->
+						<div class="col-xs-12"	
+							ng-show="product.categoriesEntity.lft >= categoryRange.CLASSIFIED_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_MAX
+									    && !(product.categoriesEntity.lft >= categoryRange.CLASSIFIED_CAMERA_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_CAMERA_MAX)
+									    && !(product.categoriesEntity.lft >= categoryRange.CLASSIFIED_COMPUTER_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_COMPUTER_MAX)
+									    && !(product.categoriesEntity.lft >= categoryRange.CLASSIFIED_DVD_MOVIES_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_DVD_MOVIES_MAX)
+									    && !(product.categoriesEntity.lft >= categoryRange.CLASSIFIED_LOST_FOUND_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_LOST_FOUND_MAX)
+									    && !(product.categoriesEntity.lft >= categoryRange.CLASSIFIED_PETS_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_PETS_MAX)">				
+			
+								
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Age:</div>
+								<div class="col-md-6">{{ageConstant[product.ageItem-1].name}}</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-6">Condition:</div>
+								<div class="col-md-6">{{conditionConstant[product.conditionItem-1].name}}</div>
+							</div>
+						</div>
+						
+						<!-- show classifed div -->
+						<div class="col-xs-12"
+							ng-show="product.categoriesEntity.lft >= categoryRange.CLASSIFIED_DVD_MOVIES_MIN 
+							&& product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_DVD_MOVIES_MAX"> 
+								
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Age:</div>
+								<div class="col-md-6">{{ageConstant[product.ageItem-1].name}}</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-6">Condition:</div>
+								<div class="col-md-6">{{conditionConstant[product.conditionItem-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Rating:</div>
+								<div class="col-md-6">{{dvdRatingConstant[product.ratingItem-1].name}}</div>
+							</div>
+						</div>
+						
+						
+						<!-- show classifed camera div -->
+						<div class="col-xs-12" 
+							ng-show="product.categoriesEntity.lft >= categoryRange.CLASSIFIED_CAMERA_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_CAMERA_MAX">
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Age:</div>
+								<div class="col-md-6">{{ageConstant[product.ageItem-1].name}}</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-6">Condition:</div>
+								<div class="col-md-6">{{conditionConstant[product.conditionItem-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Brand:</div>
+								<div class="col-md-6">{{cameraBrandConstant[product.brandItem-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Warranty:</div>
+								<div class="col-md-6">{{warrantyConstant[product.warrantyItem-1].name}}</div>
+							</div>
+						</div>
+						
+						<!-- show classifed computers -->
+						<div class="col-xs-12"
+							ng-show="product.categoriesEntity.lft >= categoryRange.CLASSIFIED_COMPUTER_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_COMPUTER_MAX">				
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Age:</div>
+								<div class="col-md-6">{{ageConstant[product.ageItem-1].name}}</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-md-6">Condition:</div>
+								<div class="col-md-6">{{conditionConstant[product.conditionItem-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Brand:</div>
+								<div class="col-md-6">{{computerBrandConstant[product.brandItem-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Memory (Ram):</div>
+								<div class="col-md-6">{{computerMemoryConstant[product.memoryRam-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Processor Speed (Per Core):</div>
+								<div class="col-md-6">{{computerProcessorConstant[product.processorSpeed-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Hard Drive:</div>
+								<div class="col-md-6">{{computerHardDriveConstant[product.hardDrive-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Warranty:</div>
+								<div class="col-md-6">{{warrantyConstant[product.warrantyItem-1].name}}</div>
+							</div>
+						</div>
+						
+						<!-- show classifed lost found -->
+						<div class="col-xs-12"
+							ng-show="product.categoriesEntity.lft >= categoryRange.CLASSIFIED_LOST_FOUND_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_LOST_FOUND_MAX">				
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Last seen:</div>
+								<div class="col-md-6">{{product.lastSeen}}</div>
+							</div>	
+						</div>
+						
+						<!-- show classifed lost found -->
+						<div class="col-xs-12"
+							ng-show="product.categoriesEntity.lft >= categoryRange.CLASSIFIED_PETS_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_PETS_MAX">				
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">Price:</div>
+								<div class="col-md-6">{{product.productPrice | currency:"$":0}}</div>
+							</div>
+						</div>
+						
+						<!-- show community -->
+						<div class="col-xs-12"
+							ng-show="product.categoriesEntity.lft >= categoryRange.COMMUNITY_MIN && product.categoriesEntity.rgt <= categoryRange.COMMUNITY_MAX">				
+							<div class="row">
+								<div class="col-md-6">Posted:</div>
+								<div class="col-md-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+						</div>
+						
+					<!-- end div -->
+				   </div>
+						 
+					<h2>Description:</h2>
+					<p>
+						<span ng-bind-html='toTrustedHTML( product.productDescription )'></span>
+
+
+					</p>
+
+					<p>Ad ref: {{product.productId}}</p>
+						
+						<div class="panel panel-default" cg-busy="{promise:myPromise, message:'Please wait...'}">
+							<div class="panel-heading">
+								<strong id="reply" name="reply">Reply to this Ad:</strong>
+							</div>
+						
+						<div class="panel-body">
+						<!-- sent message  -->
+						    
+						   
+						   <form role="form" class="form-horizontal" name="replyAdForm"
+						   		 data-ng-submit="sendReplyAdByEmail(replyAdForm.$valid)" novalidate>
+									<div class="form-group has-feedback"
+										ng-class="{ 'has-error': replyAdForm.inputEmail.$touched && 
+										replyAdForm.inputEmail.$invalid ||
+						        		replyAdForm.$submitted && replyAdForm.inputEmail.$invalid ,
+						        		'has-success': !replyAdForm.inputEmail.$invalid}">
+
+										<label for="inputEmail" class="control-label">Email</label> 
+										<input
+											name="inputEmail" type="email" class="form-control"
+											ng-model="replyAd.replierEmail" required="required">
+										
+
+										<span class="glyphicon glyphicon-ok form-control-feedback"
+											ng-show="!replyAdForm.inputEmail.$invalid"> </span> <span
+											class="glyphicon glyphicon-remove form-control-feedback"
+											ng-show="replyAdForm.inputEmail.$touched && replyAdForm.inputEmail.$invalid || replyAdForm.$submitted && replyAdForm.inputEmail.$invalid">
+										</span>
+										<div class="help-block with-errors"
+											ng-messages="replyAdForm.inputEmail.$error"
+											ng-show="replyAdForm.inputEmail.$touched || replyAdForm.$submitted">
+											<div ng-messages-include="messages.html"></div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-5">
+											<div class="form-group has-feedback"
+												ng-class="{ 'has-error': replyAdForm.inputName.$touched && 
+												replyAdForm.inputName.$invalid ||
+						       				 	replyAdForm.$submitted && replyAdForm.inputName.$invalid ,
+						       			 		'has-success': !replyAdForm.inputName.$invalid}">
+
+												<label for="inputName" class="control-label"> Your
+													Name </label> <input type="text" class="form-control"
+													name="inputName" placeholder=""
+													ng-model="replyAd.replierName" required> <span
+													class="glyphicon glyphicon-ok form-control-feedback"
+													ng-show="!replyAdForm.inputName.$invalid"> </span> <span
+													class="glyphicon glyphicon-remove form-control-feedback"
+													ng-show="replyAdForm.inputName.$touched && replyAdForm.inputName.$invalid || replyAdForm.$submitted && replyAdForm.inputName.$invalid">
+												</span>
+												<div class="help-block with-errors"
+													ng-messages="replyAdForm.inputName.$error"
+													ng-show="replyAdForm.inputName.$touched || replyAdForm.$submitted">
+													<div ng-messages-include="messages.html"></div>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-5 col-xs-offset-2">
+											<div class="form-group has-feedback"
+												ng-class="{ 'has-error': replyAdForm.inputPhone.$touched && 
+												replyAdForm.inputPhone.$invalid ||
+						       			 		replyAdForm.$submitted && replyAdForm.inputPhone.$invalid ,
+						       			 		'has-success': !replyAdForm.inputPhone.$invalid}">
+
+												<label for="inputUsername" class="control-label">Phone</label>
+												<input type="text" class="form-control" name="inputPhone"
+													placeholder="" ng-model="replyAd.replierTelephone" required>
+
+												<span class="glyphicon glyphicon-ok form-control-feedback"
+													ng-show="!replyAdForm.inputPhone.$invalid"> </span> <span
+													class="glyphicon glyphicon-remove form-control-feedback"
+													ng-show="replyAdForm.inputPhone.$touched && replyAdForm.inputPhone.$invalid || replyAdForm.$submitted && replyAdForm.inputPhone.$invalid">
+												</span>
+												<div class="help-block with-errors"
+													ng-messages="replyAdForm.inputPhone.$error"
+													ng-show="replyAdForm.inputPhone.$touched || replyAdForm.$submitted">
+													<div ng-messages-include="messages.html"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="form-group has-feedback"
+										ng-class="{ 'has-error': replyAdForm.inputMessage.$touched && 
+										replyAdForm.inputMessage.$invalid ||
+						       			 replyAdForm.$submitted && replyAdForm.inputMessage.$invalid ,
+						       			 'has-success': !replyAdForm.inputMessage.$invalid}">
+
+										<label for="inputMessage" class="control-label">Message</label>
+										<textarea class="form-control" rows="7" name="inputMessage"
+											ng-model="replyAd.replierMessage" required>
+										 </textarea>
+										<span class="glyphicon glyphicon-ok form-control-feedback"
+											ng-show="!replyAdForm.inputMessage.$invalid"> 
+										</span> 
+										<span class="glyphicon glyphicon-remove form-control-feedback"
+											ng-show="replyAdForm.inputMessage.$touched && replyAdForm.inputMessage.$invalid || replyAdForm.$submitted && replyAdForm.inputMessage.$invalid">
+										</span>
+										<div class="help-block with-errors"
+											ng-messages="replyAdForm.inputMessage.$error"
+											ng-show="replyAdForm.inputMessage.$touched || replyAdForm.$submitted">
+											<div ng-messages-include="messages.html"></div>
+										</div>
+									</div>
+									<p class="text-muted">By clicking on "Send Reply", I agree
+										to the Hashi terms &amp; conditions and Privacy policy
+									</p>
+									<button class="btn btn-primary btn-block">Send message</button>
+					    	 </form>
+					   </div>
+					</div>	
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-sm-3 center details-sidebar">
+			<div class="row" style="margin-top: 156px;">
+				<div class="col-xs-12 col-xs-offset-1d">
+
+					<div class="row">
+						<div class="col-xs-12">
+							<a  ng-click="scrollTo('reply')"
+								class="btn btn-primary btn-block">Send Message</a>
+						</div>
+					</div>
+
+
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="phone-number">
+								&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-phone">&nbsp;&nbsp;<strong>{{product.user.firstname}}</strong>:{{product.user.telephone}}
+								</i>
+							</div>
+						</div>
+					</div>
+					<br />
+
+					<div class="row">
+						<div class="col-xs-12">
+							<script async
+								src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+							<!-- Home page, right center div -->
+							<ins class="adsbygoogle"
+								style="display: inline-block; width: 300px; height: 250px"
+								data-ad-client="ca-pub-6780500882096971"
+								data-ad-slot="9461196640"></ins>
+							<script>
+								(adsbygoogle = window.adsbygoogle || [])
+										.push({});
+							</script>
+						</div>
+					</div>
+					<br />
+
+
+
+
+					<div class="row">
+						<div class="col-xs-12">
+							<map
+								center="{{product.location.latitude}}, {{product.location.longtitude}}"
+								zoom="14" disable-double-click-zoom="true">
+								<marker
+									position="{{product.location.latitude}}, {{product.location.longtitude}}"></marker>
+							</map>
+							<ol class="breadcrumb">
+								<li>{{product.location.country}}</a></li>
+								<li>{{product.location.city}}</a></li>
+								<li>{{product.location.region}}</a></li>
+							</ol>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

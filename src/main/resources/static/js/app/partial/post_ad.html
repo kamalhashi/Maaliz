@@ -1,0 +1,134 @@
+<div class="container post-ad-form">	
+                   
+    <div class="row">
+        <div class="col-sm-12">
+           <ol class="breadcrumb">
+				<li><a ui-sref="/" >Home</a></li>
+				<li class="active">Post an ad</li>
+			</ol>
+        </div>
+        
+         
+
+        <div class="col-sm-12">
+            <div class="post-ad-main-categories">
+                <div class="row">
+                    <div class="col-sm-12">		
+                        <div style="width: 16%; float:left;" ng-repeat="category in categories"  ng-click="getSubCategoriesLevelOne(category.categoryId, 2 , 500)">
+                            <div class="post-category" style="border: 1px solid #ddd; min-height: 75px; padding: 20px 10px; text-align: center;"
+                                  ng-style="selectedCategoryIdLevelOne==category.categoryId && {'background-color':'#f5f5f5'}">
+                               	   <a href="" ng-click="getSubCategoriesLevelOne(category.categoryId, 2 , 500)">
+       
+                                	<i ng-show="category.categoryId==3" class="fa fa-car fa-fw"></i>
+                                	<i ng-show="category.categoryId==4"  class="fa fa-laptop" style="font-size: 32px;"></i>
+                             		<i ng-show="category.categoryId==5" class="fa fa-home fa-fw" style="font-size: 32px;"></i>
+                                	<i ng-show="category.categoryId==6"  class="fa fa-home fa-fw" style="font-size: 32px;"></i>
+                                	<i ng-show="category.categoryId==7" class="fa fa-briefcase fa-fw" style="font-size: 32px;"></i>
+                                	<i ng-show="category.categoryId==8"  class="fa fa-users" style="font-size: 32px;"></i>
+								</a>
+								<br />
+                                <a href="" ng-click="getSubCategoriesLevelOne(category.categoryId, 2 , 500)"> {{category.categoryName}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="post-ad-content" style="height: 300px; border-left: 1px solid #ddd;  border-right: 1px solid #ddd;">
+
+                <div class="row">
+                    <div class="col-sm-12">		 
+                        <div style="width: 33.333333333333%; float: left;" ng-show="showSubCategoryLevelOne"  cg-busy="{promise:myPromiseLevelOne,backdrop:true, message:'Please wait'}">
+                          
+                            <div class="list-group-wrapper"  style="height:300px;overflow:auto;">
+                                <div class='content'>
+                                    <div class="list-group">
+                                    
+                                
+                                        <a href=""  ng-repeat="category in listSubCategoriesLevelOne" 
+                                           class="list-group-item"
+                                           ng-click="getSubCategoriesLevelTwo(category.categoryId, category.lft , category.rgt)"
+                                           ng-style="selectedCategoryIdLevelTwo==category.categoryId && {'background-color':'#f5f5f5'}">
+                                      
+                                            <i  ng-show="checkSubCategoriesLevelOne[$index]" class="fa fa-chevron-right pull-right"> </i>
+                                              {{category.categoryName}} 
+                                             <i ng-show="selectedCategory==category.categoryId && !disableButton ? true : false"   class="fa fa-check-circle pull-right" ></i>                            
+                                        </a>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 33.333333333333%; float: left;" ng-show="showSubCategoryLevelTwo"  cg-busy="{promise:myPromiseLevelTwo,backdrop:true, message:'Please wait'}">
+                            <div class="list-group-wrapper" style="height: 320px; overflow:auto;">
+                                <div class='content' >
+
+                                    <div class="list-group">
+                                                                           
+                                        <a href=""  ng-repeat="category in listSubCategoriesLevelTwo" 
+                                           class="list-group-item"
+                                           ng-click="getSubCategoriesLevelThree(category.categoryId,category.lft , category.rgt)"
+                                           ng-style="selectedCategoryIdLevelThree==category.categoryId && {'background-color':'#f5f5f5'}">
+                                           
+                                             <i  ng-show="checkSubCategoriesLevelTwo[$index]" class="fa fa-chevron-right pull-right"></i>
+                                              {{category.categoryName}}
+                                              
+                                             <i ng-show="selectedCategory==category.categoryId && !disableButton && checkSubCategoriesLevelTwo[$index]==false ? true : false"   class="fa fa-check-circle pull-right"></i>                            
+                                              
+                                        </a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                         <div style="width: 33.333333333333%; float: left;" ng-show="showSubCategoryLevelThree"  cg-busy="{promise:myPromiseLevelThree,backdrop:true, message:'Please wait'}">
+                            <div class="list-group-wrapper" style="height: 320px; overflow:auto;" >
+                                <div class='content'>
+                                    <div class="list-group">
+                                        <a href=""  ng-repeat="category in listSubCategoriesLevelThree" 
+                                           class="list-group-item"
+                                           ng-click="getSubCategoriesLevelFour(category.categoryId, category.lft , category.rgt)"
+                                           ng-style="selectedCategoryIdLevelFour==category.categoryId && {'background-color':'#f5f5f5'}">
+                                           
+                                           
+                                          <i  ng-show="checkSubCategoriesLevelThree[$index]" class="fa fa-chevron-right pull-right"></i>
+                                              {{category.categoryName}}
+                                          <i ng-show="selectedCategory==category.categoryId && !disableButton ? true : false"   class="fa fa-check-circle pull-right"></i>                            
+                                              
+                                        </a>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="width: 33.333333333333%; float: left;">
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="post-ad-footer" style="border: 1px solid #ddd; ">
+                <div class="row">
+                    <div class="col-sm-12">	
+                        <div style="padding: 18px 18px;">
+                            <div class="row">
+                                <div class="col-sm-6">	
+                                	<strong ng-show="disableButton" class="h5 text-primary">Please select the least subcategory, only then you can continue and post ad </strong>
+                                </div>
+                                <div class="col-sm-2 col-sm-offset-4">	
+                                    <button class="btn btn-primary btn-block" ng-disabled="disableButton" ng-click="onSubmit()">Continue</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+

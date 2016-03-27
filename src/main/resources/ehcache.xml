@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+     updateCheck="true"
+     monitoring="autodetect"
+     dynamicConfig="true">
+     
+	<diskStore path="java.io.tmpdir" />
+	<defaultCache maxElementsInMemory="1000" eternal="false"
+		timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="true" />
+
+	<cache name="englishCategories" maxElementsInMemory="10000"
+		eternal="true" overflowToDisk="false" />
+	<cache name="somaliCategories" maxElementsInMemory="10000"
+		eternal="true" overflowToDisk="false" />
+
+    <!-- CategoryEnglishRepository, caching  -->
+
+	<cache name="subCategoriesOfCategoryEnglish" maxElementsInMemory="10000"
+		eternal="true" overflowToDisk="false" />
+
+	<cache name="rootCategoriesOfCategoryEnglish" maxElementsInMemory="10000"
+		eternal="true" overflowToDisk="false" />
+
+	<cache name="listRootCategoriesEnglish" maxElementsInMemory="10000"
+		eternal="true" overflowToDisk="false" />
+
+	<cache name="hasChildCategoriesEnglish" maxElementsInMemory="10000"
+		eternal="true" overflowToDisk="false" />
+	
+	<cache name="findCategoryByCategoryIdEnglish" maxElementsInMemory="10000"
+		eternal="true" overflowToDisk="false" />
+		
+		
+		
+	
+    <!-- CategorySomaliRepository, caching  -->
+
+	<cache name="subCategoriesOfCategorySomali" maxElementsInMemory="10000"
+		eternal="true" overflowToDisk="false" />
+
+	<cache name="rootCategoriesOfCategorySomali" maxElementsInMemory="10000"
+		eternal="true" overflowToDisk="false" />
+
+	<cache name="listRootCategoriesSomali" maxElementsInMemory="10000"
+		eternal="true" overflowToDisk="false" />
+
+	<cache name="hasChildCategoriesSomali" maxElementsInMemory="10000"
+		eternal="true" overflowToDisk="false" />
+	
+	<cache name="findCategoryByCategoryIdSomali" maxElementsInMemory="10000"
+		eternal="true" overflowToDisk="false" />
+		
+		
+	 <!--CityEnglishRepository  -->
+
+	
+	<cache name="findByCityIdEnglish" maxElementsInMemory="1000"
+		eternal="true" overflowToDisk="false" />
+
+	<cache name="listCityEnglish" maxElementsInMemory="1000" eternal="true"
+		overflowToDisk="false" />
+
+     <!--CitySomaliRepository  -->
+	<cache name="findByCityIdSomali" maxElementsInMemory="1000"
+		eternal="true" overflowToDisk="false" />
+	
+	<cache name="listCitySomali" maxElementsInMemory="1000" eternal="true"
+		overflowToDisk="false" />
+
+
+
+	<!-- ProductRepositoryImpl, cache -->
+	<!-- this is featured list cache in the home page -->
+	<cache name="featuredProductCache" maxElementsInMemory="100000"
+		eternal="true" overflowToDisk="false" />
+			
+
+</ehcache>

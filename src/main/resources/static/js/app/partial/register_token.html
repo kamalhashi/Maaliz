@@ -1,0 +1,30 @@
+<div class="container">
+   <br/>
+   <br/>
+   
+	<div class="row">
+		<div class="row">
+			<div class="col-md-5 col-md-offset-4">
+
+				<div class="panel panel-default">
+
+					<div class="panel-heading">
+						<h3 class="panel-title">Nearly a million members and growing</h3>
+					</div>
+
+					<div class="panel-body" >
+					    
+					    
+						<div  ng-show="tokenError">
+							Error verifying your email address. Reason for the error is: {{tokenMessage}}  
+						</div>
+	
+						<div  ng-show="!tokenError">
+							<strong class="text-success">Success!</strong> Your email address has been verified. Please <a  ui-sref="login">click here to log in</a>.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

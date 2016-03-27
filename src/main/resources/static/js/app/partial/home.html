@@ -1,0 +1,998 @@
+<div class="jumbotron home-tron-search">
+	<div class="container" style="position: relative;">
+		<div class="home-slogan-area">
+			<div class="row">
+				<div class="col-xs-9 col-xs-offset-2 text-center">
+					<!--  
+						<h1 class="text-center">{{'HOME_CENTER_TITLE1' | translate }}</h1>
+					-->
+					
+						<h1 class="text-center">
+						 {{'WEBSITE_TITLE' | translate}} {{'HOME_CENTER_TITLE2' | translate }}
+						 </h1>
+				</div>
+			</div>
+		</div>
+		
+		<div class="home-tron-search-inner" >
+
+			<div class="row">
+
+				<div class="col-xs-12">
+					<div class="row">
+						<div class="col-xs-3 hidden-xs">
+							<select ng-model="basicSelectedCityId" class="form-control" 
+								ng-options="city.cityId as city.cityName for city in listCities">
+							</select>
+						</div>
+
+						<div class="col-xs-7 col-sm-4">
+							<input type="text" class="form-control col-xs-12 col-sm-3"
+								placeholder="search..." onfocus="this.placeholder=''"
+								onblur="this.placeholder='search...'" ng-model="basicTextSearch">
+
+
+
+						</div>
+						<div class="col-xs-3 hidden-xs">
+							<select class="form-control" ng-model="basicSelectedCategory"
+								ng-options="category.categoryId as category.categoryName for category in categories">
+							</select>
+						</div>
+
+						<div class="col-xs-2">
+							<button class="btn btn-primary btn-search"
+								ng-click="basicSearch()">
+								<i class="fa fa-search"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div class="container" style="min-height: 1032px">
+
+	<div class="row">
+		<div class="col-xs-3 hidden-xs hidden-sm">
+			<br /> <br /> <br /> <br />
+
+			<div class="well sidebar-form">
+				<h3 style="margin-top: 0">
+					<strong>Find the product</strong>
+				</h3>
+
+
+				<div class="form-group">
+					<select class="form-control" ng-model="advSelectedCityId"
+						ng-options="city.cityId as city.cityName for city in listCities">
+					</select>
+				</div>
+
+				<div class="form-group">
+					<select class="form-control" ng-model="advCategoryLevelOneObject"
+						ng-options="category as category.categoryName for category in categories"
+						ng-change="getSubCategoriesLevelTwo(advCategoryLevelOneObject)">
+					</select>
+				</div>
+
+				<div class="form-group" ng-show="showSubCategoryLevelTwo">
+					<select class="form-control" ng-model="advCategoryLevelTwoObject"
+						ng-options="category as category.categoryName for category in listSubCategoriesLevelTwo"
+						ng-change="getSubCategoriesLevelThree(advCategoryLevelTwoObject)">
+					</select>
+				</div>
+
+				<div class="form-group" ng-show="showSubCategoryLevelThree">
+					<select class="form-control" ng-model="advCategoryLevelThreeObject"
+						ng-options="category as category.categoryName for category in listSubCategoriesLevelThree"
+						ng-change="getSubCategoriesLevelFour(advCategoryLevelThreeObject)">
+					</select>
+				</div>
+
+				<div class="form-group" ng-show="showSubCategoryLevelFour">
+					<select class="form-control" ng-model="advCategoryLevelFourObject"
+						ng-options="category as category.categoryName for category in listSubCategoriesLevelFour"
+						ng-change="getSubCategoriesLevelFive(advCategoryLevelFourObject)">
+					</select>
+				</div>
+
+				<div class="form-group" ng-show="showAdvanceSearchCarDiv || showAdvanceSearchHeavyVehicleDiv">
+					<span>Price ($) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input name="inputPriceFrom" class="form-control"
+								ng-model="priceFrom" placeholder="Price from">
+						</div>
+						<div class="col-xs-6">
+							<input name="inputPriceTo" class="form-control"
+								ng-model="priceTo" placeholder="Price to">
+						</div>
+					</div>
+
+					<span> Year (Min/Max) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<select class="form-control" name="selectYearMin"
+								ng-model="yearMin" ng-options="year for year in years">
+							</select>
+						</div>
+						<div class="col-xs-6">
+							<select class="form-control" name="selectYearMax"
+								ng-model="yearMax" ng-options="year for year in years">
+							</select>
+						</div>
+					</div>
+
+					<span>Kilometers ( Km )</span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input type="text" class="form-control"
+								name="inputKilometersFrom" placeholder="KM from"
+								ng-model="KMFrom">
+						</div>
+						<div class="col-xs-6">
+							<input type="text" class="form-control" id="inputKilometersTo"
+								placeholder="KM to" ng-model="KMTo">
+						</div>
+					</div>
+
+					<span>Seller Type</span>
+					<div class="row">
+						<div class="col-xs-6">
+							<select ng-model="selectedSellerType" class="form-control"
+								name="selectedSellerType"
+								ng-options="sellerType.id as sellerType.name for  sellerType in listSellerTypes">
+
+							</select>
+						</div>
+
+					</div>
+				</div>
+				
+				<!-- sale residential search  -->
+				<div class="form-group" ng-show="showAdvanceSearchSaleResDiv || showAdvanceSearchRentResDiv 
+				   || showAdvanceSearchRentShortMonthlyDiv">
+					<span>Price ($) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input name="inputPriceFrom" class="form-control"
+								ng-model="priceFrom" placeholder="Price from">
+						</div>
+						<div class="col-xs-6">
+							<input name="inputPriceTo" class="form-control"
+								ng-model="priceTo" placeholder="Price to">
+						</div>
+					</div>
+					
+					<span>Rooms (Min/Max)</span>
+					<div class="row">
+						<div class="col-xs-6">
+							<select ng-model="bedroomMin" class="form-control"
+								name="selectedBedroomMin"
+								ng-options="bedrooms.id as bedrooms.name for  bedrooms in constantNoBedrooms">
+							</select>
+						</div>
+						<div class="col-xs-6">
+							<select ng-model="bedroomMax" class="form-control"
+								name="selectedBedroomMax"
+								ng-options="bedrooms.id as bedrooms.name for  bedrooms in constantNoBedrooms">
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				<!-- sale commercial house search  -->
+				<div class="form-group" ng-show="showAdvanceSearchSaleCommDiv || showAdvanceSearchSaleUnitsDiv 
+					|| showAdvanceSearchSaleLandDiv || showAdvanceSearchRentCommDiv || showAdvanceSearchRentRoomDiv
+					|| showAdvanceSearchClassifiedDiv
+					|| showAdvanceSearchRentHotelDiv">
+					<span>Price ($) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input name="inputPriceFrom" class="form-control"
+								ng-model="priceFrom" placeholder="Price from">
+						</div>
+						<div class="col-xs-6">
+							<input name="inputPriceTo" class="form-control"
+								ng-model="priceTo" placeholder="Price to">
+						</div>
+					</div>
+				</div>
+				
+				<!-- car parts, motorcycle -->
+				<div class="form-group" ng-show="showAdvanceSearchCarPartsDiv || showAdvanceSearchBoatsDiv || showAdvanceSearchMotorcycleDiv">
+					<span>Price ($) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input name="inputPriceFrom" class="form-control"
+								ng-model="priceFrom" placeholder="Price from">
+						</div>
+						<div class="col-xs-6">
+							<input name="inputPriceTo" class="form-control"
+								ng-model="priceTo" placeholder="Price to">
+						</div>
+					</div>
+					
+					<span>Seller Type</span>
+					<div class="row">
+						<div class="col-xs-6">
+							<select ng-model="selectedSellerType" class="form-control"
+								name="selectedSellerType"
+								ng-options="sellerType.id as sellerType.name for  sellerType in listSellerTypes">
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="form-group">
+					<input type="text" class="form-control" id="inputAdvSearchText"
+						placeholder="search..." onfocus="this.placeholder=''"
+						onblur="this.placeholder='search...'" ng-model="advTextSearch">
+				</div>
+
+				<button type="submit" class="btn btn-primary btn-block"
+					ng-click="advanceSearch()">Submit</button>
+			</div>
+
+			<div class="row visible-md visible-lg">
+				<div class="col-xs-12 text-center" style="overflow: hidden">
+					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- Home left div Large Skyscraper -->
+					<ins class="adsbygoogle"
+						style="display: inline-block; width: 300px; height: 600px"
+						data-ad-client="ca-pub-6780500882096971" data-ad-slot="3973066244">
+					</ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-xs-12 col-sm-12 col-md-9">
+
+			<h2 class="line text-primary">
+				<span>Featured listings</span>
+			</h2>
+			
+			<slick lazy-load="ondemand"  autoplay=true autoplay-speed=2000  slides-to-show=4 slides-to-scroll=1 init-onload=true data="listFeatured" class="slider lazy multiple-items" >
+			         
+                     <div class="col-sm-3 featured-listings" ng-repeat="featured in listFeatured" >
+                           
+                            <div class="panel panel-default" >
+                             
+                                  <a   class="property-img fancybox" 
+                                  	href ng-click="forwardToDetailsPage(featured.productId, featured.categoriesEntity.categoryId, 
+                                     featured.categoriesEntity.lft, 
+                                  	 featured.categoriesEntity.rgt)"> 
+                                 	 <img data-lazy="{{bucketName.productImages + featured.productId + '/' + featured.coverPhoto}}"   height="162" width="100%;"/>
+                                 	 <span class="property-caption" ng-show="featured.productPrice > 0">{{featured.productPrice | currency:"$":0}}</span>
+                                  </a>
+                                 
+                                 
+                                <div class="panel-body">
+
+                                    <p> 
+                                       {{featured.productTitle}} <br />
+                                          
+                                    </p>
+                                    <div class="text-center col-xs-10 col-xs-offset-1">
+                               		  <a  href ng-click="forwardToDetailsPage(featured.productId, featured.categoriesEntity.categoryId, featured.categoriesEntity.lft, featured.categoriesEntity.rgt)" class="btn btn-primary btn-block btn-xs">Details</a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                      </div>
+                      
+			</slick>
+			
+			
+
+			<h2 class="line text-primary">
+				<span>All listings</span>
+			</h2>
+			<div class="row directory">
+
+				<div class="directory-block col-sm-3 col-xs-6">
+					<div class="row">
+						<div class="col-xs-2">
+							<i class="fa fa-car"></i>
+						</div>
+						<div class="col-xs-10">
+						  	<a  ui-sref="listing ({searchType:'AdvanceSearch' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  3, 
+								  advSelectedCategoryIdLevelOne:  3,
+								  advSelectedCategoryIdLevelTwo:  20})" >
+									<h4>{{'MOTORS' |translate}}</h4>
+									
+							</a>
+							<p>
+							<a  ui-sref="listing ({searchType:'AdvanceSearchCar' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  21, 
+								  advSelectedCategoryIdLevelOne:  3,
+								  advSelectedCategoryIdLevelTwo:  21,
+								  advSelectedCategoryIdLevelThree:  30})" >
+
+								   {{'CARS_FOR_SALE' | translate}}  <strong>({{countCars}}) </strong>
+								   
+							</a> <br/>
+								   
+								   
+						    <a  ui-sref="listing ({searchType:'AdvanceSearchCarParts' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  22, 
+								  advSelectedCategoryIdLevelOne:  3,
+								  advSelectedCategoryIdLevelTwo: 22,
+								  advSelectedCategoryIdLevelThree: 150})" >
+								   
+								    {{'SPARE_PARTS_ACCESSORIES' | translate}} <strong>({{countCarParts}}) </strong>
+						    </a> <br/>
+								    
+							<a  ui-sref="listing ({searchType:'AdvanceSearchBoats' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  23, 
+								  advSelectedCategoryIdLevelOne:  3,
+								  advSelectedCategoryIdLevelTwo:  23})" >
+								  
+								    {{'BOATS' | translate}} <strong>({{countBoats}}) </strong>
+						   </a> <br/> 
+								    
+								    
+								<a  ui-sref="listing ({searchType:'AdvanceSearchHeavyVehicle' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  24, 
+								  advSelectedCategoryIdLevelOne:  3,
+								  advSelectedCategoryIdLevelTwo:  24,
+								  advSelectedCategoryIdLevelThree:  300})" >
+									{{'HEAVY_VEHICLES' | translate }} <strong>({{countHeavyVehicles}}) </strong>
+								 </a> <br/>
+								 
+								  <a  ui-sref="listing ({searchType:'AdvanceSearchMotorcycle' , advSelectedCityId :0, 
+								 	 advFinalSelectedCategoryId:  25, 
+								 	 advSelectedCategoryIdLevelOne:  3,
+									  advSelectedCategoryIdLevelTwo:  25,
+								 	 advSelectedCategoryIdLevelThree:  310})" >
+								  
+								 	{{'MOTORCYCLES' | translate }}  <strong>({{countMotorcycles}}) </strong>
+								  
+								  </a> 
+							</p>
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="directory-block col-sm-3 col-xs-6">
+					<div class="row">
+						<div class="col-xs-2">
+							<i class="fa fa-home"></i>
+						</div>
+						<div class="col-xs-10">
+							<a  ui-sref="listing ({searchType:'AdvanceSearchSaleRes' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  5, 
+								  advSelectedCategoryIdLevelOne:  5,
+								  advSelectedCategoryIdLevelTwo: 320})" >
+								<h4> {{'PROPERTY_FOR_SALE' | translate }}</h4>
+							</a>
+							<p>
+								  <a  ui-sref="listing ({searchType:'AdvanceSearchSaleRes' , advSelectedCityId :0, 
+								 	 advFinalSelectedCategoryId:  327, 
+								 	 advSelectedCategoryIdLevelOne:  5,
+									 advSelectedCategoryIdLevelTwo:  321,
+								 	 advSelectedCategoryIdLevelThree:  327})" >
+								  
+								 	 {{'APARTMENT_FOR_SALE' | translate}} <strong>({{countSaleResApartment}}) </strong>
+								  
+								  </a> <br/> 
+								  <a  ui-sref="listing ({searchType:'AdvanceSearchSaleRes' , advSelectedCityId :0, 
+								 	 advFinalSelectedCategoryId:  326, 
+								 	 advSelectedCategoryIdLevelOne:  5,
+									 advSelectedCategoryIdLevelTwo:  321,
+								 	 advSelectedCategoryIdLevelThree:  326})" >
+								  
+								 	   {{'VILLA_FOR_SALE' | translate}} <strong>({{countSaleResVilla}}) </strong>
+								  
+								  </a> <br/> 
+								    
+								 <a  ui-sref="listing ({searchType:'AdvanceSearchSaleComm' , advSelectedCityId :0, 
+								 	 advFinalSelectedCategoryId:  322, 
+								 	 advSelectedCategoryIdLevelOne:  5,
+									 advSelectedCategoryIdLevelTwo:  322,
+								 	 advSelectedCategoryIdLevelThree:  328})" >
+								 	 
+									 {{'COMMERCIAL_FOR_SALE ' | translate}} <strong>({{countSaleComm}}) </strong>
+								</a> <br/> 
+									
+								 <a  ui-sref="listing ({searchType:'AdvanceSearchSaleUnits' , advSelectedCityId :0, 
+								 	 advFinalSelectedCategoryId:  323, 
+								 	 advSelectedCategoryIdLevelOne:  5,
+									 advSelectedCategoryIdLevelTwo:  323})" >
+								 	 
+									{{'UNITS_FOR_SALE' | translate }} <strong>({{countSaleUnits}}) </strong>
+								</a> <br/> 
+								   
+								 <a  ui-sref="listing ({searchType:'AdvanceSearchSaleLand' , advSelectedCityId :0, 
+								 	 advFinalSelectedCategoryId:  324, 
+								 	 advSelectedCategoryIdLevelOne:  5,
+									 advSelectedCategoryIdLevelTwo:  324})" >
+									
+									 {{'LAND_FOR_SALE' | translate}} <strong>({{countSaleLand}}) </strong>
+									 
+							    </a> <br/>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="directory-block col-sm-3 col-xs-6">
+					<div class="row">
+						<div class="col-xs-2">
+							<i class="fa fa-briefcase fa-fw"></i>
+						</div>
+						<div class="col-xs-10">
+							<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  7, 
+								  advSelectedCategoryIdLevelOne:  7})" >
+								  <h4>{{'JOB_VACANCIES' | translate}}</h4>
+							
+							</a>
+							<p>
+							     <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  385, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  385})" >
+									{{'JOB_CONSULTING' | translate}} <strong>({{countJobConsulting}}) </strong>
+								</a> <br/>
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  384, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  384})" >
+									{{'JOB_CONSTRUCTION'  | translate}} <strong>({{countJobConstruction}}) </strong>
+								</a> <br/>
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  376, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  376})" >
+									{{'AIRLINES_AVIATION' | translate}}<strong>({{countJobAirlinesAviation}}) </strong>
+								</a> 	
+							
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  408, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  408})" >
+									{{'JOB_MEDIA' | translate}}<strong>({{countJobMedia}}) </strong>
+								</a> <br/> 
+								
+								
+								
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="directory-block col-sm-3 col-xs-6">
+					<div class="row">
+						<div class="col-xs-2">
+							<i class="fa fa-briefcase fa-fw"></i>
+						</div>
+						<div class="col-xs-10">
+							<h4>{{'JOB_VACANCIES' | translate}}</h4>
+							<p>
+							    
+							    <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  375, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  375})" >
+									{{'JOB_ACCOUNTING' | translate}} <strong>({{countJobAccounting}}) </strong>
+								</a> <br/>
+								
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId: 380, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  380})" >
+									{{'JOB_BANKING' | translate}}<strong>({{countJobBankingFinance}}) </strong>
+								</a> <br/>
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								     advFinalSelectedCategoryId:  395, 
+								     advSelectedCategoryIdLevelOne:  7,
+								     advSelectedCategoryIdLevelTwo:  395})">
+									{{'JOB_GOVERNMENT_ADMIN' | translate}} <strong>({{countJobGovAdmin}}) </strong>
+								</a> <br/>
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId: 407, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  407})" >
+									{{'JOB_MARKETTING_ADVERTISEMENT' | translate}}<strong>({{countJobMarkettingAdvertising}}) </strong>
+								</a> <br/>
+									
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row directory">
+                <div class="col-sm-6">
+                    <div class="row">
+                    
+						<div class="directory-block col-xs-6 col-xs-6">
+							<div class="row">
+								<div class="col-xs-2">
+									<i class="fa fa-laptop"></i>
+								</div>
+								<div class="col-xs-10">
+									 <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  4,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 554})">
+											<h4>{{'ITEM_FOR_SALE' | translate}}</h4>
+									</a>
+									<p>
+										<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  555,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 555,
+										 	  advSelectedCategoryIdLevelThree:  556})">
+								 		      {{'BABY_ITEMS' | translate }}<strong>({{countClassifiedBabyItems}}) </strong> 
+								  		</a> <br/>
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  609,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 609,
+										 	  advSelectedCategoryIdLevelThree:  610})">
+								 		      {{'BOOKS_ITMES' | translate}}  <strong>({{countClassifiedBooks}}) </strong> 
+								  		</a> <br/>  
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  667,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 667,
+										 	  advSelectedCategoryIdLevelThree:  668})">
+								 		      {{'BUSINESS_INDUSTRIAL' | translate}}<strong>({{countClassifiedBusinessIndustrial}}) </strong> 
+								  		</a> <br/> 
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassifiedCamera' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  765,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 765,
+										 	  advSelectedCategoryIdLevelThree: 766})">
+								 		      {{'CAMERAS_IMAGING' | translate}} <strong>({{countClassifiedCamera}}) </strong> 
+								  		</a> <br/> 
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  838,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 838,
+										 	  advSelectedCategoryIdLevelThree: 839})">
+								 		      {{'CLOTHING_ACCESSORIES' | translate}}  <strong>({{countClassifiedClothing}}) </strong> 
+								  		</a> <br/> 
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  920,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 920,
+										 	  advSelectedCategoryIdLevelThree: 921})">
+								 		      Collectibles  <strong>({{countClassifiedCollectibles}}) </strong> 
+								  		</a> <br/> 
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  968,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 968,
+										 	  advSelectedCategoryIdLevelThree: 969})">
+								 		      Computers & Network  <strong>({{countClassifiedComputerNetwork}}) </strong> 
+								  		</a> <br/> 
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  1030,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 1030,
+										 	  advSelectedCategoryIdLevelThree: 1031})">
+								 		      DVD & Movies  <strong>({{countClassifiedDvdMovies}}) </strong> 
+								  		</a> <br/> 
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  1086,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 1086,
+										 	  advSelectedCategoryIdLevelThree: 1087})">
+								 		      Electronics <strong>({{countClassifiedElectronics}}) </strong> 
+								  		</a> <br/> 
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  1570,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 1570,
+										 	  advSelectedCategoryIdLevelThree: 1571})">
+								 		      {{'TICKETS_VOUCHERS' | translate}}<strong>({{countClassifiedTicketsVouchers}}) </strong> 
+								  		</a> <br/> 
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  1196,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 1196,
+										 	  advSelectedCategoryIdLevelThree: 1197})">
+								 		       	{{'FURNITURE' | translate}}  <strong>({{countClassifiedFurniture}}) </strong> 
+								  		</a> <br/> 
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  1265,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 1265,
+										 	  advSelectedCategoryIdLevelThree: 1266})">
+								 		       	Game  <strong>({{countClassifiedGaming}}) </strong> 
+								  		</a> <br/>
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 1323,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 1323,
+										 	  advSelectedCategoryIdLevelThree: 1324})">
+								 		       {{'HOME_APPLIANCES' | translate}} <strong>({{countClassifiedHomeAppliances}}) </strong> 
+								  		</a> <br/> 
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  1367,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 1367,
+										 	  advSelectedCategoryIdLevelThree: 1368})">
+								 		     {{'JEWELRY_WATCHES' | translate}} <strong>({{countClassifiedJewelryWatches}}) </strong> 
+								  		</a> <br/>
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  1405,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 1405,
+										 	  advSelectedCategoryIdLevelThree: 1406})">
+								 		      {{'Lost_Found' | translate}} <strong>({{countClassifiedLostFound}}) </strong> 
+								  		</a> <br/>
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  1425,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 1425})">
+								 		      Miscellaneous <strong>({{countClassifiedMisc}}) </strong> 
+								  		</a> <br/>
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  1426,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 1426,
+										 	 advSelectedCategoryIdLevelThree: 1427})">
+								 		      Mobile Phones & PDAs <strong>({{countClassifiedMobile}}) </strong> 
+								  		</a> <br/>
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  1470,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 1470,
+										 	 advSelectedCategoryIdLevelThree: 1471})">
+								 		      {{'PETS' | translate}} <strong>({{countClassifiedPets}}) </strong> 
+								  		</a> <br/>
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  1488,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 1488,
+										 	 advSelectedCategoryIdLevelThree: 1489})">
+								 		      {{'SPORTS_EQUIPMENT' | translate}}<strong>({{countClassifiedSportsEquipment}}) </strong> 
+								  		</a> <br/>
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  1577,
+								 		 	 advSelectedCategoryIdLevelOne: 4,
+										 	 advSelectedCategoryIdLevelTwo: 1577,
+										 	 advSelectedCategoryIdLevelThree: 1578})">
+								 		      {{'TOYS' | translate}} <strong>({{countClassifiedToys}}) </strong> 
+								  		</a> <br/>
+								  		
+									</p>
+								</div>
+							</div>
+						</div>
+						
+						
+						 <div class="directory-block col-xs-6 col-xs-6">
+							<div class="row">
+								<div class="col-xs-2">
+									<i class="fa fa-home"></i>
+								</div>
+								<div class="col-xs-10">
+								<a  ui-sref="listing ({searchType:'AdvanceSearchRentRes' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  6, 
+								  advSelectedCategoryIdLevelOne:  6,
+								  advSelectedCategoryIdLevelTwo: 333})" >
+									<h4>{{'PROPERTY_FOR_RENT' | translate}}</h4>
+								</a>
+									<p>
+									   <a  ui-sref="listing ({searchType:'AdvanceSearchRentRes' , advSelectedCityId :0, 
+								 		 advFinalSelectedCategoryId:  343, 
+								 		 advSelectedCategoryIdLevelOne:  6,
+										 advSelectedCategoryIdLevelTwo:  334,
+								 	 	 advSelectedCategoryIdLevelThree:  343})" >
+								 		   {{'APARTMENT_FOR_RENT' | translate}} <strong>({{countRentResApartment}}) </strong>
+								  		</a> <br/> 
+								  		
+								  		 <a  ui-sref="listing ({searchType:'AdvanceSearchRentRes' , advSelectedCityId :0, 
+								 		 advFinalSelectedCategoryId:  342, 
+								 		 advSelectedCategoryIdLevelOne:  6,
+										 advSelectedCategoryIdLevelTwo:  334,
+								 	 	 advSelectedCategoryIdLevelThree:  342})">
+								 		  {{'VILLA_FOR_RENT' | translate}} <strong>({{countRentResVilla}}) </strong>
+								  		</a> <br/> 
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchRentComm' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  335 ,
+								 		 	 advSelectedCategoryIdLevelOne: 6,
+										 	 advSelectedCategoryIdLevelTwo: 335,
+										 	  advSelectedCategoryIdLevelThree:  345})">
+								 		   {{'COMMERCIAL_FOR_RENT' | translate}} <strong>({{countRentComm}}) </strong>
+								  		</a> <br/> 
+								  		
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchRentRoom' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  336 ,
+								 		 	 advSelectedCategoryIdLevelOne: 6,
+										 	 advSelectedCategoryIdLevelTwo: 336,
+										 	  advSelectedCategoryIdLevelThree:  350})">
+								 		   {{'ROOM_FOR_RENT' | translate}} <strong>({{countRentRoom}}) </strong>
+								  		</a> <br/> 
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchRentShortMonthly' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  338 ,
+								 		 	 advSelectedCategoryIdLevelOne: 6,
+										 	 advSelectedCategoryIdLevelTwo: 338,
+										 	  advSelectedCategoryIdLevelThree:  353})">
+								 		      {{'SHORT_TERM_FOR_RENT'  | translate}} <strong>({{countRentShortMonthly}}) </strong>
+								  		</a> <br/> 
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchRentHotel' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId:  339 ,
+								 		 	 advSelectedCategoryIdLevelOne: 6,
+										 	 advSelectedCategoryIdLevelTwo: 339})">
+								 		      {{'HOTELS_FOR_RENT' | translate}} <strong>({{countRentShortDaily}}) </strong> 
+								  		</a> <br/>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="directory-block col-xs-6 col-xs-6">
+							<div class="row">
+								<div class="col-xs-2">
+									<i class="fa fa-users"></i>
+								</div>
+								<div class="col-xs-10">
+									<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 8,
+								 		 	 advSelectedCategoryIdLevelOne: 8,
+										 	 advSelectedCategoryIdLevelTwo: 1589})">
+											<h4>{{'COMMUNITY' | translate}}</h4>
+									</a>
+									<p>
+										<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 1620,
+								 		 	 advSelectedCategoryIdLevelOne: 8,
+										 	 advSelectedCategoryIdLevelTwo: 1620})">
+								 		     {{'COMMUNITY_FREE_STUFF'  | translate}}<strong>({{countCommunityFreeStuff}}) </strong> 
+								  		</a> <br/>
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 1591 ,
+								 		 	 advSelectedCategoryIdLevelOne: 8,
+										 	 advSelectedCategoryIdLevelTwo: 1591})">
+								 		     {{'JOB_ART' | translate}} <strong>({{countCommunityArtist}}) </strong> 
+								  		</a> <br/>
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 1592 ,
+								 		 	 advSelectedCategoryIdLevelOne: 8,
+										 	 advSelectedCategoryIdLevelTwo: 1592})">
+								 		      {{'CAR_LIFT' | translate}}<strong>({{countCommunityCarLift}}) </strong> 
+								  		</a> <br/>
+								  		
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 1593 ,
+								 		 	 advSelectedCategoryIdLevelOne: 8,
+										 	 advSelectedCategoryIdLevelTwo: 1593})">
+								 		      {{'CHARITIES' | translate}} <strong>({{countCommunityCharities}}) </strong> 
+								  		</a> <br/>
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 1594 ,
+								 		 	 advSelectedCategoryIdLevelOne: 8,
+										 	 advSelectedCategoryIdLevelTwo: 1594})">
+								 		     {{'CHILDCARE' | translate}}  <strong>({{countCommunityChildCare}}) </strong> 
+								  		</a> <br/>
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 1595 ,
+								 		 	 advSelectedCategoryIdLevelOne: 8,
+										 	 advSelectedCategoryIdLevelTwo: 1595})">
+								 		     {{'CLASSES' | translate}}  <strong>({{countCommunityClasses}}) </strong> 
+								  		</a> <br/>
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 1597 ,
+								 		 	 advSelectedCategoryIdLevelOne: 8,
+										 	 advSelectedCategoryIdLevelTwo: 1597})">
+								 		      {{'ANNOUNCEMENT' | translate}}  <strong>({{countCommunityAnnouncement}}) </strong> 
+								  		</a> <br/>
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 1598,
+								 		 	 advSelectedCategoryIdLevelOne: 8,
+										 	 advSelectedCategoryIdLevelTwo: 1598})">
+								 		      {{'EDUCATION' | translate}}  <strong>({{countCommunityEducation}}) </strong> 
+								  		</a> <br/>
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 1599,
+								 		 	 advSelectedCategoryIdLevelOne: 8,
+										 	 advSelectedCategoryIdLevelTwo: 1599})">
+								 		      {{'FREELANCERS' | translate}}  <strong>({{countCommunityFreelancers}}) </strong> 
+								  		</a> <br/>
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 1600,
+								 		 	 advSelectedCategoryIdLevelOne: 8,
+										 	 advSelectedCategoryIdLevelTwo: 1600})">
+								 		      Misc  <strong>({{countCommunityMisc}}) </strong> 
+								  		</a> <br/>
+								  		
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 1601,
+								 		 	 advSelectedCategoryIdLevelOne: 8,
+										 	 advSelectedCategoryIdLevelTwo: 1601})">
+								 		      {{'ISLAM_LECTURE' | translate}} <strong>({{countCommunityIslam}}) </strong> 
+								  		</a> <br/>
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 1602,
+								 		 	 advSelectedCategoryIdLevelOne: 8,
+										 	 advSelectedCategoryIdLevelTwo: 1602})">
+								 		      {{'BUSINESS_ADVERTISING' | translate}} <strong>({{countCommunityBusinessAdvertisement}}) </strong> 
+								  		</a> <br/>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				 <div class="col-xs-12 col-sm-6 col-lg-6 text-center">
+                    <div class="directory-block-ad" style="margin-top: 0px; height: 290px;">
+                        <br class="visible-xs" />
+                        
+						<script async
+							src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+						<!-- Home page, right center div -->
+						<ins class="adsbygoogle"
+							style="display: inline-block; width: 300px; height: 250px"
+							data-ad-client="ca-pub-6780500882096971"
+							data-ad-slot="9461196640"></ins>
+						<script>
+							(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+						<br class="visible-xs" />
+                        <br class="visible-xs" />
+					</div>
+				</div>
+				
+			   <div class="directory-block col-sm-3 col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <i class="fa fa-briefcase fa-fw"></i>
+                        </div>
+                        <div class="col-xs-10">
+                           
+                              <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  7, 
+								  advSelectedCategoryIdLevelOne:  7})" >
+								  <h4>{{'JOB_VACANCIES' | translate}}</h4>
+							</a>                     
+                             <p>
+                               	<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  379,
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  379})" >
+									{{'JOB_AUTOMOTIVE' | translate}} <strong>({{countJobAutomotiveEngineering}}) </strong>
+								</a> <br/>
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  387, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  387})" >
+									{{'JOB_EDUCATION' | translate}} <strong>({{countJobEducation}}) </strong>
+								</a> <br/>
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  389, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  389})" >
+									{{'JOB_ENGINEERING' | translate}}<strong>({{countJobEngineering}}) </strong>
+								</a> <br/>
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  398, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  398})" >
+									{{'JOB_HR_RECRUITMENT' | translate}}<strong>({{countJobHRRecruitment}}) </strong>
+								</a> <br/> 
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId: 413, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  413})" >
+									{{'JOB_PUBLIC_RELATIONS' | translate}}<strong>({{countJobPublicRelations}}) </strong>
+								</a> <br/>
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								     advFinalSelectedCategoryId:  392, 
+								     advSelectedCategoryIdLevelOne:  7,
+								     advSelectedCategoryIdLevelTwo:  392})" >
+									{{'JOB_EXECUTIVE' | translate}} <strong>({{countJobExecutive}}) </strong>
+								</a> <br/>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="directory-block col-sm-3 col-xs-6">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <i class="fa fa-briefcase fa-fw"></i>
+                        </div>
+                        <div class="col-xs-10">
+                           
+                              <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  7, 
+								  advSelectedCategoryIdLevelOne:  7})" >
+								  <h4>{{'JOB_VACANCIES' | translate}}</h4>
+							</a>                     
+                            <p>
+                                <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  381, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  381})" >
+									{{'JOB_BEAUTY' | translate}} <strong>({{countJobBeauty}}) </strong>
+								</a> <br/>
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  382, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  382})" >
+									{{'JOB_BUSINESS_DEVELOPMENT' | translate}} <strong>({{countJobBusinessDevelopment}}) </strong>
+								</a> <br/>
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  383, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  383})" >
+									{{'JOB_BUSINESS_SUPP' | translate}} <strong>({{countJobBusinessSupplies}}) </strong>
+								</a> <br/>
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  386, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  386})" >
+									{{'JOB_CUSTOMER_SERVICE' | translate }} <strong>({{countJobCustomerService}}) </strong>
+								</a> <br/>
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								  advFinalSelectedCategoryId:  378, 
+								  advSelectedCategoryIdLevelOne:  7,
+								  advSelectedCategoryIdLevelTwo:  378})" >
+									{{'JOB_ART' | translate}} <strong>({{countJobArtEntertainment}}) </strong>
+								</a> <br/>
+								
+								
+								
+								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
+								     advFinalSelectedCategoryId:  396, 
+								     advSelectedCategoryIdLevelOne:  7,
+								     advSelectedCategoryIdLevelTwo:  396})" >
+									Graphic Design <strong>({{countJobGraphicDesign}}) </strong>
+								</a> <br/>
+                               
+                            </p>
+                        </div>
+                    </div>
+                </div>   
+			</div>	
+		</div>
+	</div>
+</div>

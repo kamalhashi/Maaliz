@@ -1,0 +1,51 @@
+package com.hashi.rest.domain;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "CLASSIFIED_CAMERAS")
+public class ClassifiedCameras extends Product {
+
+	@Column(name = "AGE_OF_ITEM")
+	private Integer ageItem;
+	@Column(name = "USAGE_OF_ITEM")
+	private Integer usageItem;
+	@Column(name = "CONDITION_OF_ITEM")
+	private Integer conditionItem;
+	@Column(name = "BRAND_OF_ITEM")
+	private String brandItem;
+	@Column(name = "WARRANTY_OF_ITEM")
+	private Integer warrantyItem;
+	public Integer getAgeItem() {
+		return ageItem;
+	}
+	public Integer getUsageItem() {
+		return usageItem;
+	}
+	public Integer getConditionItem() {
+		return conditionItem;
+	}
+	public String getBrandItem() {
+		return brandItem;
+	}
+	public Integer getWarrantyItem() {
+		return warrantyItem;
+	}
+	public void setAgeItem(Integer ageItem) {
+		this.ageItem = ageItem;
+	}
+	public void setUsageItem(Integer usageItem) {
+		this.usageItem = usageItem;
+	}
+	public void setConditionItem(Integer conditionItem) {
+		this.conditionItem = conditionItem;
+	}
+	public void setBrandItem(String brandItem) {
+		this.brandItem = brandItem;
+	}
+	public void setWarrantyItem(Integer warrantyItem) {
+		this.warrantyItem = warrantyItem;
+	}
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Xaashi.com - Reply ad</title>
+  </head>
+  <body style="margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; background-color: #F2F2F2;">
+    <table style="width: 100%; background-color: #F2F2F2; height: 100%;">
+      <tr><td style="width: 100%;">
+
+        <table style="background-color: #ffffff; border-radius: 10px; width: 935px;">
+          <tr>
+
+            <!-- HEADER MESSAGE -->
+            <td style="padding-left: 30px; padding-bottom: 20px; padding-top: 10px;"><h2> Dear <span th:text="${emailVO.getUser().getFirstname()}"></span> <span th:text="${emailVO.getUser().getSurname()}"></span> ,
+            </h2></td>
+
+          </tr>
+
+          <tr>
+
+            <td style="padding-left: 30px; border-left: 2px solid #E7E7E8;">
+
+              <!-- MESSAGE -->
+
+                 <p>Good news! <strong th:text="${emailVO.getReplierName()}"></strong> is interested in <strong th:text="${emailVO.getProductTitle()}"></strong> 
+                  and has sent you message the following message. </p>
+                  
+                  
+                  <p>
+                  	<strong th:text="${emailVO.getReplierMessage()}"></strong>
+                  </p>
+                  
+                  
+                  <p>
+                    You can contact <strong th:text="${emailVO.getReplierName()}"></strong> 
+                    	by email <strong th:text="${emailVO.getReplierEmail()}"></strong>
+                    	or by phone <strong th:text="${emailVO.getReplierTelephone()}"></strong>
+                  </p>
+                  
+
+                <p>Thanks for using the <strong th:text="#{company.name}"> </strong></p>
+            </td>
+          </tr> 
+        </table>
+
+      </td></tr>
+    </table>
+  </body>
+</html>

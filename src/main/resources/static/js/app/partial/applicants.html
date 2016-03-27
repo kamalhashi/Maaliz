@@ -1,0 +1,159 @@
+<div class="container">
+
+
+    <div class="row">
+
+        <div class="col-sm-8">
+            <ol class="breadcrumb">
+                <li><a ui-sref="/">Home</a></li>
+                <li class="active">Job applicant</li>
+            </ol>
+
+
+            <h1>Job applicant</h1>
+            <br />
+            
+            <div class="row">
+                <div class="col-sm-12 ">
+                
+                  <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation">
+                            		<a ui-sref="account_profile"  aria-controls="home" >My profile</a>
+                            </li>
+                            <li role="presentation">
+                            		<a ui-sref="account_ads" aria-controls="home" >My Ads</a>
+                            </li>
+                            <li role="presentation">
+                            	<a ui-sref="account_settings" >Account settings</a>
+                            </li>
+                            <li role="presentation" class="active">
+                            	<a ui-sref="applicants" >Job Board</a>
+                            </li>
+                        </ul>
+                        
+                        
+                    <div> 
+                    
+                       <uib-accordion close-others="oneAtATime">
+    						<uib-accordion-group  ng-repeat="product in products" is-open="status.open">
+    						   <uib-accordion-heading>
+       						            <span ng-click="getApplicantsDetail(product.productId, status.open)">
+       							  			{{product.productTitle}}  
+       							  		     <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+    						  			</span>
+    						   </uib-accordion-heading>
+      							<table class="table edit-listings table-striped table-bordered table-hover" cg-busy="{promise:myPromise,backdrop:true, message:'Searching...please wait'}" >
+                                        <thead>
+                                            <tr>
+                                                <th style="background-color:lime;">
+                                                   <a href="" ng-click="setSorting('created' , sortDirection)">
+          											   Date
+            										   <span ng-show="sortType == 'created' && sortDirection=='desc'" class="fa fa-caret-down"></span>
+            										   <span ng-show="sortType == 'created' && sortDirection=='asc'" class="fa fa-caret-up"></span>
+            										   
+          											</a>                           
+                                                </th>
+                                            	<th style="background-color:lime;">
+                                                   <a href="" ng-click="setSorting('profile.user.firstname' , sortDirection)">
+          											   Name
+            										   <span ng-show="sortType == 'profile.user.firstname' && sortDirection=='desc'" class="fa fa-caret-down"></span>
+            										   <span ng-show="sortType == 'profile.user.firstname' && sortDirection=='asc'" class="fa fa-caret-up"></span>
+            										   
+          											</a>                                                                       	
+                                            	</th>
+                                            	
+                                                <th>Current Position</th>
+                                                <th>Current Company</th>
+                                                <th style="background-color:lime;">
+                                                   <a href="" ng-click="setSorting('profile.nationality' , sortDirection)">
+          											   Nationality
+            										   <span ng-show="sortType == 'profile.nationality' && sortDirection=='desc'" class="fa fa-caret-down"></span>
+            										   <span ng-show="sortType == 'profile.nationality' && sortDirection=='asc'" class="fa fa-caret-up"></span>
+            										   
+          											</a>  
+                                                </th>
+                                                <th style="background-color:lime;">
+                                                   <a href="" ng-click="setSorting('profile.age' , sortDirection)">
+          											   Age
+            										   <span ng-show="sortType == 'profile.age' && sortDirection=='desc'" class="fa fa-caret-down"></span>
+            										   <span ng-show="sortType == 'profile.age' && sortDirection=='asc'" class="fa fa-caret-up"></span>
+          											</a>  
+                                                </th>
+                                                <th>CV</th>
+                                                <th>Telephone</th>
+                                                <th>Email</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="applicant in applicants.content | orderBy:sortType:sortReverse">
+                                           	    <td>{{applicant.created| date:'dd/MM/yyyy'}}</td>
+                                                <td>{{applicant.profile.user.firstname}}</td>
+                                                <td>{{applicant.profile.currentPosition}}</td>
+                                                <td>{{applicant.profile.currentCompany}}</td>
+                                                <td>{{applicant.profile.nationality}}</td>
+                                                <td>{{applicant.profile.age}}</td>
+                                                 <td>
+                                                    <a  ng-href="{{bucketName.profileCV + applicant.profile.user.userId + '/' + applicant.profile.cvName}}"> 
+                                                      {{applicant.profile.cvName}}
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    {{applicant.profile.user.telephone}}
+                                                </td>
+                                                <td>
+                                                
+                                                   <a href="mailto:{{applicant.profile.user.email}}?Subject=Reply" target="_top">
+                                                   
+                                                      <i class="fa fa-envelope-o"></i>
+                                                   </a>
+                                                   
+                                                </td>
+                                            </tr>
+                                           
+                                        </tbody>
+                                    </table>
+                                   
+                                    <div ng-show="applicants.totalPages > 1">
+										<div class="text-center">
+										  <uib-pagination  total-items="applicants.totalElements" ng-model="currentPage"   
+												 max-size="5" class="pagination" boundary-links="true" 
+    										  	rotate="false" ng-change="getNextPage()">
+										  </uib-pagination>
+										</div>
+									</div>
+    						</uib-accordion-group>
+    						 <uib-accordion-group heading="Job Board" is-open="true" ng-if="products.length === 0">
+     									The job board is only for the employees who's posting jobs. </br>
+     									If you are an employer and posting a job, please check this page regularly to see the applicants who appliad. 
+   							 </uib-accordion-group>
+         
+   						</uib-accordion>
+	                </div>
+              </div>
+
+
+
+
+            </div>
+
+        </div>
+
+        
+        
+        <div class="col-sm-4">
+            <div class="row" style="margin-top: 170px;">
+                <div class="col-sm-11 col-sm-offset-1">
+                    <div class="well">
+                        <strong class="text-muted"><i class="fa fa-info-circle fa-fw text-muted"></i> Information</strong><br /><br />
+                        <p>This website is visited by millions of people everyday, make sure you add the relevent descriptions and keywords to increase visibility of your ad. You'll get alerts by email everytime somone replies to your ad</p>
+                        <p>Also, don't forget - you can always edit your ad and the images after posting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <br />
+
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customer Enquiry</title>
+  </head>
+  <body style="margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; background-color: #F2F2F2;">
+    <table style="width: 100%; background-color: #F2F2F2; height: 100%;">
+      <tr><td style="width: 100%;">
+
+        <table style="background-color: #ffffff; border-radius: 10px; width: 935px;">
+          <tr>
+
+            <!-- HEADER MESSAGE -->
+            <td style="padding-left: 30px; padding-bottom: 20px; padding-top: 10px;">
+            		<h2> Dear Admin </h2>
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td style="padding-left: 30px; border-left: 2px solid #E7E7E8;">
+
+              <!-- MESSAGE -->
+
+              <p>This customer has enquiry: </p>
+              <p> Customer Name: <strong th:text="${emailVO.getUser().getName()}"></strong></p>
+              <p>Customer Telephone: <strong th:text="${emailVO.getUser().getTelephone()}"></strong></p>
+              <p>Customer Telephone: <strong th:text="${emailVO.getUser().getTelephone()}"></strong></p>
+              <p>Enquiry Nature: <strong th:text="${emailVO.getUser().getNatureEnquiry()}"></strong></p>
+        
+              
+            </td>
+          </tr> 
+        </table>
+
+      </td></tr>
+    </table>
+  </body>
+</html>

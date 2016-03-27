@@ -1,0 +1,115 @@
+<groups xmlns="http://www.isdc.ro/wro">
+	<group name="group-one">
+		<css>file:@project.basedir@/src/main/resources/static/css/theme.css</css>
+		<css>file:@project.basedir@/src/main/resources/static/css/dropzone.css</css>
+		<css>webjar:font-awesome/4.4.0/less/font-awesome.less</css>
+		<css>file:@project.basedir@/src/main/resources/static/js/ng-slick/slick-carousel/slick/slick.css</css>
+		<css>file:@project.basedir@/src/main/resources/static/js/ng-slick/slick-carousel/slick/slick-theme.css</css>
+		<css>file:@project.basedir@/src/main/resources/static/js/ng-loading-bar/loading-bar.css</css>	
+		<css>file:@project.basedir@/src/main/resources/static/js/ng-busy/angular-busy.min.css</css>
+	    <css>file:@project.basedir@/src/main/resources/static/js/ng-xeditable/css/xeditable.css</css>
+		<js>webjar:jquery/2.1.1/jquery.min.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/bootstrap.min.js</js>
+		<js>webjar:angularjs/1.4.4/angular.min.js</js>
+		<js>webjar:angularjs/1.4.4/angular-animate.min.js</js>
+		<js>webjar:angularjs/1.4.4/angular-route.min.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-ui-router/angular-ui-router.min.js</js>		
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-csrf/angular-csrf-cross-domain.min.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-loading-bar/loading-bar.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-facebook/ngFacebook.js</js>  		  				  		
+	</group>
+
+	<group name="group-two"> 
+	    <js>file:@project.basedir@/src/main/resources/static/js/ng-slick/slick-carousel/slick/slick.js</js> 
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-slick/angular-slick/dist/slick.js</js> 
+    	<js>file:@project.basedir@/src/main/resources/static/js/ng-translate/angular-translate.min.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-translate/angular-translate-storage-cookie.min.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-translate/angular-translate-storage-local.min.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-translate/angular-translate-loader-static-files.min.js</js>	
+		<js>webjar:angularjs/1.4.4/angular-cookies.min.js</js>
+		<js>webjar:angularjs/1.4.4/angular-messages.min.js</js>
+		<js>webjar:angularjs/1.4.4/angular-resource.min.js</js>	
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-busy/angular-busy.min.js</js>
+      	<js>file:@project.basedir@/src/main/resources/static/js/ng-bootstrap/ui-bootstrap.min.js</js> 
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-bootstrap/ui-bootstrap-tpls.min.js</js>  
+	</group>
+	
+	<group name="group-three">
+		<js>file:@project.basedir@/src/main/resources/static/js/app.js</js> 
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/language_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/navigation.js</js> 
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/home_controller.js</js> 
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/token_controller.js</js> 
+		<!-- common files -->
+		<js>file:@project.basedir@/src/main/resources/static/js/app/common/auth.js</js> 
+		<js>file:@project.basedir@/src/main/resources/static/js/app/common/constant.js</js> 	
+		<js>file:@project.basedir@/src/main/resources/static/js/app/common/fileUploader.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/common/google.js</js>
+		<!-- directives -->
+		<js>file:@project.basedir@/src/main/resources/static/js/app/directive/common_directive.js</js>
+		
+		<!-- service files -->
+		<js>file:@project.basedir@/src/main/resources/static/js/app/service/category_service.js</js> 
+  		<js>file:@project.basedir@/src/main/resources/static/js/app/service/product_service.js</js> 
+   		<js>file:@project.basedir@/src/main/resources/static/js/app/service/city_service.js</js> 
+   		<js>file:@project.basedir@/src/main/resources/static/js/app/service/token_service.js</js> 
+		<js>file:@project.basedir@/src/main/resources/static/js/app/service/user_service.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/service/profile_service.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/service/email_service.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/service/password_service.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/service/applicant_service.js</js>
+   		<js>file:@project.basedir@/src/main/resources/static/js/app/service/dispatcher_details_service.js</js>	
+   		<js>file:@project.basedir@/src/main/resources/static/js/app/service/dispatcher_post_ad_next_service.js</js>	
+         <!-- controller files -->
+   		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/details_controller.js</js>
+   		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/applicant_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_car_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_car_parts_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_boats_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_heavy_vehicle_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_motorcycle_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_sale_res_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_sale_comm_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_sale_land_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_sale_units_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_rent_res_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_rent_comm_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_rent_room_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_rent_short_term_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_rent_hotels_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_classified_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_classified_camera_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_classified_computer_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_classified_dvd_movies_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_classified_lost_found_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_classified_pets_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_community_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_job_controller.js</js>	 
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/listing_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/register_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/success_ad_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/account_settings_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/account_ads_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/profile_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/forgot_password_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/reset_password_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/admin_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/service/admin_dispatcher_details_service.js</js>
+		
+     </group>
+	
+	<group name="group-four">
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-flow/load-image.all.min.js</js>
+	    <js>file:@project.basedir@/src/main/resources/static/js/ng-flow/canvas-to-blob.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-map/ng-map.min.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-currency/ng-currency.min.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-flow/ng-flow-standalone.min.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-xeditable/js/xeditable.js</js> 
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-fancybox/jquery.fancybox-plus.js</js> 
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-fancybox/angular-fancybox-plus.js</js> 
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-autocomplete/angular-touch.min.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/ng-autocomplete/angucomplete-alt.min.js</js> 
+	</group>
+
+</groups>

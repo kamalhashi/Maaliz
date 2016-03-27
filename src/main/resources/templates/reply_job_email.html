@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Xaashi.com - Reply Job</title>
+  </head>
+  <body style="margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; background-color: #F2F2F2;">
+    <table style="width: 100%; background-color: #F2F2F2; height: 100%;">
+      <tr><td style="width: 100%;">
+
+        <table style="background-color: #ffffff; border-radius: 10px; width: 935px;">
+          <tr>
+
+            <!-- HEADER MESSAGE -->
+            <td style="padding-left: 30px; padding-bottom: 20px; padding-top: 10px;"><h2> Dear <span th:text="${emailVO.getUser().getFirstname()}"></span> <span th:text="${emailVO.getUser().getSurname()}"></span> ,
+            </h2></td>
+
+          </tr>
+
+          <tr>
+
+            <td style="padding-left: 30px; border-left: 2px solid #E7E7E8;">
+
+              <!-- MESSAGE -->
+
+                 <p>Good news! <strong th:text="${emailVO.getProfile().getUser().getFirstname()}"></strong> <strong th:text="${emailVO.getProfile().getUser().getSurname()}"></strong> has applied  <strong th:text="${emailVO.getProductTitle()}"></strong> 
+                  and has sent you message the following cover letter. </p>
+                  
+                  
+                  <p>
+                  	<strong th:text="${emailVO.getProfile().getCoverLetter()}"></strong>
+                  </p>
+                  
+                  
+                  <p>
+                  
+                    Go to our                
+                     <a th:href="@{${emailVO.getHostNameUrl()} + 'applicants'}">Job Board</a>
+                      To see the applicants who applied your job
+                  </p>
+                  
+
+                <p>Thanks for using the <strong th:text="#{company.name}"> </strong></p>
+            </td>
+          </tr> 
+        </table>
+
+      </td></tr>
+    </table>
+  </body>
+</html>

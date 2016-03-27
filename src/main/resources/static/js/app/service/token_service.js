@@ -1,0 +1,12 @@
+var hashiApp = angular.module('hashiApp') // gets it
+
+hashiApp.factory('tokenFactory', function($http) {
+
+	var urlBase = 'http://xaashi-rest.cfapps.io/verify';
+	var dataFactory = {};
+    
+	dataFactory.registerToken = function (token) {
+        return $http.put(urlBase + '/registerToken/' + token);
+    };
+	return dataFactory;
+});

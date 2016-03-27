@@ -1,0 +1,412 @@
+<div class="container" id="listings-page">
+	<div class="row">
+
+		<div class="col-xs-3 hidden-xs">
+
+			<br /> <br />
+
+			<div class="well sidebar-form">
+				<h3 style="margin-top: 0">
+					<strong>Find the product</strong>
+				</h3>
+
+
+				<div class="form-group">
+					<select class="form-control" ng-model="advSelectedCityId"
+						ng-options="city.cityId as city.cityName for city in listCities">
+					</select>
+				</div>
+
+
+				<div class="form-group">
+					<select class="form-control" ng-model="advCategoryLevelOneObject"
+						ng-options="category as category.categoryName for category in categories"
+						ng-change="getSubCategoriesLevelTwo(advCategoryLevelOneObject)">
+					</select>
+				</div>
+
+				<div class="form-group" ng-show="showSubCategoryLevelTwo">
+					<select class="form-control" ng-model="advCategoryLevelTwoObject"
+						ng-options="category as category.categoryName for category in listSubCategoriesLevelTwo"
+						ng-change="getSubCategoriesLevelThree(advCategoryLevelTwoObject)">
+					</select>
+				</div>
+
+				<div class="form-group" ng-show="showSubCategoryLevelThree">
+					<select class="form-control" ng-model="advCategoryLevelThreeObject"
+						ng-options="category as category.categoryName for category in listSubCategoriesLevelThree"
+						ng-change="getSubCategoriesLevelFour(advCategoryLevelThreeObject)">
+					</select>
+				</div>
+
+				<div class="form-group" ng-show="showSubCategoryLevelFour">
+					<select class="form-control" ng-model="advCategoryLevelFourObject"
+						ng-options="category as category.categoryName for category in listSubCategoriesLevelFour"
+						ng-change="getSubCategoriesLevelFive(advCategoryLevelFourObject)">
+					</select>
+				</div>
+
+				<div class="form-group" ng-show="showAdvanceSearchCarDiv || showAdvanceSearchHeavyVehicleDiv">
+					<span>Price ($) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input name="inputPriceFrom" class="form-control"
+								ng-model="priceFrom" placeholder="Price from">
+						</div>
+						<div class="col-xs-6">
+							<input name="inputPriceTo" class="form-control"
+								ng-model="priceTo" placeholder="Price to">
+						</div>
+					</div>
+
+					<span> Year (Min/Max) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<select class="form-control" name="selectYearMin"
+								ng-model="yearMin" ng-options="year for year in years">
+							</select>
+						</div>
+						<div class="col-xs-6">
+							<select class="form-control" name="selectYearMax"
+								ng-model="yearMax" ng-options="year for year in years">
+							</select>
+						</div>
+					</div>
+
+					<span>Kilometers ( Km )</span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input type="text" class="form-control"
+								name="inputKilometersFrom" placeholder="KM from"
+								ng-model="KMFrom">
+						</div>
+						<div class="col-xs-6">
+							<input type="text" class="form-control" id="inputKilometersTo"
+								placeholder="KM to" ng-model="KMTo">
+						</div>
+					</div>
+
+					<span>Seller Type</span>
+					<div class="row">
+						<div class="col-xs-6">
+							<select ng-model="selectedSellerType" class="form-control"
+								name="selectedSellerType"
+								ng-options="sellerType.id as sellerType.name for  sellerType in listSellerTypes">
+
+							</select>
+						</div>
+
+					</div>
+				</div>
+				
+				<!-- sale residential search  -->
+				<div class="form-group" ng-show="showAdvanceSearchSaleResDiv || showAdvanceSearchRentResDiv 
+				  || showAdvanceSearchRentShortDailyDiv || showAdvanceSearchRentShortMonthlyDiv">
+					<span>Price ($) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input name="inputPriceFrom" class="form-control"
+								ng-model="priceFrom" placeholder="Price from">
+						</div>
+						<div class="col-xs-6">
+							<input name="inputPriceTo" class="form-control"
+								ng-model="priceTo" placeholder="Price to">
+						</div>
+					</div>
+					
+					<span>Bedrooms (Min/Max)</span>
+					<div class="row">
+						<div class="col-xs-6">
+							<select ng-model="bedroomMin" class="form-control"
+								name="selectedBedroomMin"
+								ng-options="bedrooms.id as bedrooms.name for  bedrooms in constantNoBedrooms">
+							</select>
+						</div>
+						<div class="col-xs-6">
+							<select ng-model="bedroomMax" class="form-control"
+								name="selectedBedroomMax"
+								ng-options="bedrooms.id as bedrooms.name for  bedrooms in constantNoBedrooms">
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				<!-- sale commercial house search  -->
+				<div class="form-group" ng-show="showAdvanceSearchSaleCommDiv || showAdvanceSearchSaleUnitsDiv 
+					|| showAdvanceSearchSaleLandDiv || showAdvanceSearchRentCommDiv || showAdvanceSearchRentRoomDiv
+					|| showAdvanceSearchClassifiedDiv">
+					<span>Price ($) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input name="inputPriceFrom" class="form-control"
+								ng-model="priceFrom" placeholder="Price from">
+						</div>
+						<div class="col-xs-6">
+							<input name="inputPriceTo" class="form-control"
+								ng-model="priceTo" placeholder="Price to">
+						</div>
+					</div>
+				</div>
+				
+				<!-- car parts, motorcycle -->
+				<div class="form-group" ng-show="showAdvanceSearchCarPartsDiv || showAdvanceSearchBoatsDiv || showAdvanceSearchMotorcycleDiv">
+					<span>Price ($) </span>
+					<div class="row">
+						<div class="col-xs-6">
+							<input name="inputPriceFrom" class="form-control"
+								ng-model="priceFrom" placeholder="Price from">
+						</div>
+						<div class="col-xs-6">
+							<input name="inputPriceTo" class="form-control"
+								ng-model="priceTo" placeholder="Price to">
+						</div>
+					</div>
+					
+					<span>Seller Type</span>
+					<div class="row">
+						<div class="col-xs-6">
+							<select ng-model="selectedSellerType" class="form-control"
+								name="selectedSellerType"
+								ng-options="sellerType.id as sellerType.name for  sellerType in listSellerTypes">
+							</select>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="form-group">
+					<input type="text" class="form-control" id="inputAdvSearchText"
+						placeholder="search..." onfocus="this.placeholder=''"
+						onblur="this.placeholder='search...'" ng-model="advTextSearch">
+				</div>
+
+				<button type="submit" class="btn btn-primary btn-block"
+					ng-click="advanceSearch()">Submit</button>
+			</div>
+
+
+			<div class="row visible-md visible-lg">
+				<div class="col-xs-12 text-center" style="overflow: hidden">
+					<script async
+						src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- Home left div Large Skyscraper -->
+					<ins class="adsbygoogle"
+						style="display: inline-block; width: 300px; height: 600px"
+						data-ad-client="ca-pub-6780500882096971" data-ad-slot="3973066244"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<br /> <br />
+			<div class="row">
+
+				<div class="col-sm-12">
+
+					<ol class="breadcrumb">
+						<li ng-repeat="category in listRootCategories">
+							<a ng-hide="$last"> {{category.categoryName}} </a> 
+							<span ng-show="$last" ng-class="{'active':true}">
+							   {{category.categoryName}} 
+							</span>
+						</li>
+					</ol>
+
+				</div>
+
+			</div>
+
+            
+			<div class="row">
+			<!-- show error user -->
+					<div id="div1" class="{{styleMessage}}" ng-show="showReplyMessage">
+						<strong> {{replyMessage}} </strong>
+					</div>
+
+				<div class="col-sm-12">
+					<h1>{{product.productTitle}}</h1>
+
+					
+					
+					<div class="row">
+					   <div class="col-xs-6"><h2>Details:</h2></div>
+						  <div class="col-xs-6">
+							 <img class="logo-photo" 
+							       ng-src="{{bucketName.productLogo + product.productId + '/' + product.logoPhoto}}"
+							       ng-if="product.logoPhoto.length > 0">
+						  </div>	
+					</div>
+
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="row">
+								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-xs-6">Closing Date:</div>
+								<div class="col-xs-6">{{product.closingDate | date:'dd MMMM yyyy'}}</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-xs-6">Location:</div>
+								<div class="col-xs-6">{{product.jobLocation}}</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">Employment Type:</div>
+								<div class="col-xs-6">{{constantEmploymentType[product.employmentType-1].name}}</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-xs-6">Monthly Salary:</div>
+								<div class="col-xs-6">{{constantMonthSalary[product.monthSalary-1].name}}</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-xs-6">Minimum Work Experience:</div>
+								<div class="col-xs-6">{{constantWorkExperience[product.workExperience-1].name}}</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-xs-6">Minimum Education Level:</div>
+								<div class="col-xs-6">{{constantEducationLevel[product.educationLevel-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">Company Name:</div>
+								<div class="col-xs-6">{{product.companyName}}</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-xs-6">Benefits:</div>
+								<div class="col-xs-6">{{product.benefits}}</div>
+							</div>
+							
+							
+							<div class="row">
+								<div class="col-xs-6">Listed By:</div>
+								<div class="col-xs-6">{{constantListedBy[product.listedBy-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">Company Size:</div>
+								<div class="col-xs-6">{{constantCompanySize[product.companySize-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">Career Level:</div>
+								<div class="col-xs-6">{{constantCareerLevel[product.careerLevel-1].name}}</div>
+							</div>
+						</div>
+					</div>
+					<h2>Description:</h2>
+					<div style="word-wrap: break-word;">
+						<p>
+					    	 <span ng-bind-html='toTrustedHTML( product.productDescription )'></span>
+						</p>
+                    </div>
+					<p>
+						<br>
+						<strong>We don't use agencies to hire, so please don't
+							contact us if you are an agency.... </strong>
+					</p>
+
+					<p>Ad ref: {{product.productId}}</p>
+					<!-- CV Required==2 don't show it -->
+					<div ng-hide="product.cvRequired==2">
+					  <a name="apply"></a>
+					  <h2>Apply for this Job:</h2>
+					  <p class="h4 text-muted">Your cover note:</p>
+					  <textarea class="form-control" rows="7" ng-model="replyJob.coverLetter" required="required"></textarea>
+					  <p class="h4 text-muted">Your CV</p>
+		
+					 <div class="row" cg-busy="{promise:myPromise, message:'Please wait...'}">
+					
+						<div class="col-md-3">
+							<i class="fa fa-file-text-o fa-3x text-muted"></i>
+						</div>
+							<div class="col-md-8" flow-object="existingImageObjectZero"
+								flow-init
+								flow-file-success="fileCVUploadedSuccessfully($file, 0 )"
+								flow-files-submitted="$flow.upload()">
+								<div class="form-control">
+									<button name="inputCV"
+										aria-describedby="inputGroupSuccess4Status" flow-btn>
+										Upload CV</button>
+									<span> {{existingImageObjectZero.files[0].file.name}} </span>
+								</div>
+							</div>
+						
+						<div class="col-xs-12">
+							<br />
+							<p class="muted">
+								By clicking on "Send reply", I agree to Hashi terms and
+								Conditions and Privacy policy. <br />
+						</div>
+						<div class="col-xs-12">
+							<a  class="btn btn-primary btn-block" ng-click="sendReplyJobByEmail()">Apply</a>
+						</div>
+					</div>
+                   </div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-sm-3 center details-sidebar">
+			<div class="row" style="margin-top: 156px;">
+				<div class="col-xs-12 col-xs-offset-1d">
+
+					<div class="row">
+						<div class="col-xs-12">
+							<a ng-click="scrollTo('apply')"  class="btn btn-primary btn-block">Apply</a>
+						</div>
+					</div>
+
+					<br />
+
+					<div class="row">
+						<div class="col-xs-12">
+							<script async
+								src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+							<!-- Home page, right center div -->
+							<ins class="adsbygoogle"
+								style="display: inline-block; width: 300px; height: 250px"
+								data-ad-client="ca-pub-6780500882096971"
+								data-ad-slot="9461196640"></ins>
+							<script>
+								(adsbygoogle = window.adsbygoogle || [])
+										.push({});
+							</script>
+						</div>
+					</div>
+					<br />
+
+
+					<div class="row">
+						<div class="col-xs-12">
+							<map
+								center="{{product.location.latitude}}, {{product.location.longtitude}}"
+								zoom="8" disable-double-click-zoom="true">
+								<marker
+									position="{{product.location.latitude}}, {{product.location.longtitude}}"></marker>
+							</map>
+							<ol class="breadcrumb">
+								<li>{{product.location.country}}</a></li>
+								<li>{{product.location.region}}</a></li>	
+								<li>{{product.location.city}}</a></li>
+							</ol>
+						</div>
+					</div>
+					
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
