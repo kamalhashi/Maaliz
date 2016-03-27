@@ -431,9 +431,9 @@ hashiApp
 
 });
 
-hashiApp.run(function(auth, $rootScope, $state, editableOptions, $http, $location, $window, $cookieStore) {
+hashiApp.run(function(auth, $rootScope, $state, editableOptions, $http, $location, $window, $cookies) {
 	$window.ga('create', 'UA-71087645-1', 'auto');
-	$cookieStore.put('xaashiDomain','http://www.somalia.xaashi.com');
+	$cookies.put('xaashiDomain', "http://www.somalia.xaashi.com");
 	$rootScope.$on('$stateChangeSuccess', function() {
 		   document.body.scrollTop = document.documentElement.scrollTop = 0;
 		   $window.ga('send', 'pageview', $location.path());
