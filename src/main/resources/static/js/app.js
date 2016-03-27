@@ -433,7 +433,7 @@ hashiApp
 
 hashiApp.run(function(auth, $rootScope, $state, editableOptions, $http, $location, $window, $cookies) {
 	$window.ga('create', 'UA-71087645-1', 'auto');
-	$cookies.put('xaashiDomain', "http://www.somalia.xaashi.com");
+	$cookies.put('xaashiDomain', "http://www.somalia.xaashi.com", {domain: 'xaashi.com'});
 	$rootScope.$on('$stateChangeSuccess', function() {
 		   document.body.scrollTop = document.documentElement.scrollTop = 0;
 		   $window.ga('send', 'pageview', $location.path());
