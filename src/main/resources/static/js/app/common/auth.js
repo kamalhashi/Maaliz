@@ -4,7 +4,7 @@ hashiApp
 .factory(
 		'auth',
 		function($rootScope, $http, $state, $facebook, $q) {
-			var urlBase = 'http://xaashi-rest.cfapps.io/user';
+			var urlBase = 'http://xaashi-somalia-rest.cfapps.io/user';
 
 			var auth = {
 
@@ -113,7 +113,7 @@ hashiApp
 						auth.authenticated = false;
 						auth.initializePath=false;
 						auth.path=auth.loginPath;
-						$http.jsonp('http://xaashi-rest.cfapps.io/' + auth.logoutPath);
+						$http.jsonp('http://xaashi-somalia-rest.cfapps.io/' + auth.logoutPath);
 						$state.go(auth.homePath);
 					},
 
