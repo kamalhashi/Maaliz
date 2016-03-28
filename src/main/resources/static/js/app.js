@@ -437,7 +437,7 @@ hashiApp.run(function(auth, $rootScope, $state, editableOptions, $http, $locatio
 	if (! xaashiCookie) {
 		console.log('setting the cookie');
 		var expireDate = new Date();
-		expireDate.setDate(expireDate.getDate() + 1);
+		expireDate.setDate(expireDate.getDate() + 30);
 		$cookies.put('xaashiDomain', "http://www.somalia.xaashi.com", {domain: 'xaashi.com', 'expires': expireDate});
 	}
 	$rootScope.$on('$stateChangeSuccess', function() {
