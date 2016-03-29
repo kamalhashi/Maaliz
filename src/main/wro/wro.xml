@@ -103,7 +103,9 @@
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-flow/load-image.all.min.js</js>
 	    <js>file:@project.basedir@/src/main/resources/static/js/ng-flow/canvas-to-blob.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-map/ng-map.min.js</js>
+		<!--  
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-currency/format-as-currency.js</js>
+		-->
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-flow/ng-flow-standalone.min.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-xeditable/js/xeditable.js</js> 
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-fancybox/jquery.fancybox-plus.js</js> 
