@@ -84,10 +84,12 @@
 								postAdForm.inputPrice.$invalid ||
 						        postAdForm.$submitted && postAdForm.inputPrice.$invalid ,
 						        'has-success': !postAdForm.inputPrice.$invalid && postAdForm.inputPrice.$touched}">
-								<label for="inputPrice" class="control-label">Price($)</label> <input
+								<label for="inputPrice" class="control-label">Price($)</label> 
+								<input
 									type="text" class="form-control" name="inputPrice"
-									placeholder="" ng-model="ad.productPrice" ng-currency
-									fraction="0" required> <span
+									placeholder="" ng-model="ad.productPrice" format-as-currency
+									required>
+								<span
 									class="glyphicon glyphicon-ok form-control-feedback"
 									ng-show="postAdForm.inputPrice.$touched && !postAdForm.inputPrice.$invalid"></span>
 								<span class="glyphicon glyphicon-remove form-control-feedback"
