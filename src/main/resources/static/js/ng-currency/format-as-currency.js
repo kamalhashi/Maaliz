@@ -1,8 +1,8 @@
 // for usage via require()
-module.exports = 'bcherny/formatAsCurrency'
+module.exports = 'bcherny.formatAsCurrency'
 
 angular
-.module('bcherny/formatAsCurrency', [])
+.module('bcherny.formatAsCurrency', [])
 .service('formatAsCurrencyUtilities', function () {
 
   // (haystack: String, needles: Array<String>) => Number
