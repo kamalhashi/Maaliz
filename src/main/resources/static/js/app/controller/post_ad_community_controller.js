@@ -276,6 +276,7 @@ hashiApp.controller('PostAdCommunityController', function($scope, $state, auth,c
 		productFactory.findProductWithoutUserByProductId($stateParams.productId).success(
 				function(data) {
 					$scope.ad= data;
+					$scope.ad.productPrice=0;
 					locationIdObject={locationId: $scope.ad.location.locationId};
 					for(var i=0; i < $scope.ad.images.length; i++){
 						getImageFromAmazon(i, $scope.ad.images[i].imageIndex, $scope.ad);
