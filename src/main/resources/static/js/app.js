@@ -274,14 +274,6 @@ hashiApp
                 productId: null 
         }
 	})	
-	.state('post_ad_classified_lost_found', {
-		url: "/post_ad_classified_lost_found/:categoryId",
-		templateUrl: "js/app/partial/post_ad_classified_lost_found.html",
-		controller : "PostAdClassifiedLostFoundController",
-		params:{
-                productId: null 
-        }
-	})	
 	.state('post_ad_classified_pets', {
 		url: "/post_ad_classified_pets/:categoryId",
 		templateUrl: "js/app/partial/post_ad_classified_pets.html",

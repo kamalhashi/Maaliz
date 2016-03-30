@@ -94,11 +94,6 @@ hashiApp.factory('dispatcherPostAdNextFactory', function($location , $state,
 					$state.go("post_ad_classified_dvd_movies",  {categoryId: categoryId, productId:productId});
 					return;
 				}
-				else if(categoryLft >= categoryRange.CLASSIFIED_LOST_FOUND_MIN   && categoryRgt <= categoryRange.CLASSIFIED_LOST_FOUND_MAX){
-					$state.go("post_ad_classified_lost_found",  {categoryId: categoryId, productId:productId});
-					return;
-				}
-				
 				else if(categoryLft >= categoryRange.CLASSIFIED_PETS_MIN   && categoryRgt <= categoryRange.CLASSIFIED_PETS_MAX){
 					$state.go("post_ad_classified_pets",  {categoryId: categoryId, productId:productId});
 					return;
@@ -110,8 +105,9 @@ hashiApp.factory('dispatcherPostAdNextFactory', function($location , $state,
 				}
 			}else if(categoryLft >= categoryRange.COMMUNITY_MIN  && categoryRgt <= categoryRange.COMMUNITY_MAX)
 			{
-				$state.go("post_ad_community",  {categoryId: categoryId, productId:productId});
-			    return;
+					$state.go("post_ad_community",  {categoryId: categoryId, productId:productId});
+					return;
+			
 			}else if(categoryLft >= categoryRange.JOB_MIN  && categoryRgt <= categoryRange.JOB_MAX)
 			{
 				$state.go("post_ad_job",  {categoryId: categoryId, productId:productId});

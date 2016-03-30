@@ -168,8 +168,10 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 		countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_FURNITURE_CATEGORY_ID,0);
 		countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_GAMING_CATEGORY_ID,0);
 		countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_HOME_APPLIANCES_CATEGORY_ID,0);
-		countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_JEWELRY_WATCHES_CATEGORY_ID,0);
-		countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_LOST_FOUND_CATEGORY_ID,0);
+		countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_WOMEN_JEWELRY_CATEGORY_ID,0);
+		countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_WATCHES_CATEGORY_ID,0);
+
+		countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_LOST_FOUND_CATEGORY_ID,0);
 		countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_MISC_CATEGORY_ID,0);
 		countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_MOBILE_CATEGORY_ID,0);
 		countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_TICKETS_VOUCHERS_CATEGORY_ID,0);
@@ -186,7 +188,6 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 		countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_ANNOUNCEMENT_CATEGORY_ID,0);
 		countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_EDUCATION_CATEGORY_ID,0);
 		countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_FREELANCERS_CATEGORY_ID,0);
-		countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_MISC_CATEGORY_ID,0);
 		countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_ISLAM_CATEGORY_ID,0);
 		countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_BUSINESS_ADVERTISMENT_CATEGORY_ID,0);
 		countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_PHOTOGRAPHY_CATEGORY_ID,0);
@@ -335,12 +336,16 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 						$rootScope.countClassifiedHomeAppliances=data;
 						return;
 					}
-					else if(categoryId == categoryIdConstant.CLASSIFIED_JEWELRY_WATCHES_CATEGORY_ID){
-						$rootScope.countClassifiedJewelryWatches=data;
+					else if(categoryId == categoryIdConstant.CLASSIFIED_WATCHES_CATEGORY_ID){
+						$rootScope.countClassifiedWatches=data;
 						return;
 					}
-					else if(categoryId == categoryIdConstant.CLASSIFIED_LOST_FOUND_CATEGORY_ID){
-						$rootScope.countClassifiedLostFound=data;
+					else if(categoryId == categoryIdConstant.CLASSIFIED_WOMEN_JEWELRY_CATEGORY_ID){
+						$rootScope.countClassifiedWomenJewelry=data;
+						return;
+					}
+					else if(categoryId == categoryIdConstant.COMMUNITY_LOST_FOUND_CATEGORY_ID){
+						$rootScope.countCommunityLostFound=data;
 						return;
 					}
 					else if(categoryId == categoryIdConstant.CLASSIFIED_MISC_CATEGORY_ID){
@@ -399,10 +404,6 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 					}
 					else if(categoryId == categoryIdConstant.COMMUNITY_FREELANCERS_CATEGORY_ID){
 						$rootScope.countCommunityFreelancers=data;
-						return;
-					}
-					else if(categoryId == categoryIdConstant.COMMUNITY_MISC_CATEGORY_ID){
-						$rootScope.countCommunityMisc=data;
 						return;
 					}
 					else if(categoryId == categoryIdConstant.COMMUNITY_ISLAM_CATEGORY_ID){
