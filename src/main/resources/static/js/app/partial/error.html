@@ -14,9 +14,12 @@
       </div>
 	
 	<div>
-  <input
-    format-as-currency
-    ng-model="value"
-    type="text"
-  >
+  <input type="text" ng-currency min="0" fraction="0" ng-model="ad.productPrice">
+
+<input
+									type="text" class="form-control" name="inputPrice"
+									placeholder="" ng-model="ad.productPrice" format-as-currency
+									required> 
+			
+			{{ad.productPrice| currency:"$"}}
 </div>
