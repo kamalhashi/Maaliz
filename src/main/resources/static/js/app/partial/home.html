@@ -274,7 +274,7 @@
                                      featured.categoriesEntity.lft, 
                                   	 featured.categoriesEntity.rgt)"> 
                                  	 <img data-lazy="{{bucketName.productImages + featured.productId + '/' + featured.coverPhoto}}"   height="162" width="100%;"/>
-                                 	 <span class="property-caption" ng-show="featured.productPrice > 0">{{featured.productPrice | currency:"$":0}}</span>
+                                 	 <span class="property-caption" ng-show="featured.productPrice > 0">${{featured.productPrice | number}}</span>
                                   </a>
                                  
                                  
