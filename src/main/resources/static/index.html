@@ -43,7 +43,7 @@
         						<span class="caret"></span>
     						 </a>
     						<ul class="dropdown-menu">
-        					  <li><a href="http://www.kenya.xaashi.com"><img src="css/images/kenya.png" /> Kenya</a></li>
+        					  <li><a href="http://www.uae.xaashi.com"><img src="css/images/uae.png" /> UAE</a></li>
         					  <li><a href="http://www.somalia.xaashi.com"><img src="css/images/somalia.png" />Somalia</a></li>
     						</ul>
 						</li>
@@ -971,18 +971,18 @@
 					<div class="col-md-3 hidden-xs hidden-sm" ng-show="!authenticated()">
 						<div class="footer-well-wrapper">
 							<div class="footer-well">
-								<p class="h4 text-primary">Get registered</p>
+								<p class="h4 text-primary">{{ 'GET_REGISTERED'  | translate}}</p>
 								<p>
-									<strong>Got something to sell?</strong>
+									<strong>{{ 'DO_YOU_HAVE_SOMETHING_SELL' | translate}}</strong>
 								</p>
 								<p>
-									Place your ad here.<br>It's quick, easy, and free.*
+									{{'PLACE_YOUR_AD' | translate}}.<br>{{'QUICK_EASY_FREE' | translate}}
 								</p>
 								<br /> <br /> <a ui-sref="register" 
-									class="btn btn-default btn-block">Get started</a> <br /> <br />
+									class="btn btn-default btn-block">{{'GET_STARTED' | translate}}</a> <br /> <br />
 								<p>
-									Already a member? <a ui-sref="login" class="text-info">Sign in</a>
-									<strong>to view or edit your ad</strong>
+									{{'ALREADY_A_MEMBER' | translate}} <a ui-sref="login" class="text-info">{{'SIGN_IN' | translate}}</a>
+									<strong>{{'VIEW_EDIT_AD' | translate}}</strong>
 								</p>
 							</div>
 						</div>
@@ -1029,8 +1029,8 @@
 									<div class="col-md-4 col-xs-6 col-sm-4">
 										<div class="row">
 											<div class="col-xs-11">
-												<p class="h3">Help</p>
-												   Our solution experts are here to answer your
+												<p class="h3"><a href="mailto:admin@xaashi.com">{{'HELP' | translate}}</a></p>
+												   Our solution experts are  here to answer your
 													questions, help you troubleshoot issues and improve your
 													experience
 											</div>
