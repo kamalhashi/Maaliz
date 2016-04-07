@@ -423,17 +423,9 @@ hashiApp
 
 });
 
-hashiApp.run(function(auth, $rootScope, $state, editableOptions, $http, $location, $window, $cookies) {
+hashiApp.run(function(auth, $rootScope, $state, editableOptions, $http, $location, $window) {
 	$window.ga('create', 'UA-71087645-1', 'auto');	
-	var xaashiCookie = $cookies.get('xaashiDomain');
-	if (! xaashiCookie) {
-		console.log('setting the cookie');
-		var now = new $window.Date(),
-	    // this will set the expiration to 20 years
-	    exp = new $window.Date(now.getFullYear() + 20, now.getMonth(), now.getDate());
-
-		$cookies.put('xaashiDomain', "http://www.somalia.xaashi.com", {domain: 'xaashi.com', expires: exp});
-	}
+	
 	$rootScope.$on('$stateChangeSuccess', function() {
 		   document.body.scrollTop = document.documentElement.scrollTop = 0;
 		   $window.ga('send', 'pageview', $location.path());
