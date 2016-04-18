@@ -3,6 +3,8 @@
 		<css>file:@project.basedir@/src/main/resources/static/css/theme.css</css>
 		<css>file:@project.basedir@/src/main/resources/static/css/dropzone.css</css>
 		<css>webjar:font-awesome/4.4.0/less/font-awesome.less</css>
+		<css>file:@project.basedir@/src/main/resources/static/js/ng-fancybox/jquery.fancybox-plus.css</css>
+		<css>file:@project.basedir@/src/main/resources/static/js/ng-autocomplete/angucomplete-alt.css</css>
 		<css>file:@project.basedir@/src/main/resources/static/js/ng-slick/slick-carousel/slick/slick.css</css>
 		<css>file:@project.basedir@/src/main/resources/static/js/ng-slick/slick-carousel/slick/slick-theme.css</css>
 		<css>file:@project.basedir@/src/main/resources/static/js/ng-loading-bar/loading-bar.css</css>	
