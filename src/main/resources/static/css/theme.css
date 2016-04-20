@@ -761,6 +761,12 @@ h2.line span {
 	margin: 0
 }
 
+.price {
+	font-size: 28px;
+	font-weight: 100;
+	color: #df4a38;
+}
+
 .similar-listings .location {
 	margin: 0;
 	margin-top: 6px;
