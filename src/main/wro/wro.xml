@@ -111,7 +111,6 @@
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-fancybox/angular-fancybox-plus.js</js> 
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-autocomplete/angular-touch.min.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-autocomplete/angucomplete-alt.min.js</js> 
-		<js>file:@project.basedir@/src/main/resources/static/js/ng-currency/format-as-currency.js</js>
 	</group>
 
 </groups>
