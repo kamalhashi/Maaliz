@@ -264,7 +264,7 @@ hashiApp.constant('bodyTypeCarEnglish',  [
                                      {"id":6,  "name":"Wagon"},
                                      {"id":7,  "name":"Van"},
                                      {"id":8,  "name":"Jeep"},
-                                     {"id":12,  "name":"Other"}
+                                     {"id":9,  "name":"Other"}
                                      
                                      
 ]); 
@@ -278,7 +278,7 @@ hashiApp.constant('bodyTypeCarSomali',  [
                                      {"id":6,  "name":"Wagon"},
                                      {"id":7,  "name":"Van"},
                                      {"id":8,  "name":"Jeep"},
-                                     {"id":12,  "name":"Other"}
+                                     {"id":9,  "name":"Other"}
 ]); 
 
 
