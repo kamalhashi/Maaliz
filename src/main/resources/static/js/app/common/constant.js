@@ -256,35 +256,29 @@ hashiApp.constant('coloursSomali',  [
 //body type car 
 
 hashiApp.constant('bodyTypeCarEnglish',  [       
-                                     {"id":1,  "name":"2 Door Saloon"},
-                                     {"id":2,  "name":"4 Door Saloon"},
-                                     {"id":3,  "name":"Saloon"},
-                                     {"id":4,  "name":"Convertible"},
-                                     {"id":5,  "name":"Coupe"},
-                                     {"id":6,  "name":"Estate"},
-                                     {"id":7,  "name":"3 Door Hatchback"},
-                                     {"id":8,  "name":"5 Door Hatchback"},
-                                     {"id":9,  "name":"Sports"},
-                                     {"id":10,  "name":"Light 4x4 Utility"},
-                                     {"id":11, "name":"MPV"},
+                                     {"id":1,  "name":"Hatchback"},
+                                     {"id":2,  "name":"Sedan"},
+                                     {"id":3,  "name":"MUV/SUV"},
+                                     {"id":4,  "name":"Coupe"},
+                                     {"id":5,  "name":"Convertible"},
+                                     {"id":6,  "name":"Wagon"},
+                                     {"id":7,  "name":"Van"},
+                                     {"id":8,  "name":"Jeep"},
                                      {"id":12,  "name":"Other"}
                                      
                                      
 ]); 
 
 hashiApp.constant('bodyTypeCarSomali',  [       
-                                          {"id":1,  "name":"2 Door Saloon"},
-                                          {"id":2,  "name":"4 Door Saloon"},
-                                          {"id":3,  "name":"Saloon"},
-                                          {"id":4,  "name":"Convertible"},
-                                          {"id":5,  "name":"Coupe"},
-                                          {"id":6,  "name":"Estate"},
-                                          {"id":7,  "name":"3 Door Hatchback"},
-                                          {"id":8,  "name":"5 Door Hatchback"},
-                                          {"id":9,  "name":"Sports"},
-                                          {"id":10,  "name":"Light 4x4 Utility"},
-                                          {"id":11, "name":"MPV"},
-                                          {"id":12,  "name":"Other"}
+                                     {"id":1,  "name":"Hatchback"},
+                                     {"id":2,  "name":"Sedan"},
+                                     {"id":3,  "name":"MUV/SUV"},
+                                     {"id":4,  "name":"Coupe"},
+                                     {"id":5,  "name":"Convertible"},
+                                     {"id":6,  "name":"Wagon"},
+                                     {"id":7,  "name":"Van"},
+                                     {"id":8,  "name":"Jeep"},
+                                     {"id":12,  "name":"Other"}
 ]); 
 
 

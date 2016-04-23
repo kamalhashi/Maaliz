@@ -221,7 +221,7 @@
 					<h1 >{{product.productTitle}} <span ng-show="product.productPrice > 0"  class="price"> -  {{'$' | translate}} {{product.productPrice | number}}</span> </h1> 
 
 					<div class="row">	
-					    <div class="col-md-12 col-md-offset-2" ng-show="product.imageStatus =='IMAGE_LIVE'" >
+					    <div class="col-md-12 col-md-offset-2" ng-show="images.length > 0 && product.imageStatus =='IMAGE_LIVE'" >
 					    	<a  class="property-img fancybox"  href ng-href="{{mainImageUrl}}"  fancyboxable="mainImage">
 								<img alt="" ng-src="{{mainImageUrl}}"  class="phone" width="100%;" >	
 								<span class="property-caption2">Click here to enlarge</span>
