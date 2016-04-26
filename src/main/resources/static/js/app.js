@@ -415,6 +415,10 @@ hashiApp
 		url: "/career",
 		templateUrl: "js/app/partial/career.html",
 	   })
+	   .state('help', {
+		url: "/help",
+		templateUrl: "js/app/partial/help.html",
+	   })
       .state('error', {
 		url: "/error",
 		templateUrl: "js/app/partial/error.html",
