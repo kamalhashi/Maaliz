@@ -106,6 +106,7 @@ import javax.persistence.NamedAttributeNode;
     @JsonSubTypes.Type(value = ClassifiedMobile.class),
     @JsonSubTypes.Type(value = ClassifiedSportsEquipment.class),
     @JsonSubTypes.Type(value = ClassifiedToys.class),
+    @JsonSubTypes.Type(value = ClassifiedMisc.class),
     @JsonSubTypes.Type(value = JobEntity.class)
 
 })
