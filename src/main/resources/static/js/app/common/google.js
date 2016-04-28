@@ -5,7 +5,7 @@ hashiApp.factory('mapFactory', function(GeoCoder) {
 
 	var location = {};
     location.init = function(){
-    	return location = {latitude:5.1212591,longtitude:41.6289209, city: 'Muqdisho'
+    	return location = {latitude:2.638755,longtitude:45.375259, city: 'Muqdisho'
     		, country: 'Somalia', region: 'Banaadir', routeName: 'Jidka Makkah Almukarramah'};
    
     };
