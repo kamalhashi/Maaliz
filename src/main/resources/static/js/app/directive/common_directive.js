@@ -33,6 +33,7 @@ hashiApp.directive('compareTo', [ function() {
 	};
 }]);
 
+
 hashiApp.directive("contenteditable", function() {
 	  return {
 		  

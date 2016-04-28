@@ -15,6 +15,7 @@
 		<js>webjar:angularjs/1.4.4/angular.min.js</js>
 		<js>webjar:angularjs/1.4.4/angular-animate.min.js</js>
 		<js>webjar:angularjs/1.4.4/angular-route.min.js</js>
+		<js>webjar:angularjs/1.4.4/angular-touch.min.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-ui-router/angular-ui-router.min.js</js>		
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-csrf/angular-csrf-cross-domain.min.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-loading-bar/loading-bar.js</js>
