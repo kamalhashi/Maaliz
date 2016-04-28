@@ -454,24 +454,3 @@ hashiApp.run(function(auth, $rootScope, $state, editableOptions, $http, $locatio
      firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
 });
 
-hashiApp.directive("contenteditable", function() {
-	  return {
-		  
-		    restrict: "A",
-		    require: "ngModel",
-		    link: function(scope, element, attrs, ngModel) {
-
-		      function read() {
-		        ngModel.$setViewValue(element.html());
-		      }
-
-		      ngModel.$render = function() {
-		        element.html(ngModel.$viewValue || "");
-		      };
-
-		      element.bind("blur keyup change", function() {
-		        scope.$apply(read);
-		      });
-		    }
-		  };
-});
