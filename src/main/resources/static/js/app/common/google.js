@@ -5,8 +5,8 @@ hashiApp.factory('mapFactory', function(GeoCoder) {
 
 	var location = {};
     location.init = function(){
-    	return location = {latitude:2.638755,longtitude:45.375259, city: 'Muqdisho'
-    		, country: 'Somalia', region: 'Banaadir', routeName: 'Jidka Makkah Almukarramah'};
+    	return location = {latitude: 2.3398717,longtitude: 45.391126, city: 'Balcad'
+    		, country: 'Somalia', region: 'Shabeellaha Dhexe', routeName: 'Balcad Road'};
    
     };
 	location.addMarker = function(event) {
@@ -21,7 +21,7 @@ hashiApp.factory('mapFactory', function(GeoCoder) {
 			for (var i = 0; i < results[0].address_components.length; i++) {
 				if (results[0].address_components[i].types[0] == "route")
 					location.routeName = results[0].address_components[i].long_name;
-				if (results[0].address_components[i].types[0] == "locality")
+				if (results[0].address_components[i].types[0] == "administrative_area_level_2")
 					location.city= results[0].address_components[i].long_name;
 				if (results[0].address_components[i].types[0] == "administrative_area_level_1")
 					location.region= results[0].address_components[i].long_name;
