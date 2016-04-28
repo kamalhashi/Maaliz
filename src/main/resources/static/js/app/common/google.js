@@ -5,8 +5,8 @@ hashiApp.factory('mapFactory', function(GeoCoder) {
 
 	var location = {};
     location.init = function(){
-    	return location = {latitude: 2.3398717,longtitude: 45.391126, city: 'Balcad'
-    		, country: 'Somalia', region: 'Shabeellaha Dhexe', routeName: 'Balcad Road'};
+    	return location = {latitude: 2.3398717,longtitude: 45.391126, city: 'Muqdisho'
+    		, country: 'Somalia', region: 'Banaadir', routeName: 'Jidka Makkah Almukarramah'};
    
     };
 	location.addMarker = function(event) {
