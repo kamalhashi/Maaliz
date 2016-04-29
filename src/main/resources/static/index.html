@@ -935,15 +935,15 @@
 							</li>
 						    
 						    
-							<li class="hidden-md hidden-sm" ng-show="!authenticated()">
+							<li  ng-show="!authenticated()">
 							   <a ui-sref="login" class="login-link">Login</a>
 							</li>
-							<li  class="hidden-md hidden-sm" ng-show="!authenticated()"><a
+							<li  ng-show="!authenticated()"><a
 								ui-sref="register" class="registration-link">Register</a>
 							</li>
 							
-							<li><a ui-sref="post_ad"
-								class="btn btn-primary btn-lg btn-post">{{'POST_AN_AD' |
+							<li>
+							    <a ui-sref="post_ad" class="btn btn-primary btn-lg btn-post">{{'POST_AN_AD' |
 									translate}}
 								</a>
 							</li>
