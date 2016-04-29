@@ -12,10 +12,9 @@
 	    <css>file:@project.basedir@/src/main/resources/static/js/ng-xeditable/css/xeditable.css</css>
 		<js>webjar:jquery/2.1.1/jquery.min.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/bootstrap.min.js</js>
-		<js>webjar:angularjs/1.4.4/angular.min.js</js>
-		<js>webjar:angularjs/1.4.4/angular-animate.min.js</js>
-		<js>webjar:angularjs/1.4.4/angular-route.min.js</js>
-		<js>webjar:angularjs/1.4.4/angular-touch.min.js</js>
+		<js>webjar:angularjs/1.5.3/angular.min.js</js>
+		<js>webjar:angularjs/1.5.3/angular-animate.min.js</js>
+		<js>webjar:angularjs/1.5.3/angular-route.min.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-ui-router/angular-ui-router.min.js</js>		
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-csrf/angular-csrf-cross-domain.min.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-loading-bar/loading-bar.js</js>
@@ -29,9 +28,9 @@
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-translate/angular-translate-storage-cookie.min.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-translate/angular-translate-storage-local.min.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-translate/angular-translate-loader-static-files.min.js</js>	
-		<js>webjar:angularjs/1.4.4/angular-cookies.min.js</js>
-		<js>webjar:angularjs/1.4.4/angular-messages.min.js</js>
-		<js>webjar:angularjs/1.4.4/angular-resource.min.js</js>	
+		<js>webjar:angularjs/1.5.3/angular-cookies.min.js</js>
+		<js>webjar:angularjs/1.5.3/angular-messages.min.js</js>
+		<js>webjar:angularjs/1.5.3/angular-resource.min.js</js>	
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-busy/angular-busy.min.js</js>
       	<js>file:@project.basedir@/src/main/resources/static/js/ng-bootstrap/ui-bootstrap.min.js</js> 
 		<js>file:@project.basedir@/src/main/resources/static/js/ng-bootstrap/ui-bootstrap-tpls.min.js</js>  
