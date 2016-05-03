@@ -1,6 +1,8 @@
 {
    "LANG_LABEL": "Luqada Somaliga",
    "WEBSITE_TITLE" :"Xaashi.com",
+   "HOME" : "Home" ,
+   "LOGIN" : "Login" ,
    "HOME_CENTER_TITLE1": "Somalia No. 1 Classified",
    "HOME_CENTER_TITLE2": "is the best place to rent a house, buy a house, sell your car or find a job in Somalia", 
    "POST_AN_AD": "Post an ad", 
@@ -84,6 +86,7 @@
    "FEATURED_LISTINGS" : "Featured listings",
    "ALL_LISTINGS" : "ALL LISTINGS",
    "GET_REGISTERED" : "Get registered",
+   "REGISTER" : "Register",
    "GET_STARTED" : "Get started",
    "PLACE_YOUR_AD" : "Place your ad here",
    "QUICK_EASY_FREE" : "It's quick, easy, and free.*",
@@ -91,6 +94,23 @@
    "SIGN_IN" : "Sign in",
    "VIEW_EDIT_AD" : "to view or edit your ad",
    "HELP" : "Help",
-   "HELP_DECRIPTION" : "Our solution experts are  here to answer your questions, help you troubleshoot issues and improve your experience"
+   "HELP_DECRIPTION" : "Our solution experts are  here to answer your questions, help you troubleshoot issues and improve your experience",
+   "EMAIL_ADDRESS" : "Email address",
+   "CONFIRM_EMAIL" : "Confirm email" ,
+   "PASSWORD" : "Password",
+   "CONFIRM_PASSWORD" : "Confirm password" ,
+   "YOUR_NAME" : "Your name",
+   "MR" : "Mr",
+   "MRS" : "Mrs"  ,
+   "FIRST_NAME" : "First name" ,
+   "SURNAME" : "Surname" ,
+   "TELEPHONE" : "Telephone",
+   "TERMS_AND_CONDITIONS" : "Terms and conditions",
+   "TERMS_AND_CONDITIONS_DESC" : "By clicking on register, you agree to the Xaashi.com Terms and conditions" ,
+   "RETURNING_USER" : "Returning user?",
+   "RETURNING_USER_DESC" : "If you have an account with us, please log in" ,
+   "FORGOTTEN_USERNAME_PASSWORD" : "Forgotten your username or password?" ,
+   "LOGIN_WITH_FACEBOOK" : "Login with Facebook?" ,
+   "LOGIN_WITH_FACEBOOK_DESC" : "Login to Xaashi.com with one click. No need to register or fill out long forms or remember yet another username and password"
    
 }

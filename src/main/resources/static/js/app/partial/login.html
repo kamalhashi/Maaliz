@@ -7,9 +7,9 @@
             <br />
             <ol class="breadcrumb">
                 <li>
-                    <a ui-sref="/">Home</a>
+                    <a ui-sref="/">{{'HOME' | translate}}</a>
                 </li>
-                <li class="active">Login</li>
+                <li class="active">{{'LOGIN' | translate}}</li>
             </ol>
             
             <div class="row">
@@ -19,11 +19,11 @@
                         <ul class="nav nav-tabs" role="tablist" style="border-bottom: 0">
                             <li role="presentation" class="active">
                                 <a ui-sref="login"
-								aria-controls="home">Sign in</a>
+								aria-controls="home">{{'SIGN_IN' | translate}}</a>
                             </li>
                             <li role="presentation">
                                 <a ui-sref="register"
-								aria-controls="registration">Register</a>
+								aria-controls="registration">{{'REGISTER' | translate}}</a>
                             </li>
                         </ul>
                         <!-- Tab panes -->
@@ -40,8 +40,8 @@
                                                         <div class="col-sm-6">
                                                             <div
 																style="border-right: 1px solid #e2e2e2; padding-right: 30px; padding-left: 0px;">
-                                                                <h2 style="margin-bottom: 5px;">Returning user?</h2>
-                                                                <p>If you have an account with us, please log in.</p>
+                                                                <h2 style="margin-bottom: 5px;">{{'RETURNING_USER' | translate}}</h2>
+                                                                <p>{{'RETURNING_USER_DESC' | translate}}.</p>
                                                                 <div class="alert alert-danger" ng-show="loginError">
                                                               			  {{loginMessage}}
 																</div>
@@ -53,10 +53,10 @@
                                                                          loginForm.inputUsername.$invalid || 
 																	 	 loginForm.$submitted  && loginForm.inputUsername.$invalid,
 																	 	 'has-success': !loginForm.inputUsername.$invalid}">
-                                                                        <label for="inputUsername" class="control-label">Email address</label>
+                                                                        <label for="inputUsername" class="control-label">{{'EMAIL_ADDRESS' | translate}}</label>
                                                                         <input type="email"
                                                                             name="inputUsername"
-																			class="form-control " placeholder="Enter email"
+																			class="form-control " placeholder="{{'EMAIL_ADDRESS' | translate}}"
 																			ng-model="credentials.username"
 																			required>
 																			
@@ -74,11 +74,11 @@
                                                                         loginForm.inputPassword.$invalid ||
 																	 	loginForm.$submitted  && loginForm.inputPassword.$invalid ,
 																	 	'has-success': !loginForm.inputPassword.$invalid}">
-                                                                            <label for="inputPassword" class="control-label">Password</label>
+                                                                            <label for="inputPassword" class="control-label">{{'PASSWORD' | translate}}</label>
                                                                             <input type="password"
 																			name="inputPassword"
 																			class="form-control" 
-																			placeholder="Password"
+																			placeholder="{{'PASSWORD' | translate}}"
 																			ng-model="credentials.password"																			
 																			required>
 																			
@@ -91,32 +91,23 @@
 																			</div>
                                                                     </div>
                                                                     <div class="row">
-                                                                        <div class="col-sm-6">
-                                                                            <div class="checkbox">
-                                                                                <label>
-                                                                                            <input type="checkbox">
-																					           Remember me
-																				
-                                                                                  </label>
-                                                                              </div>
-                                                                          </div>
+                                                               
                                                                           <div class="col-sm-6">
-                                                                                        <button class="btn btn-primary btn-block">Sign in</button>
+                                                                                        <button class="btn btn-primary btn-block">{{'SIGN_IN' | translate}}</button>
                                                                            </div>
                                                                            </div>
                                                                                 <br />
                                                                                 <p>
-                                                                                    <a ui-sref="forgot_password"  class="text-info text-center">Forgotten your username or password?</a>
+                                                                                    <a ui-sref="forgot_password"  class="text-info text-center">{{'FORGOTTEN_USERNAME_PASSWORD' | translate}}</a>
                                                                                 </p>
                                                                             </form>
                                                                         </div>
                                                                     </div>
                                                                     <div class="col-sm-6">
                                                                         <div style="padding-right: 20px; padding-left: 0px;">
-                                                                            <h2 style="margin-bottom: 5px;">Login with Facebook?</h2>
+                                                                            <h2 style="margin-bottom: 5px;">{{'LOGIN_WITH_FACEBOOK' | translate}}</h2>
                                                                             <p>
-                                                                                Login to Xaashi.com with one click. No need to register or fill out 
-                                                                                out long forms or remember yet another username and password
+                                                                                {{'LOGIN_WITH_FACEBOOK_DESC' | translate }}
 																	        </p>
                                                                             <br />
                                                                             <div class="row">
@@ -126,7 +117,7 @@
                                                                                   		    <i class="fa fa-square-o fa-stack-2x"></i>
                                                                                   		    <i class="fa fa-facebook "></i> 
                                                                                   		</span>
-                                                                                  		Login with Facebook
+                                                                                  		{{'LOGIN_WITH_FACEBOOK' | translate}}
                                                                                    </button>
                                                                                    
                                                                                 </div>

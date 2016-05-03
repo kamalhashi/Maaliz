@@ -6,9 +6,9 @@
             <br />
             <ol class="breadcrumb">
                 <li>
-                    <a ui-sref="/">Home</a>
+                    <a ui-sref="/">{{'HOME' | translate}}</a>
                 </li>
-                <li class="active">Register</li>
+                <li class="active">{{'REGISTER' | translate}}</li>
             </ol>
             <div class="row">
                 <div class="col-sm-12 ">
@@ -17,11 +17,11 @@
                         <ul class="nav nav-tabs" role="tablist" style="border-bottom: 0">
                             <li role="presentation">
                                 <a ui-sref="login"
-								aria-controls="home">Sign in</a>
+								aria-controls="home">{{'SIGN_IN' | translate}}</a>
                             </li>
                             <li role="presentation" class="active">
                                 <a ui-sref="register"
-								aria-controls="registration">Register</a>
+								aria-controls="registration">{{'REGISTER' | translate}}</a>
                             </li>
                         </ul>
                         <!-- Tab panes -->
@@ -50,7 +50,8 @@
 																	 registrationForm.$submitted && registrationForm.inputEmail.$invalid ,
 																	 'has-success': !registrationForm.inputEmail.$invalid}">
                                                                     <label for="inputEmail" class="col-sm-3 control-label">
-																		Email address</label>
+																		{{'EMAIL_ADDRESS' | translate}}
+																	</label>
                                                                     <div class="col-sm-9">
                                                                         <input type="email" 
                                                                             class="form-control"
@@ -79,7 +80,7 @@
 																	   'has-success': !registrationForm.inputConfirmEmail.$invalid}">
                                                                   
                                                                            <label for="confirmEmail"
-																		       class="col-sm-3 control-label">Confirm email</label>
+																		       class="col-sm-3 control-label">{{'CONFIRM_EMAIL' | translate}}</label>
                                                                         
                                                                            <div class="col-sm-9">
                                                                                 <input type="text" 
@@ -106,7 +107,7 @@
 																	    'has-success': !registrationForm.inputPassword.$invalid}">
 																	    
                                                                   
-                                                                            <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+                                                                            <label for="inputPassword" class="col-sm-3 control-label">{{'PASSWORD' | translate}}</label>
                                                                             <div class="col-sm-9">
                                                                                 <input type="password" 
                                                                                        class="form-control"
@@ -135,7 +136,7 @@
 																	   			 registrationForm.$submitted && registrationForm.inputConfirmPassword.$invalid,
 																	   			 'has-success': !registrationForm.inputConfirmPassword.$invalid}">                 
                                                                     
-                                                                                <label for="inputConfirmPassword" class="col-sm-3 control-label">Confirm password</label>
+                                                                                <label for="inputConfirmPassword" class="col-sm-3 control-label">{{'CONFIRM_PASSWORD' | translate}}</label>
                                                                                 <div class="col-sm-9">
                                                                                     <input type="password" 
                                                                                            class="form-control"
@@ -159,7 +160,7 @@
                                                                               
                                                                                <div class="form-group">
 																	   			                                             
-                                                                                    <label for="selectGender" class="col-sm-3 control-label">Your name</label>
+                                                                                    <label for="selectGender" class="col-sm-3 control-label">{{'YOUR_NAME' | translate}}</label>
                                                                                     <div class="col-sm-9" >
                                                                                         <div class="row">                                                                                        
                                                                                             <div class="col-sm-3 has-feedback"   
@@ -175,8 +176,8 @@
                                                                                                 		name="selectGender" 
                                                                                                 		required>
                                                                                                 		
-                                                                                                    <option value="0">Mr</option>
-                                                                                                    <option value="1">Mrs</option>
+                                                                                                    <option value="0">{{'MR' | translate}}</option>
+                                                                                                    <option value="1">{{'MRS' | translate}}</option>
                                                                                                 </select>
                                                                                                 
                                                                                                  <span class="glyphicon glyphicon-ok form-control-feedback" ng-show="registrationForm.selectGender.$touched && !registrationForm.selectGender.$invalid"></span>
@@ -200,7 +201,7 @@
                                                                                                 <input type="text" 
                                                                                                         class="form-control " 
                                                                                                 		name="inputFirstname" 
-                                                                                                		placeholder="First name"
+                                                                                                		placeholder="{{'FIRST_NAME' | translate}}"
                                                                                                 		ng-model="user.firstname" 
                                                                                                 		required>
                                                                                                 	
@@ -225,7 +226,7 @@
                                                                                                 <input type="text" 
                                                                                                        class="form-control "
 																										name="inputSurname" 
-																										placeholder="surname"
+																										placeholder="{{'SURNAME' | translate}}"
 																										ng-model="user.surname" 
                                                                                                 		required>
                                                                                                 		
@@ -252,7 +253,7 @@
 																	   			 registrationForm.$submitted && registrationForm.inputTelephone.$invalid,
 																	   			 'has-success': !registrationForm.inputTelephone.$invalid}">                 
                                                                     
-                                                                                <label for="inputTelephone" class="col-sm-3 control-label">Telephone</label>
+                                                                                <label for="inputTelephone" class="col-sm-3 control-label">{{'TELEPHONE' | translate}}</label>
                                                                                 <div class="col-sm-9">
                                                                                     <input type="text" 
                                                                                            class="form-control"
@@ -280,7 +281,7 @@
 																		class="col-sm-3 control-label">&nbsp;</label>
                                                                                             <div class="col-sm-4">
                                                                                                 <button
-																			class="btn btn-primary btn-block">Register</button>
+																			class="btn btn-primary btn-block">{{'REGISTER' | translate}}</button>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div class="form-group">
@@ -289,10 +290,8 @@
                                                                                             <div class="col-sm-9">
                                                                                                 <br />
                                                                                                 <p>
-                                                                                                    <strong>Terms and conditions</strong>
-                                                                                                    <br /> By
-																			clicking on register, you agree to the Hashi Terms
-																			and conditions and the Hashi Privacy policy
+                                                                                                    <strong>{{'TERMS_AND_CONDITIONS' | translate}}</strong>
+                                                                                                    <br /> {{'TERMS_AND_CONDITIONS_DESC' | translate}}
 																		
                                                                                                 </p>
                                                                                             </div>
