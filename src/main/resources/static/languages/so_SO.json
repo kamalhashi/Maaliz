@@ -93,7 +93,7 @@
   "PLACE_YOUR_AD" : "Halkaan gasho xayeysiiskaaga",
   "QUICK_EASY_FREE" : "Si fudud oo bilaash ah",
   "ALREADY_A_MEMBER" : "Ma'is diiwaan galisay?",
-  "VIEW_EDIT_AD" : "Saad u gashatid xayeysiis",
+  "VIEW_EDIT_AD" : "Gasho xayeysiis",
    "HELP" : "Caawin",
    "EMAIL_ADDRESS" : "Cinwaanka emailkaaga",
    "CONFIRM_EMAIL" : "Xaqiiji emailkaaga",
@@ -111,6 +111,9 @@
    "RETURNING_USER_DESC" : "Hadii aad account leedahay, gali emailkaaga iyo furahaaga" ,
    "FORGOTTEN_USERNAME_PASSWORD" : "Miyaad iloowday usernamekaada iyo furahaaga?" ,
    "LOGIN_WITH_FACEBOOK" : "Kusoo gal Facebookaaga?",
-   "LOGIN_WITH_FACEBOOK_DESC" : "Kusoo gal Xaashi.com adigoo isticmaalaya Facebookaaga. Ma'ubaahnid inaad is diiwaan gelisid mise inaad buuxisid form, uun waxaad riixdaa buttonka hoose." 
+   "LOGIN_WITH_FACEBOOK_DESC" : "Kusoo gal Xaashi.com adigoo isticmaalaya Facebookaaga. Ma'ubaahnid inaad is diiwaan gelisid mise inaad buuxisid form, uun waxaad riixdaa buttonka hoose.",
+   "SUCCESS_REGISTRATION_TITLE" : "Xaqiiji Emailkaaga" , 
+   "SUCCESS_REGISTRATION_DESC" : "Waxaan kuu soo dirnay email, sidaan uxaqiijino emailkaaga inuu sax yahay,  emailkaaga fur oo  riix linkinga sidaad u dhameestirtid isdiiwaan galinta." 
+    
  
 }
