@@ -7,7 +7,7 @@
   "SEND_MY_PASSWORD" : "Iiso dir furahayga" ,
   "FIRST_TIME_HERE" : "Ma isdiiwaan galisay?" ,
   "CONTINUE_BUTTON" : "Soco" ,
-  "SELECT_LEAST_SUBCATEGORY" : "Markaad dooratid dabaqada u hooseesa, markaas ayuu buttonka kuu furmayaa oo riixi kartaa" ,
+  "SELECT_LEAST_SUBCATEGORY" : "Markaad dooratid dabaqada u hooseesa, markaas ayuu badhanka kuu furmayaa oo riixi kartaa" ,
   "FIRST_TIME_DESCRIPTION" : "Xisaab  maku leedahay Xaashi.com? Hadii aadan ku laheen xisaab Xaashi.com isdiiwaan gali saad xayeysiis ugashatid, saad shaqooyin u dalbatid" ,
   "CREATE_AN_ACCOUNT" : "Is diiwaan gali" ,
   "FORGOT_PASSWORD" : "Ma hilmaamtay furahaaga" ,
@@ -119,7 +119,19 @@
    "RETURNING_USER_DESC" : "Hadii aad xisaab ku leedahay Xaashi.com, gali emailkaaga iyo furahaaga" ,
    "FORGOTTEN_USERNAME_PASSWORD" : "Miyaad hilmaamtay usernamekaada iyo furahaaga?" ,
    "LOGIN_WITH_FACEBOOK" : "Kusoo gal Facebookaaga?",
-   "LOGIN_WITH_FACEBOOK_DESC" : "Kusoo gal Xaashi.com adigoo isticmaalaya Facebookaaga. Ma'ubaahnid inaad is diiwaan gelisid mise inaad buuxisid form, uun waxaad riixdaa buttonka hoose.",
+   "LOGIN_WITH_FACEBOOK_DESC" : "Kusoo gal Xaashi.com adigoo isticmaalaya Facebookaaga. Ma'ubaahnid inaad is diiwaan gelisid mise inaad buuxisid form, uun waxaad riixdaa badhanka hoose.",
    "SUCCESS_REGISTRATION_TITLE" : "Xaqiiji Emailkaaga" , 
-   "SUCCESS_REGISTRATION_DESC" : "Waxaan kuu soo dirnay email, sidaan uxaqiijino emailkaaga inuu sax yahay,  emailkaaga fur oo  riix linkinga sidaad u dhameestirtid isdiiwaan galinta." 
+   "SUCCESS_REGISTRATION_DESC" : "Waxaan kuu soo dirnay email, sidaan uxaqiijino emailkaaga inuu sax yahay,  emailkaaga fur oo  riix linkinga sidaad u dhameestirtid isdiiwaan galinta.",
+   "POSTED" : "Taariikhda:",
+   "PRICE" : "Qiimaha:",
+   "YEAR" : "Sanadka" ,
+   "KILOMETERS" : "Kilometerka" ,
+   "FUEL_TYPE" : "Nooca shidaalka" ,
+   "SELLER_TYPE" : "Nooca iibihiya" ,
+   "COLOUR" : "Midabka" ,
+   "TRANSMISSION" : "Gudbinta",
+   "MODEL" : "Nooca" ,
+   "MAKE" : "Sameeyaha" ,
+   "BODY_TYPE" : "Qaabka" 
+   
 }

@@ -121,5 +121,17 @@
    "LOGIN_WITH_FACEBOOK" : "Login with Facebook?" ,
    "LOGIN_WITH_FACEBOOK_DESC" : "Login to Xaashi.com with one click. No need to register or fill out long forms or remember yet another username and password",
    "SUCCESS_REGISTRATION_TITLE" : "Verification Email" , 
-   "SUCCESS_REGISTRATION_DESC" : "We have just sent you a verification email, click on the verification link to finish registering your account." 
+   "SUCCESS_REGISTRATION_DESC" : "We have just sent you a verification email, click on the verification link to finish registering your account.",
+   "POSTED" : "Posted:",
+   "PRICE" : "Price:",
+   "YEAR" : "Year" ,
+   "KILOMETERS" : "Kilometers", 
+   "FUEL_TYPE" : "Fuel type" ,
+   "SELLER_TYPE" : "Seller type" ,
+   "COLOUR" : "Colour", 
+   "TRANSMISSION" : "Transmission" ,
+   "MODEL" : "Model",
+   "MAKE" : "Make" , 
+   "BODY_TYPE" : "Body type" 
+   
 }

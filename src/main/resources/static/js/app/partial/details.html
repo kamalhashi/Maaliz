@@ -57,7 +57,7 @@
 						</div>
 					</div>
 
-					<span> Year (Min/Max) </span>
+					<span> {{'YEAR' | translate}} (Min/Max) </span>
 					<div class="row">
 						<div class="col-xs-6">
 							<select class="form-control" name="selectYearMin"
@@ -71,7 +71,7 @@
 						</div>
 					</div>
 
-					<span>Kilometers ( Km )</span>
+					<span>{{'KILOMETERS' | translate}} ( Km )</span>
 					<div class="row">
 						<div class="col-xs-6">
 							<input type="text" class="form-control"
@@ -84,7 +84,7 @@
 						</div>
 					</div>
 
-					<span>Seller Type</span>
+					<span>{{'SELLER_TYPE' | translate}}</span>
 					<div class="row">
 						<div class="col-xs-6">
 							<select ng-model="selectedSellerType" class="form-control"
@@ -160,7 +160,7 @@
 						</div>
 					</div>
 					
-					<span>Seller Type</span>
+					<span>{{'SELLER_TYPE' | translate}}</span>
 					<div class="row">
 						<div class="col-xs-6">
 							<select ng-model="selectedSellerType" class="form-control"
@@ -255,11 +255,11 @@
 					   		 ng-show="product.categoriesEntity.lft >= categoryRange.MOTOR_HEAVY_VEHICLE_MIN 
 							 && product.categoriesEntity.rgt <= categoryRange.MOTOR_HEAVY_VEHICLE_MAX"> 
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
@@ -271,11 +271,11 @@
 								<div class="col-xs-6">{{product.model}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Year:</div>
+								<div class="col-xs-6">{{'YEAR' | translate}}:</div>
 								<div class="col-xs-6">{{product.yearMade}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Kilometers:</div>
+								<div class="col-xs-6">{{'KILOMETERS' | translate}}:</div>
 								<div class="col-xs-6">{{product.kilometers}}</div>
 							</div>
 							<div class="row">
@@ -287,11 +287,11 @@
 								<div class="col-xs-6">{{noCylindersConstant[product.noCylinders-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Seller type:</div>
+								<div class="col-xs-6">{{'SELLER_TYPE' | translate}}:</div>
 								<div class="col-xs-6">{{sellerTypeCarConstant[product.sellerType-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Fuel type:</div>
+								<div class="col-xs-6">{{'FUEL_TYPE' | translate}}:</div>
 								<div class="col-xs-6">{{fuelTypeCarConstant[product.fuelType-1].name}}</div>
 							</div>		
 						</div>
@@ -301,48 +301,48 @@
 							&& product.categoriesEntity.rgt <= categoryRange.MOTOR_CAR_MAX"> 
 							
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Body Type:</div>
+								<div class="col-xs-6">{{'BODY_TYPE' | translate}}:</div>
 								<div class="col-xs-6">{{bodyTypeCarConstant[product.bodyType-1].name}}</div>
 							</div>
 
 							<div class="row">
-								<div class="col-xs-6">Make:</div>
+								<div class="col-xs-6">{{'MAKE' | translate}}:</div>
 								<div class="col-xs-6">{{product.categoriesEntity.categoryName}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Model:</div>
+								<div class="col-xs-6">{{'MODEL' | translate}}:</div>
 								<div class="col-xs-6">{{product.model}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Year:</div>
+								<div class="col-xs-6">{{'YEAR' | translate}}</div>
 								<div class="col-xs-6">{{product.yearMade}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Kilometers:</div>
+								<div class="col-xs-6">{{'KILOMETERS' | translate}}:</div>
 								<div class="col-xs-6">{{product.kilometers}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Seller type:</div>
+								<div class="col-xs-6">{{'SELLER_TYPE' | translate}}:</div>
 								<div class="col-xs-6">{{sellerTypeConstant[product.sellerType-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Fuel type:</div>
+								<div class="col-xs-6">{{'FUEL_TYPE' | translate}}:</div>
 								<div class="col-xs-6">{{fuelTypeCarConstant[product.fuelType-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Transmission :</div>
+								<div class="col-xs-6">{{'TRANSMISSION' | translate}} :</div>
 								<div class="col-xs-6">{{transmissionCarConstant[product.transmissionType-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Colour:</div>
+								<div class="col-xs-6">{{'COLOUR' | translate}}:</div>
 								<div class="col-xs-6">{{coloursCarConstant[product.colour-1].name}}</div>
 							</div>
 						</div>
@@ -352,15 +352,15 @@
 						 ng-show="product.categoriesEntity.lft >= categoryRange.MOTOR_CAR_PARTS_MIN
 							&& product.categoriesEntity.rgt <= categoryRange.MOTOR_CAR_PARTS_MAX"> 
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Seller type:</div>
+								<div class="col-xs-6">{{'SELLER_TYPE' | translate}}:</div>
 								<div class="col-xs-6">{{sellerTypeConstant[product.sellerType-1].name}}</div>
 							</div>
 							<div class="row">
@@ -374,15 +374,15 @@
 							&& product.categoriesEntity.rgt <= categoryRange.MOTOR_MOTORCYCLES_MAX"> 
 							
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Seller type:</div>
+								<div class="col-xs-6">{{'SELLER_TYPE' | translate}}:</div>
 								<div class="col-xs-6">{{sellerTypeConstant[product.sellerType-1].name}}</div>
 							</div>
 							<div class="row">
@@ -395,11 +395,11 @@
 							ng-show="product.categoriesEntity.lft >= categoryRange.MOTOR_BOATS_MIN
 							&& product.categoriesEntity.rgt <= categoryRange.MOTOR_BOATS_MAX"> 
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
@@ -411,7 +411,7 @@
 								<div class="col-xs-6">{{lengthBoatsConstant[product.length-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Seller type:</div>
+								<div class="col-xs-6">{{'SELLER_TYPE' | translate}}:</div>
 								<div class="col-xs-6">{{sellerTypeConstant[product.sellerType-1].name}}</div>
 							</div>
 						</div>
@@ -421,11 +421,11 @@
 							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_RES_MAX"> 
 							
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							 <div class="row">
@@ -461,11 +461,11 @@
 							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_LAND_MAX)"> 
 						
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							 <div class="row">
@@ -487,7 +487,7 @@
 							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_HOTEL_MAX)">
 							
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
@@ -568,11 +568,11 @@
 							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MAX)"> 
 						
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							 <div class="row">
@@ -612,11 +612,11 @@
 							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_COMM_MAX"> 
 						
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							 <div class="row">
@@ -648,11 +648,11 @@
 							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_ROOM_MAX"> 
 						
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							 <div class="row">
@@ -688,11 +688,11 @@
 			
 								
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
@@ -712,11 +712,11 @@
 							&& product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_DVD_MOVIES_MAX"> 
 								
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
@@ -739,11 +739,11 @@
 						<div class="col-xs-12"
 							ng-show="product.categoriesEntity.lft >= categoryRange.CLASSIFIED_CAMERA_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_CAMERA_MAX">
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
@@ -769,11 +769,11 @@
 						<div class="col-xs-12"
 							ng-show="product.categoriesEntity.lft >= categoryRange.CLASSIFIED_COMPUTER_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_COMPUTER_MAX">				
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
@@ -811,11 +811,11 @@
 						<div class="col-xs-12"
 							ng-show="product.categoriesEntity.lft >= categoryRange.CLASSIFIED_LOST_FOUND_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_LOST_FOUND_MAX">				
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
@@ -828,11 +828,11 @@
 						<div class="col-xs-12"
 							ng-show="product.categoriesEntity.lft >= categoryRange.CLASSIFIED_PETS_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_PETS_MAX">				
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Price:</div>
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 						</div>
@@ -841,7 +841,7 @@
 						<div class="col-xs-12"
 							ng-show="product.categoriesEntity.lft >= categoryRange.COMMUNITY_MIN && product.categoriesEntity.rgt <= categoryRange.COMMUNITY_MAX">				
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 						</div>
