@@ -3,8 +3,8 @@
     <div class="row">
         <div class="col-sm-12">
            <ol class="breadcrumb">
-				<li><a ui-sref="/" >Home</a></li>
-				<li class="active">Post an ad</li>
+				<li><a ui-sref="/" >{{'HOME' | translate}}</a></li>
+				<li class="active">{{'POST_AN_AD' | translate}}</li>
 			</ol>
         </div>
         
@@ -118,10 +118,10 @@
                         <div style="padding: 18px 18px;">
                             <div class="row">
                                 <div class="col-sm-6">	
-                                	<strong ng-show="disableButton" class="h5 text-primary">Please select the least subcategory, only then you can continue and post ad </strong>
+                                	<strong ng-show="disableButton" class="h5 text-primary">{{'SELECT_LEAST_SUBCATEGORY' | translate}}</strong>
                                 </div>
                                 <div class="col-sm-2 col-sm-offset-4">	
-                                    <button class="btn btn-primary btn-block" ng-disabled="disableButton" ng-click="onSubmit()">Continue</button>
+                                    <button class="btn btn-primary btn-block" ng-disabled="disableButton" ng-click="onSubmit()">{{'CONTINUE_BUTTON' | translate}}</button>
                                 </div>
                             </div>
                         </div>
