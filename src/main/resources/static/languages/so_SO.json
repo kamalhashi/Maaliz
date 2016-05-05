@@ -132,6 +132,20 @@
    "TRANSMISSION" : "Gudbinta",
    "MODEL" : "Nooca" ,
    "MAKE" : "Sameeyaha" ,
-   "BODY_TYPE" : "Qaabka" 
+   "BODY_TYPE" : "Qaabka" ,
+   "DETAILS" : "Faahfaahin",
+   "DESCRIPTION" : "Sharaxaad",
+   "REPLY_TO_THIS_AD" : "Fariin udir qofka xayeysiiska soo gashtay" ,
+   "MESSAGE" : "Fariin",
+   "SEND_MESSAGE" : "Dir fariin",
+   "SEND_MESSAGE_TERMS" : "Hadaan diraayo fariin, waan ogolahay shuruudaha iyo xaaladaha Xaashi.com" ,
+   "SIZE" : "Cabirka",
+   "LISTED_BY" : "Soo galiyaha",
+   "ROOMS" : "Qolalka",
+   "BATHROOMS" : "Musqulaha" ,
+   "RENT_IS_PAID" : "Bixinta kirada" ,
+   "NEIGHBOURHOOD" : "Xaafada" ,
+   "FURNISHED" : "Goglan" 
+   
    
 }

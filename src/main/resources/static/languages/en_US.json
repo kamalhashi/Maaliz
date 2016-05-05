@@ -132,6 +132,19 @@
    "TRANSMISSION" : "Transmission" ,
    "MODEL" : "Model",
    "MAKE" : "Make" , 
-   "BODY_TYPE" : "Body type" 
+   "BODY_TYPE" : "Body type" ,
+   "DETAILS" : "Details",
+   "DESCRIPTION" : "Description" ,
+   "REPLY_TO_THIS_AD" : "Reply to this Ad" ,
+   "MESSAGE" : "Message",
+   "SEND_MESSAGE" : "Send message" ,
+   "SEND_MESSAGE_TERMS" : "By clicking on 'Send Reply', I agree to the Hashi terms &amp; conditions and Privacy policy" ,
+   "SIZE" : "Size",
+   "LISTED_BY" : "Listed By",
+   "ROOMS" : "Rooms",
+   "BATHROOMS" : "Bathrooms" ,
+   "RENT_IS_PAID" : "Rent is paid" ,
+   "NEIGHBOURHOOD" : "Neighbourhood" ,
+   "FURNISHED" : "Furnished" 
    
 }

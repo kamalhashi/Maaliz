@@ -234,9 +234,9 @@ hashiApp.constant('coloursEnglish',  [
                                                {"id":4,  "name":"Blue"},
                                                {"id":5,  "name":"Yellow"},
                                                {"id":6,  "name":"Red"},
-                                               {"id":7,  "name":"Grey"},
+                                               {"id":7,  "name":"Pink"},
                                                {"id":8,  "name":"Silver"},
-                                               {"id":9,  "name":"Other"}
+                                               {"id":9,  "name":"Other colour"}
 ]); 
 
 
@@ -247,9 +247,9 @@ hashiApp.constant('coloursSomali',  [
                                       {"id":4,  "name":"Buluug"},
                                       {"id":5,  "name":"Jaale"},
                                       {"id":6,  "name":"Guduud"},
-                                      {"id":7,  "name":"Grey"},
-                                      {"id":8,  "name":"Silver"},
-                                      {"id":9,  "name":"Color Kale"}
+                                      {"id":7,  "name":"Basali"},
+                                      {"id":8,  "name":"Qalin"},
+                                      {"id":9,  "name":"Midab kale"}
 ]); 
 
 
@@ -296,7 +296,7 @@ hashiApp.constant('fuelTypeCarSomali',  [
                                               {"id":1,  "name":"Petrol"},
                                               {"id":2,  "name":"Naafto"},
                                               {"id":3,  "name":"Hybrid"},
-                                              {"id":4,  "name":"Electric"}
+                                              {"id":4,  "name":"Koronto"}
 ]); 
 
 
@@ -370,7 +370,7 @@ hashiApp.constant('warrantyEnglish',  [
 hashiApp.constant('warrantySomali',  [       
                                                {"id":1, "name":"Haa"},
                                                {"id":2,  "name":"May"},
-                                               {"id":3,  "name":"Does not apply"}                                               
+                                               {"id":3,  "name":"Ma khuseeyo"}                                               
 ]); 
 
 //heavy vechicles
@@ -413,7 +413,7 @@ hashiApp.constant('horsePowerSomali',  [
                                          {"id":3,  "name":"200 - 300 HP"},
                                          {"id":4,  "name":"300 - 400 HP"},
                                          {"id":5,  "name":"400+ HP"},
-                                         {"id":6,  "name":"Unknown"}
+                                         {"id":6,  "name":"Magaranayo"}
 ]); 
 
 
@@ -508,10 +508,10 @@ hashiApp.constant('zonedForEnglish',  [
 ]); 
 
 hashiApp.constant('zonedForSomali',  [       
-                                       {"id":1, "name":"Residential"},
-                                       {"id":2,  "name":"Commercial"},
-                                       {"id":3,  "name":"Retail"},
-                                       {"id":4,  "name":"Mixed Use"}  
+                                       {"id":1, "name":"Deegaan"},
+                                       {"id":2,  "name":"Ganacsi"},
+                                       {"id":3,  "name":"Dukaamo"},
+                                       {"id":4,  "name":"Isku jir"}  
 ]); 
 
 
@@ -531,7 +531,7 @@ hashiApp.constant('rentTimeSomali',  [
                                       {"id":2,  "name":"Usbuuc"},
                                       {"id":3,  "name":"Bishi"},
                                       {"id":4,  "name":"Sanadki"},
-                                      {"id":5,  "name":"Kawadahadal"},
+                                      {"id":5,  "name":"Gorgortan"},
 ]); 
 
 hashiApp.constant('furnishedEnglish',  [       
@@ -541,8 +541,8 @@ hashiApp.constant('furnishedEnglish',  [
 ]); 
 
 hashiApp.constant('furnishedSomali',  [       
-                                         {"id":1, "name":"Guriga goglan"},
-                                         {"id":2,  "name":"Guriga aan goglaneen"}
+                                         {"id":1, "name":"Wuu goglanyahay"},
+                                         {"id":2,  "name":"Ma goglana"}
 ]); 
 
 //classified items
@@ -554,7 +554,7 @@ hashiApp.constant('conditionEnglish',  [
                                       {"id":4,  "name":"Poor"},
 ]); 
 hashiApp.constant('conditionSomali',  [       
-                                        {"id":1, "name":"Aad u wanaagsan"},
+                                        {"id":1, "name":"Heer sare"},
                                         {"id":2,  "name":"Wanaagsan"},
                                         {"id":3,  "name":"Dhexdhexaad"},
                                         {"id":4,  "name":"Wow liitaa"}
@@ -562,11 +562,11 @@ hashiApp.constant('conditionSomali',  [
 ]); 
 
 hashiApp.constant('ageEnglish',  [       
-                                        {"id":1, "name":"Brand New"},
+                                        {"id":1, "name":"New"},
                                         {"id":2,  "name":"Used"}               
 ]); 
 hashiApp.constant('ageSomali',  [       
-                                    {"id":1, "name":"Waa cusubyahay"},
+                                    {"id":1, "name":"Cuseeb"},
                                     {"id":2,  "name":"Waa la'isticmaalay"}
                                  
 ]);  
@@ -691,8 +691,8 @@ hashiApp.constant('careerLevelSomali',  [
                                           {"id":3,  "name":"Maamul dhexe"},
                                           {"id":4,  "name":"Maamul sare"},
                                           {"id":5,  "name":"Maamule"},
-                                          {"id":6,  "name":"Executive/Agaasime"},
-                                          {"id":7,  "name":"Other"}
+                                          {"id":6,  "name":"Agaasime"},
+                                          {"id":7,  "name":"Wax kale"}
 ]);
 
 hashiApp.constant('employmentTypeEnglish',  [       
@@ -703,11 +703,11 @@ hashiApp.constant('employmentTypeEnglish',  [
                                           {"id":5,  "name":"Other"}
 ]);
 hashiApp.constant('employmentTypeSomali',  [       
-                                             {"id":1, "name":"Full Time"},
-                                             {"id":2,  "name":"Part Time"},
-                                             {"id":3,  "name":"Contract"},
-                                             {"id":4,  "name":"Temporary"},
-                                             {"id":5,  "name":"Other"}
+                                             {"id":1, "name":"Waqti buuxa"},
+                                             {"id":2,  "name":"Waqti dhiman"},
+                                             {"id":3,  "name":"Heshiis"},
+                                             {"id":4,  "name":"Waqti go'an"},
+                                             {"id":5,  "name":"Wax kale"}
 ]);
 
 
@@ -826,7 +826,7 @@ hashiApp.constant('listedByEnglish',  [
 
 hashiApp.constant('listedBySomali',  [       
                                        {"id":1,  "name":"Loo-shaqeeye"},
-                                       {"id":2,  "name":"Recruiter"}                                          
+                                       {"id":2,  "name":"Qore"}                                          
 ]);
 
 hashiApp.constant('hideCompanyNameSomali',  [       
@@ -848,7 +848,7 @@ hashiApp.constant('sellerTypeSearchEnglish',  [
 ]); 
 
 hashiApp.constant('sellerTypeSearchSomali',  [       
-                                               {"id":0, "name":"Dhamaan Noocayada"},
+                                               {"id":0, "name":"Kuli"},
                                                {"id":1,  "name":"Milkiilaha"},
                                                {"id":2,  "name":"Ganacsade"}                                
 ]); 
