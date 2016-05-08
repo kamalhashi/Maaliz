@@ -249,7 +249,6 @@
                    
 
                    
-					<h2>{{'DETAILS' | translate}}:</h2>
 					<div class="row">	
 					    <div class="col-xs-12"
 					   		 ng-show="product.categoriesEntity.lft >= categoryRange.MOTOR_HEAVY_VEHICLE_MIN 
@@ -682,7 +681,6 @@
 							ng-show="product.categoriesEntity.lft >= categoryRange.CLASSIFIED_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_MAX
 									    && !(product.categoriesEntity.lft >= categoryRange.CLASSIFIED_CAMERA_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_CAMERA_MAX)
 									    && !(product.categoriesEntity.lft >= categoryRange.CLASSIFIED_COMPUTER_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_COMPUTER_MAX)
-									    && !(product.categoriesEntity.lft >= categoryRange.CLASSIFIED_LOST_FOUND_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_LOST_FOUND_MAX)
 									    && !(product.categoriesEntity.lft >= categoryRange.CLASSIFIED_PETS_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_PETS_MAX)">				
 			
 								
@@ -818,8 +816,7 @@
 						
 					<!-- end div -->
 				   </div>
-						 
-					<h2>{{'DESCRIPTION' | translate}}:</h2>
+					<h2>{{'DETAILS' | translate}}:</h2>	 
 					<p>
 						<span ng-bind-html='toTrustedHTML( product.productDescription )'></span>
 

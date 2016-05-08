@@ -7,7 +7,7 @@ hashiApp.controller('DetailsController', function($scope, $location , $state, $s
 		fuelTypeCarEnglish, fuelTypeCarSomali, transmissionCarEnglish , transmissionCarSomali, $sce,
 		noBedroomsApartmentEnglish, noBedroomsApartmentSomali,ownerTypeEnglish, ownerTypeSomali, conditionSomali, conditionEnglish,
 		noBathroomsEnglish, noBathroomsSomali, furnishedEnglish, furnishedSomali, rentTimeEnglish, rentTimeSomali,
-		cameraBrand, warrantyEnglish, warrantySomali, computerBrand, computerHardDrive, computerProcessor, computerMemory,dvdRating,
+		cameraBrand, warrantyEnglish, warrantySomali, computerBrand, computerHardDrive, computerProcessor, computerMemory,
 		careerLevelEnglish, careerLevelSomali, employmentTypeEnglish, employmentTypeSomali, $http, $timeout,
 		workExperienceEnglish, workExperienceSomali, educationLevelEnglish, educationLevelSomali,  $window,
 		monthSalaryEnglish, monthSalarySomali, cvRequiredSomali, cvRequiredEnglish, emailFactory, applicantFactory,
@@ -131,7 +131,6 @@ hashiApp.controller('DetailsController', function($scope, $location , $state, $s
 		$scope.computerProcessorConstant=computerProcessor;
 		$scope.computerMemoryConstant= computerMemory;
 		$scope.brandConstant= cameraBrand;
-		$scope.dvdRatingConstant= dvdRating;
 
 		if($translate.use() === 'so_SO'){
 			$scope.warrantyConstant= warrantySomali;
@@ -612,10 +611,6 @@ hashiApp.controller('DetailsController', function($scope, $location , $state, $s
 			return;
 		}
 		else if(categoryId == categoryIdConstant.CLASSIFIED_COMPUTER_NETWORKING_CATEGORY_ID){
-			$scope.showAdvanceSearchClassifiedDiv= true;
-			return;
-		}
-		else if(categoryId == categoryIdConstant.CLASSIFIED_DVD_MOVIES_CATEGORY_ID){
 			$scope.showAdvanceSearchClassifiedDiv= true;
 			return;
 		}
