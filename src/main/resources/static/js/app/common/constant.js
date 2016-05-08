@@ -51,8 +51,8 @@ hashiApp.constant('categoryRange', {
     CLASSIFIED_COMPUTER_NETWORKING_MAX:3899,
     CLASSIFIED_COMPUTER_MIN:3650,
     CLASSIFIED_COMPUTER_MAX:3669,
-    CLASSIFIED_DVD_MOVIES_MIN:3900,
-    CLASSIFIED_DVD_MOVIES_MAX:4199,
+    CLASSIFIED_TV_MIN:4420,
+    CLASSIFIED_TV_MAX:4449,
     CLASSIFIED_ELECTRONICS_MIN:4200,
     CLASSIFIED_ELECTRONICS_MAX:4499,
     CLASSIFIED_FURNITURE_MIN:4700,
@@ -144,7 +144,7 @@ hashiApp.constant('categoryIdConstant', {
 	CLASSIFIED_COLLECTIBLES_CATEGORY_ID: 920,
 	CLASSIFIED_COMPUTER_NETWORKING_CATEGORY_ID: 968,
 	CLASSIFIED_COMPUTER_CATEGORY_ID: 972,
-	CLASSIFIED_DVD_MOVIES_CATEGORY_ID: 1030,
+	CLASSIFIED_TV_CATEGORY_ID: 1096,
 	CLASSIFIED_ELECTRONICS_CATEGORY_ID: 1086,
 	CLASSIFIED_FURNITURE_CATEGORY_ID: 1196,
 	CLASSIFIED_GAMING_CATEGORY_ID: 1265,
@@ -662,17 +662,6 @@ hashiApp.constant('computerHardDrive',  [
                                          {"id":7,  "name":"1.5 - 1.9 TB"},
                                          {"id":8,  "name":"2+ TB"} 
    ]); 
-//dvd stuff
-hashiApp.constant('dvdRating',  [       
-                                      {"id":1, "name":"G"},
-                                      {"id":2,  "name":"PG"},
-                                      {"id":3,  "name":"PG13"},
-                                      {"id":4,  "name":"R"},
-                                      {"id":5,  "name":"NC17"},
-                                      {"id":6,  "name":"Unrated"},
-                                      {"id":7,  "name":"Other"}
-
-   ]);
 
 //job stuff
 hashiApp.constant('careerLevelEnglish',  [       

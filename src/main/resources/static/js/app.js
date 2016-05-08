@@ -266,14 +266,6 @@ hashiApp
                 productId: null 
         }
 	})	
-	.state('post_ad_classified_dvd_movies', {
-		url: "/post_ad_classified_dvd_movies/:categoryId",
-		templateUrl: "js/app/partial/post_ad_classified_dvd_movies.html",
-		controller : "PostAdClassifiedDvdMoviesController",
-		params:{
-                productId: null 
-        }
-	})	
 	.state('post_ad_classified_pets', {
 		url: "/post_ad_classified_pets/:categoryId",
 		templateUrl: "js/app/partial/post_ad_classified_pets.html",

@@ -675,10 +675,6 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 			setSearchType(searchTypeConstant.ADVANCE_SEARCH_CLASSIFIED);
 			return;
 		}
-		else if(categoryId == categoryIdConstant.CLASSIFIED_DVD_MOVIES_CATEGORY_IDEGORY_ID){
-			setSearchType(searchTypeConstant.ADVANCE_SEARCH_CLASSIFIED);
-			return;
-		}
 		else{
 			console.log('we should be here, please check this case. setSearchTypeByCategoryId()' );
 		}
@@ -940,12 +936,6 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 				return;
 			}
 			else if(categoryId == categoryIdConstant.CLASSIFIED_COMPUTER_NETWORKING_CATEGORY_ID){
-				//set the search type to car search 
-				setSearchType(searchTypeConstant.ADVANCE_SEARCH_CLASSIFIED);
-				$scope.showAdvanceSearchClassifiedDiv= true;
-				return;
-			}
-			else if(categoryId == categoryIdConstant.CLASSIFIED_DVD_MOVIES_CATEGORY_ID){
 				//set the search type to car search 
 				setSearchType(searchTypeConstant.ADVANCE_SEARCH_CLASSIFIED);
 				$scope.showAdvanceSearchClassifiedDiv= true;

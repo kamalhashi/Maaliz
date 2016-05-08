@@ -377,7 +377,7 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 			$scope.showAdvanceSearchClassifiedDiv= true;
 			return;
 		}
-		else if(categoryId == categoryIdConstant.CLASSIFIED_DVD_MOVIES_CATEGORY_ID){
+		else if(categoryId == categoryIdConstant.CLASSIFIED_TV_CATEGORY_ID){
 			$scope.showAdvanceSearchClassifiedDiv= true;
 			return;
 		}
@@ -519,7 +519,7 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_CLOTHING_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_COLLECTIBLES_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_COMPUTER_NETWORKING_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_DVD_MOVIES_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_TV_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_ELECTRONICS_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_FURNITURE_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_GAMING_CATEGORY_ID,0);
@@ -669,8 +669,8 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 							$rootScope.countClassifiedComputerNetwork=data;
 							return;
 						}
-						else if(categoryId == categoryIdConstant.CLASSIFIED_DVD_MOVIES_CATEGORY_ID){
-							$rootScope.countClassifiedDvdMovies=data;
+						else if(categoryId == categoryIdConstant.CLASSIFIED_TV_CATEGORY_ID){
+							$rootScope.countClassifiedTV=data;
 							return;
 						}
 						else if(categoryId == categoryIdConstant.CLASSIFIED_ELECTRONICS_CATEGORY_ID){

@@ -90,10 +90,6 @@ hashiApp.factory('dispatcherPostAdNextFactory', function($location , $state,
 					$state.go("post_ad_classified_computer",  {categoryId: categoryId, productId:productId});
 					return;
 				}
-				else if(categoryLft >= categoryRange.CLASSIFIED_DVD_MOVIES_MIN   && categoryRgt <= categoryRange.CLASSIFIED_DVD_MOVIES_MAX){
-					$state.go("post_ad_classified_dvd_movies",  {categoryId: categoryId, productId:productId});
-					return;
-				}
 				else if(categoryLft >= categoryRange.CLASSIFIED_PETS_MIN   && categoryRgt <= categoryRange.CLASSIFIED_PETS_MAX){
 					$state.go("post_ad_classified_pets",  {categoryId: categoryId, productId:productId});
 					return;
