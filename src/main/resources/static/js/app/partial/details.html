@@ -6,7 +6,7 @@
 			<br /> <br />
 			<div class="well sidebar-form">
 				<h3 style="margin-top: 0">
-					<strong>Find the product</strong>
+					<strong>{{'FIND_PRODUCT' | translate}}</strong>
 				</h3>
 
 
@@ -363,7 +363,7 @@
 								<div class="col-xs-6">{{sellerTypeConstant[product.sellerType-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Age of item:</div>
+								<div class="col-xs-6">{{'AGE' | translate}}:</div>
 								<div class="col-xs-6">{{ageItemConstant[product.ageItem-1].name}}</div>
 							</div>
 						</div>
@@ -385,7 +385,7 @@
 								<div class="col-xs-6">{{sellerTypeConstant[product.sellerType-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Age of item:</div>
+								<div class="col-xs-6">{{'AGE' | translate}}:</div>
 								<div class="col-xs-6">{{ageItemConstant[product.ageItem-1].name}}</div>
 							</div>
 						</div>
@@ -402,7 +402,7 @@
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Age of item:</div>
+								<div class="col-xs-6">{{'AGE' | translate}}:</div>
 								<div class="col-xs-6">{{ageItemConstant[product.ageItem-1].name}}</div>
 							</div>
 							<div class="row">
@@ -560,10 +560,8 @@
 						
 						<div class="col-xs-12"
 							ng-show="(product.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_RES_MIN
-							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_RES_MAX)
-							
-							||
-							(product.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MIN
+							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_RES_MAX)						
+							|| (product.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MIN
 							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MAX)"> 
 						
 							<div class="row">
@@ -693,12 +691,12 @@
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Age:</div>
+								<div class="col-xs-6">{{'AGE' | translate}}:</div>
 								<div class="col-xs-6">{{ageConstant[product.ageItem-1].name}}</div>
 							</div>
 							
 							<div class="row">
-								<div class="col-xs-6">Condition:</div>
+								<div class="col-xs-6">{{'CONDITION' | translate}}:</div>
 								<div class="col-xs-6">{{conditionConstant[product.conditionItem-1].name}}</div>
 							</div>
 						</div>
@@ -715,20 +713,20 @@
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Age:</div>
+								<div class="col-xs-6">{{'AGE' | translate}}:</div>
 								<div class="col-xs-6">{{ageConstant[product.ageItem-1].name}}</div>
 							</div>
 							
 							<div class="row">
-								<div class="col-xs-6">Condition:</div>
+								<div class="col-xs-6">{{'CONDITION' | translate}}:</div>
 								<div class="col-xs-6">{{conditionConstant[product.conditionItem-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Brand:</div>
+								<div class="col-xs-6">{{'BRAND' | translate}}:</div>
 								<div class="col-xs-6">{{cameraBrandConstant[product.brandItem-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Warranty:</div>
+								<div class="col-xs-6">{{'WARRANTY' | translate}}:</div>
 								<div class="col-xs-6">{{warrantyConstant[product.warrantyItem-1].name}}</div>
 							</div>
 						</div>
@@ -745,16 +743,16 @@
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Age:</div>
+								<div class="col-xs-6">{{'AGE' | translate}}:</div>
 								<div class="col-xs-6">{{ageConstant[product.ageItem-1].name}}</div>
 							</div>
 							
 							<div class="row">
-								<div class="col-xs-6">Condition:</div>
+								<div class="col-xs-6">{{'CONDITION' | translate}}:</div>
 								<div class="col-xs-6">{{conditionConstant[product.conditionItem-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Brand:</div>
+								<div class="col-xs-6">{{'BRAND' | translate}}:</div>
 								<div class="col-xs-6">{{computerBrandConstant[product.brandItem-1].name}}</div>
 							</div>
 							<div class="row">
@@ -770,7 +768,7 @@
 								<div class="col-xs-6">{{computerHardDriveConstant[product.hardDrive-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Warranty:</div>
+								<div class="col-xs-6">{{'WARRANTY' | translate}}:</div>
 								<div class="col-xs-6">{{warrantyConstant[product.warrantyItem-1].name}}</div>
 							</div>
 						</div>

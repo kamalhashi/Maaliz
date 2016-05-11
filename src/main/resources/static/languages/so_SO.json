@@ -145,7 +145,9 @@
    "BATHROOMS" : "Musqulaha" ,
    "RENT_IS_PAID" : "Bixinta kirada" ,
    "NEIGHBOURHOOD" : "Xaafada" ,
-   "FURNISHED" : "Goglan" 
-   
-   
+   "FURNISHED" : "Goglan",
+   "AGE" : "Da'da" ,
+   "CONDITION" : "Xaalada" ,
+   "BRAND" : "Summad" ,
+   "HARD_DRIVE" : "Hard drive"
 }

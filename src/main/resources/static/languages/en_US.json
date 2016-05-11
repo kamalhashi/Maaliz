@@ -145,6 +145,11 @@
    "BATHROOMS" : "Bathrooms" ,
    "RENT_IS_PAID" : "Rent is paid" ,
    "NEIGHBOURHOOD" : "Neighbourhood" ,
-   "FURNISHED" : "Furnished" 
+   "FURNISHED" : "Furnished",
+   "AGE" : "Age" ,
+   "CONDITION" : "Condition" ,
+   "BRAND" : "Brand",
+   "HARD_DRIVE" : "Hard drive",
+   "WARRANTY" : "Warranty"
    
 }
