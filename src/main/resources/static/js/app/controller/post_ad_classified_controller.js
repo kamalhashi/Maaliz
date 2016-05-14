@@ -376,6 +376,12 @@ hashiApp.controller('PostAdClassifiedController', function($scope, $state, auth,
 						console.log("ClassifiedToys");
 						$scope.ad= {type: 'ClassifiedToys', productPriority: 0, imageStatus: 'IMAGE_PENDING'};
 					}
+					else if($scope.categoryObject.lft >= categoryRange.CLASSIFIED_TICKETS_MIN  && 
+							$scope.categoryObject.rgt <= categoryRange.CLASSIFIED_TICKETS_MAX)
+					{
+						console.log("ClassifiedTickets");
+						$scope.ad= {type: 'ClassifiedTickets', productPriority: 0, imageStatus: 'IMAGE_PENDING'};
+					}
 					//last thing to initialize is the map
 					$scope.ad.location= mapFactory.init();
 				});

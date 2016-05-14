@@ -94,6 +94,10 @@ hashiApp.factory('dispatcherPostAdNextFactory', function($location , $state,
 					$state.go("post_ad_classified_pets",  {categoryId: categoryId, productId:productId});
 					return;
 				}
+				else if(categoryLft >= categoryRange.CLASSIFIED_TICKETS_MIN   && categoryRgt <= categoryRange.CLASSIFIED_TICKETS_MAX){
+					$state.go("post_ad_classified_tickets",  {categoryId: categoryId, productId:productId});
+					return;
+				}
 				
 				else{
 					$state.go("post_ad_classified",  {categoryId: categoryId, productId:productId});

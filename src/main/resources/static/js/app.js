@@ -274,6 +274,14 @@ hashiApp
                 productId: null 
         }
 	})	
+	.state('post_ad_classified_tickets', {
+		url: "/post_ad_classified_tickets/:categoryId",
+		templateUrl: "js/app/partial/post_ad_classified_tickets.html",
+		controller : "PostAdClassifiedController",
+		params:{
+                productId: null 
+        }
+	})	
 	.state('post_ad_community', {
 		url: "/post_ad_community/:categoryId",
 		templateUrl: "js/app/partial/post_ad_community.html",
