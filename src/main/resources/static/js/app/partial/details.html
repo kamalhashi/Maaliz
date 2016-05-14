@@ -679,7 +679,8 @@
 							ng-show="product.categoriesEntity.lft >= categoryRange.CLASSIFIED_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_MAX
 									    && !(product.categoriesEntity.lft >= categoryRange.CLASSIFIED_CAMERA_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_CAMERA_MAX)
 									    && !(product.categoriesEntity.lft >= categoryRange.CLASSIFIED_COMPUTER_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_COMPUTER_MAX)
-									    && !(product.categoriesEntity.lft >= categoryRange.CLASSIFIED_PETS_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_PETS_MAX)">				
+									    && !(product.categoriesEntity.lft >= categoryRange.CLASSIFIED_PETS_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_PETS_MAX)
+									    && !(product.categoriesEntity.lft >= categoryRange.CLASSIFIED_TICKETS_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_TICKETS_MAX)">				
 			
 								
 							<div class="row">
@@ -800,6 +801,28 @@
 							<div class="row">
 								<div class="col-xs-6">{{'PRICE' | translate}}</div>
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
+							</div>
+						</div>
+						
+						
+						<!-- show classifed  tickets -->
+						<div class="col-xs-12"
+							ng-show="product.categoriesEntity.lft >= categoryRange.CLASSIFIED_TICKETS_MIN && product.categoriesEntity.rgt <= categoryRange.CLASSIFIED_TICKETS_MAX">				
+							<div class="row">
+								<div class="col-xs-6">{{'POSTED' | translate}}</div>
+								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">{{'PRICE' | translate}}</div>
+								<div class="col-xs-6">${{product.productPrice | number}}</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">{{'FROM' | translate}}:</div>
+								<div class="col-xs-6">{{product.from}}</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">{{'TO' | translate}}:</div>
+								<div class="col-xs-6">{{product.to}}</div>
 							</div>
 						</div>
 						

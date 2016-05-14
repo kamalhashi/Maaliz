@@ -150,6 +150,8 @@
    "CONDITION" : "Condition" ,
    "BRAND" : "Brand",
    "HARD_DRIVE" : "Hard drive",
-   "WARRANTY" : "Warranty"
+   "WARRANTY" : "Warranty",
+   "FROM" : "From",
+   "TO" : "To" 
    
 }

@@ -149,5 +149,7 @@
    "AGE" : "Da'da" ,
    "CONDITION" : "Xaalada" ,
    "BRAND" : "Summad" ,
-   "HARD_DRIVE" : "Hard drive"
+   "HARD_DRIVE" : "Hard drive",
+   "FROM" : "Kusocoto",
+    "TO" : "Kasocoto" 
 }
