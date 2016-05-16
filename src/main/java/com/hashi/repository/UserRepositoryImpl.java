@@ -5,6 +5,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,4 +28,18 @@ public class UserRepositoryImpl   implements UserRepositoryCustom {
 		
 		return query.executeUpdate();
 	}
+	
+	@Transactional
+    @CacheEvict(value = "listRootCategoriesSomali", allEntries=true)    
+	public void refreshSomaliCategories(){
+		System.out.println("Refresh Somali Cateogires");
+	}
+	
+	@Transactional
+    @CacheEvict(value = "listRootCategoriesEnglish", allEntries=true)    
+	public void refreshEnglishCategories(){
+		System.out.println("Refresh English Cateogires");
+	}
+	
+	
 }

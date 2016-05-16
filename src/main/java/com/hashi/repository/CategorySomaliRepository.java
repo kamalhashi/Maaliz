@@ -2,6 +2,7 @@ package com.hashi.repository;
 import java.util.List;
 
 import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -72,5 +73,4 @@ public interface CategorySomaliRepository extends JpaRepository<CategorySomali, 
 	@Query("SELECT CASE WHEN COUNT(Child) > 0 THEN true ELSE false END FROM CategorySomali Child, CategorySomali Parent WHERE Parent.categoryId = :categoryId  AND  Child.depth =Parent.depth +1 AND Child.lft BETWEEN Parent.lft AND Parent.rgt  ORDER BY Child.categoryId")
 	@Cacheable("hasChildCategoriesSomali")
 	public boolean hasChildCategories(@Param("categoryId") Long categoryId);
-	
 }

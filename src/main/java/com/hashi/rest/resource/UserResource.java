@@ -32,6 +32,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.hashi.repository.UserRepository;
 import com.hashi.rest.domain.User;
 import com.hashi.rest.domain.UserRole;
 import com.hashi.rest.enums.Role;
@@ -51,12 +52,14 @@ public class UserResource {
 	private UserService userService;
 	private MessageSource message;
 	private EmailService emailService;
+	private UserRepository userRepository;
 
 	@Autowired
-	public UserResource(MessageSource message , EmailService emailService, UserService userService) {
+	public UserResource(MessageSource message , EmailService emailService, UserService userService, UserRepository userRepository) {
 		this.emailService= emailService;
 		this.userService= userService;
 		this.message = message;
+		this.userRepository= userRepository;
 	}	
 
 
@@ -180,6 +183,27 @@ public class UserResource {
 	@ResponseBody
 	public Principal user(Principal user) {    
 		return user;
+	}
+	
+	
+	/*
+	 *Refresh categories this code should not be here
+	 */
+	@RequestMapping("/refreshSomaliCategories")
+	@ResponseBody
+	public void refreshSomaliCategories() {    
+		System.out.println("refreshSomaliCategories");
+		userRepository.refreshSomaliCategories();
+	}
+	
+	/*
+	 *Refresh categories this code should not be here
+	 */
+	@RequestMapping("/refreshEnglishCategories")
+	@ResponseBody
+	public void refreshEnglishCategories() {    
+		System.out.println("refreshEnglishCategories");
+		userRepository.refreshEnglishCategories();
 	}
 
 }

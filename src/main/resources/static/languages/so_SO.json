@@ -133,7 +133,7 @@
    "MODEL" : "Nooca" ,
    "MAKE" : "Sameeyaha" ,
    "BODY_TYPE" : "Qaabka" ,
-   "DETAILS" : "Faahfaahin",
+   "DETAILS" : "Faafaahin",
    "DESCRIPTION" : "Sharaxaad",
    "REPLY_TO_THIS_AD" : "Fariin udir xayeysiistaha" ,
    "MESSAGE" : "Fariin",
@@ -150,6 +150,6 @@
    "CONDITION" : "Xaalada" ,
    "BRAND" : "Summad" ,
    "HARD_DRIVE" : "Hard drive",
-   "FROM" : "Kusocoto",
-    "TO" : "Kasocoto" 
+   "FROM" : "Kasocoto",
+    "TO" : "Kusocoto" 
 }
