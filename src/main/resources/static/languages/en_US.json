@@ -152,6 +152,18 @@
    "HARD_DRIVE" : "Hard drive",
    "WARRANTY" : "Warranty",
    "FROM" : "From",
-   "TO" : "To" 
+   "TO" : "To" ,
+   "DELIVERY" : "Delivery",
+   "DELIVERY_TITLE" : "Shipping & Delivering items" ,
+   "DELIVERY_DESC_ONE" : "Items in",
+   "DELIVERY_DESC_THREE" : "Please contact us on",
+   "DELIVERY_DESC_TWO" : "are deliverable, if you like item to be delivered to you",
+   "DELIVERY_DESC_FOUR" : "Method of Delivery",
+   "DELIVERY_DESC_FIVE" : "We deliver items in two ways",
+   "DELIVERY_DESC_SIX" : "Airplane",
+   "DELIVERY_DESC_SEVEN" : "Truck"
    
-}
+   
+   
+   
+ }

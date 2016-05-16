@@ -151,5 +151,15 @@
    "BRAND" : "Summad" ,
    "HARD_DRIVE" : "Hard drive",
    "FROM" : "Kasocoto",
-    "TO" : "Kusocoto" 
+   "TO" : "Kusocoto" ,
+   "DELIVERY" : "Dirista",
+   "DELIVERY_TITLE" : "Dirista alaabta" ,
+   "DELIVERY_DESC_ONE" : "Alaabta kujirta",
+   "DELIVERY_DESC_THREE" : "Wixi faafaahin nagala soo xiriir",
+   "DELIVERY_DESC_TWO" : "hadii aad doonaysi waa lugu soo diri meel kasta aad ka joogto Soomaliya.",
+   "DELIVERY_DESC_FOUR" : "Habka dirista",
+   "DELIVERY_DESC_FIVE" : "Habka dirista waa labo qaab",
+   "DELIVERY_DESC_SIX" : "Diyaaradaha",
+   "DELIVERY_DESC_SEVEN" : "Baabuurta xamuulka"
+   
 }
