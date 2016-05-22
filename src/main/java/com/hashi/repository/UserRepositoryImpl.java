@@ -30,13 +30,13 @@ public class UserRepositoryImpl   implements UserRepositoryCustom {
 	}
 	
 	@Transactional
-    @CacheEvict(value = "findCategoryByCategoryIdSomali", allEntries=true)    
+    @CacheEvict(value = "subCategoriesOfCategorySomali", allEntries=true)    
 	public void refreshSomaliCategories(){
 		System.out.println("Refresh Somali Cateogires");
 	}
 	
 	@Transactional
-    @CacheEvict(value = "findCategoryByCategoryIdEnglish", allEntries=true)    
+    @CacheEvict(value = "subCategoriesOfCategoryEnglish", allEntries=true)    
 	public void refreshEnglishCategories(){
 		System.out.println("Refresh English Cateogires");
 	}

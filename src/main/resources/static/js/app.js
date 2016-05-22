@@ -250,6 +250,14 @@ hashiApp
                 productId: null 
         }
 	})	
+	.state('post_ad_classified_business_sale', {
+		url: "/post_ad_classified_business_sale/:categoryId",
+		templateUrl: "js/app/partial/post_ad_classified_business_sale.html",
+		controller : "PostAdClassifiedController",
+		params:{
+                productId: null 
+        }
+	})	
 	.state('post_ad_classified_camera', {
 		url: "/post_ad_classified_camera/:categoryId",
 		templateUrl: "js/app/partial/post_ad_classified_camera.html",
