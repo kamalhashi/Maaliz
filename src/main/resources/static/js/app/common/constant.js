@@ -388,7 +388,9 @@ hashiApp.constant('noCylindersEnglish',  [
                                       {"id":6,  "name":8},
                                       {"id":7,  "name":9},
                                       {"id":8,  "name":10},
-                                      {"id":9,  "name":12}
+                                      {"id":9,  "name":"12+"},
+                                      {"id":10,  "name":"Unknown"}
+                                      
 ]); 
 hashiApp.constant('noCylindersSomali',  [       
                                           {"id":1, "name":3},
@@ -399,7 +401,8 @@ hashiApp.constant('noCylindersSomali',  [
                                           {"id":6,  "name":8},
                                           {"id":7,  "name":9},
                                           {"id":8,  "name":10},
-                                          {"id":9,  "name": "12+"}
+                                          {"id":9,  "name": "12+"},
+                                          {"id":10,  "name":"Magaranayo"}
 ]); 
 
 
