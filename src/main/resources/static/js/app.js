@@ -375,12 +375,30 @@ hashiApp
 	.state('account_settings', {
 		url: "/account_settings",
 		templateUrl: "js/app/partial/account_settings.html",
-		controller : 'AccountSettingsController'
+		controller : 'AccountSettingsController' ,
+		resolve:{
+			promiseObj: function findUserByUserId(userFactory, auth){ 
+				if(auth){
+					if(auth.authenticated){
+						return userFactory.findUserByUserId(auth.authenticatedUserId);
+					}
+				}	
+			}
+		}
 	})
 	.state('account_profile', {
 		url: "/account_profile",
 		templateUrl: "js/app/partial/account_profile.html",
-		controller : 'AccountProfileController'
+		controller : 'AccountProfileController' ,
+		resolve:{
+			promiseObj: function findProfileByUserId(profileFactory, auth){ 
+				if(auth){
+					if(auth.authenticated){
+						return profileFactory.findProfileByUserId(auth.authenticatedUserId);
+					}
+				}	
+			}
+		}
 	})
 	.state('listing', {
 		url: "/listing",

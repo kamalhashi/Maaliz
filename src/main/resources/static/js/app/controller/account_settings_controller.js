@@ -1,20 +1,17 @@
 var hashiApp = angular.module('hashiApp') // gets it
 
 hashiApp.controller('AccountSettingsController', function($scope, $location , $state, $stateParams,  $anchorScroll, $translate,
-		userFactory, auth, $window, $q) {
+		userFactory, auth, $window, $q, promiseObj) {
 
 	/*********Advance search variables**********************/
 
 	(function init() {
 
-
-
-
-		if(auth){
-			if(auth.authenticated){
-				findUserByUserId(auth.authenticatedUserId);
+		if(promiseObj){
+			if(promiseObj.data){
+				$scope.user = promiseObj.data;
 			}
-		}	
+		}
 
 	})();
 
@@ -58,17 +55,6 @@ hashiApp.controller('AccountSettingsController', function($scope, $location , $s
 		}
 		return d.promise;
 	};
-
-	/***********Helper function***************/
-
-	//get product by product id
-	function findUserByUserId(userId){
-		userFactory.findUserByUserId(userId).success(
-				function(data) {
-					$scope.user= data;
-				});
-	}
-
 });
 
 

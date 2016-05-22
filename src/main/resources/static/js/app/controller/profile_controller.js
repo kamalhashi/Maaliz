@@ -2,7 +2,7 @@ var hashiApp = angular.module('hashiApp') // gets it
 
 hashiApp.controller('AccountProfileController', function($scope, $location , $state, $stateParams,  $anchorScroll, $translate,
 		profileFactory, auth, $window, careerLevelEnglish, careerLevelSomali, fileUploaderFactory, flowFactory , $http,
-		bucketName, $timeout) {
+		bucketName, $timeout, promiseObj) {
 
 	/*********Advance search variables**********************/
 	$scope.fileCV;
@@ -26,9 +26,16 @@ hashiApp.controller('AccountProfileController', function($scope, $location , $st
 			$scope.constantCareerLevel=careerLevelEnglish;	
 		}
 
-		if(auth){
-			if(auth.authenticated){
-				findProfileByUserId(auth.authenticatedUserId);
+		if(promiseObj){
+			if(promiseObj.data){
+				$scope.profile= promiseObj.data;
+				$scope.profileExist=true;
+				if(promiseObj.data.imageName)
+					getImageFromAmazon(auth.authenticatedUserId, bucketName.profileImage , promiseObj.data.imageName);
+				if(promiseObj.data.cvName)
+					getImageFromAmazon(auth.authenticatedUserId, bucketName.profileCV , promiseObj.data.cvName);
+			}else{
+				$scope.profileExist=false;
 			}
 		}
 
