@@ -14,8 +14,8 @@
             <div class="post-ad-main-categories">
                 <div class="row">
                     <div class="col-sm-12">		
-                        <div style="width: 16%; float:left;" ng-repeat="category in categories"  ng-click="getSubCategoriesLevelOne(category.categoryId, 2 , 500)">
-                            <div class="post-category" style="border: 1px solid #ddd; min-height: 75px; padding: 20px 10px; text-align: center;"
+                        <div class="col-xs-6 col-sm-2 post-category"  ng-repeat="category in categories"  ng-click="getSubCategoriesLevelOne(category.categoryId, 2 , 500)">
+                            <div 
                                   ng-style="selectedCategoryIdLevelOne==category.categoryId && {'background-color':'#f5f5f5'}">
                                	   <a href="" ng-click="getSubCategoriesLevelOne(category.categoryId, 2 , 500)">
        
