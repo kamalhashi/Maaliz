@@ -8,21 +8,15 @@ import javax.persistence.Table;
 @Table(name = "CLASSIFIED_TICKETS")
 public class ClassifiedTickets extends Product {
 
-	@Column(name = "FROM_CITY")
-	private String from;
-	@Column(name = "TO_CITY")
-	private String to;
+	@Column(name = "NUMBER_TICKETS")
+	private Integer numberOfTickets;
+
+	public Integer getNumberOfTickets() {
+		return numberOfTickets;
+	}
+
+	public void setNumberOfTickets(Integer numberOfTickets) {
+		this.numberOfTickets = numberOfTickets;
+	}
 	
-	public String getFrom() {
-		return from;
-	}
-	public void setFrom(String from) {
-		this.from = from;
-	}
-	public String getTo() {
-		return to;
-	}
-	public void setTo(String to) {
-		this.to = to;
-	}
 }
