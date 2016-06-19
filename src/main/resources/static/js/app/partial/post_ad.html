@@ -61,7 +61,7 @@
                             </div>
                         </div>
                         <div style="width: 33.333333333333%; float: left;" ng-show="showSubCategoryLevelTwo"  cg-busy="{promise:myPromiseLevelTwo,backdrop:true, message:'Please wait'}">
-                            <div class="list-group-wrapper" style="height: 320px; overflow:auto;">
+                            <div class="list-group-wrapper" style="height: 300px; overflow:auto;">
                                 <div class='content' >
 
                                     <div class="list-group">
@@ -84,7 +84,7 @@
                         </div>
                         
                          <div style="width: 33.333333333333%; float: left;" ng-show="showSubCategoryLevelThree"  cg-busy="{promise:myPromiseLevelThree,backdrop:true, message:'Please wait'}">
-                            <div class="list-group-wrapper" style="height: 320px; overflow:auto;" >
+                            <div class="list-group-wrapper" style="height: 300px; overflow:auto;" >
                                 <div class='content'>
                                     <div class="list-group">
                                         <a href=""  ng-repeat="category in listSubCategoriesLevelThree" 
@@ -117,7 +117,7 @@
                     <div class="col-sm-12">	
                         <div style="padding: 18px 18px;">
                             <div class="row">
-                                <div class="col-sm-6">	
+                                <div class="col-sm-6 col-xs-12">	
                                 	<strong ng-show="disableButton" class="h5 text-primary">{{'SELECT_LEAST_SUBCATEGORY' | translate}}</strong>
                                 </div>
                                 <div class="col-sm-2 col-sm-offset-4">	

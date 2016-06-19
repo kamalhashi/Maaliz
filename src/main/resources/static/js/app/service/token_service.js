@@ -2,7 +2,7 @@ var hashiApp = angular.module('hashiApp') // gets it
 
 hashiApp.factory('tokenFactory', function($http) {
 
-	var urlBase = 'http://xaashi-somalia-rest.cfapps.io/verify';
+	var urlBase = 'http://maaliz-djibouti-rest.cfapps.io/verify';
 	var dataFactory = {};
     
 	dataFactory.registerToken = function (token) {

@@ -2,7 +2,7 @@ var hashiApp = angular.module('hashiApp') // gets it
 
 hashiApp.factory('applicantFactory', function($http, $q, $translate) {
 
-	var urlBase = 'http://xaashi-somalia-rest.cfapps.io/applicants';
+	var urlBase = 'http://maaliz-djibouti-rest.cfapps.io/applicants';
 	var dataFactory = {};
 
 	dataFactory.findApplicants = function(productId, pageIndex, sortColumn, sortDirection) {

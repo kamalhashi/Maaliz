@@ -10,7 +10,7 @@ import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="Dali", date="2016-01-31T15:35:13.899+0300")
+@Generated(value="Dali", date="2016-06-19T14:38:13.891+0400")
 @StaticMetamodel(Product.class)
 public class Product_ {
 	public static volatile SingularAttribute<Product, Long> productId;
@@ -18,7 +18,6 @@ public class Product_ {
 	public static volatile SingularAttribute<Product, Double> productPrice;
 	public static volatile SingularAttribute<Product, String> productDescription;
 	public static volatile SingularAttribute<Product, String> coverPhoto;
-	public static volatile SingularAttribute<Product, String> logoPhoto;
 	public static volatile SingularAttribute<Product, LiveType> liveType;
 	public static volatile SingularAttribute<Product, LanguageType> productLanguage;
 	public static volatile SingularAttribute<Product, ProductPriority> productPriority;
@@ -32,4 +31,5 @@ public class Product_ {
 	public static volatile SingularAttribute<Product, Date> created;
 	public static volatile SingularAttribute<Product, Date> updated;
 	public static volatile SingularAttribute<Product, Date> expiryDate;
+	public static volatile SingularAttribute<Product, String> logoPhoto;
 }

@@ -2,7 +2,7 @@ var hashiApp = angular.module('hashiApp') // gets it
 
 hashiApp.factory('cityFactory', function($http, $q, $translate) {
 
-	var urlBase = 'http://xaashi-somalia-rest.cfapps.io/cities';
+	var urlBase = 'http://maaliz-djibouti-rest.cfapps.io/cities';
 	var dataFactory = {};
 
 

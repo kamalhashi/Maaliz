@@ -154,7 +154,7 @@
 									</div>
 								</div>
 
-								<div class="col-sm-5 col-xs-offset-2">
+								<div class="col-sm-5 col-sm-offset-2">
 									<div class="form-group has-feedback"
 										ng-class="{ 'has-error': postAdForm.selectEmploymentType.$touched && 
 									    postAdForm.selectEmploymentType.$invalid ||
@@ -211,7 +211,7 @@
 									</div>
 								</div>
 
-								<div class="col-sm-5 col-xs-offset-2">
+								<div class="col-sm-5 col-sm-offset-2">
 										<div class="form-group has-feedback"
 										ng-class="{ 'has-error': postAdForm.selectEducationLevel.$touched && 
 									    postAdForm.selectEducationLevel.$invalid ||
@@ -271,7 +271,7 @@
 									</div>
 								</div>
 
-								<div class="col-sm-5 col-xs-offset-2">
+								<div class="col-sm-5 col-sm-offset-2">
 										<div class="form-group has-feedback"
 										ng-class="{ 'has-error': postAdForm.selectMonthSalary.$touched && 
 									    postAdForm.selectMonthSalary.$invalid ||
@@ -329,7 +329,7 @@
 									</div>
 								</div>
 
-								<div class="col-sm-5 col-xs-offset-2">
+								<div class="col-sm-5 col-sm-offset-2">
 										<div class="form-group has-feedback"
 										ng-class="{ 'has-error': postAdForm.selectListedBy.$touched && 
 									    postAdForm.selectListedBy.$invalid ||
@@ -387,7 +387,7 @@
 									</div>
 								</div>
 
-								<div class="col-sm-5 col-xs-offset-2">
+								<div class="col-sm-5 col-sm-offset-2">
 										<div class="form-group has-feedback"
 										ng-class="{ 'has-error': postAdForm.inputCompanyName.$touched && 
 									    postAdForm.inputCompanyName.$invalid ||
@@ -459,7 +459,7 @@
 									</div>
 								</div>	
 								
-							   <div class="col-sm-5 col-xs-offset-2">
+							   <div class="col-sm-5 col-sm-offset-2">
 										<div class="form-group has-feedback"
 										ng-class="{ 'has-error': postAdForm.inputJobLocation.$touched && 
 									    postAdForm.inputJobLocation.$invalid ||
@@ -566,9 +566,9 @@
 						<div class="panel-heading">
 							<h3 class="panel-title">Language of the ad</h3>
 						</div>
-						<div class="panel-body">
+						<div class="row panel-body">
 
-							<div class="checkbox">
+							<div class="checkbox col-xs-7">
 								<label> <input type="checkbox"
 									ng-model="ad.productLanguage" ng-true-value="'so_SO'" />
 
@@ -578,10 +578,10 @@
 									Eglish Language
 								</label>
 							</div>
-
-							<button class="btn btn-primary pull-right" ng-click="saveProduct(postAdForm.$valid)" ng-hide="updateButton">Publish ad</button>
-							<button class="btn btn-primary pull-right" ng-show="updateButton" ng-click="updateProduct(postAdForm.$valid)">Update ad</button>
-							
+							<div class="col-xs-5">
+								<button class="btn btn-primary pull-right" ng-click="saveProduct(postAdForm.$valid)" ng-hide="updateButton">Publish ad</button>
+								<button class="btn btn-primary pull-right" ng-show="updateButton" ng-click="updateProduct(postAdForm.$valid)">Update ad</button>
+							</div>
 						</div>
 					</div>
 				</div>

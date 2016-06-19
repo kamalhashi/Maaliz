@@ -177,7 +177,7 @@
 										</div>
 									 </div>
 								   </div>
-								<div class="col-sm-5 col-xs-offset-2">
+								<div class="col-sm-5 col-sm-offset-2">
 									<div class="form-group has-feedback"
 										ng-class="{ 'has-error': postAdForm.selectNoBedrooms.$touched && 
 									    postAdForm.selectNoBedrooms.$invalid ||
@@ -234,7 +234,7 @@
 										</div>
 									 </div>
 								   </div>
-								<div class="col-sm-5 col-xs-offset-2">
+								<div class="col-sm-5 col-sm-offset-2">
 									<div class="form-group has-feedback"
 										ng-class="{ 'has-error': postAdForm.selectOwnerType.$touched && 
 									    postAdForm.selectOwnerType.$invalid ||
@@ -292,7 +292,7 @@
 										</div>
 									 </div>
 								   </div>
-								<div class="col-sm-5 col-xs-offset-2">
+								<div class="col-sm-5 col-sm-offset-2">
 									<div class="form-group has-feedback"
 										ng-class="{ 'has-error': postAdForm.selectFurnished.$touched && 
 									    postAdForm.selectFurnished.$invalid ||
@@ -344,11 +344,9 @@
 									flow-file-success="fileUploadedSuccessfully($file, 0 )"
 									flow-files-submitted="$flow.upload()">
 									
-									
-                                      
 
 									<div ng-hide="$flow.files.length"
-										style="border: 3px dashed #CCCCCC; height: 350px; display: block; background: #f7f7f7; padding: 10px;">
+										style="border: 3px dashed #CCCCCC; height: 350px; margin-bottom: 10px; display: block; background: #f7f7f7; padding: 10px;">
 										<a href="" style="font-size: 36px; color: #ddd; padding: 30px"><i
 											class="fa fa-camera"></i></a><br /> <a href="" class="text-info"
 											style="font-size: 14px;">Add image</a>										
@@ -693,9 +691,9 @@
 						<div class="panel-heading">
 							<h3 class="panel-title">Language of the ad</h3>
 						</div>
-						<div class="panel-body">
+						<div class="row panel-body">
 
-							<div class="checkbox">
+							<div class="checkbox col-xs-7">
 								<label> <input type="checkbox"
 									ng-model="ad.productLanguage" ng-true-value="'so_SO'" />
 
@@ -705,10 +703,10 @@
 									Eglish Language
 								</label>
 							</div>
-
-							<button class="btn btn-primary pull-right" ng-click="saveProduct(postAdForm.$valid)" ng-hide="updateButton">Publish ad</button>
-							<button class="btn btn-primary pull-right" ng-show="updateButton" ng-click="updateProduct(postAdForm.$valid)">Update ad</button>
-							
+							<div class="col-xs-5">
+								<button class="btn btn-primary pull-right" ng-click="saveProduct(postAdForm.$valid)" ng-hide="updateButton">Publish ad</button>
+								<button class="btn btn-primary pull-right" ng-show="updateButton" ng-click="updateProduct(postAdForm.$valid)">Update ad</button>
+							</div>
 						</div>
 					</div>
 				</div>
