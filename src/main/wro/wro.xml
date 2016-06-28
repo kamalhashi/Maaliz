@@ -78,8 +78,8 @@
 		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_rent_res_controller.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_rent_comm_controller.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_rent_room_controller.js</js>
-		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_rent_short_term_controller.js</js>
-		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_rent_hotels_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_rent_short_term_daily_controller.js</js>
+		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_rent_short_term_monthly_controller.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_classified_controller.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_classified_camera_controller.js</js>
 		<js>file:@project.basedir@/src/main/resources/static/js/app/controller/post_ad_classified_computer_controller.js</js>

@@ -155,7 +155,7 @@
 				
 				<!-- sale residential search  -->
 				<div class="form-group" ng-show="showAdvanceSearchSaleResDiv || showAdvanceSearchRentResDiv 
-				   || showAdvanceSearchRentShortMonthlyDiv">
+				   || showAdvanceSearchRentShortMonthlyDiv || showAdvanceSearchRentShortDailyDiv">
 					<span>Price ($) </span>
 					<div class="row">
 						<div class="col-xs-6">
@@ -188,8 +188,7 @@
 				<!-- sale commercial house search  -->
 				<div class="form-group" ng-show="showAdvanceSearchSaleCommDiv || showAdvanceSearchSaleUnitsDiv 
 					|| showAdvanceSearchSaleLandDiv || showAdvanceSearchRentCommDiv || showAdvanceSearchRentRoomDiv
-					|| showAdvanceSearchClassifiedDiv
-					|| showAdvanceSearchRentHotelDiv">
+					|| showAdvanceSearchClassifiedDiv">
 					<span>Price ($) </span>
 					<div class="row">
 						<div class="col-xs-6">
@@ -285,7 +284,7 @@
                                           
                                     </p>
                                     <div class="text-center col-xs-10 col-xs-offset-1">
-                               		  <a  href ng-click="forwardToDetailsPage(featured.productId, featured.categoriesEntity.categoryId, featured.categoriesEntity.lft, featured.categoriesEntity.rgt)" class="btn btn-primary btn-block btn-xs">Details</a>
+                               		  <a  href ng-click="forwardToDetailsPage(featured.productId, featured.categoriesEntity.categoryId, featured.categoriesEntity.lft, featured.categoriesEntity.rgt)" class="btn btn-primary btn-block btn-xs">{{'DETAILS' | translate}}</a>
                                     </div>
                                 </div>
                                 
@@ -460,7 +459,7 @@
 								  advFinalSelectedCategoryId:  376, 
 								  advSelectedCategoryIdLevelOne:  7,
 								  advSelectedCategoryIdLevelTwo:  376})" >
-									{{'AIRLINES_AVIATION' | translate}}<strong> {{countJobAirlinesAviation}} </strong>
+									{{'JOB_AIRLINES_AVIATION' | translate}}<strong> {{countJobAirlinesAviation}} </strong>
 								</a> <br/>
 							
 								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
@@ -469,8 +468,6 @@
 								  advSelectedCategoryIdLevelTwo:  408})" >
 									{{'JOB_MEDIA' | translate}}<strong> {{countJobMedia}} </strong>
 								</a> <br/> 
-								
-								
 								
 							</p>
 						</div>
@@ -582,21 +579,21 @@
 								 		 	 advSelectedCategoryIdLevelOne: 4,
 										 	 advSelectedCategoryIdLevelTwo: 920,
 										 	  advSelectedCategoryIdLevelThree: 921})">
-								 		      Collectibles  <strong> {{countClassifiedCollectibles}} </strong> 
+								 		      {{'COLLECTIBLES' | translate}}   <strong> {{countClassifiedCollectibles}} </strong> 
 								  		</a> <br/> 
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
 								 			 advFinalSelectedCategoryId:  968,
 								 		 	 advSelectedCategoryIdLevelOne: 4,
 										 	 advSelectedCategoryIdLevelTwo: 968,
 										 	  advSelectedCategoryIdLevelThree: 969})">
-								 		      Computers & Network  <strong> {{countClassifiedComputerNetwork}} </strong> 
+								 		       {{'COMPUTERS_NETWORK' | translate}} <strong> {{countClassifiedComputerNetwork}} </strong> 
 								  		</a> <br/> 
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
 								 			 advFinalSelectedCategoryId:  1096,
 								 		 	 advSelectedCategoryIdLevelOne: 4,
 										 	 advSelectedCategoryIdLevelTwo: 1086,
 										 	 advSelectedCategoryIdLevelThree: 1096})">
-								 		      TV & Television<strong> {{countClassifiedTV}} </strong> 
+								 		     {{'TELEVISION' | translate}} <strong> {{countClassifiedTV}} </strong> 
 								  		</a> <br/> 
 								  		
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
@@ -604,7 +601,7 @@
 								 		 	 advSelectedCategoryIdLevelOne: 4,
 										 	 advSelectedCategoryIdLevelTwo: 1086,
 										 	  advSelectedCategoryIdLevelThree: 1087})">
-								 		      Electronics <strong> {{countClassifiedElectronics}} </strong> 
+								 		      {{'ELECTRONICS' | translate}}   <strong> {{countClassifiedElectronics}} </strong> 
 								  		</a> <br/> 
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
 								 			 advFinalSelectedCategoryId:  1570,
@@ -625,7 +622,7 @@
 								 		 	 advSelectedCategoryIdLevelOne: 4,
 										 	 advSelectedCategoryIdLevelTwo: 1265,
 										 	  advSelectedCategoryIdLevelThree: 1266})">
-								 		       	Game  <strong> {{countClassifiedGaming}} </strong> 
+								 		       	{{'GAMING' | translate}}  <strong> {{countClassifiedGaming}} </strong> 
 								  		</a> <br/>
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
 								 			 advFinalSelectedCategoryId: 1323,
@@ -652,14 +649,14 @@
 								 			 advFinalSelectedCategoryId:  1425,
 								 		 	 advSelectedCategoryIdLevelOne: 4,
 										 	 advSelectedCategoryIdLevelTwo: 1425})">
-								 		      Miscellaneous <strong> {{countClassifiedMisc}} </strong> 
+								 		     {{'MISCELLANEOUS' | translate}}  <strong> {{countClassifiedMisc}} </strong> 
 								  		</a> <br/>
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
 								 			 advFinalSelectedCategoryId:  1426,
 								 		 	 advSelectedCategoryIdLevelOne: 4,
 										 	 advSelectedCategoryIdLevelTwo: 1426,
 										 	 advSelectedCategoryIdLevelThree: 1427})">
-								 		      Mobile Phones & PDAs <strong> {{countClassifiedMobile}} </strong> 
+								 		      {{'MOBILES_PDA' | translate}}  <strong> {{countClassifiedMobile}} </strong> 
 								  		</a> <br/>
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
 								 			 advFinalSelectedCategoryId:  1470,
@@ -739,15 +736,16 @@
 								 			 advFinalSelectedCategoryId:  338 ,
 								 		 	 advSelectedCategoryIdLevelOne: 6,
 										 	 advSelectedCategoryIdLevelTwo: 338,
-										 	  advSelectedCategoryIdLevelThree:  353})">
-								 		      {{'SHORT_TERM_FOR_RENT'  | translate}} <strong> {{countRentShortMonthly}} </strong>
+										 	 advSelectedCategoryIdLevelThree:  353})">
+								 		      {{'SHORT_TERM_MONTHLY_RENT'  | translate}} <strong> {{countRentShortMonthly}} </strong>
 								  		</a> <br/> 
 								  		
-								  		<a  ui-sref="listing ({searchType:'AdvanceSearchRentHotel' , advSelectedCityId :0, 
-								 			 advFinalSelectedCategoryId:  339 ,
+								  		<a  ui-sref="listing ({searchType:'AdvanceSearchRentShortDaily' , advSelectedCityId :0, 
+								 		     advFinalSelectedCategoryId:  339 ,
 								 		 	 advSelectedCategoryIdLevelOne: 6,
-										 	 advSelectedCategoryIdLevelTwo: 339})">
-								 		      {{'HOTELS_FOR_RENT' | translate}} <strong> {{countRentShortDaily}} </strong> 
+										 	 advSelectedCategoryIdLevelTwo: 339,
+										 	 advSelectedCategoryIdLevelThree:  356})">
+								 		      {{'SHORT_TERM_DAILY_RENT' | translate}} <strong> {{countRentShortDaily}} </strong> 
 								  		</a> <br/>
 									</p>
 								</div>
@@ -766,25 +764,25 @@
 											<h4>{{'COMMUNITY' | translate}}</h4>
 									</a>
 									<p>
-										<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 			 advFinalSelectedCategoryId: 1620,
+									    <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
+								 			 advFinalSelectedCategoryId: 1590,
 								 		 	 advSelectedCategoryIdLevelOne: 8,
-								 		 	 advSelectedCategoryIdLevelTwo: 1620})">
-								 		     {{'COMMUNITY_FREE_STUFF'  | translate}} <strong> {{countCommunityFreeStuff}} </strong> 
+								 		 	 advSelectedCategoryIdLevelTwo: 1590})">
+								 		     {{'COMMUNITY_ACTIVITIES'  | translate}} <strong> {{countCommunityActivities}} </strong> 
 								  		</a> <br/>
 								  		
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
 								 			 advFinalSelectedCategoryId: 1591 ,
 								 		 	 advSelectedCategoryIdLevelOne: 8,
 										 	 advSelectedCategoryIdLevelTwo: 1591})">
-								 		     {{'JOB_ART' | translate}} <strong> {{countCommunityArtist}} </strong> 
+								 		     {{'COMMUNITY_ARTISTS' | translate}} <strong> {{countCommunityArtist}} </strong> 
 								  		</a> <br/>
 								  		
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
 								 			 advFinalSelectedCategoryId: 1592 ,
 								 		 	 advSelectedCategoryIdLevelOne: 8,
 										 	 advSelectedCategoryIdLevelTwo: 1592})">
-								 		      {{'CAR_LIFT' | translate}}<strong> {{countCommunityCarLift}} </strong> 
+								 		      {{'COMMUNITY_CAR_LIFT' | translate}}<strong> {{countCommunityCarLift}} </strong> 
 								  		</a> <br/>
 								  		
 								  		
@@ -792,62 +790,66 @@
 								 			 advFinalSelectedCategoryId: 1593 ,
 								 		 	 advSelectedCategoryIdLevelOne: 8,
 										 	 advSelectedCategoryIdLevelTwo: 1593})">
-								 		      {{'CHARITIES' | translate}} <strong> {{countCommunityCharities}} </strong> 
+								 		      {{'COMMUNITY_CHARITIES' | translate}} <strong> {{countCommunityCharities}} </strong> 
 								  		</a> <br/>
+								  		
 								  		
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
 								 			 advFinalSelectedCategoryId: 1594 ,
 								 		 	 advSelectedCategoryIdLevelOne: 8,
 										 	 advSelectedCategoryIdLevelTwo: 1594})">
-								 		     {{'CHILDCARE' | translate}}  <strong> {{countCommunityChildCare}} </strong> 
+								 		     {{'COMMUNITY_CHILDCARE' | translate}}  <strong> {{countCommunityChildCare}} </strong> 
 								  		</a> <br/>
 								  		
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
 								 			 advFinalSelectedCategoryId: 1595 ,
 								 		 	 advSelectedCategoryIdLevelOne: 8,
 										 	 advSelectedCategoryIdLevelTwo: 1595})">
-								 		     {{'CLASSES' | translate}}  <strong> {{countCommunityClasses}} </strong> 
+								 		     {{'COMMUNITY_CLASSES' | translate}}  <strong> {{countCommunityClasses}} </strong> 
 								  		</a> <br/>
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
 								 			 advFinalSelectedCategoryId: 1597 ,
 								 		 	 advSelectedCategoryIdLevelOne: 8,
 										 	 advSelectedCategoryIdLevelTwo: 1597})">
-								 		      {{'ANNOUNCEMENT' | translate}}  <strong> {{countCommunityAnnouncement}} </strong> 
+								 		      {{'COMMUNITY_DOMESTIC' | translate}}  <strong> {{countCommunityDomestic}} </strong> 
 								  		</a> <br/>
 								  		
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 			 advFinalSelectedCategoryId: 1598,
+								 			 advFinalSelectedCategoryId: 1604,
 								 		 	 advSelectedCategoryIdLevelOne: 8,
-										 	 advSelectedCategoryIdLevelTwo: 1598})">
-								 		      {{'EDUCATION' | translate}}  <strong> {{countCommunityEducation}} </strong> 
+										 	 advSelectedCategoryIdLevelTwo: 1604,
+										 	 advSelectedCategoryIdLevelThree:  1607})">
+								 		      {{'COMMUNITY_SERVICES' | translate}}  <strong> {{countCommunityServices}} </strong> 
 								  		</a> <br/>
 								  		
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
 								 			 advFinalSelectedCategoryId: 1599,
 								 		 	 advSelectedCategoryIdLevelOne: 8,
 										 	 advSelectedCategoryIdLevelTwo: 1599})">
-								 		      {{'FREELANCERS' | translate}}  <strong> {{countCommunityFreelancers}} </strong> 
+								 		      {{'COMMUNITY_FREELANCERS' | translate}}  <strong> {{countCommunityFreelancers}} </strong> 
 								  		</a> <br/>
 								  		
 								  		 <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 			 	advFinalSelectedCategoryId:  1644,
+								 			 	advFinalSelectedCategoryId:  1600,
 								 		 	 	advSelectedCategoryIdLevelOne: 8,
-										 	 	advSelectedCategoryIdLevelTwo: 1644})">
-								 		     	{{'LOST_FOUND' | translate}} <strong> {{countCommunityLostFound}} </strong> 
+										 	 	advSelectedCategoryIdLevelTwo: 1600})">
+								 		     	{{'COMMUNITY_LOST_FOUND' | translate}} <strong> {{countCommunityLostFound}} </strong> 
 								  		</a> <br/>
 								  		
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 			 advFinalSelectedCategoryId: 1601,
+								 			 advFinalSelectedCategoryId: 1605,
 								 		 	 advSelectedCategoryIdLevelOne: 8,
-										 	 advSelectedCategoryIdLevelTwo: 1601})">
-								 		      {{'ISLAM_LECTURE' | translate}} <strong> {{countCommunityIslam}} </strong> 
+								 		 	 advSelectedCategoryIdLevelTwo: 1605})">
+								 		     {{'COMMUNITY_SPORTS'  | translate}} <strong> {{countCommunitySports}} </strong> 
 								  		</a> <br/>
+								  		
 								  		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 			 advFinalSelectedCategoryId: 1602,
+								 			 advFinalSelectedCategoryId: 1606,
 								 		 	 advSelectedCategoryIdLevelOne: 8,
-										 	 advSelectedCategoryIdLevelTwo: 1602})">
-								 		      {{'BUSINESS_ADVERTISING' | translate}} <strong>{{countCommunityBusinessAdvertisement}} </strong> 
+								 		 	 advSelectedCategoryIdLevelTwo: 1606})">
+								 		     {{'COMMUNITY_FREE_STUFF'  | translate}} <strong> {{countCommunityFreeStuff}} </strong> 
 								  		</a> <br/>
+								  		
 									</p>
 								</div>
 							</div>
@@ -888,10 +890,10 @@
 							</a>                     
                              <p>
                                	<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								  advFinalSelectedCategoryId:  379,
+								  advFinalSelectedCategoryId:  422,
 								  advSelectedCategoryIdLevelOne:  7,
-								  advSelectedCategoryIdLevelTwo:  379})" >
-									{{'JOB_AUTOMOTIVE' | translate}} <strong> {{countJobAutomotiveEngineering}} </strong>
+								  advSelectedCategoryIdLevelTwo:  422})" >
+									{{'JOB_SALES' | translate}} <strong> {{countJobSales}} </strong>
 								</a> <br/>
 								
 								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
@@ -954,17 +956,17 @@
 								</a> <br/>
 								
 								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								  advFinalSelectedCategoryId:  382, 
+								  advFinalSelectedCategoryId:  410, 
 								  advSelectedCategoryIdLevelOne:  7,
-								  advSelectedCategoryIdLevelTwo:  382})" >
-									{{'JOB_BUSINESS_DEVELOPMENT' | translate}} <strong> {{countJobBusinessDevelopment}} </strong>
+								  advSelectedCategoryIdLevelTwo:  410})" >
+									{{'JOB_OIL_GAS' | translate}} <strong> {{countJobOilGas}} </strong>
 								</a> <br/>
 								
 								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								  advFinalSelectedCategoryId:  383, 
+								  advFinalSelectedCategoryId:  423, 
 								  advSelectedCategoryIdLevelOne:  7,
-								  advSelectedCategoryIdLevelTwo:  383})" >
-									{{'JOB_BUSINESS_SUPP' | translate}} <strong> {{countJobBusinessSupplies}} </strong>
+								  advSelectedCategoryIdLevelTwo:  423})" >
+									{{'JOB_SECRETARIAL' | translate}} <strong> {{countJobSecretarial}} </strong>
 								</a> <br/>
 								
 								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
@@ -980,14 +982,12 @@
 								  advSelectedCategoryIdLevelTwo:  378})" >
 									{{'JOB_ART' | translate}} <strong> {{countJobArtEntertainment}} </strong>
 								</a> <br/>
-								
-								
-								
+									
 								<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
 								     advFinalSelectedCategoryId:  396, 
 								     advSelectedCategoryIdLevelOne:  7,
 								     advSelectedCategoryIdLevelTwo:  396})" >
-									Graphic Design <strong> {{countJobGraphicDesign}} </strong>
+									{{'JOB_GRAPHIC_DESIGN' | translate}}  <strong> {{countJobGraphicDesign}} </strong>
 								</a> <br/>
                                
                             </p>

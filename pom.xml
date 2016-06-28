@@ -3,9 +3,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hashi</groupId>
-	<artifactId>maaliz-djibouti</artifactId>
+	<artifactId>maaliz-angola</artifactId>
 	<version>0.0.1</version>
-	<name>maaliz-djibouti</name>
+	<name>maaliz-angola</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

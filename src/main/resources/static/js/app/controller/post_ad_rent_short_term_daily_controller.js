@@ -1,6 +1,6 @@
 var hashiApp = angular.module('hashiApp') // gets it
 
-hashiApp.controller('PostAdRentShortTermMonthlyController', function($scope, $state, auth,categoryFactory,
+hashiApp.controller('PostAdRentShortTermDailyController', function($scope, $state, auth,categoryFactory,
 		categoryRange, $stateParams, mapFactory, fileUploaderFactory, productFactory,
 		$window, $translate, categoryRange,flowFactory,bucketName,
 		$http,$timeout, noBedroomsVillaEnglish, noBedroomsVillaSomali,
@@ -50,10 +50,10 @@ hashiApp.controller('PostAdRentShortTermMonthlyController', function($scope, $st
 
 		if($translate.use() === 'so_SO'){
 			//Vill House no studio apartment 
-			 if($scope.categoryId ==355)
+			 if($scope.categoryId ==358)
 				 $scope.constantNoBedrooms= noBedroomsVillaSomali;
 			 //apartment has studio flat
-			 else if($scope.categoryId ==354)
+			 else if($scope.categoryId ==357)
 				 $scope.constantNoBedrooms= noBedroomsApartmentSomali;
 			 $scope.constantNoBathrooms= noBathroomsSomali;
 			 $scope.constantOwnerType=ownerTypeSomali;
@@ -62,10 +62,10 @@ hashiApp.controller('PostAdRentShortTermMonthlyController', function($scope, $st
 
 		} 
 		if($translate.use() === 'en_US'){
-			 if($scope.categoryId ==355)
+			 if($scope.categoryId ==358)
 				 $scope.constantNoBedrooms= noBedroomsVillaEnglish;
 			 //apartment has studio flat
-			 else if($scope.categoryId ==354)
+			 else if($scope.categoryId ==357)
 				 $scope.constantNoBedrooms= noBedroomsApartmentEnglish;
 			 
 			 $scope.constantNoBathrooms= noBathroomsEnglish;
@@ -90,7 +90,7 @@ hashiApp.controller('PostAdRentShortTermMonthlyController', function($scope, $st
 		/********only specific for the new product**********/
 		else{
 			//this is important for JSON back-end server
-			$scope.ad= {type: 'PropertyRentShortMonthly', productPriority: 0, imageStatus: 'IMAGE_PENDING'};
+			$scope.ad= {type: 'PropertyRentShortDaily', productPriority: 0, imageStatus: 'IMAGE_PENDING'};
 			//last thing to initialize is the map
 			$scope.ad.location= mapFactory.init();
 		}

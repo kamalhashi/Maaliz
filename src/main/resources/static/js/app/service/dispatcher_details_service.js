@@ -73,8 +73,8 @@ hashiApp.factory('dispatcherDetailsFactory', function($location , $state,
 					$state.go("details", { productId: productId, categoryId: categoryId, categoryType: categoryName.PROPERTY_RENT_ROOM});
 					return;
 				}
-				else if(categoryLft >= categoryRange.PROPERTY_RENT_HOTEL_MIN   && categoryRgt <= categoryRange.PROPERTY_RENT_HOTEL_MAX){
-					$state.go("details", { productId: productId, categoryId: categoryId, categoryType: categoryName.PROPERTY_RENT_HOTEL});
+				else if(categoryLft >= categoryRange.PROPERTY_RENT_SHORT_DAILY_MIN    && categoryRgt <= categoryRange.PROPERTY_RENT_SHORT_DAILY_MAX){
+					$state.go("details", { productId: productId, categoryId: categoryId, categoryType: categoryName.PROPERTY_RENT_SHORT_DAILY});
 					return;
 				}
 				else if(categoryLft >= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MIN   && categoryRgt <= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MAX){

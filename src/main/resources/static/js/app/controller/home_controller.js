@@ -72,7 +72,7 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 	$scope.showAdvanceSearchRentResDiv= false;
 	$scope.showAdvanceSearchRentCommDiv= false;
 	$scope.showAdvanceSearchRentRommDiv= false;
-	$scope.showAdvanceSearchRentHotelDiv= false;
+	$scope.showAdvanceSearchRentShortDailyDiv= false;
 	$scope.showAdvanceSearchRentShortMonthlyDiv= false;
 	//classified stuff
 	$scope.showAdvanceSearchClassifiedDiv= false;
@@ -340,8 +340,8 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 			$scope.showAdvanceSearchRentRoomDiv= true;
 			return;
 		}
-		else if(categoryId == categoryIdConstant.RENT_HOTEL_CATEGORY_ID){
-			$scope.showAdvanceSearchRentHotelDiv= true;
+		else if(categoryId == categoryIdConstant.RENT_SHORT_DAILY_CATEGORY_ID){
+			$scope.showAdvanceSearchRentShortDailyDiv= true;
 			return;
 		}
 		else if(categoryId == categoryIdConstant.RENT_SHORT_MONTHLY_CATEGORY_ID){
@@ -394,7 +394,7 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 			$scope.showAdvanceSearchRentResDiv= false;
 			$scope.showAdvanceSearchRentCommDiv= false;
 			$scope.showAdvanceSearchRentRoomDiv= false;
-			$scope.showAdvanceSearchRentHotelDiv= false;
+			$scope.showAdvanceSearchRentDailyDiv= false;
 			$scope.showAdvanceSearchRentShortMonthlyDiv= false;
 			$scope.showAdvanceSearchClassifiedDiv= false;
 			return;
@@ -415,7 +415,7 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 		$scope.showAdvanceSearchRentResDiv= false;
 		$scope.showAdvanceSearchRentCommDiv= false;
 		$scope.showAdvanceSearchRentRoomDiv= false;
-		$scope.showAdvanceSearchRentHotelDiv= false;
+		$scope.showAdvanceSearchRentShortDailyDiv= false;
 		$scope.showAdvanceSearchRentShortMonthlyDiv= false;
 		$scope.showAdvanceSearchClassifiedDiv= false;
 	}
@@ -445,8 +445,8 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 			return searchTypeConstant.ADVANCE_SEARCH_RENT_COMM;
 		}else if($scope.showAdvanceSearchRentRoomDiv==true){
 			return searchTypeConstant.ADVANCE_SEARCH_RENT_ROOM;
-		}else if($scope.showAdvanceSearchRentHotelDiv==true){
-			return searchTypeConstant.ADVANCE_SEARCH_RENT_HOTEL;
+		}else if($scope.showAdvanceSearchRentShortDailyDiv==true){
+			return searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_DAILY;
 		}else if($scope.showAdvanceSearchRentShortMonthlyDiv==true){
 			return searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_MONTHLY;
 		}else if($scope.showAdvanceSearchClassifiedDiv==true){
@@ -479,38 +479,32 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 			countProductsAvailableByCategoryId(categoryIdConstant.RENT_RES_VILLA_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.RENT_COMM_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.RENT_ROOM_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.RENT_HOTEL_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.RENT_SHORT_DAILY_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.RENT_SHORT_MONTHLY_CATEGORY_ID,0);
-			//Job accounting 
+			//Job top level
+			countProductsAvailableByCategoryId(categoryIdConstant.JOB_CONSULTING_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.JOB_ACCOUNTING_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_AUTOMOTIVE_ENGINEERING_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_MEDIA_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_PUBLIC_RELATIONS_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.JOB_CONSTRUCTION_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.JOB_BANKING_FINANCE_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.JOB_AIRLINES_AVIATION_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.JOB_GOV_ADMIN_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.JOB_MEDIA_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.JOB_MARKETING_ADVERTISING_CATEGORY_ID,0);
 
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_AIRLINES_AVIATION_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_ART_ENTERTAINMENT_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_INTERIOR_DESIGN_CATEGORY_ID,0);
+			
+            //job second level bottom
+			countProductsAvailableByCategoryId(categoryIdConstant.JOB_SALES_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.JOB_BEAUTY_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_BUSINESS_DEVELOPMENT_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_BUSINESS_SUPPLIES_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_CONSULTING_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_CONSTRUCTION_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_CUSTOMER_SERVICE_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.JOB_EDUCATION_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.JOB_OIL_GAS_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.JOB_ENGINEERING_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_ENV_SERVICES_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_EVENT_MANAGEMENT_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_EXECUTIVE_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_FASHION_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_FOOD_BEVERAGE_CATEGORY_ID,0);
-			
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_GOV_ADMIN_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_GRAPHIC_DESIGN_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.JOB_HOSPITALITY_RESTAURANT_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.JOB_SECRETARIAL_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.JOB_HR_RECRUITMENT_CATEGORY_ID,0);
-			
+			countProductsAvailableByCategoryId(categoryIdConstant.JOB_CUSTOMER_SERVICE_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.JOB_PUBLIC_RELATIONS_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.JOB_ART_ENTERTAINMENT_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.JOB_EXECUTIVE_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.JOB_GRAPHIC_DESIGN_CATEGORY_ID,0);	
 			//classified 
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_BABY_ITEMS_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_BOOKS_CATEGORY_ID,0);
@@ -527,7 +521,6 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_WOMEN_JEWELRY_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_WATCHES_CATEGORY_ID,0);
 
-			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_LOST_FOUND_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_MISC_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_MOBILE_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_TICKETS_VOUCHERS_CATEGORY_ID,0);
@@ -535,19 +528,17 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_SPORTS_EQUIPMENT_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.CLASSIFIED_TOYS_CATEGORY_ID,0);
 			//Community stuff
-			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_FREE_STUFF_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_ACTIVITIES_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_ARTIST_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_CAR_LIFT_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_CHARITIES_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_CHILDCARE_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_CLASSES_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_ANNOUNCEMENT_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_EDUCATION_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_FREELANCERS_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_ISLAM_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_BUSINESS_ADVERTISMENT_CATEGORY_ID,0);
-			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_PHOTOGRAPHY_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_DOMESTIC_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_SERVICES_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_FREELANCERS_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_LOST_FOUND_CATEGORY_ID,0);
+			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_FREE_STUFF_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.COMMUNITY_SPORTS_CATEGORY_ID,0);
 	    }
 
@@ -608,7 +599,7 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 							$rootScope.countRentRoom=data;
 							return;
 						}
-						else if(categoryId == categoryIdConstant.RENT_HOTEL_CATEGORY_ID){
+						else if(categoryId == categoryIdConstant.RENT_SHORT_DAILY_CATEGORY_ID){
 							$rootScope.countRentShortDaily=data;
 							return;
 						}
@@ -617,29 +608,39 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 							return;
 						}
 						//JOB TOP LEVEL
-						else if(categoryId == categoryIdConstant.JOB_MEDIA_CATEGORY_ID){
-							$rootScope.countJobMedia=data;
-							return;
-						}
-						
-						else if(categoryId == categoryIdConstant.JOB_PUBLIC_RELATIONS_CATEGORY_ID){
-							$rootScope.countJobPublicRelations=data;
+						else if(categoryId == categoryIdConstant.JOB_CONSULTING_CATEGORY_ID){
+							$rootScope.countJobConsulting=data;
 							return;
 						}
 						else if(categoryId == categoryIdConstant.JOB_ACCOUNTING_CATEGORY_ID){
 							$rootScope.countJobAccounting=data;
 							return;
 						}
-						
-						else if(categoryId == categoryIdConstant.JOB_AUTOMOTIVE_ENGINEERING_CATEGORY_ID){
-							$rootScope.countJobAutomotiveEngineering=data;
+						else if(categoryId == categoryIdConstant.JOB_CONSTRUCTION_CATEGORY_ID){
+							$rootScope.countJobConstruction=data;
 							return;
 						}
-						
+						else if(categoryId == categoryIdConstant.JOB_BANKING_FINANCE_CATEGORY_ID){
+							$rootScope.countJobBankingFinance=data;
+							return;
+						}
+						else if(categoryId == categoryIdConstant.JOB_AIRLINES_AVIATION_CATEGORY_ID){
+							$rootScope.countJobAirlinesAviation=data;
+							return;
+						}
+						else if(categoryId == categoryIdConstant.JOB_GOV_ADMIN_CATEGORY_ID){
+							$rootScope.countJobGovAdmin=data;
+							return;
+						}
+						else if(categoryId == categoryIdConstant.JOB_MEDIA_CATEGORY_ID){
+							$rootScope.countJobMedia=data;
+							return;
+						}
 						else if(categoryId == categoryIdConstant.JOB_MARKETING_ADVERTISING_CATEGORY_ID){
 							$rootScope.countJobMarkettingAdvertising=data;
 							return;
 						}
+						
 						//classified stuff
 						else if(categoryId == categoryIdConstant.CLASSIFIED_BABY_ITEMS_CATEGORY_ID){
 							$rootScope.countClassifiedBabyItems=data;
@@ -697,10 +698,6 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 							$rootScope.countClassifiedWomenJewelry=data;
 							return;
 						}
-						else if(categoryId == categoryIdConstant.COMMUNITY_LOST_FOUND_CATEGORY_ID){
-							$rootScope.countCommunityLostFound=data;
-							return;
-						}
 						else if(categoryId == categoryIdConstant.CLASSIFIED_MISC_CATEGORY_ID){
 							$rootScope.countClassifiedMisc=data;
 							return;
@@ -727,6 +724,11 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 							$rootScope.countClassifiedToys=data;
 							return;
 						}
+						//Community staff related
+						else if(categoryId == categoryIdConstant.COMMUNITY_ACTIVITIES_CATEGORY_ID){
+							$rootScope.countCommunityActivities=data;
+							return;
+						}
 						else if(categoryId == categoryIdConstant.COMMUNITY_ARTIST_CATEGORY_ID){
 							$rootScope.countCommunityArtist=data;
 							return;
@@ -747,143 +749,77 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 							$rootScope.countCommunityClasses=data;
 							return;
 						}
-						else if(categoryId == categoryIdConstant.COMMUNITY_ANNOUNCEMENT_CATEGORY_ID){
-							$rootScope.countCommunityAnnouncement=data;
-							return;
-						}
-						else if(categoryId == categoryIdConstant.COMMUNITY_EDUCATION_CATEGORY_ID){
-							$rootScope.countCommunityEducation=data;
-							return;
-						}
-						else if(categoryId == categoryIdConstant.COMMUNITY_FREELANCERS_CATEGORY_ID){
-							$rootScope.countCommunityFreelancers=data;
-							return;
-						}
-						else if(categoryId == categoryIdConstant.COMMUNITY_ISLAM_CATEGORY_ID){
-							$rootScope.countCommunityIslam=data;
-							return;
-						}
-						else if(categoryId == categoryIdConstant.COMMUNITY_BUSINESS_ADVERTISMENT_CATEGORY_ID){
-							$rootScope.countCommunityBusinessAdvertisement=data;
-							return;
-						}
-						else if(categoryId == categoryIdConstant.COMMUNITY_PHOTOGRAPHY_CATEGORY_ID){
-							$rootScope.countCommunityPhotography=data;
+						else if(categoryId == categoryIdConstant.COMMUNITY_DOMESTIC_CATEGORY_ID){
+							$rootScope.countCommunityDomestic=data;
 							return;
 						}
 						else if(categoryId == categoryIdConstant.COMMUNITY_SERVICES_CATEGORY_ID){
 							$rootScope.countCommunityServices=data;
 							return;
 						}
-						else if(categoryId == categoryIdConstant.COMMUNITY_SPORTS_CATEGORY_ID){
-							$rootScope.countCommunitySports=data;
+						else if(categoryId == categoryIdConstant.COMMUNITY_FREELANCERS_CATEGORY_ID){
+							$rootScope.countCommunityFreelancers=data;
+							return;
+						}
+						else if(categoryId == categoryIdConstant.COMMUNITY_LOST_FOUND_CATEGORY_ID){
+							$rootScope.countCommunityLostFound=data;
 							return;
 						}
 						else if(categoryId == categoryIdConstant.COMMUNITY_FREE_STUFF_CATEGORY_ID){
 							$rootScope.countCommunityFreeStuff=data;
 							return;
 						}
-						
-						else if(categoryId == categoryIdConstant.JOB_AIRLINES_AVIATION_CATEGORY_ID){
-							$rootScope.countJobAirlinesAviation=data;
+						else if(categoryId == categoryIdConstant.COMMUNITY_SPORTS_CATEGORY_ID){
+							$rootScope.countCommunitySports=data;
+							return;
+						}
+						//BOTTOM LEVEL JOBS
+						else if(categoryId == categoryIdConstant.JOB_SALES_CATEGORY_ID){
+							$rootScope.countJobSales=data;
+							return;
+						}
+						else if(categoryId == categoryIdConstant.JOB_BEAUTY_CATEGORY_ID){
+							$rootScope.countJobBeauty=data;
+							return;
+						}
+						else if(categoryId == categoryIdConstant.JOB_EDUCATION_CATEGORY_ID){
+							$rootScope.countJobEducation=data;
+							return;
+						}
+						else if(categoryId == categoryIdConstant.JOB_OIL_GAS_CATEGORY_ID){
+							$rootScope.countJobOilGas=data;
+							return;
+						}
+						else if(categoryId == categoryIdConstant.JOB_ENGINEERING_CATEGORY_ID){
+							$rootScope.countJobEngineering=data;
+							return;
+						}
+						else if(categoryId == categoryIdConstant.JOB_SECRETARIAL_ID){
+							$rootScope.countJobSecretarial =data;
+							return;
+						}
+						else if(categoryId == categoryIdConstant.JOB_HR_RECRUITMENT_CATEGORY_ID){
+							$rootScope.countJobHRRecruitment=data;
+							return;
+						}
+						else if(categoryId == categoryIdConstant.JOB_CUSTOMER_SERVICE_CATEGORY_ID){
+							$scope.countJobCustomerService=data;
+							return;
+						}
+						else if(categoryId == categoryIdConstant.JOB_PUBLIC_RELATIONS_CATEGORY_ID){
+							$rootScope.countJobPublicRelations=data;
 							return;
 						}
 						else if(categoryId == categoryIdConstant.JOB_ART_ENTERTAINMENT_CATEGORY_ID){
 							$rootScope.countJobArtEntertainment=data;
 							return;
 						}
-						else if(categoryId == categoryIdConstant.JOB_INTERIOR_DESIGN_CATEGORY_ID){
-							$rootScope.countJobInteriorDesign=data;
-							return;
-						}
-						
-						
-						else if(categoryId == categoryIdConstant.JOB_BANKING_FINANCE_CATEGORY_ID){
-							$rootScope.countJobBankingFinance=data;
-							return;
-						}
-						
-						else if(categoryId == categoryIdConstant.JOB_BEAUTY_CATEGORY_ID){
-							$rootScope.countJobBeauty=data;
-							return;
-						}
-						
-						else if(categoryId == categoryIdConstant.JOB_BUSINESS_DEVELOPMENT_CATEGORY_ID){
-							$rootScope.countJobBusinessDevelopment=data;
-							return;
-						}
-						
-						else if(categoryId == categoryIdConstant.JOB_BUSINESS_SUPPLIES_CATEGORY_ID){
-							$rootScope.countJobBusinessSupplies=data;
-							return;
-						}
-						
-						else if(categoryId == categoryIdConstant.JOB_CONSTRUCTION_CATEGORY_ID){
-							$rootScope.countJobConstruction=data;
-							return;
-						}
-						else if(categoryId == categoryIdConstant.JOB_CONSULTING_CATEGORY_ID){
-							$rootScope.countJobConsulting=data;
-							return;
-						}
-						
-						else if(categoryId == categoryIdConstant.JOB_CUSTOMER_SERVICE_CATEGORY_ID){
-							$scope.countJobCustomerService=data;
-							return;
-						}
-						
-						else if(categoryId == categoryIdConstant.JOB_EDUCATION_CATEGORY_ID){
-							$rootScope.countJobEducation=data;
-							return;
-						}
-						
-						else if(categoryId == categoryIdConstant.JOB_ENGINEERING_CATEGORY_ID){
-							$rootScope.countJobEngineering=data;
-							return;
-						}
-						
-						else if(categoryId == categoryIdConstant.JOB_ENV_SERVICES_CATEGORY_ID){
-							$rootScope.countJobEnvServices=data;
-							return;
-						}
-						
-						else if(categoryId == categoryIdConstant.JOB_EVENT_MANAGEMENT_CATEGORY_ID){
-							$rootScope.countJobEventManagement=data;
-							return;
-						}
-						
 						else if(categoryId == categoryIdConstant.JOB_EXECUTIVE_CATEGORY_ID){
 							$rootScope.countJobExecutive=data;
 							return;
 						}
-						
-						else if(categoryId == categoryIdConstant.JOB_FASHION_CATEGORY_ID){
-							$rootScope.countJobFashion=data;
-							return;
-						}
-					
-						else if(categoryId == categoryIdConstant.JOB_FOOD_BEVERAGE_CATEGORY_ID){
-							$rootScope.countJobFoodBeverage=data;
-							return;
-						}
-						
-						else if(categoryId == categoryIdConstant.JOB_GOV_ADMIN_CATEGORY_ID){
-							$rootScope.countJobGovAdmin=data;
-							return;
-						}
-						
 						else if(categoryId == categoryIdConstant.JOB_GRAPHIC_DESIGN_CATEGORY_ID){
 							$rootScope.countJobGraphicDesign=data;
-							return;
-						}
-						
-						else if(categoryId == categoryIdConstant.JOB_HOSPITALITY_RESTAURANT_CATEGORY_ID){
-							$rootScope.countJobHospitalityRestaurant=data;
-							return;
-						}
-							
-						else if(categoryId == categoryIdConstant.JOB_HR_RECRUITMENT_CATEGORY_ID){
-							$rootScope.countJobHRRecruitment=data;
 							return;
 						}
 						

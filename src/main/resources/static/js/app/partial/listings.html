@@ -95,7 +95,7 @@
 					</div>
 					<!-- sale residential search  -->
 				<div class="form-group" ng-show="showAdvanceSearchSaleResDiv || showAdvanceSearchRentResDiv
-				|| showAdvanceSearchRentShortMonthlyDiv">
+				|| showAdvanceSearchRentShortMonthlyDiv || showAdvanceSearchRentShortDailyDiv">
 					<span>Price ($) </span>
 					<div class="row">
 						<div class="col-xs-6">
@@ -126,7 +126,7 @@
 				</div>
 				<!-- sale commercial search  -->
 				<div class="form-group" ng-show="showAdvanceSearchSaleCommDiv || showAdvanceSearchSaleUnitsDiv || showAdvanceSearchSaleLandDiv
-				 || showAdvanceSearchRentCommDiv || showAdvanceSearchRentRoomDiv || showAdvanceSearchRentHotelDiv 
+				 || showAdvanceSearchRentCommDiv || showAdvanceSearchRentRoomDiv
 				 || showAdvanceSearchClassifiedDiv || showAdvanceSearchClassifiedCameraDiv">
 					<span>Price ($) </span>
 					<div class="row">
@@ -568,33 +568,6 @@
 											{{'RENT_IS_PAID' | translate }}: <strong style="margin-right: 20px">
 										 	{{constantRentTime[ad.rentTime-1].name}}</strong>
 										 </div>
-									</div>
-								</div>	
-								
-								
-								<!-- show only fields related to property rent hotel -->
-								<div
-									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_HOTEL_MIN && 
-										ad.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_HOTEL_MAX">
-									<div class="row">
-										<div class="col-sm-5">
-											Wifi: <strong style="margin-right: 20px">
-												{{ad.wiFi? "Yes" : "No"}}</strong>
-										</div>
-										
-										<div class="col-sm-5">
-											Parking: <strong style="margin-right: 20px">
-												{{ad.parking? "Yes" : "No"}}</strong>
-										</div>	
-										<div class="col-sm-5">
-											24hr Reception: <strong style="margin-right: 20px">
-												{{ad.reception? "Yes" : "No"}}</strong>
-										</div>
-										<div class="col-sm-5">
-											Restaurant: <strong style="margin-right: 20px">
-												{{ad.restaurant? "Yes" : "No"}}</strong>
-										</div>		
-											
 									</div>
 								</div>	
 								

@@ -57,7 +57,7 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 	$scope.showAdvanceSearchRentResDiv= false;
 	$scope.showAdvanceSearchRentCommDiv= false;
 	$scope.showAdvanceSearchRentRoomDiv= false;
-	$scope.showAdvanceSearchRentHotelDiv= false;
+	$scope.showAdvanceSearchRentShortDailyDiv= false;
 	$scope.showAdvanceSearchRentShortMonthlyDiv= false;
 	$scope.showAdvanceSearchClassifiedDiv= false;
 
@@ -137,7 +137,7 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 				|| $scope.searchType ===  searchTypeConstant.ADVANCE_SEARCH_RENT_RES 
 				|| $scope.searchType ===  searchTypeConstant.ADVANCE_SEARCH_RENT_COMM 
 				|| $scope.searchType ===  searchTypeConstant.ADVANCE_SEARCH_RENT_ROOM 
-				|| $scope.searchType ===  searchTypeConstant.ADVANCE_SEARCH_RENT_HOTEL
+				|| $scope.searchType ===  searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_DAILY
 				|| $scope.searchType ===  searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_MONTHLY
 				|| $scope.searchType ===  searchTypeConstant.ADVANCE_SEARCH_CLASSIFIED
 				|| $scope.searchType ===  searchTypeConstant.ADVANCE_SEARCH_JOB
@@ -496,8 +496,9 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 		case searchTypeConstant.ADVANCE_SEARCH_RENT_ROOM: 
 			var searchObject = {type: searchTypeParam  , priceFrom: $scope.priceFrom, priceTo: $scope.priceTo};
 			return searchObject;
-		case searchTypeConstant.ADVANCE_SEARCH_RENT_HOTEL: 
-			var searchObject = {type: searchTypeParam  , priceFrom: $scope.priceFrom, priceTo: $scope.priceTo};
+		case searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_DAILY:
+			var searchObject = {type: searchTypeParam  , priceFrom: $scope.priceFrom, priceTo: $scope.priceTo,
+				bedroomMin: $scope.bedroomMin, bedroomMax: $scope.bedroomMax};
 			return searchObject;
 		case searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_MONTHLY:
 			var searchObject = {type: searchTypeParam  , priceFrom: $scope.priceFrom, priceTo: $scope.priceTo,
@@ -572,9 +573,9 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 			$scope.showAdvanceSearchRentRoomDiv= true;
 			$scope.searchType = searchTypeConstant.ADVANCE_SEARCH_RENT_ROOM;
 			break;
-		case searchTypeConstant.ADVANCE_SEARCH_RENT_HOTEL:
-			$scope.showAdvanceSearchRentHotelDiv= true;
-			$scope.searchType = searchTypeConstant.ADVANCE_SEARCH_RENT_HOTEL;
+		case searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_DAILY:
+			$scope.showAdvanceSearchRentShortDailyDiv= true;
+			$scope.searchType = searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_DAILY;
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_MONTHLY:
 			$scope.showAdvanceSearchRentShortMonthlyDiv= true;
@@ -639,8 +640,8 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 			setSearchType(searchTypeConstant.ADVANCE_SEARCH_RENT_ROOM);
 			return;
 		}
-		else if(categoryId == categoryIdConstant.RENT_HOTEL_CATEGORY_ID){
-			setSearchType(searchTypeConstant.ADVANCE_SEARCH_RENT_HOTEL);
+		else if(categoryId == categoryIdConstant.RENT_SHORT_DAILY_CATEGORY_ID){
+			setSearchType(searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_DAILY);
 			return;
 		}
 		else if(categoryId == categoryIdConstant.RENT_SHORT_MONTHLY_CATEGORY_ID){
@@ -759,9 +760,11 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 			$scope.priceFrom= $stateParams.advPriceFrom;
 			$scope.priceTo = $stateParams.advPriceTo;
 			break;
-		case searchTypeConstant.ADVANCE_SEARCH_RENT_HOTEL:
+		case searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_DAILY:
 			$scope.priceFrom= $stateParams.advPriceFrom;
 			$scope.priceTo = $stateParams.advPriceTo;
+			$scope.bedroomMax = $stateParams.advBedroomMax;
+			$scope.bedroomMin = $stateParams.advBedroomMin;
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_MONTHLY:
 			$scope.priceFrom= $stateParams.advPriceFrom;
@@ -887,10 +890,10 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 				$scope.showAdvanceSearchRentRoomDiv= true;
 				return;
 			}
-			else if(categoryId == categoryIdConstant.RENT_HOTEL_CATEGORY_ID){
+			else if(categoryId == categoryIdConstant.RENT_SHORT_DAILY_CATEGORY_ID){
 				//set the search type to car search 
-				setSearchType(searchTypeConstant.ADVANCE_SEARCH_RENT_HOTEL);
-				$scope.showAdvanceSearchRentHotelDiv= true;
+				setSearchType(searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_DAILY);
+				$scope.showAdvanceSearchRentShortDailyDiv= true;
 				return;
 			}
 			else if(categoryId == categoryIdConstant.RENT_SHORT_MONTHLY_CATEGORY_ID){
@@ -954,7 +957,7 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 				$scope.showAdvanceSearchRentResDiv= false;
 				$scope.showAdvanceSearchRentCommDiv= false;
 				$scope.showAdvanceSearchRentRoomDiv= false;
-				$scope.showAdvanceSearchRentHotelDiv= false;
+				$scope.showAdvanceSearchRentShortDailyDiv= false;
 				$scope.showAdvanceSearchRentShortMonthlyDiv= false;
 				$scope.showAdvanceSearchClassifiedDiv= false;
 			}
@@ -974,7 +977,7 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 		$scope.showAdvanceSearchRentResDiv= false;
 		$scope.showAdvanceSearchRentCommDiv= false;
 		$scope.showAdvanceSearchRentRoomDiv= false;
-		$scope.showAdvanceSearchRentHotelDiv= false;
+		$scope.showAdvanceSearchRentShortDailyDiv= false;
 		$scope.showAdvanceSearchRentShortMonthlyDiv= false;
 		$scope.showAdvanceSearchClassifiedDiv= false;
 	}

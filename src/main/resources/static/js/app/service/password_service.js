@@ -2,7 +2,7 @@ var hashiApp = angular.module('hashiApp') // gets it
 
 hashiApp.factory('passwordFactory', function($http) {
 
-	var urlBase = 'http://maaliz-djibouti-rest.cfapps.io/password';
+	var urlBase = 'http://maaliz-angola-rest.cfapps.io/password';
 	var dataFactory = {};
 
 	dataFactory.sendLostPasswordToken = function(email) {

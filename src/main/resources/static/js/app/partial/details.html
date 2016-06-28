@@ -99,7 +99,7 @@
 				
 				<!-- sale residential search  -->
 				<div class="form-group" ng-show="showAdvanceSearchSaleResDiv || showAdvanceSearchRentResDiv 
-												   || showAdvanceSearchRentShortMonthlyDiv">
+												   || showAdvanceSearchRentShortMonthlyDiv || showAdvanceSearchRentShortDailyDiv">
 					<span>Price ($) </span>
 					<div class="row">
 						<div class="col-xs-6">
@@ -132,7 +132,7 @@
 				<!-- sale commercial house search  -->
 				<div class="form-group" ng-show="showAdvanceSearchSaleCommDiv || showAdvanceSearchSaleUnitsDiv 
 					|| showAdvanceSearchSaleLandDiv || showAdvanceSearchRentCommDiv || showAdvanceSearchRentRoomDiv
-					|| showAdvanceSearchClassifiedDiv  || showAdvanceSearchRentHotelDiv">
+					|| showAdvanceSearchClassifiedDiv">
 					<span>Price ($) </span>
 					<div class="row">
 						<div class="col-xs-6">
@@ -481,88 +481,16 @@
 							</div>
 						</div>
 						
-						<div class="col-xs-12"
-							ng-show="(product.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_HOTEL_MIN
-							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_HOTEL_MAX)">
-							
-							<div class="row">
-								<div class="col-xs-6">{{'POSTED' | translate}}</div>
-								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-6">Price per night:</div>
-								<div class="col-xs-6">${{product.productPrice | number}}</div>
-							</div>
-							<div class="row" ng-show="(product.wiFi)">
-								<div class="col-xs-6">Wifi:</div>
-								<div class="col-xs-6"><i class="fa fa-check-circle fa-fw"></i></div>
-							</div>
-							<div class="row" ng-show="(product.parking)">
-								<div class="col-xs-6">Parking:</div>
-								<div class="col-xs-6"><i class="fa fa-check-circle fa-fw"></i></div>
-							</div>	
-							<div class="row" ng-show="(product.reception)">
-								<div class="col-xs-6">24hr Reception:</div>
-								<div class="col-xs-6"><i class="fa fa-check-circle fa-fw"></i></div>
-							</div>	
-							<div class="row" ng-show="(product.restaurant)">
-								<div class="col-xs-6">Restaurant:</div>
-								<div class="col-xs-6"><i class="fa fa-check-circle fa-fw"></i></div>
-							</div>	
-							<div class="row" ng-show="(product.laundry)">
-								<div class="col-xs-6">Laundry services:</div>
-								<div class="col-xs-6"><i class="fa fa-check-circle fa-fw"></i></div>
-							</div>	
-							<div class="row" ng-show="(product.breakfast)">
-								<div class="col-xs-6">Breakfast:</div>
-								<div class="col-xs-6"><i class="fa fa-check-circle fa-fw"></i></div>
-							</div>
-							<div class="row" ng-show="(product.roomService)">
-								<div class="col-xs-6">Room service:</div>
-								<div class="col-xs-6"><i class="fa fa-check-circle fa-fw"></i></div>
-							</div>
-							
-							<div class="row" ng-show="(product.elevator)">
-								<div class="col-xs-6">Elevator:</div>
-								<div class="col-xs-6"><i class="fa fa-check-circle fa-fw"></i></div>
-							</div>
-							
-							<div class="row" ng-show="(product.conferenceRoom)">
-								<div class="col-xs-6">Conference Room:</div>
-								<div class="col-xs-6"><i class="fa fa-check-circle fa-fw"></i></div>
-							</div>
-							
-							<div class="row" ng-show="(product.fitnessFacilities)">
-								<div class="col-xs-6">Fitness facilities:</div>
-								<div class="col-xs-6"><i class="fa fa-check-circle fa-fw"></i></div>
-							</div>
-							
-							<div class="row" ng-show="(product.airportPickup)">
-								<div class="col-xs-6">Airport transfer/pick up:</div>
-								<div class="col-xs-6"><i class="fa fa-check-circle fa-fw"></i></div>
-							</div>
-							
-							<div class="row" ng-show="(product.babySitting)">
-								<div class="col-xs-6"> Baby sitting services:</div>
-								<div class="col-xs-6"><i class="fa fa-check-circle fa-fw"></i></div>
-							</div>
-							
-							<div class="row" ng-show="(product.neighbourhood)">
-								<div class="col-xs-6">{{'NEIGHBOURHOOD' | translate }}:</div>
-								<div class="col-xs-6">{{product.neighbourhood}}</div>
-							</div>
-							
-							
-							
-													
-						</div>
+						
 						<!-- show only fields related to property residential rent -->
 						
 						<div class="col-xs-12"
 							ng-show="(product.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_RES_MIN
 							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_RES_MAX)						
 							|| (product.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MIN
-							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MAX)"> 
+							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MAX)
+							|| (product.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_SHORT_DAILY_MIN
+							&& product.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_SHORT_DAILY_MAX)"> 
 						
 							<div class="row">
 								<div class="col-xs-6">{{'POSTED' | translate}}</div>

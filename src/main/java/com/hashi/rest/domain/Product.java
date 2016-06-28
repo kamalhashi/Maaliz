@@ -86,7 +86,7 @@ import javax.persistence.NamedAttributeNode;
     @JsonSubTypes.Type(value = PropertyRentRes.class),
     @JsonSubTypes.Type(value = PropertyRentComm.class),
     @JsonSubTypes.Type(value = PropertyRentRoom.class),
-    @JsonSubTypes.Type(value = PropertyRentHotel.class),
+    @JsonSubTypes.Type(value = PropertyRentShortDaily.class),
     @JsonSubTypes.Type(value = PropertyRentShortMonthly.class),
     @JsonSubTypes.Type(value = ClassifiedBabyItems.class),
     @JsonSubTypes.Type(value = ClassifiedBooks.class),

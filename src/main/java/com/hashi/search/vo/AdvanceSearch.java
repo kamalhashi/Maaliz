@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
     @JsonSubTypes.Type(value = AdvanceSearchRentRes.class),
     @JsonSubTypes.Type(value = AdvanceSearchRentComm.class),
     @JsonSubTypes.Type(value = AdvanceSearchRentRoom.class),
-    @JsonSubTypes.Type(value = AdvanceSearchRentHotel.class),
+    @JsonSubTypes.Type(value = AdvanceSearchRentShortDaily.class),
     @JsonSubTypes.Type(value = AdvanceSearchRentShortMonthly.class),
     @JsonSubTypes.Type(value = AdvanceSearchClassified.class)
 

@@ -28,6 +28,7 @@ import com.hashi.search.service.AdvanceSearchMotorcycleService;
 import com.hashi.search.service.AdvanceSearchRentCommService;
 import com.hashi.search.service.AdvanceSearchRentResService;
 import com.hashi.search.service.AdvanceSearchRentRoomService;
+import com.hashi.search.service.AdvanceSearchRentShortDailyService;
 import com.hashi.search.service.AdvanceSearchRentShortMonthlyService;
 import com.hashi.search.service.AdvanceSearchSaleCommService;
 import com.hashi.search.service.AdvanceSearchSaleLandService;
@@ -42,9 +43,9 @@ import com.hashi.search.vo.AdvanceSearchClassified;
 import com.hashi.search.vo.AdvanceSearchHeavyVehicle;
 import com.hashi.search.vo.AdvanceSearchMotorcycle;
 import com.hashi.search.vo.AdvanceSearchRentComm;
-import com.hashi.search.vo.AdvanceSearchRentHotel;
 import com.hashi.search.vo.AdvanceSearchRentRes;
 import com.hashi.search.vo.AdvanceSearchRentRoom;
+import com.hashi.search.vo.AdvanceSearchRentShortDaily;
 import com.hashi.search.vo.AdvanceSearchRentShortMonthly;
 import com.hashi.search.vo.AdvanceSearchSaleComm;
 import com.hashi.search.vo.AdvanceSearchSaleLand;
@@ -159,14 +160,7 @@ public class ProductSpecification {
 					predicates.addAll(ISearchService.advanceSearchByPrice(
 							(AdvanceSearch) advanceSearch, root, cb));
 				}
-
-				else if (advanceSearch instanceof AdvanceSearchRentHotel) {
-					System.out.println("Advance Search Rent Hotel" + advanceSearch.getPriceFrom());
-					predicates.addAll(ISearchService.advanceSearchByPrice(
-							(AdvanceSearch) advanceSearch, root, cb));
-				}
-			
-				
+	
 				/*****FOR SEARCH MOTORS FIELDS FILTERING ******/
 				else if (advanceSearch instanceof AdvanceSearchCar) {
 					predicates.addAll(AdvanceSearchCarService
@@ -311,6 +305,19 @@ public class ProductSpecification {
 									(AdvanceSearchRentShortMonthly)advanceSearch,
 									root, cb, query));
 				} 
+				// search rent short Daily
+				else if (advanceSearch instanceof AdvanceSearchRentShortDaily) {
+					System.out.println("AdvanceSearchRentShortDaily" + advanceSearch.getPriceTo()) ;
+					predicates.addAll(AdvanceSearchRentShortDailyService
+							.advanceSearchByPrice(
+									(AdvanceSearchRentShortDaily) advanceSearch,
+									root, cb));
+					
+					predicates.addAll(AdvanceSearchRentShortDailyService
+							.advanceSearchRentShortDailyByBedrooms(
+									(AdvanceSearchRentShortDaily)advanceSearch,
+									root, cb, query));
+				} 	
 				return cb.and(predicates.toArray(new Predicate[predicates.size()]));
 			}
 		};
@@ -359,10 +366,5 @@ public class ProductSpecification {
 		};
 
 	}
-
-
-
-
-
 
 }

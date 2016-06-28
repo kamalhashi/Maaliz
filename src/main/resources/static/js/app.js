@@ -226,18 +226,18 @@ hashiApp
                 productId: null 
         }
 	})	
-	.state('post_ad_rent_hotels', {
-		url: "/post_ad_rent_hotels/:categoryId",
-		templateUrl: "js/app/partial/post_ad_rent_hotels.html",
-		controller : "PostAdRentHotelsController",
+	.state('post_ad_rent_short_term_daily', {
+		url: "/post_ad_rent_short_term_daily/:categoryId",
+		templateUrl: "js/app/partial/post_ad_rent_short_term_daily.html",
+		controller : "PostAdRentShortTermDailyController",
 		params:{
                 productId: null 
         }
 	})	
-	.state('post_ad_rent_short_term', {
-		url: "/post_ad_rent_short_term/:categoryId",
-		templateUrl: "js/app/partial/post_ad_rent_short_term.html",
-		controller : "PostAdRentShortTermController",
+	.state('post_ad_rent_short_term_monthly', {
+		url: "/post_ad_rent_short_term_monthly/:categoryId",
+		templateUrl: "js/app/partial/post_ad_rent_short_term_monthly.html",
+		controller : "PostAdRentShortTermMonthlyController",
 		params:{
                 productId: null 
         }
