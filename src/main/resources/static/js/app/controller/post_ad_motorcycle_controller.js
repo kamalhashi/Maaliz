@@ -3,7 +3,7 @@ var hashiApp = angular.module('hashiApp') // gets it
 hashiApp.controller('PostAdMotorCycleController', function($scope, $state, auth,categoryFactory,
 		categoryRange, $stateParams, mapFactory, fileUploaderFactory, productFactory,
 		$window, $translate, categoryRange,flowFactory, bucketName,
-		sellerTypeEnglish, sellerTypeSomali, $http,$timeout, ageEnglish, ageSomali) {
+		sellerTypeEnglish, sellerTypeSomali, $http,$timeout, usageEnglish, usageSomali) {
 
 
 	//bucket name variable to show the images products in featured listing
@@ -48,13 +48,13 @@ hashiApp.controller('PostAdMotorCycleController', function($scope, $state, auth,
 		fileUploaderFactory.initializeFileUploader();
 		/*******************Shared information***************************/
 		if($translate.use() === 'so_SO'){
-			$scope.constantAge= ageSomali;
+			$scope.constantUsage= usageSomali;
 			$scope.constantSellerType= sellerTypeSomali;	 
 			
 
 		} 
 		if($translate.use() === 'en_US'){
-			$scope.constantAge= ageEnglish;
+			$scope.constantUsage= usageEnglish;
 			$scope.constantSellerType= sellerTypeEnglish;
 		}
 
@@ -93,17 +93,12 @@ hashiApp.controller('PostAdMotorCycleController', function($scope, $state, auth,
 			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop);  
 			return;
 		}
-		if(typeof $scope.ad.productLanguage === 'undefined' || $scope.ad.productLanguage==false){
-			$scope.postAdError=true;
-			$scope.postAdErrorMessage='Tick language for your ad.';
-			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop); 
-			return;
-		}
 		else{
 			//after saving go to the top of the page
 			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop); 
 			//save the products and process to success page 
 			$scope.location= $scope.ad.location;
+			$scope.ad.productLanguage= $translate.proposedLanguage() || $translate.use();
 			$scope.myPromise =  productFactory.saveProduct(fileUploaderFactory.getFiles(), $scope.ad,  $scope.location, $stateParams.categoryId,  auth.authenticatedUserId, $scope.telephone)
 			.success( function(result) {
 				$state.go("success_ad" , {productId: result, categoryId: $scope.categoryId, 
@@ -125,19 +120,13 @@ hashiApp.controller('PostAdMotorCycleController', function($scope, $state, auth,
 			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop);  
 			return;
 		}
-		if(typeof $scope.ad.productLanguage === 'undefined'){
-			$scope.postAdError=true;
-			$scope.postAdErrorMessage='Tick language for your ad.';
-			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop);  
-
-		}
 		else{
 			//after saving go to the top of the page
 			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop); 
 			//save the products and process to success page 				
 			angular.extend($scope.ad.location, locationIdObject , $scope.ad.location);
-
-
+			$scope.ad.productLanguage= $translate.proposedLanguage() || $translate.use();
+			
 			$scope.myPromise =  productFactory.updateProduct(fileUploaderFactory.getFiles(), $scope.ad, auth.authenticatedUserId, $scope.telephone)
 			.success( function(result) {
 				auth.authenticatedTelephone=$scope.telephone;

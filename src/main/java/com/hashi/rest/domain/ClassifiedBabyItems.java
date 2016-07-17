@@ -8,11 +8,11 @@ import javax.persistence.Table;
 @Table(name = "CLASSIFIED_BABY_ITEMS")
 public class ClassifiedBabyItems extends Product {
 
-	@Column(name = "AGE_OF_ITEM", unique = false, nullable = false)
+	@Column(name = "AGE_ITEM", unique = false, nullable = false)
 	private Integer ageItem;
-	@Column(name = "USAGE_OF_ITEM", unique = false, nullable = false)
+	@Column(name = "USAGE_ITEM", unique = false, nullable = false)
 	private Integer usageItem;
-	@Column(name = "CONDITION_OF_ITEM", unique = false, nullable = false)
+	@Column(name = "CONDITION_ITEM", unique = false, nullable = false)
 	private Integer conditionItem;
 	public Integer getAgeItem() {
 		return ageItem;

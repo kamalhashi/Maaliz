@@ -2,7 +2,7 @@ var hashiApp = angular.module('hashiApp') // gets it
 
 hashiApp.factory('emailFactory', function($http) {
 
-	var urlBase = 'http://maaliz-angola-rest.cfapps.io/email';
+	var urlBase = 'http://maaliz-uae-rest.cfapps.io/email';
 	var dataFactory = {};
  
 	dataFactory.sendReplyAdByEmail = function(emailVO, userId) {

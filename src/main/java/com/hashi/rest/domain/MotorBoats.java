@@ -8,17 +8,14 @@ import javax.persistence.Table;
 @Table(name = "MOTOR_BOATS")
 public class MotorBoats extends Product {
 
-	@Column(name = "AGE_OF_ITEM")
-	private Integer ageItem;
-	@Column(name = "WARRANTY_OF_ITEM")
+	@Column(name = "USAGE_ITEM")
+	private Integer usageItem;
+	@Column(name = "WARRANTY_ITEM")
 	private Integer warrantyItem;
 	@Column(name = "SELLER_TYPE")
 	private Integer sellerType;
 	@Column(name = "LENGTH_BOAT")
 	private Integer length;
-	public Integer getAgeItem() {
-		return ageItem;
-	}
 	
 	public Integer getWarrantyItem() {
 		return warrantyItem;
@@ -29,9 +26,6 @@ public class MotorBoats extends Product {
 	public Integer getLength() {
 		return length;
 	}
-	public void setAgeItem(Integer ageItem) {
-		this.ageItem = ageItem;
-	}
 	public void setWarrantyItem(Integer warrantyItem) {
 		this.warrantyItem = warrantyItem;
 	}
@@ -40,5 +34,11 @@ public class MotorBoats extends Product {
 	}
 	public void setLength(Integer length) {
 		this.length = length;
+	}
+	public Integer getUsageItem() {
+		return usageItem;
+	}
+	public void setUsageItem(Integer usageItem) {
+		this.usageItem = usageItem;
 	}
 }

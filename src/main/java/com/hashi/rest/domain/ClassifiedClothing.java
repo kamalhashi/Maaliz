@@ -10,11 +10,11 @@ import javax.persistence.Table;
 @Table(name = "CLASSIFIED_CLOTHING")
 public class ClassifiedClothing extends Product implements Serializable {
 
-	@Column(name = "AGE_OF_ITEM")
+	@Column(name = "AGE_ITEM")
 	private Integer ageItem;
-	@Column(name = "USAGE_OF_ITEM")
+	@Column(name = "USAGE_ITEM")
 	private Integer usageItem;
-	@Column(name = "CONDITION_OF_ITEM")
+	@Column(name = "CONDITION_ITEM")
 	private Integer conditionItem;
 	
 	public Integer getAgeItem() {

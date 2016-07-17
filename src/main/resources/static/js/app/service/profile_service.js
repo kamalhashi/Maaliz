@@ -2,7 +2,7 @@ var hashiApp = angular.module('hashiApp') // gets it
 
 hashiApp.factory('profileFactory', function($http, $q, $translate) {
 
-	var urlBase = 'http://maaliz-angola-rest.cfapps.io/profile';
+	var urlBase = 'http://maaliz-uae-rest.cfapps.io/profile';
 	var dataFactory = {};
 
 	dataFactory.findProfileByUserId = function(userId) {

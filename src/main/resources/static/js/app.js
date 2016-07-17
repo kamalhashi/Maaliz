@@ -457,13 +457,25 @@ hashiApp
 
 });
 
-hashiApp.run(function(auth, $rootScope, $state, editableOptions, $http, $location, $window) {
+hashiApp.run(function(auth, $rootScope, $state, editableOptions, $http, $location, $window, $translate) {
 	$window.ga('create', 'UA-71087645-1', 'auto');	
 	
 	$rootScope.$on('$stateChangeSuccess', function() {
 		   document.body.scrollTop = document.documentElement.scrollTop = 0;
 		   $window.ga('send', 'pageview', $location.path());
 	});
+	//language has changed, therefore if its arabic add bootstrap-rtl	  
+	var currentLang = $translate.proposedLanguage() || $translate.use();
+	if( currentLang == 'so_SO'){
+		angular.element('head').append('<link id="bootstrap-rtl" href="css/bootstrap-rtl.min.css" rel="stylesheet">');
+	}
+    else{
+    	var stylesheet = document.getElementById('bootstrap-rtl');
+
+    	if(stylesheet){
+    	   stylesheet.parentNode.removeChild(stylesheet);
+    	}
+    }
 	
 	 auth.init('/', 'login', 'logout');
 	 editableOptions.theme = 'bs3';

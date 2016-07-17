@@ -128,18 +128,13 @@ hashiApp.controller('PostAdCarController', function($scope, $state, auth,categor
 			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop);  
 			return;
 		}
-		if(typeof $scope.ad.productLanguage === 'undefined' || $scope.ad.productLanguage==false){
-			$scope.postAdError=true;
-			$scope.postAdErrorMessage='Tick language for your ad.';
-			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop);  
-			return;
-		}
 		else{
 			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop); 
 			/*for saving and editing is diffrent because now locations is sent to the server as location object, 
 			 * why because of the multipart 
 			 */
 			$scope.location= $scope.ad.location;
+			$scope.ad.productLanguage= $translate.proposedLanguage() || $translate.use();
 
 			$scope.myPromise =  productFactory.saveProduct(fileUploaderFactory.getFiles(), $scope.ad,  $scope.location, $stateParams.categoryId,  auth.authenticatedUserId, $scope.telephone)
 			.success( function(result) {
@@ -162,16 +157,13 @@ hashiApp.controller('PostAdCarController', function($scope, $state, auth,categor
 			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop);  
 			return;
 		}
-		if(typeof $scope.ad.productLanguage === 'undefined'){
-			$scope.postAdError=true;
-			$scope.postAdErrorMessage='Tick language for your ad.';
-			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop);  
 
-		}
 		else{
 			//after saving go to the top of the page
 			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop);
 			angular.extend($scope.ad.location, locationIdObject , $scope.ad.location);
+			$scope.ad.productLanguage= $translate.proposedLanguage() || $translate.use();
+
 			//save the products and process to success page 				
 			$scope.myPromise =  productFactory.updateProduct(fileUploaderFactory.getFiles(), $scope.ad, auth.authenticatedUserId, $scope.telephone)
 			.success( function(result) {

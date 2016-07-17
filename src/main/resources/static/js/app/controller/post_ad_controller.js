@@ -12,11 +12,7 @@ hashiApp.controller('PostAdController', function($scope, $location, auth,
 	$scope.showSubCategoryLevelTwo = false;
 	$scope.showSubCategoryLevelThree = false;
 
-	/**boolean values for checking sub categories**/
-	$scope.checkSubCategoriesLevelOne = [];
-	$scope.checkSubCategoriesLevelTwo = [];
-	$scope.checkSubCategoriesLevelThree = [];
-
+	
 
 	/**to show the button and other css classes when ther's no sub categories to select**/
 	$scope.disableButton=true;
@@ -58,10 +54,6 @@ hashiApp.controller('PostAdController', function($scope, $location, auth,
 		$scope.showSubCategoryLevelOne = false;
 		$scope.showSubCategoryLevelTwo = false;
 		$scope.showSubCategoryLevelThree = false;
-		//empty list first
-		$scope.checkSubCategoriesLevelOne=[];
-		$scope.checkSubCategoriesLevelTwo=[];
-		$scope.checkSubCategoriesLevelThree=[];
 		//empty list sub categories
 		$scope.listSubCategoriesLevelOne=[];
 		$scope.listSubCategoriesLevelTwo = [];
@@ -73,7 +65,6 @@ hashiApp.controller('PostAdController', function($scope, $location, auth,
 		//for showing ticking class 
 		$scope.disableButton=true;
 		//needed for $q.all to send loop asynchronouse 
-		var promiseArray = [];
 
 		$scope.myPromise = categoryFactory.getSubCategoriesByCategoryId(categoryId).success(
 				function(categ) {
@@ -81,15 +72,6 @@ hashiApp.controller('PostAdController', function($scope, $location, auth,
 						categ.splice(0,1);
 						$scope.listSubCategoriesLevelOne = categ;
 						$scope.showSubCategoryLevelOne = true;
-						for(var i=0; i < $scope.listSubCategoriesLevelOne.length; i++){
-							promiseArray.push(categoryFactory.hasChildCategories($scope.listSubCategoriesLevelOne[i].categoryId));
-						}
-						$scope.myPromiseLevelOne =  $q.all(promiseArray)
-						// Each element of dataArray corresponds to each result of http request.
-						.then( function(dataArray) {
-							for(var i=0; i < dataArray.length; i++)	
-								$scope.checkSubCategoriesLevelOne.push(dataArray[i].data);			 
-						});
 					}
 
 				});
@@ -103,15 +85,11 @@ hashiApp.controller('PostAdController', function($scope, $location, auth,
 		$scope.disableButton=true;
 		$scope.listSubCategoriesLevelTwo = [];
 		$scope.listSubCategoriesLevelThree = [];
-		$scope.checkSubCategoriesLevelTwo=[];
-		$scope.checkSubCategoriesLevelThree=[];
-
 		//for storing user selected category info
 		$scope.selectedCategory= categoryId;
 		$scope.selectedCategoryLft=categoryLft;
 		$scope.selectedCategoryRgt=categoryRgt;
 		//needed for $q.all to send loop asynchronouse 
-		var promiseArray = [];
 
 		$scope.myPromiseLevelTwo = categoryFactory.getSubCategoriesByCategoryId(categoryId).success(
 				function(categ) {
@@ -121,20 +99,10 @@ hashiApp.controller('PostAdController', function($scope, $location, auth,
 						$scope.showSubCategoryLevelTwo = true;
 						$scope.showSubCategoryLevelThree = false;
 						$scope.disableButton=true;
-						for(var i=0; i < $scope.listSubCategoriesLevelTwo.length; i++){
-							promiseArray.push(categoryFactory.hasChildCategories($scope.listSubCategoriesLevelTwo[i].categoryId));
-						}
-						$scope.myPromiseLevelTwo = $q.all(promiseArray)
-						// Each element of dataArray corresponds to each result of http request.
-						.then( function(dataArray) {
-							for(var i=0; i < dataArray.length; i++)	
-								$scope.checkSubCategoriesLevelTwo.push(dataArray[i].data);			 
-						});	
 					}else{
 						$scope.disableButton=false;
 					}
 				});
-
 	}
 
 	$scope.getSubCategoriesLevelThree = function(categoryId, categoryLft, categoryRgt) {		
@@ -150,7 +118,6 @@ hashiApp.controller('PostAdController', function($scope, $location, auth,
 		$scope.selectedCategoryRgt=categoryRgt;
 
 
-		var promiseArray = [];
 
 		$scope.myPromiseLevelThree = categoryFactory.getSubCategoriesByCategoryId(categoryId).success(
 				function(categ) {
@@ -159,15 +126,6 @@ hashiApp.controller('PostAdController', function($scope, $location, auth,
 						$scope.listSubCategoriesLevelThree = categ;
 						$scope.showSubCategoryLevelThree = true;
 						$scope.disableButton=true;
-						for(var i=0; i < $scope.listSubCategoriesLevelThree.length; i++){
-							promiseArray.push(categoryFactory.hasChildCategories($scope.listSubCategoriesLevelThree[i].categoryId));
-						}
-						$scope.myPromiseLevelThree = $q.all(promiseArray)
-						// Each element of dataArray corresponds to each result of httpp request.
-						.then( function(dataArray) {
-							for(var i=0; i < dataArray.length; i++)	
-								$scope.checkSubCategoriesLevelThree.push(dataArray[i].data);			 
-						});	
 					}else{
 						$scope.disableButton=false;
 					}
@@ -178,7 +136,6 @@ hashiApp.controller('PostAdController', function($scope, $location, auth,
 		//store the first level of category, to keep the selected background active
 		$scope.selectedCategoryIdLevelFour= categoryId;
 		$scope.selectedCategory= categoryId;
-
 		$scope.disableButton=false;		
 	}
 	//when submit button is pressed

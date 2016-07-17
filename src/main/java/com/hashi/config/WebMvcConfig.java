@@ -79,7 +79,7 @@ public class WebMvcConfig extends WebMvcAutoConfigurationAdapter {
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/**")
 		.allowedHeaders("*")
-		.allowedOrigins("http://xaashi.com", "http://www.xaashi.com", "http://localhost:9000")
+		.allowedOrigins("http://maaliz.com", "http://www.maaliz.com", "http://localhost:9000")
 		.allowedMethods("GET", "POST", "PUT", "DELETE","HEAD","OPTIONS");
 	}
 

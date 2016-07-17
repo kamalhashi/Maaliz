@@ -11,11 +11,11 @@ import javax.persistence.Table;
 public class ClassifiedMisc extends Product implements Serializable {
 
 
-	@Column(name = "USAGE_OF_ITEM")
+	@Column(name = "USAGE_ITEM")
 	private Integer usageItem;
-	@Column(name = "CONDITION_OF_ITEM")
+	@Column(name = "CONDITION_ITEM")
 	private Integer conditionItem;
-	@Column(name = "AGE_OF_ITEM")
+	@Column(name = "AGE_ITEM")
 	private Integer ageItem;
 	
 	public Integer getUsageItem() {

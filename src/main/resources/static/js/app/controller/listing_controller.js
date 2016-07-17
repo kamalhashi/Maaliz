@@ -2,7 +2,7 @@ var hashiApp = angular.module('hashiApp') // gets it
 
 
 hashiApp.controller('ListingController', function($scope, $http, productFactory, $stateParams, categoryRange, bucketName,
-		$window, cityFactory, categoryFactory, sellerTypeSearchSomali, sellerTypeSearchEnglish, 
+		$window, cityFactory, categoryFactory, sellerTypeSearchSomali, sellerTypeSearchEnglish, usageEnglish, usageSomali, 
 		searchTypeConstant, categoryIdConstant, $translate, noBedroomsApartmentEnglish, noBedroomsApartmentSomali,
 		sellerTypeEnglish, sellerTypeSomali, coloursEnglish, coloursSomali, noBathroomsEnglish, noBathroomsSomali,
 		warrantySomali, warrantyEnglish, ageEnglish, ageSomali, lengthEnglish, lengthSomali, conditionSomali, conditionEnglish,
@@ -84,6 +84,7 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 			$scope.sellerTypeConstant= sellerTypeSomali;
 			$scope.colourConstant= coloursSomali;
 			$scope.ageConstant= ageSomali;
+			$scope.usageConstant= usageSomali;
 			$scope.warrantyConstant= warrantySomali;
 			$scope.lengthConstant= lengthSomali;
 			$scope.constantNoBedrooms= noBedroomsApartmentSomali;
@@ -104,6 +105,7 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 			$scope.colourConstant= coloursEnglish;
 			$scope.sellerTypeConstant= sellerTypeEnglish;
 			$scope.ageConstant= ageEnglish;
+			$scope.usageConstant= usageSomali;
 			$scope.warrantyConstant= warrantyEnglish;
 			$scope.lengthConstant= lengthEnglish;
 			$scope.constantNoBedrooms= noBedroomsApartmentEnglish;

@@ -346,8 +346,8 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.MOTOR_MOTORCYCLES_MIN && ad.categoriesEntity.rgt <= categoryRange.MOTOR_MOTORCYCLES_MAX">
 									<div class="row">
 										<div class="col-sm-10">
-											{{'AGE' | translate}}: <strong style="margin-right: 20px">
-											{{ageConstant[ad.ageItem-1].name}}</strong>
+											{{'USAGE' | translate}}: <strong style="margin-right: 20px">
+											{{usageConstant[ad.usageItem-1].name}}</strong>
 										</div>		
 									</div>
 									<div class="row">
@@ -362,8 +362,8 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.MOTOR_CAR_PARTS_MIN && ad.categoriesEntity.rgt <= categoryRange.MOTOR_CAR_PARTS_MAX">
 									<div class="row">
 										<div class="col-sm-10">
-											{{'AGE' | translate}}: <strong style="margin-right: 20px">
-											{{ageConstant[ad.ageItem-1].name}}</strong>
+											{{'USAGE' | translate}}: <strong style="margin-right: 20px">
+											{{usageConstant[ad.usageItem-1].name}}</strong>
 										</div>		
 									</div>
 									<div class="row">
@@ -380,8 +380,8 @@
 									<div class="row">
 										
 										<div class="col-sm-5">
-											{{'AGE' | translate}}: <strong style="margin-right: 20px">
-											{{ageConstant[ad.ageItem-1].name}}</strong>
+											{{'USAGE' | translate}}: <strong style="margin-right: 20px">
+											{{usageConstant[ad.usageItem-1].name}}</strong>
 										</div>									
 										<div class="col-sm-5">
 											{{'WARRANTY' | translate}}: <strong style="margin-right: 20px">
@@ -390,11 +390,11 @@
 									</div>	
 									<div class="row">
 										<div class="col-md-5">
-											{{'SELLER_TYPE' | translate}}: <strong style="margin-right: 20px">
+											{{'SELLER_TYPE' | translate}}:  <strong style="margin-right: 20px">
 										 	{{sellerTypeConstant[ad.sellerType-1].name}}</strong>
 										 </div>
 										 <div class="col-md-5">
-											Length: <strong style="margin-right: 20px">
+											{{'LENGTH' | translate}}: <strong style="margin-right: 20px">
 										 	{{lengthConstant[ad.length-1].name}}</strong>
 										 </div>
 									</div>

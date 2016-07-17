@@ -13,8 +13,8 @@ import javax.persistence.Table;
 @Table(name = "MOTOR_CAR_PARTS")
 public class MotorCarParts extends Product {
 
-	@Column(name = "AGE_ITEM")
-	private Integer ageItem;
+	@Column(name = "USAGE_ITEM")
+	private Integer usageItem;
 
 	@Column(name = "SELLER_TYPE")
 	private Integer sellerType;
@@ -27,11 +27,11 @@ public class MotorCarParts extends Product {
 		this.sellerType = sellerType;
 	}
 
-	public Integer getAgeItem() {
-		return ageItem;
+	public Integer getUsageItem() {
+		return usageItem;
 	}
 
-	public void setAgeItem(Integer ageItem) {
-		this.ageItem = ageItem;
+	public void setUsageItem(Integer usageItem) {
+		this.usageItem = usageItem;
 	}
 }

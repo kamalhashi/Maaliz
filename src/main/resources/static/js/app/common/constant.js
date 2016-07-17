@@ -110,11 +110,11 @@ hashiApp.constant('categoryName', {
 
 
 hashiApp.constant('bucketName', {
-    productImages: 'https://s3-eu-west-1.amazonaws.com/maaliz.angola.product.images/',
-    profileImage: 'https://s3-eu-west-1.amazonaws.com/maaliz.angola.profile.image/',
-    profileCV: 'https://s3-eu-west-1.amazonaws.com/maaliz.angola.profile.cv/',
-    otherImage: 'https://s3-eu-west-1.amazonaws.com/maaliz.angola.other.images/',
-    productLogo: 'https://s3-eu-west-1.amazonaws.com/maaliz.angola.product.logo/'
+    productImages: 'https://s3-eu-west-1.amazonaws.com/maaliz.uae.product.images/',
+    profileImage: 'https://s3-eu-west-1.amazonaws.com/maaliz.uae.profile.image/',
+    profileCV: 'https://s3-eu-west-1.amazonaws.com/maaliz.uae.profile.cv/',
+    otherImage: 'https://s3-eu-west-1.amazonaws.com/maaliz.uae.other.images/',
+    productLogo: 'https://s3-eu-west-1.amazonaws.com/maaliz.uae.product.logo/'
 
 });
 
@@ -235,15 +235,15 @@ hashiApp.constant('coloursEnglish',  [
 
 
 hashiApp.constant('coloursSomali',  [       
-                                      {"id":1, "name":"Cadaan"},
-                                      {"id":2,  "name":"Madoow"},
-                                      {"id":3,  "name":"Cagaar"},
-                                      {"id":4,  "name":"Buluug"},
-                                      {"id":5,  "name":"Jaale"},
-                                      {"id":6,  "name":"Guduud"},
-                                      {"id":7,  "name":"Basali"},
-                                      {"id":8,  "name":"Qalin"},
-                                      {"id":9,  "name":"Midab kale"}
+                                      {"id":1, "name":"أبيض"},
+                                      {"id":2,  "name":"أسود"},
+                                      {"id":3,  "name":"أخضر"},
+                                      {"id":4,  "name":"أزرق"},
+                                      {"id":5,  "name":"أصفر"},
+                                      {"id":6,  "name":"أحمر"},
+                                      {"id":7,  "name":"وردي"},
+                                      {"id":8,  "name":"فضي"},
+                                      {"id":9,  "name":"اّخر"}
 ]); 
 
 
@@ -264,15 +264,15 @@ hashiApp.constant('bodyTypeCarEnglish',  [
 ]); 
 
 hashiApp.constant('bodyTypeCarSomali',  [       
-                                     {"id":1,  "name":"Hatchback"},
-                                     {"id":2,  "name":"Sedan"},
-                                     {"id":3,  "name":"MUV/SUV"},
-                                     {"id":4,  "name":"Coupe"},
-                                     {"id":5,  "name":"Convertible"},
-                                     {"id":6,  "name":"Wagon"},
-                                     {"id":7,  "name":"Van"},
-                                     {"id":8,  "name":"Jeep"},
-                                     {"id":9,  "name":"Other"}
+                                     {"id":1,  "name":"هاتشباك"},
+                                     {"id":2,  "name":"سيدان"},
+                                     {"id":3,  "name":"دفع رباعي"},
+                                     {"id":4,  "name":"كوبيه"},
+                                     {"id":5,  "name":"سيارة رياضية"},
+                                     {"id":6,  "name":"واجون"},
+                                     {"id":7,  "name":" شاحنة صغيرة/فان"},
+                                     {"id":8,  "name":"جيب"},
+                                     {"id":9,  "name":"اّخر"}
 ]); 
 
 
@@ -287,10 +287,10 @@ hashiApp.constant('fuelTypeCarEnglish',  [
 ]); 
 
 hashiApp.constant('fuelTypeCarSomali',  [       
-                                              {"id":1,  "name":"Petrol"},
-                                              {"id":2,  "name":"Naafto"},
-                                              {"id":3,  "name":"Hybrid"},
-                                              {"id":4,  "name":"Koronto"}
+                                              {"id":1,  "name":"بنزين"},
+                                              {"id":2,  "name":"ديزل"},
+                                              {"id":3,  "name":"مولد"},
+                                              {"id":4,  "name":"الكتروني"}
 ]); 
 
 
@@ -303,8 +303,8 @@ hashiApp.constant('transmissionCarEnglish',  [
   ]); 
 
 hashiApp.constant('transmissionCarSomali',  [       
-                                            {"id":1,  "name":"Manual"},
-                                            {"id":2,  "name":"Automatic"}                                        
+                                            {"id":1,  "name":"نقل يدوي"},
+                                            {"id":2,  "name":"  نقل أوتوماتيكي"}                                        
  ]); 
 
 
@@ -317,8 +317,8 @@ hashiApp.constant('sellerTypeEnglish',  [
 ]); 
 
 hashiApp.constant('sellerTypeSomali',  [       
-                                               {"id":1,  "name":"Miilkiile"},
-                                               {"id":2,  "name":"Ganacsade"}
+                                               {"id":1,  "name":"مالك"},
+                                               {"id":2,  "name":"تاجر"}
                                                
  ]); 
 
@@ -341,16 +341,16 @@ hashiApp.constant('lengthEnglish',  [
 ]);
 
 hashiApp.constant('lengthSomali',  [       
-                                     {"id":1, "name":"Under 10 tilaabo."},
-                                     {"id":2, "name":"10-14 tilaabo."},
-                                     {"id":3, "name":"15-19 ft."},
-                                     {"id":4, "name":"20-24 ft."},
-                                     {"id":5, "name":"25-29 ft."},
-                                     {"id":6, "name":"30-39 ft."},
-                                     {"id":7, "name":"40-49 ft."},
-                                     {"id":8, "name":"50-69 ft."},
-                                     {"id":9, "name":"70-100 ft."},
-                                     {"id":10, "name":"100+ ft."}
+                                     {"id":1, "name":"أقل من 10 أقدام"},
+                                     {"id":2, "name":"من 10 إلى 14 قدم"},
+                                     {"id":3, "name":"من 15 إلى 19 قدم"},
+                                     {"id":4, "name":"من 20 إلى 24 قدم"},
+                                     {"id":5, "name":"من 25 إلى 29 قدم"},
+                                     {"id":6, "name":"من 30 إلى 39 قدم"},
+                                     {"id":7, "name":"من 40 إلى 49 قدم"},
+                                     {"id":8, "name":"من 50 إلى 69 قدم"},
+                                     {"id":9, "name":"من 70 إلى 100 قدم"},
+                                     {"id":10, "name":"أكثر من 100 قدم"}
 
                                      
 ]);
@@ -362,9 +362,9 @@ hashiApp.constant('warrantyEnglish',  [
                                                {"id":3,  "name":"Does not apply"}                                             
 ]); 
 hashiApp.constant('warrantySomali',  [       
-                                               {"id":1, "name":"Haa"},
-                                               {"id":2,  "name":"May"},
-                                               {"id":3,  "name":"Ma khuseeyo"}                                               
+                                               {"id":1, "name":"نعم"},
+                                               {"id":2,  "name":"لا"},
+                                               {"id":3,  "name":"لا ينطبق"}                                               
 ]); 
 
 //heavy vechicles
@@ -392,7 +392,7 @@ hashiApp.constant('noCylindersSomali',  [
                                           {"id":7,  "name":9},
                                           {"id":8,  "name":10},
                                           {"id":9,  "name": "12+"},
-                                          {"id":10,  "name":"Magaranayo"}
+                                          {"id":10,  "name":"غير معروف"}
 ]); 
 
 
@@ -405,12 +405,12 @@ hashiApp.constant('horsePowerEnglish',  [
                                         {"id":6,  "name":"Unknown"}
 ]); 
 hashiApp.constant('horsePowerSomali',  [       
-                                         {"id":1, "name":"Less than 150 HP"},
-                                         {"id":2,  "name":"150 - 200 HP"},
-                                         {"id":3,  "name":"200 - 300 HP"},
-                                         {"id":4,  "name":"300 - 400 HP"},
-                                         {"id":5,  "name":"400+ HP"},
-                                         {"id":6,  "name":"Magaranayo"}
+                                         {"id":1, "name":"أقل من 150 حصان"},
+                                         {"id":2,  "name":"150 - 200 + حصان"},
+                                         {"id":3,  "name":"200 - 300 + حصان"},
+                                         {"id":4,  "name":"300 - 400 + حصان"},
+                                         {"id":5,  "name":"400 + حصان"},
+                                         {"id":6,  "name":"غير معروف"}
 ]); 
 
 
@@ -558,15 +558,25 @@ hashiApp.constant('conditionSomali',  [
                                        
 ]); 
 
-hashiApp.constant('ageEnglish',  [       
+hashiApp.constant('usageEnglish',  [       
                                         {"id":1, "name":"New"},
                                         {"id":2,  "name":"Used"}               
 ]); 
-hashiApp.constant('ageSomali',  [       
-                                    {"id":1, "name":"Cuseeb"},
-                                    {"id":2,  "name":"Waa la'isticmaalay"}
+hashiApp.constant('usageSomali',  [       
+                                    {"id":1, "name":"جديد"},
+                                    {"id":2,  "name":"مستعمل"}
                                  
 ]);  
+
+hashiApp.constant('ageEnglish',  [       
+                                    {"id":1, "name":"1 Year"},
+                                    {"id":2,  "name":"2 Years"}               
+]); 
+hashiApp.constant('ageSomali',  [       
+                                {"id":1, "name":"جديد"},
+                                {"id":2,  "name":"مستعمل"}
+                             
+]); 
 
 hashiApp.constant('cameraBrand',  [       
                                     {"id":1, "name":"Aiptek"},

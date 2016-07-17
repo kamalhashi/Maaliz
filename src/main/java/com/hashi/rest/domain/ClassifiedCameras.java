@@ -8,15 +8,15 @@ import javax.persistence.Table;
 @Table(name = "CLASSIFIED_CAMERAS")
 public class ClassifiedCameras extends Product {
 
-	@Column(name = "AGE_OF_ITEM")
+	@Column(name = "AGE_ITEM")
 	private Integer ageItem;
-	@Column(name = "USAGE_OF_ITEM")
+	@Column(name = "USAGE_ITEM")
 	private Integer usageItem;
-	@Column(name = "CONDITION_OF_ITEM")
+	@Column(name = "CONDITION_ITEM")
 	private Integer conditionItem;
-	@Column(name = "BRAND_OF_ITEM")
+	@Column(name = "BRAND_ITEM")
 	private String brandItem;
-	@Column(name = "WARRANTY_OF_ITEM")
+	@Column(name = "WARRANTY_ITEM")
 	private Integer warrantyItem;
 	public Integer getAgeItem() {
 		return ageItem;

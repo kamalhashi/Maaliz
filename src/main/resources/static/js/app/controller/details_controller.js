@@ -2,7 +2,7 @@ var hashiApp = angular.module('hashiApp') // gets it
 
 hashiApp.controller('DetailsController', function($scope, $location , $state, $stateParams,  $anchorScroll, $translate, bucketName,
 		categoryRange, productFactory, categoryFactory, cityFactory, profileFactory, flowFactory,auth, categoryName, ageSomali, ageEnglish,
-		lengthEnglish, lengthSomali, horsePowerEnglish, horsePowerSomali, noCylindersEnglish, noCylindersSomali, 
+		lengthEnglish, lengthSomali, horsePowerEnglish, horsePowerSomali, noCylindersEnglish, noCylindersSomali, usageSomali, usageEnglish,
 		bodyTypeCarSomali, bodyTypeCarEnglish, sellerTypeEnglish, sellerTypeSomali,coloursEnglish, coloursSomali,
 		fuelTypeCarEnglish, fuelTypeCarSomali, transmissionCarEnglish , transmissionCarSomali, $sce,
 		noBedroomsApartmentEnglish, noBedroomsApartmentSomali,ownerTypeEnglish, ownerTypeSomali, conditionSomali, conditionEnglish,
@@ -135,6 +135,7 @@ hashiApp.controller('DetailsController', function($scope, $location , $state, $s
 		if($translate.use() === 'so_SO'){
 			$scope.warrantyConstant= warrantySomali;
 			$scope.ageConstant= ageSomali; 
+			$scope.usageConstant= usageSomali; 
 			$scope.conditionConstant= conditionSomali; 
 			$scope.constantCareerLevel=careerLevelSomali;	 
 			$scope.constantEmploymentType= employmentTypeSomali;
@@ -155,7 +156,6 @@ hashiApp.controller('DetailsController', function($scope, $location , $state, $s
 			$scope.transmissionCarConstant= transmissionCarSomali;
 			$scope.coloursCarConstant=coloursSomali;
 			$scope.bodyTypeCarConstant= bodyTypeCarSomali; 
-			$scope.ageItemConstant= ageEnglish; 
 			$scope.lengthBoatsConstant= lengthSomali;
 
 			//SALE RESIDENTIAL
@@ -172,6 +172,7 @@ hashiApp.controller('DetailsController', function($scope, $location , $state, $s
 			$scope.listSellerTypes= sellerTypeSearchEnglish; 
 			$scope.warrantyConstant= warrantyEnglish;
 			$scope.ageConstant= ageEnglish; 
+			$scope.usageConstant= usageEnglish; 
 			$scope.conditionConstant= conditionEnglish;
 			$scope.constantCareerLevel= careerLevelEnglish;	 
 			$scope.constantEmploymentType= employmentTypeEnglish;
@@ -191,7 +192,6 @@ hashiApp.controller('DetailsController', function($scope, $location , $state, $s
 			$scope.transmissionCarConstant= transmissionCarEnglish;
 			$scope.coloursCarConstant=coloursEnglish;
 			$scope.bodyTypeCarConstant= bodyTypeCarEnglish; 
-			$scope.ageItemConstant= ageEnglish; 
 			$scope.lengthBoatsConstant= lengthEnglish;
 
 			//SALE RESIDENTIAL

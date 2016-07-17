@@ -37,8 +37,8 @@ public class CategoryEnglish implements Serializable {
 	private Integer rgt;
 	@Column(name = "DEPTH")
 	private Integer depth;
-	
-
+	@Column(name = "IS_SUBCATEGORY")
+	private  Boolean isSubcategory;
 	
 	public Integer getLft() {
 		return lft;
@@ -86,6 +86,14 @@ public class CategoryEnglish implements Serializable {
 
 	public void setCategoryId(Long categoryId) {
 		this.categoryId = categoryId;
+	}
+
+	public Boolean getIsSubcategory() {
+		return isSubcategory;
+	}
+
+	public void setIsSubcategory(Boolean isSubcategory) {
+		this.isSubcategory = isSubcategory;
 	}
 
 }

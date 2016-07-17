@@ -2,7 +2,7 @@ var hashiApp = angular.module('hashiApp') // gets it
 
 hashiApp.factory('productFactory', function($http, $q, $translate) {
 
-	var urlBase = 'http://maaliz-angola-rest.cfapps.io/products';
+	var urlBase = 'http://maaliz-uae-rest.cfapps.io/products';
 	var dataFactory = {};
 
 	//update image status

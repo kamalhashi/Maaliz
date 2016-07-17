@@ -12,21 +12,25 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "MOTOR_CYCLES")
 public class MotorCycles extends Product{
-	@Column(name = "AGE_OF_ITEM")
-	private Integer ageItem;
+	@Column(name = "USAGE_ITEM")
+	private Integer usageItem;
 	@Column(name = "SELLER_TYPE")
 	private Integer sellerType;
-	public Integer getAgeItem() {
-		return ageItem;
-	}
+	
 	public Integer getSellerType() {
 		return sellerType;
 	}
-	public void setAgeItem(Integer ageItem) {
-		this.ageItem = ageItem;
-	}
+	
 	public void setSellerType(Integer sellerType) {
 		this.sellerType = sellerType;
+	}
+
+	public Integer getUsageItem() {
+		return usageItem;
+	}
+
+	public void setUsageItem(Integer usageItem) {
+		this.usageItem = usageItem;
 	}
 	
 }

@@ -5,7 +5,7 @@ hashiApp.controller('navigation', function($scope, auth, $http, $state) {
 	$scope.credentials = {};
 	$scope.loginMessage = "";
 	$scope.loginError = false;
-	var urlBase = 'http://xaashi-somalia-rest.cfapps.io/login';
+	var urlBase = 'http://xaashi-uae-rest.cfapps.io/login';
 
 
 	$scope.authenticated = function() {

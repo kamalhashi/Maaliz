@@ -4,7 +4,7 @@ hashiApp.directive('emailAvailable', function($timeout, $q, $http) {
 		require : 'ngModel',
 		link : function(scope, elm, attr, model) {
 			model.$asyncValidators.usernameExists = function(email) {
-				return $http.get('http://maaliz-angola-rest.cfapps.io/user/email/' + email).then(function(res) {
+				return $http.get('http://maaliz-uae-rest.cfapps.io/user/email/' + email).then(function(res) {
 					+$timeout(function() {
 						model.$setValidity('emailExists', !!res.data);
 					}, 1000);

@@ -803,7 +803,7 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 							return;
 						}
 						else if(categoryId == categoryIdConstant.JOB_CUSTOMER_SERVICE_CATEGORY_ID){
-							$scope.countJobCustomerService=data;
+							$rootScope.countJobCustomerService=data;
 							return;
 						}
 						else if(categoryId == categoryIdConstant.JOB_PUBLIC_RELATIONS_CATEGORY_ID){

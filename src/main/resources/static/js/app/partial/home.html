@@ -3,13 +3,10 @@
 		<div class="home-slogan-area">
 			<div class="row">
 				<div class="col-xs-9 col-xs-offset-2 text-center">
-					<!--  
-						<h1 class="text-center">{{'HOME_CENTER_TITLE1' | translate }}</h1>
-					-->
 					
-						<h1 class="text-center">
-						 {{'WEBSITE_TITLE' | translate}} {{'HOME_CENTER_TITLE2' | translate }}
-						 </h1>
+						<h1 class="text-center">{{'HOME_CENTER_TITLE1' | translate }}</h1>
+					
+						 <p> {{'HOME_CENTER_TITLE2' | translate }} </p>
 				</div>
 			</div>
 		</div>
@@ -27,8 +24,8 @@
 						</div>
 
 						<div class="col-xs-7 col-sm-4">
-							<input type="text" class="form-control col-xs-12 col-sm-3"
-								placeholder="search..." onfocus="this.placeholder=''"
+							<input type="text" class="form-control col-xs-12 col-sm-12"
+								placeholder="{{'FIND_PRODUCT' | translate}}" onfocus="this.placeholder=''"
 								onblur="this.placeholder='search...'" ng-model="basicTextSearch">
 
 
@@ -262,7 +259,7 @@
 				<span>{{'FEATURED_LISTINGS' | translate}}</span>
 			</h2>
 			
-			<slick lazy-load="ondemand"  autoplay=true autoplay-speed=2000  slides-to-show=4 slides-to-scroll=1 init-onload=true data="listFeatured" class="slider lazy multiple-items" >
+			<slick lazy-load="ondemand"  rtl=true autoplay=true autoplay-speed=2000  slides-to-show=4 slides-to-scroll=1 init-onload=true data="listFeatured" class="slider lazy multiple-items" >
 			         
                      <div class="col-sm-3 featured-listings" ng-repeat="featured in listFeatured" >
                            
