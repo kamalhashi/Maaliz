@@ -105,7 +105,7 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 			$scope.colourConstant= coloursEnglish;
 			$scope.sellerTypeConstant= sellerTypeEnglish;
 			$scope.ageConstant= ageEnglish;
-			$scope.usageConstant= usageSomali;
+			$scope.usageConstant= usageEnglish;
 			$scope.warrantyConstant= warrantyEnglish;
 			$scope.lengthConstant= lengthEnglish;
 			$scope.constantNoBedrooms= noBedroomsApartmentEnglish;

@@ -466,6 +466,7 @@ hashiApp.run(function(auth, $rootScope, $state, editableOptions, $http, $locatio
 	});
 	//language has changed, therefore if its arabic add bootstrap-rtl	  
 	var currentLang = $translate.proposedLanguage() || $translate.use();
+	$rootScope.isRtl =currentLang == 'so_SO' ? true : false;
 	if( currentLang == 'so_SO'){
 		angular.element('head').append('<link id="bootstrap-rtl" href="css/bootstrap-rtl.min.css" rel="stylesheet">');
 	}

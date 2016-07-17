@@ -1,6 +1,6 @@
 var hashiApp = angular.module('hashiApp') // gets it
 
-hashiApp.controller('LanguageController', function ($scope, $translate, $state) {
+hashiApp.controller('LanguageController', function ($scope, $translate, $state, $rootScope) {
 	  $scope.switchLanguage = function (key) {
 	    $translate.use(key).then(function() {
 	    	$state.reload();
@@ -8,6 +8,7 @@ hashiApp.controller('LanguageController', function ($scope, $translate, $state) 
 	    
 	    //language has changed, therefore if its arabic add bootstrap-rtl	  
 		var currentLang = $translate.proposedLanguage() || $translate.use();
+		$rootScope.isRtl =currentLang == 'so_SO' ? true : false;
 	    if( currentLang == 'so_SO'){
 	            angular.element('head').append('<link id="bootstrap-rtl" href="css/bootstrap-rtl.min.css" rel="stylesheet">');
 		}

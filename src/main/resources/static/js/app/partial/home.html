@@ -259,7 +259,7 @@
 				<span>{{'FEATURED_LISTINGS' | translate}}</span>
 			</h2>
 			
-			<slick lazy-load="ondemand"  rtl=true autoplay=true autoplay-speed=2000  slides-to-show=4 slides-to-scroll=1 init-onload=true data="listFeatured" class="slider lazy multiple-items" >
+			<slick lazy-load="ondemand"  rtl={{isRtl}} autoplay=true autoplay-speed=2000  slides-to-show=4 slides-to-scroll=1 init-onload=true data="listFeatured" class="slider lazy multiple-items" >
 			         
                      <div class="col-sm-3 featured-listings" ng-repeat="featured in listFeatured" >
                            
