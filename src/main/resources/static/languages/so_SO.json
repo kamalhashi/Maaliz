@@ -1,5 +1,6 @@
 {
   "LANG_LABEL": "English",
+  "COUNTRY": "الإمارات العربية المتحدة",
   "HOME" : "الصفحة الرئيسية" ,
   "LOGIN" : "دخول" ,
   "SIGN_IN" : "دخول",
@@ -207,6 +208,8 @@
    "LENGTH" : "الطول",
    "NO_CYLINDERS" : "عدد الاسطوانات" ,
    "HORSE_POWER" : "قوة حصان" ,
-   "SORT_BY" : "ترتيب بحسب:"
+   "SORT_BY" : "ترتيب بحسب:",
+   "NO_RESULTS_FOUND" : "لا توجد نتائج",
+   "ADS_IN" : "إعلان في" 
   
 }

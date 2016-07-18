@@ -198,8 +198,9 @@
 			<div class="row">
 				<div class="col-sm-12">
 
-					<h1 class="text-center">Found {{ads.totalElements}} ads in
-						{{cityName}}</h1>
+					<h1  class="text-center">{{ads.totalElements}} {{'ADS_IN' | translate}}
+						 {{ (cityName.indexOf(">") >  -1 ==false  ?  cityName  : 'COUNTRY') | translate }}
+				    </h1>
 
 				</div>
 			</div>
@@ -213,17 +214,13 @@
 				</div>
           		    <div class="col-sm-3 sort-options">
           		   	   <div class="flip pull-right">          		    
-          		           <span class="pull-left"> {{'SORT_BY' | translate}} </span>
+          		           <span class="flip pull-left"> {{'SORT_BY' | translate}} </span>
           		   
           		    	   <select id="sort"
 							   ng-model="orderProp" 
 							   ng-change="resetSorting()"
-							   class="form-control">
-							   <option value="productPriority">Featured ads</option>
-							   <option value="-created">Newest to oldest</option>
-							   <option value="created">Oldest to newest</option>
-							   <option value="productPrice">Price lowest to highest</option>
-							   <option value="-productPrice">Price highest to lowest</option>
+							   class="form-control"
+							   ng-options="sortBy.id as sortBy.name for  sortBy in sortByConstant">
 						    </select>
 						 </div>
           		    </div>
@@ -747,7 +744,7 @@
 
 					<div>
 						<div class="alert alert-info">
-							<strong> No results found</strong> .
+							<strong>{{'NO_RESULTS_FOUND' | translate}}</strong>
 						</div>
 					</div>
 				</div>

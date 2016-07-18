@@ -1,5 +1,6 @@
 {
    "LANG_LABEL": "العربية",
+   "COUNTRY" : "UAE" ,
    "WEBSITE_TITLE" :"Maaliz.com",
    "HOME" : "Home" ,
    "LOGIN" : "Login" ,
@@ -208,6 +209,8 @@
    "LENGTH" : "Length",
    "NO_CYLINDERS" : "Number of cylinders" ,
    "HORSE_POWER" : "Horse Power" ,
-   "SORT_BY" : "Sort by:"
+   "SORT_BY" : "Sort by:",
+   "NO_RESULTS_FOUND" : "No results found",
+   "ADS_IN" : "ads in" 
    
  }

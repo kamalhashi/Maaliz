@@ -31,6 +31,7 @@ import com.hashi.repository.ProductRepository;
 import com.hashi.repository.ProductSpecification;
 import com.hashi.rest.domain.Product;
 import com.hashi.rest.enums.ImageStatus;
+import com.hashi.rest.enums.LanguageType;
 import com.hashi.rest.enums.LiveType;
 import com.hashi.rest.enums.ProductPriority;
 import com.hashi.search.vo.AdvanceSearch;
@@ -144,8 +145,16 @@ public class ProductServiceImpl implements ProductService {
 	}
 
 	@Override
-	public List<Object> countProductsByDepth(Long categoryId, Integer depth) {
-		return productRepository.countProductsByDepth(categoryId, depth);
+	public List<Object> countProductsByDepth(Long categoryId, Integer depth, LanguageType language) {
+		switch (language) {
+		case en_US:
+			return productRepository.countCategoriesEnglishProductsByDepth(categoryId, depth);
+		case so_SO:
+			return productRepository.countCategoriesSomaliProductsByDepth(categoryId, depth);
+		default:
+			break;
+		}
+		return null;
 	}
 
 	@Override

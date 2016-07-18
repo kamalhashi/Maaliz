@@ -852,6 +852,26 @@ hashiApp.constant('sellerTypeSearchSomali',  [
 ]); 
 
 
+//sort by listing.html  
+hashiApp.constant('sortByEnglish',  [       
+                                           {"id": 'productPriority', "name":"Featured ads"},
+                                           {"id":'-created',  "name":"Newest to oldest"},
+                                           {"id":'created',  "name":"Oldest to newest"}, 
+                                           {"id":'productPrice', "name":"Price lowest to highest"},
+                                           {"id":'-productPrice',  "name":"Price highest to lowest"}
+                                          
+]); 
+
+hashiApp.constant('sortBySomali',  [       
+                                     {"id":'productPriority', "name":"إعلانات مميزة"},
+                                     {"id":'-created',  "name":"الأحدث إلى الأقدم"},
+                                     {"id":'created',  "name":"الأقدم إلى الأحدث"},  
+                                     {"id":'productPrice', "name":"السعر من الأقل إلى الأعلى"},
+                                     {"id":'-productPrice',  "name":"السعر من الأعلى إلى الأقل"}
+                                    
+]); 
+
+
 
 
 //error code

@@ -268,16 +268,17 @@ public class ProductResource {
 	 * @return
 	 * @throws JsonProcessingException
 	 */
-	@RequestMapping(value="/count/byDepth/{categoryId}/{cityId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value="/count/byDepth/{categoryId}/{cityId}/{language}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@PreAuthorize("permitAll")
 	public ResponseEntity<List<Object>>  countProductsByDepth(
 			@PathVariable  Long categoryId,
-			@PathVariable  Long cityId) {
+			@PathVariable  Long cityId,
+			@PathVariable("language") LanguageType language) {
 		if(categoryId <= CategoryType.ALL_CATEGORIES.getValue()){
-			List<Object> countedObject  = productService.countProductsByDepth(1L, 1);
+			List<Object> countedObject  = productService.countProductsByDepth(1L, 1, language);
 			return new ResponseEntity<List<Object>>  (countedObject, HttpStatus.OK);
 		}else{
-			List<Object> countedObject  = productService.countProductsByDepth(categoryId, 2);
+			List<Object> countedObject  = productService.countProductsByDepth(categoryId, 2, language);
 			return new ResponseEntity<List<Object>>  (countedObject, HttpStatus.OK);
 		}
 	}

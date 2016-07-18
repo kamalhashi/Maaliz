@@ -42,7 +42,7 @@ hashiApp.factory('productFactory', function($http, $q, $translate) {
 	};
 	
 	dataFactory.countProductsByDepth= function(categoryId, cityId) {
-		return $http.get(urlBase + '/count/byDepth/' + categoryId + '/' + cityId);
+		return $http.get(urlBase + '/count/byDepth/' + categoryId + '/' + cityId + '/' + $translate.use());
 	};
 
 	dataFactory.advanceSearch= function(cityId, categoryId, simpleSearchText, pageIndex, sortColumn, sortDirection, searchObject) {

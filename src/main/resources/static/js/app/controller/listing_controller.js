@@ -7,10 +7,9 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 		sellerTypeEnglish, sellerTypeSomali, coloursEnglish, coloursSomali, noBathroomsEnglish, noBathroomsSomali,
 		warrantySomali, warrantyEnglish, ageEnglish, ageSomali, lengthEnglish, lengthSomali, conditionSomali, conditionEnglish,
 		ownerTypeEnglish, ownerTypeSomali, furnishedSomali, furnishedEnglish, rentTimeEnglish, rentTimeSomali,
-		computerBrand, computerHardDrive, dispatcherDetailsFactory,
-		employmentTypeEnglish, employmentTypeSomali,
-		workExperienceEnglish, workExperienceSomali, educationLevelEnglish, educationLevelSomali,
-		monthSalaryEnglish, monthSalarySomali) {
+		computerBrand, computerHardDrive, dispatcherDetailsFactory, sortBySomali, sortByEnglish,
+		employmentTypeEnglish, employmentTypeSomali, workExperienceEnglish, workExperienceSomali, educationLevelEnglish, 
+		educationLevelSomali, monthSalaryEnglish, monthSalarySomali) {
 	//ui bootstrap pagination
 	$scope.currentPage=1;
 	
@@ -82,6 +81,7 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 			$scope.listSellerTypes= sellerTypeSearchSomali; 
 			//for car parts 
 			$scope.sellerTypeConstant= sellerTypeSomali;
+			$scope.sortByConstant= sortBySomali;
 			$scope.colourConstant= coloursSomali;
 			$scope.ageConstant= ageSomali;
 			$scope.usageConstant= usageSomali;
@@ -103,6 +103,7 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 		if($translate.use() === 'en_US'){
 			$scope.listSellerTypes= sellerTypeSearchEnglish; 
 			$scope.colourConstant= coloursEnglish;
+			$scope.sortByConstant= sortByEnglish;
 			$scope.sellerTypeConstant= sellerTypeEnglish;
 			$scope.ageConstant= ageEnglish;
 			$scope.usageConstant= usageEnglish;
@@ -389,7 +390,7 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 	function getCityNameByCityId(cityId){
 		cityFactory.getCityName(cityId).success(
 				function(data) {
-					$scope.cityName=  data.cityName.indexOf(">") >  -1 ==false  ?  data.cityName + ', Somalia': 'Somalia';
+					$scope.cityName=  data.cityName;
 				});
 
 	}

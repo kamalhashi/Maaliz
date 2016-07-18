@@ -53,7 +53,18 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
     		+ "AND child.lft BETWEEN parent.lft AND parent.rgt AND p.category_id= child.category_id"
     		+ " AND p.expiry_date >= curdate()  Group by categoryName" 
     		, nativeQuery = true)	
-    public  List<Object> countProductsByDepth(@Param("categoryId") Long categoryId, @Param("depth") Integer depth);
+    public  List<Object> countCategoriesEnglishProductsByDepth(@Param("categoryId") Long categoryId, @Param("depth") Integer depth);
+    
+    @Query(value="SELECT (SELECT InnerParent.category_name as categoryName FROM categories_so InnerChild, categories_so InnerParent "
+    		+ "WHERE InnerChild.category_Id = child.category_Id "
+    		+ "AND InnerChild.lft BETWEEN InnerParent.lft AND InnerParent.rgt AND InnerParent.category_Id <> 1 "
+    		+ "AND InnerParent.DEPTH =:depth) as categoryName , count(parent.category_id) as countProduct "
+    		+ "FROM categories_so parent , categories_so child, products p WHERE parent.category_id=:categoryId "
+    		+ "AND child.lft BETWEEN parent.lft AND parent.rgt AND p.category_id= child.category_id"
+    		+ " AND p.expiry_date >= curdate()  Group by categoryName" 
+    		, nativeQuery = true)	
+    public  List<Object> countCategoriesSomaliProductsByDepth(@Param("categoryId") Long categoryId, @Param("depth") Integer depth);
+
 
     
     public  Page<Product> findAll(Specification<Product> spec, Pageable pageable);

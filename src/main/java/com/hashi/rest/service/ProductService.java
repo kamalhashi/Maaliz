@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.hashi.rest.domain.Product;
 import com.hashi.rest.enums.ImageStatus;
+import com.hashi.rest.enums.LanguageType;
 import com.hashi.rest.enums.ProductPriority;
 import com.hashi.search.vo.AdvanceSearch;
 
@@ -93,7 +94,7 @@ public interface  ProductService {
 	 * 
 	 * @return count by category id
 	 */
-	public List<Object> countProductsByDepth(Long categoryId, Integer depth);
+	public List<Object> countProductsByDepth(Long categoryId, Integer depth, LanguageType language);
 	
 	
 	/**
