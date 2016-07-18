@@ -470,7 +470,6 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 			countProductsAvailableByCategoryId(25,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.SALE_RES_APARTMENT_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.SALE_RES_VILLA_CATEGORY_ID,0);
-
 			countProductsAvailableByCategoryId(categoryIdConstant.SALE_COMM_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.SALE_UNITS_CATEGORY_ID,0);
 			countProductsAvailableByCategoryId(categoryIdConstant.SALE_LAND_CATEGORY_ID,0);

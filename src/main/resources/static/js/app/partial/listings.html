@@ -211,25 +211,22 @@
 							 {{val[0]}} ({{val[1]}})
 					</div>
 				</div>
-
-				<div class="col-sm-3 sort-options">
-					<div class="pull-right">
-						<span>Sort by:&nbsp;&nbsp;&nbsp;</span> 
-						
-						<select
+                
+          		    <div class="col-sm-3">
+          		        <label class="control-label" id="sort">{{'SORT_BY' | translate}}</label>
+          
+          		    	<select id="sort"
 							ng-model="orderProp" 
 							ng-change="resetSorting()"
-							class="form-control">
+							class="sort-options">
 							<option value="productPriority">Featured ads</option>
 							<option value="-created">Newest to oldest</option>
 							<option value="created">Oldest to newest</option>
 							<option value="productPrice">Price lowest to highest</option>
 							<option value="-productPrice">Price highest to lowest</option>
 						</select>
-
-					</div>
-					
-				</div>
+          			</div>
+				
 
 			</div>
 
@@ -405,8 +402,8 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_RES_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_RES_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'SIZE' | translate }}: <strong style="margin-right: 20px">
-											{{ad.propertySize}} Square metre</strong>
+											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}<strong style="margin-right: 20px">
+											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
 											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
@@ -430,8 +427,8 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_COMM_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_COMM_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'SIZE' | translate }}: <strong style="margin-right: 20px">
-											{{ad.propertySize}} Square metre</strong>
+											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }} <strong style="margin-right: 20px">
+											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
 											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
@@ -444,8 +441,8 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_UNITS_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_UNITS_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'SIZE' | translate }}: <strong style="margin-right: 20px">
-											{{ad.propertySize}} Square metre</strong>
+											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }} <strong style="margin-right: 20px">
+											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
 											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
@@ -458,8 +455,8 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_LAND_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_LAND_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-										    {{'SIZE' | translate }}: <strong style="margin-right: 20px">
-											{{ad.propertySize}} Square metre</strong>
+										    {{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}<strong style="margin-right: 20px">
+											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
 											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
@@ -474,8 +471,8 @@
 									 ">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'SIZE' | translate }}: <strong style="margin-right: 20px">
-											{{ad.propertySize}} Square metre</strong>
+											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }} <strong style="margin-right: 20px">
+											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
 											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
@@ -499,8 +496,8 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_COMM_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_COMM_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'SIZE' | translate }}: <strong style="margin-right: 20px">
-											{{ad.propertySize}} Square metre</strong>
+											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}<strong style="margin-right: 20px">
+											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
 											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
@@ -551,8 +548,8 @@
 										ad.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'SIZE' | translate }}: <strong style="margin-right: 20px">
-											{{ad.propertySize}} Square metre</strong>
+											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }} <strong style="margin-right: 20px">
+											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
 											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
@@ -577,8 +574,8 @@
 										ad.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_SHORT_DAILY_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'SIZE' | translate }}: <strong style="margin-right: 20px">
-											{{ad.propertySize}} Square metre</strong>
+											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}<strong style="margin-right: 20px">
+											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
 											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">

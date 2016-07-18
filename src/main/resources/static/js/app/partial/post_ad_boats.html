@@ -348,13 +348,8 @@
 														href="" class="text-info" style="font-size: 14px;"
 														ng-show="$flow.files.length"
 														ng-click="$flow.cancel(); removeFile(1)">
-														
-	
-														 {{'REMOVE' | translate}}  
-														 
-													</a>
-														
-														
+														 {{'REMOVE' | translate}}  	 
+													</a>	
 												</div>
 
 												<div class="progress"
@@ -407,7 +402,6 @@
 														100 | number:0}}%</div>
 												</div>
 											</div>
-
 										</div>
 
 
@@ -445,10 +439,7 @@
 														100 | number:0}}%</div>
 												</div>
 											</div>
-
 										</div>
-
-
 
 										<div class="col-sm-4" cg-busy="{promise:promiseExistingImageObjectFour, message:'Loading images'}"
 											flow-object="existingImageObjectFour"

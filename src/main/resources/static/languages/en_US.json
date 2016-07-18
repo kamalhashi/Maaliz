@@ -167,6 +167,7 @@
    "BATHROOMS" : "Bathrooms" ,
    "RENT_IS_PAID" : "Rent is paid" ,
    "NEIGHBOURHOOD" : "Neighbourhood" ,
+   "SQUARE_METRE" : "(Square metre)" ,
    "CLICK_ENLARGE" : "Click here to enlarge" ,
    "FURNISHED" : "Furnished",
    "AGE" : "Age" ,
@@ -206,6 +207,7 @@
    "CHECK_IT_LIVE" : "Check it Live" ,
    "LENGTH" : "Length",
    "NO_CYLINDERS" : "Number of cylinders" ,
-   "HORSE_POWER" : "Horse Power" 
+   "HORSE_POWER" : "Horse Power" ,
+   "SORT_BY" : "Sort by:"
    
  }

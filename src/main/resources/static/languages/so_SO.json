@@ -161,12 +161,13 @@
    "SEND_MESSAGE" : "أرسل الرد",
    "SEND_MESSAGE_TERMS" : "بالضغط على 'أرسل الرد'، أنا أوافق على شروط  مالز  والأحكام وسياسة الخصوصية" ,
    "CLICK_ENLARGE" : "انقر هنا لتكبير الصورة" ,
-   "SIZE" : "Cabirka",
-   "LISTED_BY" : "Soo galiyaha",
-   "ROOMS" : "Qolalka",
-   "BATHROOMS" : "Musqulaha" ,
+   "SIZE" : "المساحة",
+   "LISTED_BY" : "صاحب الإعلان",
+   "ROOMS" : "غرف النوم",
+   "BATHROOMS" : "الحمامات" ,
    "RENT_IS_PAID" : "Bixinta kirada" ,
-   "NEIGHBOURHOOD" : "Xaafada" ,
+   "NEIGHBOURHOOD" : "حي" ,
+   "SQUARE_METRE" : "(متر مربع)", 
    "FURNISHED" : "Goglan",
    "AGE" : "Da'da" ,
    "CONDITION" : "Xaalada" ,
@@ -205,6 +206,7 @@
    "CHECK_IT_LIVE" : "التحقق من ذلك الإعلان" ,
    "LENGTH" : "الطول",
    "NO_CYLINDERS" : "عدد الاسطوانات" ,
-   "HORSE_POWER" : "قوة حصان" 
+   "HORSE_POWER" : "قوة حصان" ,
+   "SORT_BY" : "ترتيب بحسب:"
   
 }

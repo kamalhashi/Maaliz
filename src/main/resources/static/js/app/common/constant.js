@@ -451,7 +451,7 @@ hashiApp.constant('noBedroomsApartmentEnglish',  [
 ]); 
 
 hashiApp.constant('noBedroomsApartmentSomali',  [       
-                                            {"id":1, "name":"Studio"},
+                                            {"id":1, "name":"ستوديو"},
                                             {"id":2,  "name":"1"},
                                             {"id":3,  "name":"2"},
                                             {"id":4,  "name":"3"},
@@ -488,11 +488,13 @@ hashiApp.constant('noBathroomsSomali',  [
 hashiApp.constant('ownerTypeEnglish',  [       
                                                {"id":1, "name":"Landloard"},
                                                {"id":2,  "name":"Agent"},
+                                               {"id":2,  "name":"Developer"},
 ]); 
 
 hashiApp.constant('ownerTypeSomali',  [       
-                                        {"id":1, "name":"Milkiile"},
-                                        {"id":2,  "name":"Dalaal"},
+                                       			{"id":1,  "name":"الوسيط"},
+                                       			{"id":2,  "name":"المالك"} ,
+                                       			{"id":3,  "name":"المطوّر العقاري"}  
 ]); 
 
 
@@ -817,12 +819,12 @@ hashiApp.constant('cvRequiredSomali',  [
 
 hashiApp.constant('listedByEnglish',  [       
                                         {"id":1,  "name":"Employer"},
-                                        {"id":2,  "name":"Recruiter"}                                          
+                                        {"id":2,  "name":"Recruiter"} 
 ]);
 
 hashiApp.constant('listedBySomali',  [       
-                                       {"id":1,  "name":"Loo-shaqeeye"},
-                                       {"id":2,  "name":"Qore"}                                          
+                                       {"id":1,  "name":"الوسيط"},
+                                       {"id":2,  "name":"المالك"}  
 ]);
 
 hashiApp.constant('hideCompanyNameSomali',  [       

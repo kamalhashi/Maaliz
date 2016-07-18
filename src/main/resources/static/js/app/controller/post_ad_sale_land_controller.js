@@ -89,17 +89,13 @@ hashiApp.controller('PostAdSaleLandController', function($scope, $state, auth,ca
 			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop);  
 			return;
 		}
-		if(typeof $scope.ad.productLanguage === 'undefined' || $scope.ad.productLanguage==false){
-			$scope.postAdError=true;
-			$scope.postAdErrorMessage='Tick language for your ad.';
-			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop);  
-			return;
-		}
+		
 		else{
 			//after saving go to the top of the page
 			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop); 
 			//save the products and process to success page 
 			$scope.location= $scope.ad.location;
+			$scope.ad.productLanguage= $translate.proposedLanguage() || $translate.use();
 			$scope.myPromise =  productFactory.saveProduct(fileUploaderFactory.getFiles(), $scope.ad,  $scope.location, $stateParams.categoryId,  auth.authenticatedUserId, $scope.telephone)
 			.success( function(result) {
 				$state.go("success_ad" , {productId: result, categoryId: $scope.categoryId, 
@@ -121,18 +117,12 @@ hashiApp.controller('PostAdSaleLandController', function($scope, $state, auth,ca
 			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop);  
 			return;
 		}
-		if(typeof $scope.ad.productLanguage === 'undefined'){
-			$scope.postAdError=true;
-			$scope.postAdErrorMessage='Tick language for your ad.';
-			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop);  
-
-		}
 		else{
 			//after saving go to the top of the page
 			$window.scrollTo(0, angular.element(document.getElementById('div1')).offsetTop); 
 			//save the products and process to success page 				
 			angular.extend($scope.ad.location, locationIdObject , $scope.ad.location);
-
+			$scope.ad.productLanguage= $translate.proposedLanguage() || $translate.use();
 
 			$scope.myPromise =  productFactory.updateProduct(fileUploaderFactory.getFiles(), $scope.ad, auth.authenticatedUserId, $scope.telephone)
 			.success( function(result) {
