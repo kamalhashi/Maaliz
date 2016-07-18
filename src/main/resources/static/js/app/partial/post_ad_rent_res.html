@@ -8,18 +8,18 @@
 				<div class="col-sm-12 col-lg-8">
 					<ol class="breadcrumb">
 						<li><a ui-sref="/" >{{'HOME' | translate}}</a></li>
-						<li><a ui-sref="post_ad" >Post an ad</a></li>
-						<li class="active">Residential for rent</li>
+						<li><a ui-sref="post_ad" >{{'POST_AN_AD' | translate }}</a></li>
+						<li class="active">{{'PROPERTY_FOR_RENT' | translate}}</li>
 					</ol>
 
-					<h1>Post an Ad</h1>
+					<h1>{{'POST_AN_AD' | translate}}</h1>
 
 					<div class="alert alert-danger" ng-show="postAdError">
 						{{postAdErrorMessage}}</div>
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">
-								<i class="fa fa-check-circle fa-fw"></i> Selected a category
+								<i class="fa fa-check-circle fa-fw"></i> {{'SELECTED_CATEGORY' | translate }}
 							</h3>
 						</div>
 
@@ -38,7 +38,7 @@
 								</div>
 
 								<div class="col-sm-2 pull-right">
-									<a ui-sref="post_ad" class="btn btn-default btn-block">edit</a>
+									<a ui-sref="post_ad" class="btn btn-default btn-block">{{'EDIT' | translate}}</a>
 								</div>
 							</div>
 
@@ -47,7 +47,7 @@
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Ad details</h3>
+							<h3 class="panel-title">{{'AD_DETAILS' | translate}}</h3>
 						</div>
 						<div class="panel-body">
 
@@ -57,7 +57,7 @@
 								postAdForm.inputTitle.$invalid ||
 						        postAdForm.$submitted && postAdForm.inputTitle.$invalid ,
 						        'has-success': !postAdForm.inputTitle.$invalid}">
-								<label for="inputTitle" class="control-label">Title</label>
+								<label for="inputTitle" class="control-label">{{'TITLE' | translate}}</label>
 								 <input
 									type="text" class="form-control" name="inputTitle"
 									placeholder="" 
@@ -82,9 +82,9 @@
 								postAdForm.inputPrice.$invalid ||
 						        postAdForm.$submitted && postAdForm.inputPrice.$invalid ,
 						        'has-success': !postAdForm.inputPrice.$invalid && postAdForm.inputPrice.$touched}">
-								<label for="inputPrice" class="control-label">Price</label> 
+								<label for="inputPrice" class="control-label">{{'PRICE' | translate}}</label> 
 								<div class="input-group">
-								   <span class="input-group-addon">$</span>
+								   <span class="input-group-addon">{{'CURRENCY_SYMBOL' | translate}}</span>
 								   <input
 									type="number" class="form-control" name="inputPrice"
 									placeholder="" ng-model="ad.productPrice"
@@ -108,7 +108,7 @@
 								postAdForm.inputTelephone.$invalid ||
 						        postAdForm.$submitted && postAdForm.inputTelephone.$invalid ,
 						        'has-success': !postAdForm.inputTelephone.$invalid && postAdForm.inputTelephone.$touched}">
-								<label for="inputTelephone" class="control-label">Telephone</label>
+								<label for="inputTelephone" class="control-label">{{'TELEPHONE' | translate}}</label>
 								<input type="text" class="form-control" name="inputTelephone"
 									ng-model="telephone" required> <span
 									class="glyphicon glyphicon-ok form-control-feedback"
@@ -127,7 +127,7 @@
 								postAdForm.inputDescription.$invalid ||
 						        postAdForm.$submitted && postAdForm.inputDescription.$invalid ,
 						        'has-success': !postAdForm.inputDescription.$invalid}">
-								<label for="inputDescription" class="control-label">Description</label>
+								<label for="inputDescription" class="control-label">{{'DESCRIPTION' | translate}}</label>
 								
 								<div  name="inputDescription" class="form-control editable"
 								     contenteditable ng-model="ad.productDescription" required>
@@ -149,7 +149,7 @@
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Information</h3>
+							<h3 class="panel-title">{{'INFORMATION' | translate}}</h3>
 						</div>
 						<div class="panel-body">
 
@@ -161,7 +161,7 @@
 						        		postAdForm.$submitted && postAdForm.inputPropertySize.$invalid ,
 						         		'has-success': !postAdForm.inputPropertySize.$invalid}">
 
-										<label for="inputPropertySize" class="control-label">Size (Square metre)</label>
+										<label for="inputPropertySize" class="control-label">{{'SIZE' | translate}} {{'SQUARE_METRE' | translate}}</label>
 										<input ng-model="ad.propertySize" name="inputPropertySize"
 											class="form-control"
 											required>
@@ -186,7 +186,7 @@
 						        		postAdForm.$submitted && postAdForm.selectNoBedrooms.$invalid ,
 						         		'has-success': !postAdForm.selectNoBedrooms.$invalid}">
 
-										<label for="selectNoBedrooms" class="control-label">Number of rooms</label>
+										<label for="selectNoBedrooms" class="control-label">{{'ROOMS' | translate}}</label>
 										<select ng-model="ad.noBedrooms" name="selectNoBedrooms"
 											class="form-control"
 											ng-options="bedrooms.id as bedrooms.name for  bedrooms in constantNoBedrooms"
@@ -216,7 +216,7 @@
 						        		postAdForm.$submitted && postAdForm.selectNoBathrooms.$invalid ,
 						         		'has-success': !postAdForm.selectNoBathrooms.$invalid}">
 
-										<label for="selectNoBathrooms" class="control-label">Number of bathrooms</label>
+										<label for="selectNoBathrooms" class="control-label">{{'BATHROOMS' | translate}}</label>
 										<select ng-model="ad.noBathrooms" name="selectNoBathrooms"
 											class="form-control"
 											ng-options="bathrooms.id as bathrooms.name for  bathrooms in constantNoBathrooms"
@@ -243,7 +243,7 @@
 						        		postAdForm.$submitted && postAdForm.selectOwnerType.$invalid ,
 						         		'has-success': !postAdForm.selectOwnerType.$invalid}">
 
-										<label for="selectOwnerType" class="control-label">Owner type</label>
+										<label for="selectOwnerType" class="control-label">{{'LISTED_BY' | translate}}</label>
 										<select ng-model="ad.ownerType" name="selectOwnerType"
 											class="form-control"
 											ng-options="ownerType.id as ownerType.name for  ownerType in constantOwnerType"
@@ -273,7 +273,7 @@
 						        		postAdForm.$submitted && postAdForm.selectRentTime.$invalid ,
 						         		'has-success': !postAdForm.selectRentTime.$invalid}">
 
-										<label for="selectRentTime" class="control-label">Rent time:</label>
+										<label for="selectRentTime" class="control-label">{{'RENT_IS_PAID' | translate}}</label>
 										<select ng-model="ad.rentTime" 
 										   name="selectRentTime"
 											class="form-control"
@@ -301,7 +301,7 @@
 						        		postAdForm.$submitted && postAdForm.selectFurnished.$invalid ,
 						         		'has-success': !postAdForm.selectFurnished.$invalid}">
 
-										<label for="selectFurnished" class="control-label">Furnitured:</label>
+										<label for="selectFurnished" class="control-label">{{'FURNISHED' | translate}}</label>
 										<select ng-model="ad.furnished" name="selectFurnished"
 											class="form-control"
 											ng-options="furnished.id as furnished.name for  furnished in constantFurnished"
@@ -330,7 +330,7 @@
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Images</h3>
+							<h3 class="panel-title">{{'IMAGES' | translate}}</h3>
 						</div>
 						<div class="panel-body" style="background: #fff">
                             
@@ -350,7 +350,7 @@
 										style="border: 3px dashed #CCCCCC; height: 350px; margin-bottom: 10px; display: block; background: #f7f7f7; padding: 10px;">
 										<a href="" style="font-size: 36px; color: #ddd; padding: 30px"><i
 											class="fa fa-camera"></i></a><br /> <a href="" class="text-info"
-											style="font-size: 14px;">Add image</a>
+											style="font-size: 14px;">{{'MAIN_IMAGE' | translate}}</a>
 										
 									</div>
 								
@@ -360,7 +360,7 @@
 											<img my-flow-img="$flow.files[0]" style="height: 290px;" width="100%;" /> <a
 												href="" class="text-info" style="font-size: 14px;"
 												ng-show="$flow.files.length"
-												ng-click="$flow.cancel();removeFile(0)"> Remove </a>
+												ng-click="$flow.cancel();removeFile(0)"> {{'REMOVE' | translate}}  </a>
 										</div>
 										
 										<div class="progress" ng-class="{active: $flow.isUploading()}"
@@ -393,7 +393,7 @@
 												style="z-index: 1; top: 0px; left: 10px; background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center; padding: 10px;">
 												<a href="" style="font-size: 36px; color: #ddd;"><i
 													class="fa fa-camera"></i></a><br /> <a href=""
-													class="text-info" style="font-size: 14px;">Add image</a>												
+													class="text-info" style="font-size: 14px;">{{'ADD_ANOTHER_IMAGE' | translate}}</a>												
 											</div>
 											<div style="background: #f7f7f7;">
 												<div class="thumbnail" ng-show="$flow.files.length"
@@ -406,7 +406,7 @@
 														ng-click="$flow.cancel(); removeFile(1)">
 														
 	
-														 Remove 
+														 {{'REMOVE' | translate}}  
 														 
 													</a>
 														
@@ -440,7 +440,7 @@
 												style="z-index: 1; top: 0px; left: 10px; background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center; padding: 10px;">
 												<a href="" style="font-size: 36px; color: #ddd;"><i
 													class="fa fa-camera"></i></a><br /> <a href=""
-													class="text-info" style="font-size: 14px;">Add image</a>
+													class="text-info" style="font-size: 14px;">{{'ADD_ANOTHER_IMAGE' | translate}}</a>
 													
 											</div>
 											<div style="background: #f7f7f7;">
@@ -449,7 +449,7 @@
 													<img my-flow-img="$flow.files[0]" style="height: 115px;" width="100%;" /> <a
 														href="" class="text-info" style="font-size: 14px;"
 														ng-show="$flow.files.length"
-														ng-click="$flow.cancel(); removeFile(2)"> Remove </a>
+														ng-click="$flow.cancel(); removeFile(2)"> {{'REMOVE' | translate}}  </a>
 												</div>
 
 												<div class="progress"
@@ -480,7 +480,7 @@
 												style="z-index: 1; top: 0px; left: 10px; background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center; padding: 10px;">
 												<a href="" style="font-size: 36px; color: #ddd;"><i
 													class="fa fa-camera"></i></a><br /> <a href=""
-													class="text-info" style="font-size: 14px;">Add image</a>
+													class="text-info" style="font-size: 14px;">{{'ADD_ANOTHER_IMAGE' | translate}}</a>
 													
 											</div>
 											<div style="background: #f7f7f7;">
@@ -489,7 +489,7 @@
 													<img my-flow-img="$flow.files[0]" style="height: 115px;" width="100%;" /> <a
 														href="" class="text-info" style="font-size: 14px;"
 														ng-show="$flow.files.length"
-														ng-click="$flow.cancel(); removeFile(3 )"> Remove </a>
+														ng-click="$flow.cancel(); removeFile(3 )"> {{'REMOVE' | translate}}  </a>
 												</div>
 
 												<div class="progress"
@@ -503,10 +503,7 @@
 														100 | number:0}}%</div>
 												</div>
 											</div>
-
 										</div>
-
-
 
 										<div class="col-sm-4" 
 											cg-busy="{promise:promiseExistingImageObjectFour, message:'Loading images'}"
@@ -521,7 +518,7 @@
 												style="z-index: 1; top: 0px; left: 10px; background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center; padding: 10px;">
 												<a href="" style="font-size: 36px; color: #ddd;"><i
 													class="fa fa-camera"></i></a><br /> <a href=""
-													class="text-info" style="font-size: 14px;">Add image</a>
+													class="text-info" style="font-size: 14px;">{{'ADD_ANOTHER_IMAGE' | translate}}</a>
 													
 											</div>
 											<div style="background: #f7f7f7;">
@@ -530,7 +527,7 @@
 													<img my-flow-img="$flow.files[0]" style="height: 115px;" width="100%;" /> <a
 														href="" class="text-info" style="font-size: 14px;"
 														ng-show="$flow.files.length"
-														ng-click="$flow.cancel(); removeFile(4)"> Remove </a>
+														ng-click="$flow.cancel(); removeFile(4)"> {{'REMOVE' | translate}}  </a>
 												</div>
 
 												<div class="progress"
@@ -544,7 +541,6 @@
 														100 | number:0}}%</div>
 												</div>
 											</div>
-
 										</div>
 
 										<div class="col-sm-4" 
@@ -560,7 +556,7 @@
 												style="z-index: 1; top: 0px; left: 10px; background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center; padding: 10px;">
 												<a href="" style="font-size: 36px; color: #ddd;"><i
 													class="fa fa-camera"></i></a><br /> <a href=""
-													class="text-info" style="font-size: 14px;">Add image</a>
+													class="text-info" style="font-size: 14px;">{{'ADD_ANOTHER_IMAGE' | translate}}</a>
 											</div>
 											<div style="background: #f7f7f7;">
 												<div class="thumbnail" ng-show="$flow.files.length"
@@ -568,7 +564,7 @@
 													<img my-flow-img="$flow.files[0]" style="height: 115px;" width="100%;" /> <a
 														href="" class="text-info" style="font-size: 14px;"
 														ng-show="$flow.files.length"
-														ng-click="$flow.cancel(); removeFile(5)"> Remove </a>
+														ng-click="$flow.cancel(); removeFile(5)"> {{'REMOVE' | translate}}  </a>
 												</div>
 
 												<div class="progress"
@@ -597,7 +593,7 @@
 												style="z-index: 1; top: 0px; left: 10px; background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center; padding: 10px;">
 												<a href="" style="font-size: 36px; color: #ddd;"><i
 													class="fa fa-camera"></i></a><br /> <a href=""
-													class="text-info" style="font-size: 14px;">Add image</a>
+													class="text-info" style="font-size: 14px;">{{'ADD_ANOTHER_IMAGE' | translate}}</a>
 													
 											</div>
 											<div style="background: #f7f7f7;">
@@ -606,7 +602,7 @@
 													<img my-flow-img="$flow.files[0]" style="height: 115px;" width="100%;" /> <a
 														href="" class="text-info" style="font-size: 14px;"
 														ng-show="$flow.files.length"
-														ng-click="$flow.cancel(); removeFile(6)"> Remove </a>
+														ng-click="$flow.cancel(); removeFile(6)"> {{'REMOVE' | translate}}  </a>
 												</div>
 
 												<div class="progress"
@@ -633,7 +629,7 @@
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Location</h3>
+							<h3 class="panel-title">{{'LOCATION' | translate}}</h3>
 						</div>
 						<div class="panel-body">
 						   <div class="form-horizontal"> 
@@ -643,7 +639,7 @@
 						              postAdForm.$submitted && postAdForm.inputNeighbourhood.$invalid ,
 						         	  'has-success': !postAdForm.inputNeighbourhood.$invalid}">
 
-                            		<label for="inputNeighbourhood" class="col-sm-2 control-label">Neighbourhood</label>
+                            		<label for="inputNeighbourhood" class="col-sm-2 control-label">{{'NEIGHBOURHOOD' | translate}}</label>
                             	    <div class="col-sm-10">
                                 		<input type="hidden" class="form-control" 
                                 			name="inputNeighbourhood" 
@@ -653,7 +649,7 @@
 										<angucomplete-alt input-class="form-control"
 											placeholder="enter your area here" 
 											selected-object="selectedNeighbourhood"
-											remote-url="http://xaashi-somalia-rest.cfapps.io/autocomplete/neighbourhood/"
+											remote-url="http://maaliz-uae-rest.cfapps.io/autocomplete/neighbourhood/"
 											title-field="neighbourhoodName" minlength="1" 		
 											field-required="true" type="text"
 											input-name="inputNeighbourhoodComplete" 
@@ -677,7 +673,7 @@
                         	      </div>
                               </div>
 							<div>
-								<map center="{{ad.location.latitude}}, {{ad.location.longtitude}}" zoom="7"
+								<map center="{{ad.location.latitude}}, {{ad.location.longtitude}}" zoom="9"
 									on-click="addMarker()">
 									<marker
 										position="{{ad.location.latitude}}, {{ad.location.longtitude}}"></marker>
@@ -686,7 +682,7 @@
 
 							<br />
 							<p>
-								<strong class="text-primary">You have selected:</strong>
+								<strong class="text-primary">{{'YOUR_AD_LOCATION' | translate}}</strong>
 								{{ad.location.country}}, {{ad.location.region}}, {{ad.location.city}}, 
 								{{ad.location.routeName}}
 							</p>
@@ -695,28 +691,19 @@
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Language of the ad</h3>
+							<h3 class="panel-title">{{'PUBLISH_AD' | translate}}</h3>
 						</div>
 						<div class="row panel-body">
-
-							<div class="col-xs-7 checkbox">
-								<label> <input type="checkbox"
-									ng-model="ad.productLanguage" ng-true-value="'so_SO'" />
-
-									Somali Language
-								</label> <label> <input type="checkbox"
-									ng-model="ad.productLanguage" ng-true-value="'en_US'" />
-									Eglish Language
-								</label>
-							</div>
-							<div class="col-xs-5">
-								<button class="btn btn-primary pull-right" ng-click="saveProduct(postAdForm.$valid)" ng-hide="updateButton">Publish ad</button>
-								<button class="btn btn-primary pull-right" ng-show="updateButton" ng-click="updateProduct(postAdForm.$valid)">Update ad</button>
-							</div>
+						  <div>
+                        	  <label>
+                          	     {{'PUBLISH_TERMS_CONDITIONS' | translate}}  
+                        	 </label>
+								<button class="btn btn-primary flip pull-right" ng-click="saveProduct(postAdForm.$valid)" ng-hide="updateButton">{{'PUBLISH_AD' | translate}}</button>
+							    <button class="btn btn-primary flip pull-right" ng-show="updateButton" ng-click="updateProduct(postAdForm.$valid)">{{'UPDATE_AD' | translate}}</button>
+							</div>	
 						</div>
 					</div>
 				</div>
-
 			</form>
 
 
@@ -726,14 +713,10 @@
 					<div class="col-sm-11 col-sm-offset-1">
 						<div class="well">
 							<strong class="text-muted"><i
-								class="fa fa-info-circle fa-fw text-muted"></i> Information</strong><br />
+								class="fa fa-info-circle fa-fw text-muted"></i> {{'INFORMATION' | translate}}</strong><br />
 							<br />
-							<p>This website is visited by millions of people everyday,
-								make sure you add the relevent descriptions and keywords to
-								increase visibility of your ad. You'll get alerts by email
-								everytime somone replies to your ad</p>
-							<p>Also, don't forget - you can always edit your ad and the
-								images after posting</p>
+							<p>{{'INFORMATION_DESC_ONE' | translate}}</p>
+							<p>{{'INFORMATION_DESC_TWO' | translate}}</p>
 						</div>
 					</div>
 				</div>

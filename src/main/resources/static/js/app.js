@@ -1,8 +1,7 @@
 var hashiApp = angular.module('hashiApp', ['ngRoute', 'ngMessages', 'ngResource', 'cgBusy', 'flow', 
-                                            'ngMap', 'pascalprecht.translate', 'ngCookies',
-                                            'angucomplete-alt', 'ui.router', 'slick', 'xeditable', 'fancyboxplus',
-                                            'ui.bootstrap', 'angular-loading-bar', 
-                                             'ngAnimate', 'csrf-cross-domain', 'ngFacebook']);
+                                             'pascalprecht.translate', 'ngCookies', 'angucomplete-alt', 'ui.router', 'slick',
+                                             'xeditable', 'fancyboxplus', 'ui.bootstrap', 'angular-loading-bar', 'ngAnimate', 
+                                             'csrf-cross-domain', 'ngFacebook', 'ngMap' ]);
 
 
 hashiApp

@@ -534,14 +534,14 @@ hashiApp.constant('rentTimeSomali',  [
 ]); 
 
 hashiApp.constant('furnishedEnglish',  [       
-                                      {"id":1, "name":"Furnished"},
-                                      {"id":2,  "name":"Unfurnished"}
+                                      {"id":1, "name":"Yes"},
+                                      {"id":2,  "name":"No"}
                                      
 ]); 
 
 hashiApp.constant('furnishedSomali',  [       
-                                         {"id":1, "name":"Wuu goglanyahay"},
-                                         {"id":2,  "name":"Ma goglana"}
+                                         {"id":1, "name":"نعم"},
+                                         {"id":2,  "name":"لا"}
 ]); 
 
 //classified items
