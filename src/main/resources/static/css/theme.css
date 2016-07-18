@@ -938,10 +938,6 @@ h2.line span {
 	padding-bottom: 10px
 }
 
-.sort-options span {
-	float: left
-}
-
 .sort-options .form-control {
 	font-size: 13px;
 	width: 131px;

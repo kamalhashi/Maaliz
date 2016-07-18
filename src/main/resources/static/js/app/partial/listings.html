@@ -211,24 +211,23 @@
 							 {{val[0]}} ({{val[1]}})
 					</div>
 				</div>
-                
-          		    <div class="col-sm-3">
-          		        <label class="control-label" id="sort">{{'SORT_BY' | translate}}</label>
-          
-          		    	<select id="sort"
-							ng-model="orderProp" 
-							ng-change="resetSorting()"
-							class="sort-options">
-							<option value="productPriority">Featured ads</option>
-							<option value="-created">Newest to oldest</option>
-							<option value="created">Oldest to newest</option>
-							<option value="productPrice">Price lowest to highest</option>
-							<option value="-productPrice">Price highest to lowest</option>
-						</select>
-          			</div>
-				
-
-			</div>
+          		    <div class="col-sm-3 sort-options">
+          		   	   <div class="flip pull-right">          		    
+          		           <span class="pull-left"> {{'SORT_BY' | translate}} </span>
+          		   
+          		    	   <select id="sort"
+							   ng-model="orderProp" 
+							   ng-change="resetSorting()"
+							   class="form-control">
+							   <option value="productPriority">Featured ads</option>
+							   <option value="-created">Newest to oldest</option>
+							   <option value="created">Oldest to newest</option>
+							   <option value="productPrice">Price lowest to highest</option>
+							   <option value="-productPrice">Price highest to lowest</option>
+						    </select>
+						 </div>
+          		    </div>
+				</div>
 
 			
 			<br />
