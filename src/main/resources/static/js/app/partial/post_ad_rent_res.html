@@ -618,9 +618,7 @@
 											</div>
 										</div>
 									</div>
-
 								</div>
-
 							</div>
 						</div>
 					</div>
@@ -683,8 +681,8 @@
 							<br />
 							<p>
 								<strong class="text-primary">{{'YOUR_AD_LOCATION' | translate}}</strong>
-								{{ad.location.country}}, {{ad.location.region}}, {{ad.location.city}}, 
-								{{ad.location.routeName}}
+								{{ad.location.country}}, {{ad.location.region}}, {{ad.location.city}} 
+								{{!ad.location.city ? '' : ', '}}  {{ad.location.routeName}}
 							</p>
 						</div>
 					</div>

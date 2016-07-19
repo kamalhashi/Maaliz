@@ -784,7 +784,7 @@
 						<span ng-bind-html='toTrustedHTML( product.productDescription )'></span>
 					</p>
 
-					<p>Ad ref: {{product.productId}}</p>
+					<p>{{'AD_REF_NO' | translate}} {{product.productId}}</p>
 						
 						<div class="panel panel-default" cg-busy="{promise:myPromise, message:'Please wait...'}">
 							<div class="panel-heading">

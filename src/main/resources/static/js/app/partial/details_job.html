@@ -236,7 +236,7 @@
 					
 					
 					<div class="row">
-					   <div class="col-xs-6"><h2>Details:</h2></div>
+					   <div class="col-xs-6"><h2>{{'DETAILS' | translate}}:</h2></div>
 						  <div class="col-xs-6">
 							 <img class="logo-photo" 
 							       ng-src="{{bucketName.productLogo + product.productId + '/' + product.logoPhoto}}"
@@ -247,83 +247,78 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<div class="row">
-								<div class="col-xs-6">Posted:</div>
+								<div class="col-xs-6">{{'POSTED' | translate}} :</div>
 								<div class="col-xs-6">{{product.created | date:'dd MMMM yyyy'}}</div>
 							</div>
 							
 							<div class="row">
-								<div class="col-xs-6">Closing Date:</div>
+								<div class="col-xs-6">{{'CLOSING_DATE' | translate}}:</div>
 								<div class="col-xs-6">{{product.closingDate | date:'dd MMMM yyyy'}}</div>
 							</div>
 							
 							<div class="row">
-								<div class="col-xs-6">Location:</div>
+								<div class="col-xs-6">{{'LOCATION_JOB' | translate}}:</div>
 								<div class="col-xs-6">{{product.jobLocation}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Employment Type:</div>
+								<div class="col-xs-6">{{'EMPLOYMENT_TYPE' | translate}}:</div>
 								<div class="col-xs-6">{{constantEmploymentType[product.employmentType-1].name}}</div>
 							</div>
 							
 							<div class="row">
-								<div class="col-xs-6">Monthly Salary:</div>
+								<div class="col-xs-6">{{'MONTH_SALARY' | translate}}:</div>
 								<div class="col-xs-6">{{constantMonthSalary[product.monthSalary-1].name}}</div>
 							</div>
 							
 							<div class="row">
-								<div class="col-xs-6">Minimum Work Experience:</div>
+								<div class="col-xs-6">{{'MINIMUM_WORK_EXPERIENCE' | translate}}:</div>
 								<div class="col-xs-6">{{constantWorkExperience[product.workExperience-1].name}}</div>
 							</div>
 							
 							<div class="row">
-								<div class="col-xs-6">Minimum Education Level:</div>
+								<div class="col-xs-6">{{'MINIMUM_EDUCATION_LEVEL' | translate}}:</div>
 								<div class="col-xs-6">{{constantEducationLevel[product.educationLevel-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Company Name:</div>
+								<div class="col-xs-6">{{'COMPANY_NAME' | translate}}:</div>
 								<div class="col-xs-6">{{product.companyName}}</div>
 							</div>
 							
 							<div class="row">
-								<div class="col-xs-6">Benefits:</div>
+								<div class="col-xs-6">{{'BENEFITS' | translate}}:</div>
 								<div class="col-xs-6">{{product.benefits}}</div>
 							</div>
 							
 							
 							<div class="row">
-								<div class="col-xs-6">Listed By:</div>
+								<div class="col-xs-6">{{'LISTED_BY' | translate}}:</div>
 								<div class="col-xs-6">{{constantListedBy[product.listedBy-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Company Size:</div>
+								<div class="col-xs-6">{{'COMPANY_SIZE' | translate}}:</div>
 								<div class="col-xs-6">{{constantCompanySize[product.companySize-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Career Level:</div>
+								<div class="col-xs-6">{{'CAREER_LEVEL' | translate}}:</div>
 								<div class="col-xs-6">{{constantCareerLevel[product.careerLevel-1].name}}</div>
 							</div>
 						</div>
 					</div>
-					<h2>Description:</h2>
+					<h2>{{'DESCRIPTION' | translate}}:</h2>
 					<div style="word-wrap: break-word;">
 						<p>
 					    	 <span ng-bind-html='toTrustedHTML( product.productDescription )'></span>
 						</p>
                     </div>
-					<p>
-						<br>
-						<strong>We don't use agencies to hire, so please don't
-							contact us if you are an agency.... </strong>
-					</p>
-
-					<p>Ad ref: {{product.productId}}</p>
+					
+					<p>{{'AD_REF_NO' | translate}} {{product.productId}}</p>
 					<!-- CV Required==2 don't show it -->
 					<div ng-hide="product.cvRequired==2">
 					  <a name="apply"></a>
-					  <h2>Apply for this Job:</h2>
-					  <p class="h4 text-muted">Your cover note:</p>
+					  <h2>{{'APPLY_THIS_JOB' | translate}}</h2>
+					  <p class="h4 text-muted">{{'COVER_NOTE' | translate}}</p>
 					  <textarea class="form-control" rows="7" ng-model="replyJob.coverLetter" required="required"></textarea>
-					  <p class="h4 text-muted">Your CV</p>
+					  <p class="h4 text-muted">{{'YOUR_CV' | translate}}</p>
 		
 					 <div class="row" cg-busy="{promise:myPromise, message:'Please wait...'}">
 					
@@ -337,25 +332,22 @@
 								<div class="form-control">
 									<button name="inputCV"
 										aria-describedby="inputGroupSuccess4Status" flow-btn>
-										Upload CV</button>
+										{{'UPLOAD_CV' | translate}}</button>
 									<span> {{existingImageObjectZero.files[0].file.name}} </span>
 								</div>
 							</div>
 						
 						<div class="col-xs-12">
 							<br />
-							<p class="muted">
-								By clicking on "Send reply", I agree to Hashi terms and
-								Conditions and Privacy policy. <br />
+							<p class="muted">{{'SEND_MESSAGE_TERMS' | translate}} <br />
 						</div>
 						<div class="col-xs-12">
-							<a  class="btn btn-primary btn-block" ng-click="sendReplyJobByEmail()">Apply</a>
+							<a  class="btn btn-primary btn-block" ng-click="sendReplyJobByEmail()">{{'APPLY' | translate}}</a>
 						</div>
 					</div>
                    </div>
 				</div>
 			</div>
-
 		</div>
 
 		<div class="col-sm-3 center details-sidebar">
@@ -364,7 +356,7 @@
 
 					<div class="row">
 						<div class="col-xs-12">
-							<a ng-click="scrollTo('apply')"  class="btn btn-primary btn-block">Apply</a>
+							<a ng-click="scrollTo('apply')"  class="btn btn-primary btn-block">{{'APPLY' | translate}}</a>
 						</div>
 					</div>
 
@@ -385,26 +377,27 @@
 							</script>
 						</div>
 					</div>
-					<br />
+					<br/>
 
 
 					<div class="row">
 						<div class="col-xs-12">
 							<map
 								center="{{product.location.latitude}}, {{product.location.longtitude}}"
-								zoom="7" disable-double-click-zoom="true">
+								zoom="9" disable-double-click-zoom="true">
 								<marker
 									position="{{product.location.latitude}}, {{product.location.longtitude}}"></marker>
 							</map>
-							<ol class="breadcrumb">
-								<li>{{product.location.country}}</a></li>
-								<li>{{product.location.region}}</a></li>	
-								<li>{{product.location.city}}</a></li>
-							</ol>
+							<p>
+								
+								{{product.location.region}}
+								{{!product.location.city ? '' : '> '}}
+								{{product.location.city}}
+								{{!product.location.route? '' : '> '}}
+								{{product.location.route}}
+							</p>
 						</div>
 					</div>
-					
-					
 				</div>
 			</div>
 		</div>

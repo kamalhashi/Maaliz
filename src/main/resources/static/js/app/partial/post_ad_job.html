@@ -7,19 +7,19 @@
 
 				<div class="col-sm-12 col-lg-8">
 					<ol class="breadcrumb">
-						<li><a ui-sref="/" >Home</a></li>
-						<li><a ui-sref="post_ad" >Post an ad</a></li>
-						<li class="active">Jobs</li>
+						<li><a ui-sref="/" >{{'HOME' | translate}}</a></li>
+						<li><a ui-sref="post_ad" >{{'POST_AN_AD' | translate }}</a></li>
+						<li class="active">{{'JOBS' | translate }}</li>
 					</ol>
 
-					<h1>Post an Ad</h1>
+					<h1>{{'POST_AN_AD' | translate }}</h1>
 
 					<div class="alert alert-danger" ng-show="postAdError">
 						{{postAdErrorMessage}}</div>
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">
-								<i class="fa fa-check-circle fa-fw"></i> Selected a category
+								<i class="fa fa-check-circle fa-fw"></i> {{'SELECTED_CATEGORY' | translate }}
 							</h3>
 						</div>
 
@@ -37,7 +37,7 @@
 								</div>
 
 								<div class="col-sm-2 pull-right">
-									<a ui-sref="post_ad" class="btn btn-default btn-block">edit</a>
+									<a ui-sref="post_ad" class="btn btn-default btn-block">{{'EDIT' | translate}}</a>
 								</div>
 							</div>
 
@@ -46,7 +46,7 @@
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Ad details</h3>
+							<h3 class="panel-title">{{'AD_DETAILS' | translate}}</h3>
 						</div>
 						<div class="panel-body">
 
@@ -56,7 +56,7 @@
 								postAdForm.inputTitle.$invalid ||
 						        postAdForm.$submitted && postAdForm.inputTitle.$invalid ,
 						        'has-success': !postAdForm.inputTitle.$invalid}">
-								<label for="inputTitle" class="control-label">Job title</label> 
+								<label for="inputTitle" class="control-label">{{'JOB_TITLE' | translate}}</label> 
 								<input
 									type="text" class="form-control" 
 									name="inputTitle"
@@ -83,7 +83,7 @@
 								postAdForm.inputTelephone.$invalid ||
 						        postAdForm.$submitted && postAdForm.inputTelephone.$invalid ,
 						        'has-success': !postAdForm.inputTelephone.$invalid && postAdForm.inputTelephone.$touched}">
-								<label for="inputTelephone" class="control-label">Telephone</label>
+								<label for="inputTelephone" class="control-label">{{'TELEPHONE' | translate}}</label>
 								<input type="text" class="form-control" name="inputTelephone"
 									ng-model="telephone" required> <span
 									class="glyphicon glyphicon-ok form-control-feedback"
@@ -102,7 +102,7 @@
 								postAdForm.inputDescription.$invalid ||
 						        postAdForm.$submitted && postAdForm.inputDescription.$invalid ,
 						        'has-success': !postAdForm.inputDescription.$invalid}">
-								<label for="inputDescription" class="control-label">Description</label>
+								<label for="inputDescription" class="control-label">{{'DESCRIPTION' | translate}}</label>
 								<div  name="inputDescription" class="form-control editable" 
 									contenteditable ng-model="ad.productDescription" required>
 						     	</div>
@@ -122,7 +122,7 @@
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Information</h3>
+							<h3 class="panel-title">{{'INFORMATION' | translate}}</h3>
 						</div>
 						<div class="panel-body">
 							<div class="row">
@@ -133,7 +133,7 @@
 						        		postAdForm.$submitted && postAdForm.selectCareerLevel.$invalid ,
 						         		'has-success': !postAdForm.selectCareerLevel.$invalid}">
 
-										<label for="selectCareerLevel" class="control-label">Career Level</label>
+										<label for="selectCareerLevel" class="control-label">{{'CAREER_LEVEL' | translate}}</label>
 										<select ng-model="ad.careerLevel" name="selectCareerLevel"
 											class="form-control"
 											ng-options="careerLevel.id as careerLevel.name for  careerLevel in constantCareerLevel"
@@ -161,7 +161,7 @@
 						        		postAdForm.$submitted && postAdForm.selectEmploymentType.$invalid ,
 						         		'has-success': !postAdForm.selectEmploymentType.$invalid}">
               
-										<label for="selectEmploymentType" class="control-label">Employment Type</label> 
+										<label for="selectEmploymentType" class="control-label">{{'EMPLOYMENT_TYPE' | translate}}</label> 
 										<select class="form-control"  ng-model="ad.employmentType"
 											name="selectEmploymentType"
 											ng-options="employmentType.id as employmentType.name for employmentType in constantEmploymentType"
@@ -190,7 +190,7 @@
 						        		postAdForm.$submitted && postAdForm.selectWorkExperience.$invalid ,
 						         		'has-success': !postAdForm.selectWorkExperience.$invalid}">
               
-										<label for="selectWorkExperience" class="control-label">Minimum Work Experience</label> 
+										<label for="selectWorkExperience" class="control-label">{{'MINIMUM_WORK_EXPERIENCE' | translate}}</label> 
 										<select class="form-control"  ng-model="ad.workExperience"
 											name="selectWorkExperience"
 											ng-options="workExperience.id as workExperience.name for workExperience in constantWorkExperience"
@@ -218,7 +218,7 @@
 						        		postAdForm.$submitted && postAdForm.selectEducationLevel.$invalid ,
 						         		'has-success': !postAdForm.selectEducationLevel.$invalid}">
               
-										<label for="selectEducationLevel" class="control-label">Education Level</label> 
+										<label for="selectEducationLevel" class="control-label">{{'MINIMUM_EDUCATION_LEVEL' | translate }}</label> 
 										<select class="form-control"  ng-model="ad.educationLevel"
 											name="selectEducationLevel"
 											ng-options="educationLevel.id as educationLevel.name for educationLevel in constantEducationLevel"
@@ -250,7 +250,7 @@
 						        		postAdForm.$submitted && postAdForm.selectCVRequired.$invalid ,
 						         		'has-success': !postAdForm.selectCVRequired.$invalid}">
               
-										<label for="selectCVRequired" class="control-label">CV Required</label> 
+										<label for="selectCVRequired" class="control-label">{{'CV_REQUIRED' | translate}} </label> 
 										<select class="form-control"  ng-model="ad.cvRequired"
 											name="selectCVRequired"
 											ng-options="cvRequired.id as cvRequired.name for cvRequired in constantCVRequired"
@@ -278,7 +278,7 @@
 						        		postAdForm.$submitted && postAdForm.selectMonthSalary.$invalid ,
 						         		'has-success': !postAdForm.selectMonthSalary.$invalid}">
               
-										<label for="selectMonthSalary" class="control-label">Month Salary</label> 
+										<label for="selectMonthSalary" class="control-label">{{'MONTH_SALARY' | translate}}</label> 
 										<select class="form-control"  ng-model="ad.monthSalary"
 											name="selectMonthSalary"
 											ng-options="monthSalary.id as monthSalary.name for monthSalary in constantMonthSalary"
@@ -308,7 +308,7 @@
 						        		postAdForm.$submitted && postAdForm.selectCompanySize.$invalid ,
 						         		'has-success': !postAdForm.selectCompanySize.$invalid}">
               
-										<label for="selectCompanySize" class="control-label">Company Size</label> 
+										<label for="selectCompanySize" class="control-label">{{'COMPANY_SIZE' | translate}}</label> 
 										<select class="form-control"  ng-model="ad.companySize"
 											name="selectCompanySize"
 											ng-options="companySize.id as companySize.name for companySize in constantCompanySize"
@@ -336,7 +336,7 @@
 						        		postAdForm.$submitted && postAdForm.selectListedBy.$invalid ,
 						         		'has-success': !postAdForm.selectListedBy.$invalid}">
               
-										<label for="selectListedBy" class="control-label">Listed by</label> 
+										<label for="selectListedBy" class="control-label">{{'LISTED_BY' | translate}}</label> 
 										<select class="form-control"  ng-model="ad.listedBy"
 											name="selectListedBy"
 											ng-options="listedBy.id as listedBy.name for listedBy in constantListedBy"
@@ -367,10 +367,10 @@
 						        		postAdForm.$submitted && postAdForm.inputBenefits.$invalid ,
 						         		'has-success': !postAdForm.inputBenefits.$invalid}">
               
-										<label for="inputBenefits" class="control-label">Benefits</label> 
+										<label for="inputBenefits" class="control-label">{{'BENEFITS' | translate }}</label> 
 										<input class="form-control"  ng-model="ad.benefits" 
 											name="inputBenefits"
-											placeholder="Benefits (bonus, health insurance, etc.)"
+											placeholder="{{'BENEFITS_DESC' | translate}}"
 											required>
 										
 										<span class="glyphicon glyphicon-ok form-control-feedback"
@@ -394,7 +394,7 @@
 						        		postAdForm.$submitted && postAdForm.inputCompanyName.$invalid ,
 						         		'has-success': !postAdForm.inputCompanyName.$invalid}">
               
-										<label for="inputCompanyName" class="control-label">Company Name</label> 
+										<label for="inputCompanyName" class="control-label">{{'COMPANY_NAME' | translate }}</label> 
 										<input class="form-control"  ng-model="ad.companyName"
 											name="inputCompanyName"
 											required>
@@ -424,7 +424,7 @@
 						         		'has-success': !postAdForm.inputClosingDate.$invalid}">
               
 									 
-										<label for="inputClosingDate" class="control-label">Closing date</label> 
+										<label for="inputClosingDate" class="control-label">{{'CLOSING_DATE' | translate }}</label> 
 										<p class="input-group">
 										   <input type="text"
 										      name="inputClosingDate" 
@@ -466,7 +466,7 @@
 						        		postAdForm.$submitted && postAdForm.inputJobLocation.$invalid ,
 						         		'has-success': !postAdForm.inputJobLocation.$invalid}">
               
-										<label for="inputJobLocation" class="control-label">Location</label> 
+										<label for="inputJobLocation" class="control-label">{{'LOCATION_JOB' | translate}}</label> 
 										<input class="form-control"  ng-model="ad.jobLocation"
 											name="inputJobLocation"
 											required>
@@ -491,7 +491,7 @@
 					
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Logo picture</h3>
+							<h3 class="panel-title">{{'LOGO_PICTURE' | translate }}</h3>
 						</div>
 						<div class="panel-body">	    
 						    <div class="row">
@@ -508,7 +508,7 @@
 												style="z-index: 1; top: 0px; left: 10px; background: #f7f7f7; height: 170px; margin-bottom: 10px; text-align: center; padding: 10px;">
 												<a href="" style="font-size: 36px; color: #ddd;"><i
 													class="fa fa-camera"></i></a><br /> <a href=""
-													class="text-info" style="font-size: 14px;">Add logo image</a>												
+													class="text-info" style="font-size: 14px;">{{'ADD_LOGO_PICTURE' | translate}}</a>												
 											</div>
 											<div style="background: #f7f7f7;">
 												<div class="thumbnail" ng-show="$flow.files.length"
@@ -542,11 +542,11 @@
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Location</h3>
+							<h3 class="panel-title">{{'LOCATION' | translate}}</h3>
 						</div>
 						<div class="panel-body">
 							<div>
-								<map center="{{ad.location.latitude}}, {{ad.location.longtitude}}" zoom="7"
+								<map center="{{ad.location.latitude}}, {{ad.location.longtitude}}" zoom="9"
 									on-click="addMarker()">
 									<marker
 										position="{{ad.location.latitude}}, {{ad.location.longtitude}}"></marker>
@@ -555,33 +555,25 @@
 
 							<br />
 							<p>
-								<strong class="text-primary">You have selected:</strong>
-								{{ad.location.country}},  {{ad.location.region}}, {{ad.location.city}},
-								{{ad.location.routeName}}
+								<strong class="text-primary">{{'YOUR_AD_LOCATION' | translate}}</strong>
+								{{ad.location.country}},  {{ad.location.region}}, {{ad.location.city}}
+								{{!ad.location.city ? '' : ', '}} {{ad.location.routeName}}
 							</p>
 						</div>
 					</div>
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Language of the ad</h3>
+							<h3 class="panel-title">{{'PUBLISH_AD' | translate}}</h3>
 						</div>
 						<div class="row panel-body">
-
-							<div class="checkbox col-xs-7">
-								<label> <input type="checkbox"
-									ng-model="ad.productLanguage" ng-true-value="'so_SO'" />
-
-									Somali Language
-								</label> <label> <input type="checkbox"
-									ng-model="ad.productLanguage" ng-true-value="'en_US'" />
-									Eglish Language
-								</label>
-							</div>
-							<div class="col-xs-5">
-								<button class="btn btn-primary pull-right" ng-click="saveProduct(postAdForm.$valid)" ng-hide="updateButton">Publish ad</button>
-								<button class="btn btn-primary pull-right" ng-show="updateButton" ng-click="updateProduct(postAdForm.$valid)">Update ad</button>
-							</div>
+						  <div>
+                        	  <label>
+                          	     {{'PUBLISH_TERMS_CONDITIONS' | translate}}  
+                        	 </label>
+								<button class="btn btn-primary flip pull-right" ng-click="saveProduct(postAdForm.$valid)" ng-hide="updateButton">{{'PUBLISH_AD' | translate}}</button>
+							    <button class="btn btn-primary flip pull-right" ng-show="updateButton" ng-click="updateProduct(postAdForm.$valid)">{{'UPDATE_AD' | translate}}</button>
+							</div>	
 						</div>
 					</div>
 				</div>
@@ -595,14 +587,10 @@
 					<div class="col-sm-11 col-sm-offset-1">
 						<div class="well">
 							<strong class="text-muted"><i
-								class="fa fa-info-circle fa-fw text-muted"></i> Information</strong><br />
+								class="fa fa-info-circle fa-fw text-muted"></i> {{'INFORMATION' | translate}}</strong><br />
 							<br />
-							<p>This website is visited by millions of people everyday,
-								make sure you add the relevent descriptions and keywords to
-								increase visibility of your ad. You'll get alerts by email
-								everytime somone replies to your ad</p>
-							<p>Also, don't forget - you can always edit your ad and the
-								images after posting</p>
+							<p>{{'INFORMATION_DESC_ONE' | translate}}</p>
+							<p>{{'INFORMATION_DESC_TWO' | translate}}</p>
 						</div>
 					</div>
 				</div>

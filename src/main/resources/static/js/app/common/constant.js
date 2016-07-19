@@ -519,18 +519,22 @@ hashiApp.constant('zonedForSomali',  [
 hashiApp.constant('rentTimeEnglish',  [       
                                       {"id":1, "name":"Daily"},
                                       {"id":2,  "name":"Weekly"},
-                                      {"id":3,  "name":"Monthly"},
-                                      {"id":4,  "name":"Yearly"},
-                                      {"id":5,  "name":"Negotiable"},
+                                      {"id":3,  "name":"Monthly"},  
+                                      {"id":4,  "name":"Quarterly"},
+                                      {"id":5,  "name":"Half-Yearly"}, 
+                                      {"id":6,  "name":"Yearly"},
+                                      {"id":7,  "name":"Negotiable"}
 ]); 
 
 //for rent residential 
 hashiApp.constant('rentTimeSomali',  [       
-                                      {"id":1, "name":"Maalin"},
-                                      {"id":2,  "name":"Usbuuc"},
-                                      {"id":3,  "name":"Bishi"},
-                                      {"id":4,  "name":"Sanadki"},
-                                      {"id":5,  "name":"Gorgortan"},
+                                      {"id":1, "name":"يومي"},
+                                      {"id":2,  "name":"أسبوعي"},
+                                      {"id":3,  "name":"شهريا"},
+                                      {"id":4,  "name":"ربع سنوي"},
+                                      {"id":5,  "name":"صف سنوي"}, 
+                                      {"id":6,  "name":"سنويا"},
+                                      {"id":5,  "name":"قابل للتفاوض"}
 ]); 
 
 hashiApp.constant('furnishedEnglish',  [       
@@ -684,13 +688,13 @@ hashiApp.constant('careerLevelEnglish',  [
 ]);
 
 hashiApp.constant('careerLevelSomali',  [       
-                                          {"id":1, "name":"Arday/Intern"},
-                                          {"id":2,  "name":"Junior"},
-                                          {"id":3,  "name":"Maamul dhexe"},
-                                          {"id":4,  "name":"Maamul sare"},
-                                          {"id":5,  "name":"Maamule"},
-                                          {"id":6,  "name":"Agaasime"},
-                                          {"id":7,  "name":"Wax kale"}
+                                          {"id":1, "name":"طالب/متدرب"},
+                                          {"id":2,  "name":"مبتدئ/جونيور"},
+                                          {"id":3,  "name":"متوسظ الخبرة"},
+                                          {"id":4,  "name":"مدير/سينيور"},
+                                          {"id":5,  "name":"مدير"},
+                                          {"id":6,  "name":"إدارة عليا/تنفيذية"},
+                                          {"id":7,  "name":"آخر"}
 ]);
 
 hashiApp.constant('employmentTypeEnglish',  [       
@@ -701,11 +705,11 @@ hashiApp.constant('employmentTypeEnglish',  [
                                           {"id":5,  "name":"Other"}
 ]);
 hashiApp.constant('employmentTypeSomali',  [       
-                                             {"id":1, "name":"Waqti buuxa"},
-                                             {"id":2,  "name":"Waqti dhiman"},
-                                             {"id":3,  "name":"Heshiis"},
-                                             {"id":4,  "name":"Waqti go'an"},
-                                             {"id":5,  "name":"Wax kale"}
+                                             {"id":1, "name":"دوام كامل"},
+                                             {"id":2,  "name":"دوام جزئى"},
+                                             {"id":3,  "name":"عــقــد"},
+                                             {"id":4,  "name":"مؤقت"},
+                                             {"id":5,  "name":"آخر"}
 ]);
 
 
@@ -719,32 +723,28 @@ hashiApp.constant('workExperienceEnglish',  [
 ]);
 
 hashiApp.constant('workExperienceSomali',  [       
-                                             {"id":1, "name":"0-1 Sano"},
-                                             {"id":2,  "name":"1-2 Sano"},
-                                             {"id":3,  "name":"2-5 Sano"},
-                                             {"id":4,  "name":"5-10 Sano"},
-                                             {"id":5,  "name":"10-15 Sano"},
-                                             {"id":6,  "name":"15+ Sano"}                                         
+                                             {"id":1, "name":"0 - 1 سنة"},
+                                             {"id":2,  "name":"1 - 2 سنوات"},
+                                             {"id":3,  "name":"2 - 5 سنوات"},
+                                             {"id":4,  "name":"5 - 10 سنوات"},
+                                             {"id":5,  "name":"10 - 15 سنوات"},
+                                             {"id":6,  "name":"15 سنوات  وأكثر"}                                         
  ]);
 
 hashiApp.constant('educationLevelEnglish',  [       
-                                            {"id":1, "name":"Secondary"},
-                                            {"id":2, "name":"High-School"},
-                                            {"id":3,  "name":"Bachelors Degree"},
-                                            {"id":4,  "name":"Masters Degree"},
-                                            {"id":5,  "name":"PhD"},
-                                            {"id":6,  "name":"10-15 Years"},
-                                            {"id":7,  "name":"Not needed"}                                         
+                                            {"id":1, "name":"Secondary/High School"},
+                                            {"id":2,  "name":"Bachelors Degree"},
+                                            {"id":3,  "name":"Masters Degree"},
+                                            {"id":4,  "name":"PhD"},
+                                            {"id":5,  "name":"Not needed"}                                         
 ]);
 
 hashiApp.constant('educationLevelSomali',  [       
-                                             {"id":1, "name":"Dugsi Dhexe"},
-                                             {"id":2, "name":"Dugsi Sare"},
-                                             {"id":3,  "name":"Jaamacad degree"},
-                                             {"id":4,  "name":"Master Degree"},
-                                             {"id":5,  "name":"PhD"},
-                                             {"id":6,  "name":"10-15 Years"},
-                                             {"id":7,  "name":"Maloo baahno"}                                         
+                                             {"id":1, "name":"ثانوية عامة"},
+                                             {"id":2,  "name":"بكالوريوس"},
+                                             {"id":3,  "name":"ماجستير"},
+                                             {"id":4,  "name":"دكتوراه"},
+                                             {"id":5,  "name":"لا حاجة"}                                         
  ]);
 
 
@@ -766,21 +766,21 @@ hashiApp.constant('monthSalaryEnglish',  [
                                              {"id":15,  "name":"10,000+"}
  ]);
 hashiApp.constant('monthSalarySomali',  [       
-                                          {"id":1, "name":"Unspecified"},
-                                          {"id":2,  "name":"0      -  100"},
-                                          {"id":3,  "name":"100    -  200"},
-                                          {"id":4,  "name":"200    -  400"},
-                                          {"id":5,  "name":"400    -  600"},
-                                          {"id":6,  "name":"600    -  800"},
-                                          {"id":7,  "name":"800    -  1,000"},
-                                          {"id":8,  "name":"1,000  -  1,500"},  
-                                          {"id":9,  "name":"1,500  -  1,500"},
-                                          {"id":10,  "name":"1,500 -  2,000"},
-                                          {"id":11,  "name":"2,000 -  3,000"},
-                                          {"id":12,  "name":"3,000 -  5,000"},
-                                          {"id":13,  "name":"5,000 -  7,000"},
-                                          {"id":14,  "name":"9,000 -  10,000"},
-                                          {"id":15,  "name":"10,000+"}
+                                          {"id":1, "name":"غير محدد"},
+                                          {"id":2,  "name":"0      -  999"},
+                                          {"id":3,  "name":"1000    -  1,999"},
+                                          {"id":4,  "name":"2000    -  2,999"},
+                                          {"id":5,  "name":"3000    -  4,999"},
+                                          {"id":6,  "name":"5000    -  6,999"},
+                                          {"id":7,  "name":"8000    -  9,999"},
+                                          {"id":8,  "name":"10,000  -  12,999"},  
+                                          {"id":9,  "name":"13,000  -  19,999"},
+                                          {"id":10,  "name":"20,000 -  29,999"},
+                                          {"id":11,  "name":"30,000 -  39,999"},
+                                          {"id":12,  "name":"40,000 -  49,999"},
+                                          {"id":13,  "name":"50,000 -  59,999"},
+                                          {"id":14,  "name":"60,000 -  69,999"},
+                                          {"id":15,  "name":"70,000+"}
 ]);
 
 
@@ -813,8 +813,8 @@ hashiApp.constant('cvRequiredEnglish',  [
                                                {"id":2,  "name":"No"}                                          
 ]); 
 hashiApp.constant('cvRequiredSomali',  [       
-                                         {"id":1,  "name":"Haa"},
-                                         {"id":2,  "name":"May"}                                          
+                                         {"id":1,  "name":"نعم"},
+                                         {"id":2,  "name":"لا"}                                          
 ]); 
 
 hashiApp.constant('listedByEnglish',  [       
@@ -823,13 +823,13 @@ hashiApp.constant('listedByEnglish',  [
 ]);
 
 hashiApp.constant('listedBySomali',  [       
-                                       {"id":1,  "name":"الوسيط"},
-                                       {"id":2,  "name":"المالك"}  
+                                       {"id":1,  "name":"صاحب العمل"},
+                                       {"id":2,  "name":"شركة توظيف"}  
 ]);
 
 hashiApp.constant('hideCompanyNameSomali',  [       
-                                      {"id":1,  "name":"Haa"},
-                                      {"id":2,  "name":"May"}                                          
+                                      {"id":1,  "name":"نعم"},
+                                      {"id":2,  "name":"لا"}                                          
 ]);
 
 hashiApp.constant('hideCompanyNameEnglish',  [       
