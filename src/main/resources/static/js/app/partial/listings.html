@@ -225,8 +225,6 @@
 						 </div>
           		    </div>
 				</div>
-
-			
 			<br />
 			<hr/>
 
@@ -277,7 +275,7 @@
 									<div class="col-sm-8">
 
 										<p class="muted">
-											{{'POSTED' | translate}} <strong style="margin-right: 20px">
+											{{'POSTED' | translate}} <strong>
 											{{ad.created | date:'dd MMMM yyyy'}} </strong>
 										</p>
 										<br />
@@ -288,21 +286,21 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.MOTOR_CAR_MIN && ad.categoriesEntity.rgt <= categoryRange.MOTOR_CAR_MAX">
 									<div class="row">
 									<div class="col-sm-5">
-											{{'MODEL' | translate}}: <strong style="margin-right: 20px">
+											{{'MODEL' | translate}}: <strong>
 											{{ad.model }}</strong>
 										</div>
 										<div class="col-sm-5">
-											{{'YEAR' | translate}}: <strong style="margin-right: 20px">
+											{{'YEAR' | translate}}: <strong>
 											{{ad.yearMade}}</strong>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-5">
-											{{'KILOMETERS' | translate}}: <strong style="margin-right: 20px">
+											{{'KILOMETERS' | translate}}: <strong>
 											{{ad.kilometers}}</strong>
 										</div>
 										<div class="col-sm-5">
-											{{'COLOUR' | translate}}: <strong style="margin-right: 20px">
+											{{'COLOUR' | translate}}: <strong>
 											{{colourConstant[ad.colour-1].name }}</strong>
 										</div>									
 									</div>
@@ -312,22 +310,22 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.MOTOR_HEAVY_VEHICLE_MIN && ad.categoriesEntity.rgt <= categoryRange.MOTOR_HEAVY_VEHICLE_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'MAKE' | translate}}: <strong style="margin-right: 20px">
+											{{'MAKE' | translate}}: <strong>
 											{{ad.make }}</strong>
 										</div>
 									    <div class="col-sm-5">
-											{{'MODEL' | translate}}: <strong style="margin-right: 20px">
+											{{'MODEL' | translate}}: <strong>
 											{{ad.model }}</strong>
 										</div>
 											
 									</div>
 									<div class="row">
 										<div class="col-sm-5">
-											{{'YEAR' | translate}}: <strong style="margin-right: 20px">
+											{{'YEAR' | translate}}: <strong>
 											{{ad.yearMade}}</strong>
 										</div>
 										<div class="col-sm-5">
-											{{'KILOMETERS' | translate}}: <strong style="margin-right: 20px">
+											{{'KILOMETERS' | translate}}: <strong>
 											{{ad.kilometers}}</strong>
 										</div>
 																		
@@ -339,13 +337,13 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.MOTOR_MOTORCYCLES_MIN && ad.categoriesEntity.rgt <= categoryRange.MOTOR_MOTORCYCLES_MAX">
 									<div class="row">
 										<div class="col-sm-10">
-											{{'USAGE' | translate}}: <strong style="margin-right: 20px">
+											{{'USAGE' | translate}}: <strong>
 											{{usageConstant[ad.usageItem-1].name}}</strong>
 										</div>		
 									</div>
 									<div class="row">
 										<div class="col-md-10">
-											{{'SELLER_TYPE' | translate}}: <strong style="margin-right: 20px">
+											{{'SELLER_TYPE' | translate}}: <strong>
 										 	{{sellerTypeConstant[ad.sellerType-1].name}}</strong>
 										 </div>
 									</div>
@@ -355,13 +353,13 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.MOTOR_CAR_PARTS_MIN && ad.categoriesEntity.rgt <= categoryRange.MOTOR_CAR_PARTS_MAX">
 									<div class="row">
 										<div class="col-sm-10">
-											{{'USAGE' | translate}}: <strong style="margin-right: 20px">
+											{{'USAGE' | translate}}: <strong>
 											{{usageConstant[ad.usageItem-1].name}}</strong>
 										</div>		
 									</div>
 									<div class="row">
 										<div class="col-md-10">
-											{{'SELLER_TYPE' | translate}}: <strong style="margin-right: 20px">
+											{{'SELLER_TYPE' | translate}}: <strong>
 										 	{{sellerTypeConstant[ad.sellerType-1].name}}</strong>
 										 </div>
 									</div>
@@ -373,21 +371,21 @@
 									<div class="row">
 										
 										<div class="col-sm-5">
-											{{'USAGE' | translate}}: <strong style="margin-right: 20px">
+											{{'USAGE' | translate}}: <strong>
 											{{usageConstant[ad.usageItem-1].name}}</strong>
 										</div>									
 										<div class="col-sm-5">
-											{{'WARRANTY' | translate}}: <strong style="margin-right: 20px">
+											{{'WARRANTY' | translate}}: <strong>
 											{{warrantyConstant[ad.warrantyItem-1].name}}</strong>
 										</div>		
 									</div>	
 									<div class="row">
 										<div class="col-md-5">
-											{{'SELLER_TYPE' | translate}}:  <strong style="margin-right: 20px">
+											{{'SELLER_TYPE' | translate}}:  <strong>
 										 	{{sellerTypeConstant[ad.sellerType-1].name}}</strong>
 										 </div>
 										 <div class="col-md-5">
-											{{'LENGTH' | translate}}: <strong style="margin-right: 20px">
+											{{'LENGTH' | translate}}: <strong>
 										 	{{lengthConstant[ad.length-1].name}}</strong>
 										 </div>
 									</div>
@@ -398,21 +396,21 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_RES_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_RES_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}<strong style="margin-right: 20px">
+											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}:<strong >
 											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
-											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
+											{{'LISTED_BY' | translate}}: <strong>
 											{{constantOwnerType[ad.ownerType-1].name}}</strong>
 										</div>			
 									</div>
 									<div class="row">
 										<div class="col-md-5">
-											{{'ROOMS' | translate }}: <strong style="margin-right: 20px">
+											{{'ROOMS' | translate }}: <strong >
 										 	{{constantNoBedrooms[ad.noBedrooms-1].name}}</strong>
 										 </div>
 										 <div class="col-md-5">
-											{{'BATHROOMS' | translate }}: <strong style="margin-right: 20px">
+											{{'BATHROOMS' | translate }}: <strong >
 										 	{{constantNoBathrooms[ad.noBathrooms-1].name}}</strong>
 										 </div>
 									</div>
@@ -423,11 +421,11 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_COMM_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_COMM_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }} <strong style="margin-right: 20px">
+											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}: <strong >
 											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
-											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
+											{{'LISTED_BY' | translate}}: <strong >
 											{{constantOwnerType[ad.ownerType-1].name}}</strong>
 										</div>			
 									</div>
@@ -437,11 +435,11 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_UNITS_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_UNITS_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }} <strong style="margin-right: 20px">
+											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}: <strong >
 											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
-											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
+											{{'LISTED_BY' | translate}}: <strong >
 											{{constantOwnerType[ad.ownerType-1].name}}</strong>
 										</div>			
 									</div>
@@ -451,11 +449,11 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_SALE_LAND_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_SALE_LAND_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-										    {{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}<strong style="margin-right: 20px">
+										    {{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}:<strong >
 											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
-											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
+											{{'LISTED_BY' | translate}}: <strong >
 											{{constantOwnerType[ad.ownerType-1].name}}</strong>
 										</div>			
 									</div>
@@ -467,21 +465,21 @@
 									 ">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }} <strong style="margin-right: 20px">
+											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}: <strong >
 											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
-											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
+											{{'LISTED_BY' | translate}}: <strong >
 											{{constantOwnerType[ad.ownerType-1].name}}</strong>
 										</div>			
 									</div>
 									<div class="row">
 										<div class="col-md-5">
-											{{'ROOMS' | translate }}: <strong style="margin-right: 20px">
+											{{'ROOMS' | translate }}: <strong >
 										 	{{constantNoBedrooms[ad.noBedrooms-1].name}}</strong>
 										 </div>
 										 <div class="col-md-5">
-											{{'RENT_IS_PAID' | translate }}: <strong style="margin-right: 20px">
+											{{'RENT_IS_PAID' | translate }}: <strong >
 										 	{{constantRentTime[ad.rentTime-1].name}}</strong>
 										 </div>
 									</div>
@@ -492,21 +490,21 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_COMM_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_COMM_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}<strong style="margin-right: 20px">
+											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}:<strong >
 											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
-											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
+											{{'LISTED_BY' | translate}}: <strong >
 											{{constantOwnerType[ad.ownerType-1].name}}</strong>
 										</div>			
 									</div>
 									<div class="row">
 										<div class="col-md-5">
-											{{'RENT_IS_PAID' | translate }}: <strong style="margin-right: 20px">
+											{{'RENT_IS_PAID' | translate }}: <strong >
 										 	{{constantRentTime[ad.rentTime-1].name}}</strong>
 										 </div>
 										 <div class="col-md-5">
-											{{'FURNISHED' | translate }}: <strong style="margin-right: 20px">
+											{{'FURNISHED' | translate }}: <strong >
 										 	{{constantFurnished[ad.furnished-1].name}}</strong>
 										 </div>
 									</div>
@@ -518,21 +516,21 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.PROPERTY_RENT_ROOM_MIN && ad.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_ROOM_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
+											{{'LISTED_BY' | translate}}: <strong >
 											{{constantOwnerType[ad.ownerType-1].name}}</strong>
 										</div>
 										 <div class="col-md-5">
-											{{'BATHROOMS' | translate }}: <strong style="margin-right: 20px">
+											{{'BATHROOMS' | translate }}: <strong >
 										 	{{constantNoBathrooms[ad.noBathrooms-1].name}}</strong>
 										 </div>			
 									</div>
 									<div class="row">
 										<div class="col-md-5">
-											{{'RENT_IS_PAID' | translate }}: <strong style="margin-right: 20px">
+											{{'RENT_IS_PAID' | translate }}: <strong >
 										 	{{constantRentTime[ad.rentTime-1].name}}</strong>
 										 </div>
 										 <div class="col-md-5">
-											{{'FURNISHED' | translate }}: <strong style="margin-right: 20px">
+											{{'FURNISHED' | translate }}: <strong >
 										 	{{constantFurnished[ad.furnished-1].name}}</strong>
 										 </div>
 									</div>
@@ -544,21 +542,21 @@
 										ad.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_SHORT_MONTHLY_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }} <strong style="margin-right: 20px">
+											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}: <strong >
 											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
-											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
+											{{'LISTED_BY' | translate}}: <strong >
 											{{constantOwnerType[ad.ownerType-1].name}}</strong>
 										</div>			
 									</div>
 									<div class="row">
 										<div class="col-md-5">
-											{{'ROOMS' | translate }}: <strong style="margin-right: 20px">
+											{{'ROOMS' | translate }}: <strong >
 										 	{{constantNoBedrooms[ad.noBedrooms-1].name}}</strong>
 										 </div>
 										 <div class="col-md-5">
-											{{'RENT_IS_PAID' | translate }}: <strong style="margin-right: 20px">
+											{{'RENT_IS_PAID' | translate }}: <strong >
 										 	{{constantRentTime[ad.rentTime-1].name}}</strong>
 										 </div>
 									</div>
@@ -570,21 +568,21 @@
 										ad.categoriesEntity.rgt <= categoryRange.PROPERTY_RENT_SHORT_DAILY_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}<strong style="margin-right: 20px">
+											{{'SIZE' | translate }} {{'SQUARE_METRE' | translate }}:<strong >
 											{{ad.propertySize}} </strong>
 										</div>
 										<div class="col-sm-5">
-											{{'LISTED_BY' | translate}}: <strong style="margin-right: 20px">
+											{{'LISTED_BY' | translate}}: <strong >
 											{{constantOwnerType[ad.ownerType-1].name}}</strong>
 										</div>			
 									</div>
 									<div class="row">
 										<div class="col-md-5">
-											{{'ROOMS' | translate }}: <strong style="margin-right: 20px">
+											{{'ROOMS' | translate }}: <strong >
 										 	{{constantNoBedrooms[ad.noBedrooms-1].name}}</strong>
 										 </div>
 										 <div class="col-md-5">
-											{{'RENT_IS_PAID' | translate }}: <strong style="margin-right: 20px">
+											{{'RENT_IS_PAID' | translate }}: <strong >
 										 	{{constantRentTime[ad.rentTime-1].name}}</strong>
 										 </div>
 									</div>
@@ -597,17 +595,18 @@
 									    && !(ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_COMPUTER_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_COMPUTER_MAX)
 									    && !(ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_LOST_FOUND_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_LOST_FOUND_MAX)
 									    && !(ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_BUSINESS_SALE_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_BUSINESS_SALE_MAX)  
-									    && !(ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_PETS_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_PETS_MAX)									    
+									    && !(ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_PETS_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_PETS_MAX)
+									    && !(ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_TICKETS_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_TICKETS_MAX)								    
 									    ">
 									<div class="row">
 										<div class="col-sm-10">
-											{{'AGE' | translate}}: <strong style="margin-right: 20px">
+											{{'AGE' | translate}}: <strong >
 											{{ageConstant[ad.ageItem-1].name}}</strong>
 										</div>		
 									</div>
 									<div class="row">
 										<div class="col-md-10">
-											{{'CONDITION' | translate}}: <strong style="margin-right: 20px">
+											{{'CONDITION' | translate}}: <strong >
 										 	{{constantCondition[ad.conditionItem-1].name}}</strong>
 										 </div>
 									</div>
@@ -618,17 +617,17 @@
 									ng-show="ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_CAMERA_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_CAMERA_MAX">
 									<div class="row">
 										<div class="col-sm-5">
-											{{'AGE' | translate}}: <strong style="margin-right: 20px">
+											{{'AGE' | translate}}: <strong >
 											{{ageConstant[ad.ageItem-1].name}}</strong>
 										</div>	
 										<div class="col-md-5">
-											{{'WARRANTY' | translate}}: <strong style="margin-right: 20px">
+											{{'WARRANTY' | translate}}: <strong >
 										 	{{warrantyConstant[ad.warrantyItem-1].name}}</strong>
 										 </div>	
 									</div>
 									<div class="row">
 										<div class="col-md-5">
-											{{'CONDITION' | translate}}: <strong style="margin-right: 20px">
+											{{'CONDITION' | translate}}: <strong >
 										 	{{constantCondition[ad.conditionItem-1].name}}</strong>
 										 </div>
 										
@@ -636,27 +635,38 @@
 								</div>			
 								
 								
+								<!-- show only fields related to classified Ticket -->
+								<div
+									ng-show="ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_TICKETS_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_TICKETS_MAX">
+									<div class="row">
+										<div class="col-sm-5">
+											{{'NUMBER' | translate}}: <strong >
+											{{constantNumberTickets [ad.numberOfTickets-1].name }}</strong>
+										</div>		
+									</div>
+								</div>	
+								
 								<!-- show only fields related to classified computer -->
 								<div
 									ng-show="ad.categoriesEntity.lft >= categoryRange.CLASSIFIED_COMPUTER_MIN && ad.categoriesEntity.rgt <= categoryRange.CLASSIFIED_COMPUTER_MAX">
 									<div class="row">
 										<div class="col-md-5">
-											{{'AGE' | translate}}: <strong style="margin-right: 20px">
+											{{'AGE' | translate}}: <strong >
 											{{ageConstant[ad.ageItem-1].name}}</strong>
 										</div>					
 										<div class="col-md-5">
-											{{'CONDITION' | translate}}: <strong style="margin-right: 20px">
+											{{'CONDITION' | translate}}: <strong >
 										 	{{constantCondition[ad.conditionItem-1].name}}</strong>
 										 </div>				
 									</div>
 				
 									<div class="row">
 										<div class="col-md-5">
-											{{'BRAND' | translate}}: <strong style="margin-right: 20px">
+											{{'BRAND' | translate}}: <strong >
 										 	{{constantComputerBrand[ad.brandItem-1].name}}</strong>
 										 </div>
 										 <div class="col-md-5">
-											{{'HARD_DRIVE' | translate}}: <strong style="margin-right: 20px">
+											{{'HARD_DRIVE' | translate}}: <strong >
 										 	{{constantComputerHardDrive[ad.hardDrive-1].name}}</strong>
 										 </div>
 									</div>
@@ -703,12 +713,9 @@
 									<div class="row">
 										<div class="col-sm-10">
 												{{ad.productTitle}}
-										</div>	
-									
+										</div>		
 									</div>
 							</div>			
-								
-								
 										
                               <!-- end of the whole div -->
 							</div> 

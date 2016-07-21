@@ -7,9 +7,9 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 		sellerTypeEnglish, sellerTypeSomali, coloursEnglish, coloursSomali, noBathroomsEnglish, noBathroomsSomali,
 		warrantySomali, warrantyEnglish, ageEnglish, ageSomali, lengthEnglish, lengthSomali, conditionSomali, conditionEnglish,
 		ownerTypeEnglish, ownerTypeSomali, furnishedSomali, furnishedEnglish, rentTimeEnglish, rentTimeSomali,
-		computerBrand, computerHardDrive, dispatcherDetailsFactory, sortBySomali, sortByEnglish,
-		employmentTypeEnglish, employmentTypeSomali, workExperienceEnglish, workExperienceSomali, educationLevelEnglish, 
-		educationLevelSomali, monthSalaryEnglish, monthSalarySomali) {
+		computerBrand, computerHardDrive, dispatcherDetailsFactory, sortBySomali, sortByEnglish, numberOfTicketsEnglish, 
+		numberOfTicketsSomali, employmentTypeEnglish, employmentTypeSomali, workExperienceEnglish, workExperienceSomali, 
+		educationLevelEnglish, educationLevelSomali, monthSalaryEnglish, monthSalarySomali) {
 	//ui bootstrap pagination
 	$scope.currentPage=1;
 	
@@ -79,6 +79,7 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 	(function init() {
 		if($translate.use() === 'so_SO'){
 			$scope.listSellerTypes= sellerTypeSearchSomali; 
+			$scope.constantNumberTickets= numberOfTicketsSomali; 
 			//for car parts 
 			$scope.sellerTypeConstant= sellerTypeSomali;
 			$scope.sortByConstant= sortBySomali;
@@ -101,6 +102,7 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 			$scope.constantMonthSalary = monthSalarySomali;
 		}
 		if($translate.use() === 'en_US'){
+			$scope.constantNumberTickets= numberOfTicketsEnglish; 
 			$scope.listSellerTypes= sellerTypeSearchEnglish; 
 			$scope.colourConstant= coloursEnglish;
 			$scope.sortByConstant= sortByEnglish;

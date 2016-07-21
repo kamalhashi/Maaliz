@@ -77,8 +77,8 @@ hashiApp.constant('categoryRange', {
     CLASSIFIED_SPORTS_EQUIPMENT_MAX:7499,
     CLASSIFIED_TOYS_MIN:7600,
     CLASSIFIED_TOYS_MAX:7699,
-    CLASSIFIED_BUSINESS_SALE_MIN:2380,
-    CLASSIFIED_BUSINESS_SALE_MAX:2399,
+    CLASSIFIED_BUSINESS_SALE_MIN:2351,
+    CLASSIFIED_BUSINESS_SALE_MAX:2650,
     COMMUNITY_MIN:8000,
     COMMUNITY_MAX:9999,
     JOB_MIN: 1201,
@@ -549,40 +549,56 @@ hashiApp.constant('furnishedSomali',  [
 ]); 
 
 //classified items
-hashiApp.constant('conditionEnglish',  [       
-                       
-                                      {"id":1,  "name":"Excellent"},
-                                      {"id":2,  "name":"Good"},
-                                      {"id":3,  "name":"Average"},
-                                      {"id":4,  "name":"Poor"},
-]); 
-hashiApp.constant('conditionSomali',  [       
-                                        {"id":1, "name":"Heer sare"},
-                                        {"id":2,  "name":"Wanaagsan"},
-                                        {"id":3,  "name":"Dhexdhexaad"},
-                                        {"id":4,  "name":"Wow liitaa"}
-                                       
-]); 
-
 hashiApp.constant('usageEnglish',  [       
-                                        {"id":1, "name":"New"},
-                                        {"id":2,  "name":"Used"}               
+                       
+                                      {"id":1,  "name":"Never Used"},
+                                      {"id":2,  "name":"Used only once"},
+                                      {"id":3,  "name":"Used only few times"},
+                                      {"id":4,  "name":"Used frequently"}
+                                      
 ]); 
 hashiApp.constant('usageSomali',  [       
-                                    {"id":1, "name":"جديد"},
-                                    {"id":2,  "name":"مستعمل"}
+                                        {"id":1, "name":"لم تستخدم قط"},
+                                        {"id":2,  "name":"استخدمت مرة واحدة فقط"},
+                                        {"id":3,  "name":"استخدمت عدة مرات فقط"},
+                                        {"id":4,  "name":"استخدمت في كثير من الأحيان"}                                 
+]); 
+
+hashiApp.constant('conditionEnglish',  [       
+                                        {"id":1, "name":"Excellent"},
+                                        {"id":2,  "name":"Good"},
+                                        {"id":3, "name":"Average"},
+                                        {"id":4,  "name":"Poor "}
+]); 
+hashiApp.constant('conditionSomali',  [       
+                                        {"id":1, "name":"ممتاز"},
+                                        {"id":2,  "name":"جيد"},
+                                        {"id":3, "name":"متوسط "},
+                                        {"id":4,  "name":"رديء "}
                                  
 ]);  
 
 hashiApp.constant('ageEnglish',  [       
-                                    {"id":1, "name":"1 Year"},
-                                    {"id":2,  "name":"2 Years"}               
+                                    {"id":1, "name":"Brand New"},
+                                    {"id":2,  "name":"0-1 month"},
+                                    {"id":3, "name":"1-6 months"},
+                                    {"id":4,  "name":"6-12 months"},
+                                    {"id":5, "name":"1-2 years"},
+                                    {"id":6,  "name":"2-5 years"},
+                                    {"id":7, "name":"5-10 years"},
+                                    {"id":8,  "name":"10+ years"}
 ]); 
 hashiApp.constant('ageSomali',  [       
-                                {"id":1, "name":"جديد"},
-                                {"id":2,  "name":"مستعمل"}
-                             
+                                {"id":1,  "name":"جديد"},
+                                {"id":2,  "name":"شهر أو أقل"},
+                                {"id":3,  "name":"1 - 6 شهر"},
+                                {"id":4,  "name":"6 - 12 شهر"},
+                                {"id":5,  "name":"1 - 2 سنوات"},
+                                {"id":6,  "name":"2 - 5 سنوات"},
+                                {"id":7, "name":"5 - 10 سنوات"},
+                                {"id":8,  "name":"10 سنوات وأكثر"}
 ]); 
+
 
 hashiApp.constant('cameraBrand',  [       
                                     {"id":1, "name":"Aiptek"},
@@ -747,7 +763,22 @@ hashiApp.constant('educationLevelSomali',  [
                                              {"id":5,  "name":"لا حاجة"}                                         
  ]);
 
+hashiApp.constant('numberOfTicketsEnglish',  [       
+                                             {"id":1, "name":"Single Ticket"},
+                                             {"id":2,  "name":"Pair of Tickets"},
+                                             {"id":3,  "name":"3 Tickets"},
+                                             {"id":4,  "name":"4 Tickets"},
+                                             {"id":5,  "name":"4+ Tickets"}                                         
+ ]);
 
+ hashiApp.constant('numberOfTicketsSomali',  [       
+                                              {"id":1, "name":"تذكرة واحدة"},
+                                              {"id":2,  "name":"تذكرتين"},
+                                              {"id":3,  "name":"3 تذاكر"},
+                                              {"id":4,  "name":"4 تذاكر"},
+                                              {"id":5,  "name":"4+ تذاكر"}                                         
+  ]);
+ 
 hashiApp.constant('monthSalaryEnglish',  [       
                                              {"id":1, "name":"Unspecified"},
                                              {"id":2,  "name":"0      -  100"},

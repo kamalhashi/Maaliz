@@ -3,8 +3,8 @@ var hashiApp = angular.module('hashiApp') // gets it
 hashiApp.controller('DetailsController', function($scope, $location , $state, $stateParams,  $anchorScroll, $translate, bucketName,
 		categoryRange, productFactory, categoryFactory, cityFactory, profileFactory, flowFactory,auth, categoryName, ageSomali, ageEnglish,
 		lengthEnglish, lengthSomali, horsePowerEnglish, horsePowerSomali, noCylindersEnglish, noCylindersSomali, usageSomali, usageEnglish,
-		bodyTypeCarSomali, bodyTypeCarEnglish, sellerTypeEnglish, sellerTypeSomali,coloursEnglish, coloursSomali,
-		fuelTypeCarEnglish, fuelTypeCarSomali, transmissionCarEnglish , transmissionCarSomali, $sce,
+		bodyTypeCarSomali, bodyTypeCarEnglish, sellerTypeEnglish, sellerTypeSomali,coloursEnglish, coloursSomali,numberOfTicketsEnglish, 
+		numberOfTicketsSomali, fuelTypeCarEnglish, fuelTypeCarSomali, transmissionCarEnglish , transmissionCarSomali, $sce,
 		noBedroomsApartmentEnglish, noBedroomsApartmentSomali,ownerTypeEnglish, ownerTypeSomali, conditionSomali, conditionEnglish,
 		noBathroomsEnglish, noBathroomsSomali, furnishedEnglish, furnishedSomali, rentTimeEnglish, rentTimeSomali,
 		cameraBrand, warrantyEnglish, warrantySomali, computerBrand, computerHardDrive, computerProcessor, computerMemory,
@@ -133,6 +133,7 @@ hashiApp.controller('DetailsController', function($scope, $location , $state, $s
 		$scope.brandConstant= cameraBrand;
 
 		if($translate.use() === 'so_SO'){
+			$scope.constantNumberTickets= numberOfTicketsSomali; 
 			$scope.warrantyConstant= warrantySomali;
 			$scope.ageConstant= ageSomali; 
 			$scope.usageConstant= usageSomali; 
@@ -147,12 +148,10 @@ hashiApp.controller('DetailsController', function($scope, $location , $state, $s
 			$scope.constantCompanySize = companySizeSomali;
 			$scope.constantHideCompanyName = hideCompanyNameSomali;
 			$scope.listSellerTypes= sellerTypeSearchSomali; 
-
 			$scope.sellerTypeConstant= sellerTypeSomali; 
 			$scope.fuelTypeCarConstant= fuelTypeCarSomali; 
 			$scope.horsePowerConstant= horsePowerSomali;
 			$scope.noCylindersConstant= noCylindersSomali;
-
 			$scope.transmissionCarConstant= transmissionCarSomali;
 			$scope.coloursCarConstant=coloursSomali;
 			$scope.bodyTypeCarConstant= bodyTypeCarSomali; 
@@ -169,6 +168,7 @@ hashiApp.controller('DetailsController', function($scope, $location , $state, $s
 
 		}
 		else if($translate.use() === 'en_US'){
+			$scope.constantNumberTickets= numberOfTicketsEnglish; 
 			$scope.listSellerTypes= sellerTypeSearchEnglish; 
 			$scope.warrantyConstant= warrantyEnglish;
 			$scope.ageConstant= ageEnglish; 

@@ -699,15 +699,15 @@
 								<div class="col-xs-6">{{computerBrandConstant[product.brandItem-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Memory (Ram):</div>
+								<div class="col-xs-6">{{'MEMORY_RAM' | translate }}:</div>
 								<div class="col-xs-6">{{computerMemoryConstant[product.memoryRam-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Processor Speed (Per Core):</div>
+								<div class="col-xs-6">{{'PROCESS_SPEED' | translate}}:</div>
 								<div class="col-xs-6">{{computerProcessorConstant[product.processorSpeed-1].name}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">Hard Drive:</div>
+								<div class="col-xs-6">{{'HARD_DRIVE' | translate}}:</div>
 								<div class="col-xs-6">{{computerHardDriveConstant[product.hardDrive-1].name}}</div>
 							</div>
 							<div class="row">
@@ -759,12 +759,8 @@
 								<div class="col-xs-6">${{product.productPrice | number}}</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-6">{{'FROM' | translate}}:</div>
-								<div class="col-xs-6">{{product.from}}</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-6">{{'TO' | translate}}:</div>
-								<div class="col-xs-6">{{product.to}}</div>
+								<div class="col-xs-6">{{'NUMBER' | translate}}:</div>
+								<div class="col-xs-6">{{constantNumberTickets [product.numberOfTickets-1].name }}</div>
 							</div>
 						</div>
 						
