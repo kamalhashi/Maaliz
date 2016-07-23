@@ -457,7 +457,7 @@ hashiApp
 });
 
 hashiApp.run(function(auth, $rootScope, $state, editableOptions, $http, $location, $window, $translate) {
-	$window.ga('create', 'UA-71087645-1', 'auto');	
+	$window.ga('create', 'UA-81211634-1', 'auto');	
 	
 	$rootScope.$on('$stateChangeSuccess', function() {
 		   document.body.scrollTop = document.documentElement.scrollTop = 0;
