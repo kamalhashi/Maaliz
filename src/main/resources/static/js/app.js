@@ -450,7 +450,7 @@ hashiApp
       .state('error', {
 		url: "/error",
 		templateUrl: "js/app/partial/error.html",
-		controller : 'PostAdBoatsController'
+		controller : 'PostAdJobController'
 	});
 
 });

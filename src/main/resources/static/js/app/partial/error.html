@@ -1,25 +1,21 @@
-  <p>Hello {{name}}!</p>
-    <div 
-    flow-init='{singleFile:true}' 
-    
-    flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
-    flow-file-success="fileUploadedSuccessfully($flow.upload(), 1)"
-    flow-files-submitted="$flow.upload()"
-    flow-image-resize>
-      <span flow-btn flow-attrs="{'accept': 'image/*'}" >Click to Upload Image</span>
-      <div class="thumbnail" ng-show="$flow.files.length">
-        <img my-flow-img="$flow.files[0]" />
-        Size: {{$flow.files[0].size/1024}}Kb
-        Size: {{$flow.files[0].size}}
-      </div>
-	
-	<div>
-  <input type="text" ng-currency min="0" fraction="0" ng-model="ad.productPrice">
-
-<input
-									type="text" class="form-control" name="inputPrice"
-									placeholder="" ng-model="ad.productPrice" format-as-currency
-									required> 
-			
-			{{ad.productPrice| currency:"$"}}
-</div>
+<p class="input-group">
+										   <input type="text"
+										      name="inputClosingDate" 
+										      class="fromDate" 
+										      uib-datepicker-popup
+										      ng-model="ad.closingDate" 
+											  is-open="popupDatePicker.opened" 
+											  min-date="minDate" 
+											  max-date="maxDate" 
+											  datepicker-options="dateOptions"
+											  ng-required="true"
+											  close-text="Close" />
+											  
+											 
+										
+              							 <span class="input-group-btn">
+               								 <button type="button" class="btn btn-default" ng-click="openDatePicker()">
+               								   <i class="glyphicon glyphicon-calendar"></i>
+               								</button>
+              							</span>
+              						</p>
