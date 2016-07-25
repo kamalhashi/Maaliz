@@ -3,7 +3,6 @@ var hashiApp = angular.module('hashiApp', ['ngRoute', 'ngMessages', 'ngResource'
                                              'xeditable', 'fancyboxplus', 'ui.bootstrap', 'angular-loading-bar', 'ngAnimate', 
                                              'csrf-cross-domain', 'ngFacebook', 'ngMap' ]);
 
-
 hashiApp
 .config(function($stateProvider, $urlRouterProvider	, $httpProvider, $locationProvider, 
 		$translateProvider, $sceDelegateProvider, $facebookProvider) {

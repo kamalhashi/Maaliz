@@ -19,8 +19,7 @@ public class MotorCar extends Product {
 	@Column(name = "KILO_METERS", unique = false, nullable = false)
 	private Integer kilometers;
 	@Column(name = "BODY_TYPE", unique = false, nullable = false)
-	private Integer bodyType;
-	
+	private Integer bodyType;	
 	@Column(name = "MODEL", unique = false, nullable = false)
 	private String model;
 	@Column(name = "COLOUR", unique = false, nullable = false)
@@ -31,6 +30,8 @@ public class MotorCar extends Product {
 	private Integer fuelType;
 	@Column(name = "SELLER_TYPE")
 	private Integer sellerType;
+	@Column(name = "ENGINE_SIZE")
+	private Double engineSize;
 
 	/* a product can belong to one image of row or more */
 	@OneToMany(cascade = { CascadeType.ALL } , fetch=FetchType.LAZY)
@@ -107,6 +108,14 @@ public class MotorCar extends Product {
 
 	public void setCarExtras(List<CarExtras> carExtras) {
 		this.carExtras = carExtras;
+	}
+
+	public Double getEngineSize() {
+		return engineSize;
+	}
+
+	public void setEngineSize(Double engineSize) {
+		this.engineSize = engineSize;
 	}
 
 }

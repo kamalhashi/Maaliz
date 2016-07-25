@@ -217,7 +217,7 @@ hashiApp.controller('PostAdJobController', function($scope, $state, auth,categor
 	/********Date Picker *****************/
 	
 	$scope.dateOptions = {
-		    startingDay: 1 
+		    startingDay: 2 
 	};
 	
 	$scope.format='dd-MMMM-yyyy',

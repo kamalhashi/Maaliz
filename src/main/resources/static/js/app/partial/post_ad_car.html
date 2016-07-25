@@ -85,8 +85,9 @@
 								<div class="input-group">
 								   <span class="input-group-addon">{{'CURRENCY_SYMBOL' | translate}}</span>
 								   <input
-									type="number" class="form-control" name="inputPrice"
+									type="text" class="form-control" name="inputPrice"
 									placeholder="" ng-model="ad.productPrice" 
+									pattern="[0-9]+([\.,][0-9]+)*" format
 									required> 
 							    </div>
 								
@@ -252,12 +253,16 @@
 						         		'has-success': !postAdForm.inputKilometers.$invalid}">
 
 										<label for="inputKilometers" class="control-label">{{'KILOMETERS' | translate}}</label>
-										<input type="number" class="form-control"
+										<input type="text" class="form-control"
 											ng-model="ad.kilometers" name="inputKilometers"
-											ng-pattern="/^(0|[1-9][0-9]*)$/" required> <span
+											pattern="[0-9]+([\.,][0-9]+)*" format 
+											required> 
+										
+										<span
 											class="glyphicon glyphicon-ok form-control-feedback"
 											ng-show="postAdForm.inputKilometers.$touched && !postAdForm.inputKilometers.$invalid">
-										</span> <span
+										</span> 
+										<span
 											class="glyphicon glyphicon-remove form-control-feedback"
 											ng-show="postAdForm.inputKilometers.$touched && postAdForm.inputKilometers.$invalid || postAdForm.$submitted &&  postAdForm.inputKilometers.$invalid">
 										</span>
@@ -382,6 +387,38 @@
 											<div ng-messages-include="messages.html"></div>
 										</div>
 									</div>
+								</div>
+							</div>
+							
+							<div class="row">
+								<div class="col-sm-5">
+									<div class="form-group has-feedback"
+										ng-class="{ 'has-error': postAdForm.inputEngineSize.$touched && 
+									    postAdForm.inputEngineSize.$invalid ||
+						        		postAdForm.$submitted && postAdForm.inputEngineSize.$invalid ,
+						         		'has-success': !postAdForm.inputEngineSize.$invalid}">
+
+										<label for="inputEngineSize" class="control-label">{{'ENGINE_SIZE' | translate}}</label>
+										<input type="number" class="form-control"
+											ng-model="ad.engineSize" name="inputEngineSize"
+											required> 
+									   
+									   <span class="glyphicon glyphicon-ok form-control-feedback"
+											ng-show="postAdForm.inputEngineSize.$touched && !postAdForm.inputEngineSize.$invalid">
+										</span> <span
+											class="glyphicon glyphicon-remove form-control-feedback"
+											ng-show="postAdForm.inputEngineSize.$touched && postAdForm.inputEngineSize.$invalid || postAdForm.$submitted &&  postAdForm.inputEngineSize.$invalid">
+										</span>
+										<div class="help-block with-errors"
+											ng-messages="postAdForm.inputEngineSize.$error"
+											ng-show="postAdForm.inputEngineSize.$touched || postAdForm.$submitted">
+											<div ng-messages-include="messages.html"></div>
+
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-5 col-sm-offset-2">
 								</div>
 							</div>
 

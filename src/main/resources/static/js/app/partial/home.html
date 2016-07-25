@@ -201,7 +201,7 @@
 				
 				<!-- car parts, motorcycle -->
 				<div class="form-group" ng-show="showAdvanceSearchCarPartsDiv || showAdvanceSearchBoatsDiv || showAdvanceSearchMotorcycleDiv">
-					<span>Price ($) </span>
+					<span>{{'PRICE' | translate}} ({{'CURRENCY_SYMBOL' | translate}})</span>
 					<div class="row">
 						<div class="col-xs-6">
 							<input name="inputPriceFrom" class="form-control"
@@ -213,7 +213,7 @@
 						</div>
 					</div>
 					
-					<span>Seller Type</span>
+					<span>{{'SELLER_TYPE' | translate}}</span>
 					<div class="row">
 						<div class="col-xs-6">
 							<select ng-model="selectedSellerType" class="form-control"
@@ -233,7 +233,7 @@
 				</div>
 
 				<button type="submit" class="btn btn-primary btn-block"
-					ng-click="advanceSearch()">Submit</button>
+					ng-click="advanceSearch()">{{'SEARCH' | translate}}</button>
 			</div>
 
 			<div class="row visible-md visible-lg">
@@ -827,9 +827,10 @@
 								  		</a> <br/>
 								  		
 								  		 <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 			 	advFinalSelectedCategoryId:  1600,
+								 			 	advFinalSelectedCategoryId:  1619,
 								 		 	 	advSelectedCategoryIdLevelOne: 8,
-										 	 	advSelectedCategoryIdLevelTwo: 1600})">
+										 	 	advSelectedCategoryIdLevelTwo: 1619,
+										 	 	advSelectedCategoryIdLevelThree:  1620})">
 								 		     	{{'COMMUNITY_LOST_FOUND' | translate}} <strong> {{countCommunityLostFound}} </strong> 
 								  		</a> <br/>
 								  		
