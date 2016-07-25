@@ -85,9 +85,10 @@
 								<div class="input-group">
 								   <span class="input-group-addon">{{'CURRENCY_SYMBOL' | translate}}</span>
 								   <input
-									type="number" class="form-control" name="inputPrice"
+									type="text" class="form-control" name="inputPrice"
 									placeholder="" ng-model="ad.productPrice"
-									required> 
+									pattern="[0-9]+([\.,][0-9]+)*" format
+									required>
 								</div>
 								<span
 									class="glyphicon glyphicon-ok form-control-feedback"
