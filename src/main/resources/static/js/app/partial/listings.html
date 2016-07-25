@@ -251,7 +251,7 @@
 									</div>
 									<div class="col-sm-4" ng-show="ad.productPrice > 0">
 									
-										<h2 class="price text-right">${{ad.productPrice | number}}</h2>
+										<h2 class="price text-right">{{'CURRENCY_SYMBOL' | translate }}  {{ad.productPrice | number}}</h2>
 									</div>
 								</div>
 							</div>
