@@ -6,7 +6,7 @@
 			<br /> <br />
 			<div class="well sidebar-form">
 				<h3 style="margin-top: 0">
-					<strong>{{'FIND_PRODUCT' | translate}}</strong>
+					<strong>{{'SEARCH' | translate}}</strong>
 				</h3>
 
 
@@ -45,19 +45,19 @@
 				</div>
 
 				<div class="form-group" ng-show="showAdvanceSearchCarDiv || showAdvanceSearchHeavyVehicleDiv">
-					<span>Price ($) </span>
+					<span>{{'PRICE' | translate}} ({{'CURRENCY_SYMBOL' | translate}}) </span>
 					<div class="row">
 						<div class="col-xs-6">
 							<input name="inputPriceFrom" class="form-control"
-								ng-model="priceFrom" placeholder="Price from">
+								ng-model="priceFrom" placeholder="{{'PRICE_FROM' | translate}}">
 						</div>
 						<div class="col-xs-6">
 							<input name="inputPriceTo" class="form-control"
-								ng-model="priceTo" placeholder="Price to">
+								ng-model="priceTo" placeholder="{{'PRICE_TO' | translate}}">
 						</div>
 					</div>
 
-					<span> {{'YEAR' | translate}} (Min/Max) </span>
+					<span>{{'YEAR' | translate}} {{'MIN_MAX' | translate}}  </span>
 					<div class="row">
 						<div class="col-xs-6">
 							<select class="form-control" name="selectYearMin"
@@ -71,16 +71,16 @@
 						</div>
 					</div>
 
-					<span>{{'KILOMETERS' | translate}} ( Km )</span>
+					<span>{{'KILOMETERS' | translate}}</span>
 					<div class="row">
 						<div class="col-xs-6">
 							<input type="text" class="form-control"
-								name="inputKilometersFrom" placeholder="KM from"
+								name="inputKilometersFrom" placeholder="{{'KM_FROM' | translate}}"
 								ng-model="KMFrom">
 						</div>
 						<div class="col-xs-6">
 							<input type="text" class="form-control" id="inputKilometersTo"
-								placeholder="KM to" ng-model="KMTo">
+								placeholder="{{'KM_TO' | translate}}" ng-model="KMTo">
 						</div>
 					</div>
 
@@ -100,19 +100,19 @@
 				<!-- sale residential search  -->
 				<div class="form-group" ng-show="showAdvanceSearchSaleResDiv || showAdvanceSearchRentResDiv 
 												   || showAdvanceSearchRentShortMonthlyDiv || showAdvanceSearchRentShortDailyDiv">
-					<span>Price ($) </span>
+					<span>{{'PRICE' | translate}} ({{'CURRENCY_SYMBOL' | translate}}) </span>
 					<div class="row">
 						<div class="col-xs-6">
 							<input name="inputPriceFrom" class="form-control"
-								ng-model="priceFrom" placeholder="Price from">
+								ng-model="priceFrom" placeholder="{{'PRICE_FROM' | translate}}">
 						</div>
 						<div class="col-xs-6">
 							<input name="inputPriceTo" class="form-control"
-								ng-model="priceTo" placeholder="Price to">
+								ng-model="priceTo" placeholder="{{'PRICE_TO' | translate}}">
 						</div>
 					</div>
 					
-					<span>Rooms (Min/Max)</span>
+					<span>{{'BED_ROOM_MIN_MAX' | translate}}</span>
 					<div class="row">
 						<div class="col-xs-6">
 							<select ng-model="bedroomMin" class="form-control"
@@ -133,30 +133,30 @@
 				<div class="form-group" ng-show="showAdvanceSearchSaleCommDiv || showAdvanceSearchSaleUnitsDiv 
 					|| showAdvanceSearchSaleLandDiv || showAdvanceSearchRentCommDiv || showAdvanceSearchRentRoomDiv
 					|| showAdvanceSearchClassifiedDiv">
-					<span>Price ($) </span>
+					<span>{{'PRICE' | translate}} ({{'CURRENCY_SYMBOL' | translate}}) </span>
 					<div class="row">
 						<div class="col-xs-6">
 							<input name="inputPriceFrom" class="form-control"
-								ng-model="priceFrom" placeholder="Price from">
+								ng-model="priceFrom" placeholder="{{'PRICE_FROM' | translate}}">
 						</div>
 						<div class="col-xs-6">
 							<input name="inputPriceTo" class="form-control"
-								ng-model="priceTo" placeholder="Price to">
+								ng-model="priceTo" placeholder="{{'PRICE_TO' | translate}}">
 						</div>
 					</div>
 				</div>
 				
 				<!-- car parts, motorcycle -->
 				<div class="form-group" ng-show="showAdvanceSearchCarPartsDiv || showAdvanceSearchBoatsDiv || showAdvanceSearchMotorcycleDiv">
-					<span>Price ($) </span>
+					<span>{{'PRICE' | translate}} ({{'CURRENCY_SYMBOL' | translate}}) </span>
 					<div class="row">
 						<div class="col-xs-6">
 							<input name="inputPriceFrom" class="form-control"
-								ng-model="priceFrom" placeholder="Price from">
+								ng-model="priceFrom" placeholder="{{'PRICE_FROM' | translate}}">
 						</div>
 						<div class="col-xs-6">
 							<input name="inputPriceTo" class="form-control"
-								ng-model="priceTo" placeholder="Price to">
+								ng-model="priceTo" placeholder="{{'PRICE_TO' | translate}}">
 						</div>
 					</div>
 					
@@ -180,7 +180,7 @@
 				</div>
 
 				<button type="submit" class="btn btn-primary btn-block"
-					ng-click="advanceSearch()">Submit</button>
+					ng-click="advanceSearch()">{{'SEARCH' | translate}}</button>
 			</div>
 
 			<div class="row visible-md visible-lg">
@@ -239,7 +239,7 @@
 					
 						</div>
 					</div>
-					<slick  lazy-load="ondemand" autoplay=true autoplay-speed=2000  slides-to-show=4 slides-to-scroll=1  init-onload=true data="product" class="slider multiple-items col-xs-12">
+					<slick  lazy-load="ondemand" rtl={{isRtl}} autoplay=true autoplay-speed=1500  slides-to-show=4 slides-to-scroll=1  init-onload=true data="product" class="slider multiple-items col-xs-12">
                     	<div class="phone-thumbs" ng-repeat="image in images track by $index"  ng-if="images.length > 1 && product.imageStatus =='IMAGE_LIVE'">
                                 <a   ng-href="{{image}}" rel="example_group" fancyboxable >
                                 	 <img   alt="" ng-src="{{image}}"  class="phone-thumbs"  width="100%;" height="80" ng-click="setImage(image)"></img>
@@ -339,6 +339,10 @@
 							<div class="row">
 								<div class="col-xs-6">{{'TRANSMISSION' | translate}} :</div>
 								<div class="col-xs-6">{{transmissionCarConstant[product.transmissionType-1].name}}</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">{{'ENGINE_SIZE' | translate}}:</div>
+								<div class="col-xs-6">{{product.engineSize}}</div>
 							</div>
 							<div class="row">
 								<div class="col-xs-6">{{'COLOUR' | translate}}:</div>

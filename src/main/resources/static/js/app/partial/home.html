@@ -25,7 +25,7 @@
 
 						<div class="col-xs-7 col-sm-4">
 							<input type="text" class="form-control col-xs-12 col-sm-12"
-								placeholder="{{'FIND_PRODUCT' | translate}}" onfocus="this.placeholder=''"
+								placeholder="{{'SEARCH' | translate}}" onfocus="this.placeholder=''"
 								onblur="this.placeholder='search...'" ng-model="basicTextSearch">
 
 
@@ -59,7 +59,7 @@
 
 			<div class="well sidebar-form">
 				<h3 style="margin-top: 0">
-					<strong>{{'FIND_PRODUCT' | translate}}</strong>
+					<strong>{{'SEARCH' | translate}}</strong>
 				</h3>
 
 
@@ -98,19 +98,19 @@
 				</div>
 
 				<div class="form-group" ng-show="showAdvanceSearchCarDiv || showAdvanceSearchHeavyVehicleDiv">
-					<span>Price ($) </span>
+					<span>{{'PRICE' | translate}} ({{'CURRENCY_SYMBOL' | translate}}) </span>
 					<div class="row">
 						<div class="col-xs-6">
 							<input name="inputPriceFrom" class="form-control"
-								ng-model="priceFrom" placeholder="Price from">
+								ng-model="priceFrom" placeholder="{{'PRICE_FROM' | translate}}">
 						</div>
 						<div class="col-xs-6">
 							<input name="inputPriceTo" class="form-control"
-								ng-model="priceTo" placeholder="Price to">
+								ng-model="priceTo" placeholder="{{'PRICE_TO' | translate}}">
 						</div>
 					</div>
 
-					<span> Year (Min/Max) </span>
+					<span> {{'YEAR' | translate}} {{'MIN_MAX' | translate}} </span>
 					<div class="row">
 						<div class="col-xs-6">
 							<select class="form-control" name="selectYearMin"
@@ -124,20 +124,20 @@
 						</div>
 					</div>
 
-					<span>Kilometers ( Km )</span>
+					<span>{{'KILOMETERS' | translate}}</span>
 					<div class="row">
 						<div class="col-xs-6">
 							<input type="text" class="form-control"
-								name="inputKilometersFrom" placeholder="KM from"
+								name="inputKilometersFrom" placeholder="{{'KM_FROM' | translate}}"
 								ng-model="KMFrom">
 						</div>
 						<div class="col-xs-6">
 							<input type="text" class="form-control" id="inputKilometersTo"
-								placeholder="KM to" ng-model="KMTo">
+								placeholder="{{'KM_TO' | translate}}" ng-model="KMTo">
 						</div>
 					</div>
 
-					<span>Seller Type</span>
+					<span>{{'SELLER_TYPE' | translate}}</span>
 					<div class="row">
 						<div class="col-xs-6">
 							<select ng-model="selectedSellerType" class="form-control"
@@ -153,19 +153,19 @@
 				<!-- sale residential search  -->
 				<div class="form-group" ng-show="showAdvanceSearchSaleResDiv || showAdvanceSearchRentResDiv 
 				   || showAdvanceSearchRentShortMonthlyDiv || showAdvanceSearchRentShortDailyDiv">
-					<span>Price ($) </span>
+					<span>{{'PRICE' | translate}} ({{'CURRENCY_SYMBOL' | translate}}) </span>
 					<div class="row">
 						<div class="col-xs-6">
 							<input name="inputPriceFrom" class="form-control"
-								ng-model="priceFrom" placeholder="Price from">
+								ng-model="priceFrom" placeholder="{{'PRICE_FROM' | translate}}">
 						</div>
 						<div class="col-xs-6">
 							<input name="inputPriceTo" class="form-control"
-								ng-model="priceTo" placeholder="Price to">
+								ng-model="priceTo" placeholder="{{'PRICE_TO' | translate}}">
 						</div>
 					</div>
 					
-					<span>Rooms (Min/Max)</span>
+					<span>{{'BED_ROOM_MIN_MAX' | translate}}</span>
 					<div class="row">
 						<div class="col-xs-6">
 							<select ng-model="bedroomMin" class="form-control"
@@ -186,15 +186,15 @@
 				<div class="form-group" ng-show="showAdvanceSearchSaleCommDiv || showAdvanceSearchSaleUnitsDiv 
 					|| showAdvanceSearchSaleLandDiv || showAdvanceSearchRentCommDiv || showAdvanceSearchRentRoomDiv
 					|| showAdvanceSearchClassifiedDiv">
-					<span>Price ($) </span>
+					<span>{{'PRICE' | translate}} ({{'CURRENCY_SYMBOL' | translate}})</span>
 					<div class="row">
 						<div class="col-xs-6">
 							<input name="inputPriceFrom" class="form-control"
-								ng-model="priceFrom" placeholder="Price from">
+								ng-model="priceFrom" placeholder="{{'PRICE_FROM' | translate}}">
 						</div>
 						<div class="col-xs-6">
 							<input name="inputPriceTo" class="form-control"
-								ng-model="priceTo" placeholder="Price to">
+								ng-model="priceTo" placeholder="{{'PRICE_TO'  | translate}} ">
 						</div>
 					</div>
 				</div>
@@ -205,11 +205,11 @@
 					<div class="row">
 						<div class="col-xs-6">
 							<input name="inputPriceFrom" class="form-control"
-								ng-model="priceFrom" placeholder="Price from">
+								ng-model="priceFrom" placeholder="{{'PRICE_FROM' | translate}}">
 						</div>
 						<div class="col-xs-6">
 							<input name="inputPriceTo" class="form-control"
-								ng-model="priceTo" placeholder="Price to">
+								ng-model="priceTo" placeholder="{{'PRICE_TO' | translate}}">
 						</div>
 					</div>
 					

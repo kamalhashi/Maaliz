@@ -877,9 +877,9 @@ hashiApp.constant('sellerTypeSearchEnglish',  [
 ]); 
 
 hashiApp.constant('sellerTypeSearchSomali',  [       
-                                               {"id":0, "name":"Kuli"},
-                                               {"id":1,  "name":"Milkiilaha"},
-                                               {"id":2,  "name":"Ganacsade"}                                
+                                               {"id":0, "name":"جميع الأنواع"},
+                                               {"id":1,  "name":"مالك"},
+                                               {"id":2,  "name":"تاجر"}                                
 ]); 
 
 
