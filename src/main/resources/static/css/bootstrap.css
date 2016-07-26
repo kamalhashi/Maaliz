@@ -8016,3 +8016,8 @@ hr {
 .nav.nav-tabs>li.active>a {
 	font-weight: 700
 }
+
+
+.ebcs-calendar .btn-group .btn  {
+    background-color: #5cb85c;
+}

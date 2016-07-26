@@ -1,7 +1,10 @@
+<div class="row ebcs-calendar">
 <p class="input-group">
+
 										   <input type="text"
+										   
 										      name="inputClosingDate" 
-										      class="fromDate" 
+										      class="form-control ebcs-calendar" 
 										      uib-datepicker-popup
 										      ng-model="ad.closingDate" 
 											  is-open="popupDatePicker.opened" 
@@ -10,8 +13,6 @@
 											  datepicker-options="dateOptions"
 											  ng-required="true"
 											  close-text="Close" />
-											  
-											 
 										
               							 <span class="input-group-btn">
                								 <button type="button" class="btn btn-default" ng-click="openDatePicker()">
@@ -19,3 +20,4 @@
                								</button>
               							</span>
               						</p>
+        </div>

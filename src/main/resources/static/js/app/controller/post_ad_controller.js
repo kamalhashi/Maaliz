@@ -30,6 +30,7 @@ hashiApp.controller('PostAdController', function($scope, $location, auth,
 	$scope.selectedCategoryIdLevelTwo=0;
 	$scope.selectedCategoryIdLevelThree=0;
 	$scope.selectedCategoryIdLevelFour=0;
+	$scope.myPromise ;
 
 	//initialize  
 	(function init() {
