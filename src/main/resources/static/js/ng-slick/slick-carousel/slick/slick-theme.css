@@ -29,8 +29,10 @@
 
     width: 20px;
     height: 20px;
-    margin-top: -10px;
     padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
 
     cursor: pointer;
 
@@ -86,11 +88,11 @@
 }
 .slick-prev:before
 {
-    content: 'â†';
+    content: '←';
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: 'â†’';
+    content: '→';
 }
 
 .slick-next
@@ -104,15 +106,15 @@
 }
 .slick-next:before
 {
-    content: 'â†’';
+    content: '→';
 }
 [dir='rtl'] .slick-next:before
 {
-    content: 'â†';
+    content: '←';
 }
 
 /* Dots */
-.slick-slider
+.slick-dotted.slick-slider
 {
     margin-bottom: 30px;
 }
@@ -120,12 +122,13 @@
 .slick-dots
 {
     position: absolute;
-    bottom: -45px;
+    bottom: -25px;
 
     display: block;
 
     width: 100%;
     padding: 0;
+    margin: 0;
 
     list-style: none;
 
@@ -185,7 +188,7 @@
     width: 20px;
     height: 20px;
 
-    content: 'â€¢';
+    content: '•';
     text-align: center;
 
     opacity: .25;
