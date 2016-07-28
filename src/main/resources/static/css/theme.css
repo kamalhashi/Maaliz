@@ -1153,3 +1153,12 @@ div.editable {
 	padding: 5px;
 	overflow: auto;
 }
+
+/*******for the detailed image div*******/
+
+.nopadding {
+   padding: 0 !important;
+   padding-left: 0 !important;
+   padding-right: 0 !important;
+   margin: 0 !important;
+}
