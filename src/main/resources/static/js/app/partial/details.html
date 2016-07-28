@@ -227,6 +227,13 @@
 							</a>
 						</div>
 					</div>
+					<!-- image pending div -->
+					<div class="col-md-12 col-md-offset-2" ng-show="product.imageStatus =='IMAGE_PENDING'">
+					    	<a  class="property-img fancybox"  ng-href="{{bucketName.otherImage + 'not_approved.png'}}"  fancyboxable>
+								<img alt="" ng-src="{{bucketName.otherImage + 'not_approved.png'}}" class="img-responsive" >	
+								<span class="property-caption2">Click here to enlarge</span>
+							</a>
+					</div>
 					<div  style="display: none" ng-repeat="image in images | limitTo: (1 - images.length)""  ng-if="images.length > 1 && product.imageStatus =='IMAGE_LIVE'">
                                 <a   ng-href="{{image}}" rel="gallery1" fancyboxable >
                                 	 <img   alt="" ng-src="{{image}}"></img>
