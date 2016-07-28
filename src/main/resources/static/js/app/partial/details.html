@@ -222,10 +222,10 @@
 					   <div class="image-container">
 							<a  class="property-img"   ng-href="{{mainImageUrl}}" rel="gallery1" ng-show="images.length > 0 && product.imageStatus =='IMAGE_LIVE'"  fancyboxable>
 								<img ng-src="{{mainImageUrl}}"   spinner-load />
-								<span class="property-caption2">{{images.length}} {{'CLICK_ENLARGE' | translate}}</span>
+								<span class="property-caption2" ng-show="showCaptionImage">{{images.length}} {{'CLICK_ENLARGE' | translate}}</span>
 							</a>
 						</div>
-						<div class="col-md-4 nopadding" ng-show="product.imageStatus =='IMAGE_PENDING'">
+						<div class="image-container" ng-show="product.imageStatus =='IMAGE_PENDING'">
 							<a  class="property-img fancybox"  ng-href="{{bucketName.otherImage + 'not_approved.png'}}"  fancyboxable>
 								<img alt="" ng-src="{{bucketName.otherImage + 'not_approved.png'}}" class="img-responsive" >	
 								<span class="property-caption2">Click here to enlarge</span>

@@ -1162,13 +1162,23 @@ div.editable {
    margin: 0 !important;
 }
 
-/* View: Phone detail */
 .image-container {
 	width: 600px;
+	border: dashed blue 1px;
 }
 
 .image-container img {
   height: 100%;
   max-width: 100%;
   max-height: 300px;
+}
+
+/****Spinner font awsome align center****/
+
+.spinner-middle {
+   position:relative;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+   
 }

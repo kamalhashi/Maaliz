@@ -19,13 +19,16 @@ hashiApp.directive('spinnerLoad', [function spinnerLoad() {
     return {
         restrict: 'A',
         link: function spinnerLoadLink(scope, elem, attrs) {
+            scope.showCaptionImage = false;
             scope.$watch('ngSrc', function watchNgSrc() {
                 elem.hide();
-                elem.after('<i class="fa fa-spinner fa-lg fa-spin"></i>');  // add spinner
+                elem.after('<i class="fa fa-spinner fa-lg fa-spin spinner-middle"></i>');  // add spinner
             });
             elem.on('load', function onLoad() {
+                scope.showCaptionImage = true;
                 elem.show();
                 elem.next('i.fa-spinner').remove(); // remove spinner
+                scope.$apply();
             });
         }
     };
