@@ -842,7 +842,7 @@ h2.line span {
 	height: 40px;
 	line-height: 40px;
 	padding-left: 10px;
-	width: 100px;
+	width: 200px;
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -1152,30 +1152,4 @@ div.editable {
 	border: 1px solid #ccc;
 	padding: 5px;
 	overflow: auto;
-}
-
-/** Detail View **/
-img.phone {
-	border: 1px solid black;
-	margin-right: 3em;
-	margin-bottom: 2em;
-	background-color: white;
-	padding: 2em;
-	height: 400px;
-	width: 400px;
-}
-
-img.phone-thumbs {
-	margin: 0 auto;
-	list-style: none;
-	border: 1px solid black;
-	display: inline-block;
-	background-color: white;
-	height: 100px;
-	width: 100px;
-	padding: 0.5em;
-}
-
-img.phone-thumbs img:hover {
-	cursor: pointer;
 }
