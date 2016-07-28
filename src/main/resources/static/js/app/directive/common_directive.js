@@ -15,22 +15,21 @@ hashiApp.directive('emailAvailable', function($timeout, $q, $http) {
 	}
 });
 
-hashiApp.directive('spinnerOnLoad', function() {
+hashiApp.directive('spinnerLoad', [function spinnerLoad() {
     return {
         restrict: 'A',
-        link: function(scope,element){
-            element.on('load', function() {
-                element.removeClass('spinner-hide');
-                element.addClass('spinner-show');
-                element.parent().find('span').remove();
+        link: function spinnerLoadLink(scope, elem, attrs) {
+            scope.$watch('ngSrc', function watchNgSrc() {
+                elem.hide();
+                elem.after('<i class="fa fa-spinner fa-lg fa-spin"></i>');  // add spinner
             });
-            scope.$watch('ngSrc', function() {
-                element.addClass('spinner-hide');
-                element.parent().append('<span class="spinner"></span>');
-            });      
+            elem.on('load', function onLoad() {
+                elem.show();
+                elem.next('i.fa-spinner').remove(); // remove spinner
+            });
         }
-    }
-});
+    };
+}]);
 hashiApp.directive('format', function ($filter) {
     'use strict';
 

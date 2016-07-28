@@ -824,6 +824,18 @@ h2.line span {
 	display: block
 }
 
+.property-img .property-caption  {
+	background: #337ab7;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+	width: 100px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	color: #fff
+}
+
 .property-img .property-caption2 {
 	background: #337ab7;
 	height: 40px;
@@ -832,20 +844,7 @@ h2.line span {
 	width: 200px;
 	position: absolute;
 	bottom: 0;
-	left:200px;
-	top:350px;
-	color: #fff
-}
-
-.property-img .property-caption {
-	background: #337ab7;
-	height: 40px;
-	line-height: 40px;
-	padding-left: 10px;
-	width: 200px;
-	position: absolute;
-	bottom: 0;
-	right: 0;
+	right: 400px;
 	color: #fff
 }
 
@@ -1162,21 +1161,14 @@ div.editable {
    padding-right: 0 !important;
    margin: 0 !important;
 }
-/***spinner image ***/
-.spinner {
-	position: absolute;
-	left: 0;
-	top: 0;
-	background: url(./ajax-loader.gif) no-repeat center center;
-	display: block;
-	width: 500px;
-	height: 300px;
+
+/* View: Phone detail */
+.image-container {
+	width: 600px;
 }
 
-.feed img.spinner-show {
-	visibility: visible;
-}
-
-.feed img.spinner-hide {
-	visibility: hidden;
+.image-container img {
+  height: 100%;
+  max-width: 100%;
+  max-height: 300px;
 }
