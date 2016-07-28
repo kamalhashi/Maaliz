@@ -1162,3 +1162,21 @@ div.editable {
    padding-right: 0 !important;
    margin: 0 !important;
 }
+/***spinner image ***/
+.spinner {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: url(./ajax-loader.gif) no-repeat center center;
+	display: block;
+	width: 500px;
+	height: 300px;
+}
+
+.feed img.spinner-show {
+	visibility: visible;
+}
+
+.feed img.spinner-hide {
+	visibility: hidden;
+}

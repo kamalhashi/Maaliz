@@ -220,9 +220,9 @@
                
 					<h1 >{{product.productTitle}} <span ng-show="product.productPrice > 0"  class="price"> -  {{'CURRENCY_SYMBOL' | translate }}  {{product.productPrice | number}}</span> </h1> 
 					<div class="container nopadding">
-						<div class="col-md-5 nopadding">
+						<div class="col-md-5 nopadding media-box">
 							<a  class="property-img"   ng-href="{{mainImageUrl}}" rel="gallery1" ng-show="images.length > 0 && product.imageStatus =='IMAGE_LIVE'" fancyboxable>
-								<img ng-src="{{mainImageUrl}}"  class="img-responsive" />
+								<img ng-src="{{mainImageUrl}}"  class="img-responsive" data-spinner-on-load/>
 								<span class="property-caption">{{images.length}} {{'CLICK_ENLARGE' | translate}}</span>
 							</a>
 						</div>
