@@ -8,7 +8,7 @@ hashiApp
 		$translateProvider, $sceDelegateProvider, $facebookProvider) {
 	
 	$sceDelegateProvider.resourceUrlWhitelist(['self', new RegExp('^(http[s]?):\/\/(w{3}.)?s3-eu-west-1.amazonaws\.com/.+$')]);
-	$facebookProvider.setAppId('1047915708583706');
+	$facebookProvider.setAppId('224160581313069');
 
     $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
 
