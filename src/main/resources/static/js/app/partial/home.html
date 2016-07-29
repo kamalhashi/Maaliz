@@ -266,7 +266,7 @@
                            
                             <div class="panel panel-default" >
                              
-                                  <a   class="property-img fancybox" 
+                                  <a   id="{{featured.productId}}" class="property-img fancybox" 
                                   	href ng-click="forwardToDetailsPage(featured.productId, featured.categoriesEntity.categoryId, 
                                      featured.categoriesEntity.lft, 
                                   	 featured.categoriesEntity.rgt)"> 
@@ -282,7 +282,7 @@
                                           
                                     </p>
                                     <div class="text-center col-xs-10 col-xs-offset-1">
-                               		  <a  href ng-click="forwardToDetailsPage(featured.productId, featured.categoriesEntity.categoryId, featured.categoriesEntity.lft, featured.categoriesEntity.rgt)" class="btn btn-primary btn-block btn-xs">{{'DETAILS' | translate}}</a>
+                               		  <a id="{{featured.productId}}"  href ng-click="forwardToDetailsPage(featured.productId, featured.categoriesEntity.categoryId, featured.categoriesEntity.lft, featured.categoriesEntity.rgt)" class="btn btn-primary btn-block btn-xs">{{'DETAILS' | translate}}</a>
                                     </div>
                                 </div>
                                 
