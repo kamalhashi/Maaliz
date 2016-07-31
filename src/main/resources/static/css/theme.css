@@ -1163,8 +1163,8 @@ div.editable {
 }
 
 .image-container {
-	width: 600px;
-	border: dashed blue 1px;
+	/*width: 600px;
+	border: dashed blue 1px;*/
 }
 
 .image-container img {

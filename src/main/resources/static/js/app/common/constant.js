@@ -312,13 +312,15 @@ hashiApp.constant('transmissionCarSomali',  [
 
 hashiApp.constant('sellerTypeEnglish',  [       
                                            {"id":1,  "name":"Owner"},
-                                           {"id":2,  "name":"Dealer"}
+                                           {"id":2,  "name":"Dealer"},
+                                           {"id":3,  "name":"Dealership/Certified Pre-Owned"}
                                            
 ]); 
 
 hashiApp.constant('sellerTypeSomali',  [       
-                                               {"id":1,  "name":"مالك"},
-                                               {"id":2,  "name":"تاجر"}
+                                               {"id":1,  "name":"المالك"},
+                                               {"id":2,  "name":"الوكيل"},
+                                               {"id":3,  "name":"وكلات / سيارات مستعملة معتمدة"}
                                                
  ]); 
 
@@ -486,8 +488,8 @@ hashiApp.constant('noBathroomsSomali',  [
 
 
 hashiApp.constant('ownerTypeEnglish',  [       
-                                               {"id":1, "name":"Landloard"},
-                                               {"id":2,  "name":"Agent"},
+                                               {"id":1, "name":"Agent"},
+                                               {"id":2,  "name":"Landloard"},
                                                {"id":2,  "name":"Developer"},
 ]); 
 
@@ -873,13 +875,15 @@ hashiApp.constant('hideCompanyNameEnglish',  [
 hashiApp.constant('sellerTypeSearchEnglish',  [       
                                            {"id":0, "name":"All Type"},
                                            {"id":1,  "name":"Owner"},
-                                           {"id":2,  "name":"Dealer"}                                          
+                                           {"id":2,  "name":"Dealer"},
+                                           {"id":3,  "name":"Dealership/Certified Pre-Owned"} 
 ]); 
 
 hashiApp.constant('sellerTypeSearchSomali',  [       
                                                {"id":0, "name":"جميع الأنواع"},
-                                               {"id":1,  "name":"مالك"},
-                                               {"id":2,  "name":"تاجر"}                                
+                                               {"id":1,  "name":"المالك"},
+                                               {"id":2,  "name":"الوكيل"} ,
+                                               {"id":3,  "name":"وكلات / سيارات مستعملة معتمدة"} 
 ]); 
 
 
