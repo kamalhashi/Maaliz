@@ -984,9 +984,6 @@ div.editable {
   padding-right: 0 !important;
   margin: 0 !important;
 }
-.image-container {
-  border: dashed blue 1px;
-}
 .image-container img {
   height: 100%;
   max-width: 100%;
