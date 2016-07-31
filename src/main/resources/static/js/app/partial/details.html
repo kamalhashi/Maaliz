@@ -218,25 +218,25 @@
 					<strong> {{replyMessage}} </strong>
 				</div>
                
-					<h1 >{{product.productTitle}} <span ng-show="product.productPrice > 0"  class="price"> -  {{'CURRENCY_SYMBOL' | translate }}  {{product.productPrice | number}}</span> </h1> 
-					   <div class="image-container">
-							<a  class="property-img"   ng-href="{{mainImageUrl}}" rel="gallery1" ng-show="images.length > 0 && product.imageStatus =='IMAGE_LIVE'"  fancyboxable>
+				<h1 >{{product.productTitle}} <span ng-show="product.productPrice > 0"  class="price"> -  {{'CURRENCY_SYMBOL' | translate }}  {{product.productPrice | number}}</span> </h1> 
+				<div class="image-container">
+					<a  class="property-img"   ng-href="{{mainImageUrl}}" rel="gallery1" ng-show="images.length > 0 && product.imageStatus =='IMAGE_LIVE'"  fancyboxable>
 								<img ng-src="{{mainImageUrl}}"   spinner-load />
 								<span class="property-caption2" ng-show="showCaptionImage">{{images.length}} {{'CLICK_ENLARGE' | translate}}</span>
-							</a>
-						</div>
-						<div class="image-container" ng-show="product.imageStatus =='IMAGE_PENDING'">
-							<a  class="property-img fancybox"  ng-href="{{bucketName.otherImage + 'not_approved.png'}}"  fancyboxable>
+					</a>
+				</div>
+				<div class="image-container" ng-show="product.imageStatus =='IMAGE_PENDING'">
+					  <a  class="property-img fancybox"  ng-href="{{bucketName.otherImage + 'not_approved.png'}}"  fancyboxable>
 								<img alt="" ng-src="{{bucketName.otherImage + 'not_approved.png'}}" class="img-responsive" >	
 								<span class="property-caption2">Click here to enlarge</span>
-					     	</a>
-					     </div>
+					   </a>
+				</div>
 					
-					<div  style="display: none" ng-repeat="image in images | limitTo: (1 - images.length)""  ng-if="images.length > 1 && product.imageStatus =='IMAGE_LIVE'">
+				<div  style="display: none" ng-repeat="image in images | limitTo: (1 - images.length)""  ng-if="images.length > 1 && product.imageStatus =='IMAGE_LIVE'">
                                 <a   ng-href="{{image}}" rel="gallery1" fancyboxable >
                                 	 <img   alt="" ng-src="{{image}}"></img>
                         		</a>
-                    </div>
+               </div>
                     
                    
                     <h2>{{'AL_DETAILS' | translate}}</h2>
