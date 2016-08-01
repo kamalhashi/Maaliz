@@ -483,7 +483,7 @@ hashiApp.constant('noBathroomsSomali',  [
                                           {"id":5,  "name":"5"},
                                           {"id":6,  "name":"6"},
                                           {"id":7,  "name":"7"},
-                                          {"id":8,  "name":"8"}
+                                          {"id":8,  "name":"8+"}
 ]); 
 
 
@@ -783,20 +783,17 @@ hashiApp.constant('numberOfTicketsEnglish',  [
  
 hashiApp.constant('monthSalaryEnglish',  [       
                                              {"id":1, "name":"Unspecified"},
-                                             {"id":2,  "name":"0      -  100"},
-                                             {"id":3,  "name":"100    -  200"},
-                                             {"id":4,  "name":"200    -  400"},
-                                             {"id":5,  "name":"400    -  600"},
-                                             {"id":6,  "name":"600    -  800"},
-                                             {"id":7,  "name":"800    -  1,000"},
-                                             {"id":8,  "name":"1,000  -  1,500"},  
-                                             {"id":9,  "name":"1,500  -  1,500"},
-                                             {"id":10,  "name":"1,500 -  2,000"},
-                                             {"id":11,  "name":"2,000 -  3,000"},
-                                             {"id":12,  "name":"3,000 -  5,000"},
-                                             {"id":13,  "name":"5,000 -  7,000"},
-                                             {"id":14,  "name":"9,000 -  10,000"},
-                                             {"id":15,  "name":"10,000+"}
+                                             {"id":2,  "name":"0 - 1,999"},
+                                             {"id":3,  "name":"2,000 - 3,999"},
+                                             {"id":4,  "name":"4,000 - 5,999"},
+                                             {"id":5,  "name":"6,000 - 7,999"},
+                                             {"id":6,  "name":"8,000 - 11,999"},
+                                             {"id":7,  "name":"12,000 - 19,999"},
+                                             {"id":8,  "name":"20,000 - 29,999"},  
+                                             {"id":9,  "name":"30,000 - 49,999"},
+                                             {"id":10,  "name":"50,000 - 99,999"},
+                                             {"id":11,  "name":"100,000+"},
+                                            
  ]);
 hashiApp.constant('monthSalarySomali',  [       
                                           {"id":1, "name":"غير محدد"},

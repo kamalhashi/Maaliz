@@ -192,7 +192,7 @@
    "MODEL" : "Model",
    "MAKE" : "Make" , 
    "BODY_TYPE" : "Body type" ,
-   "DESCRIPTION" : "Description:" ,
+   "DESCRIPTION" : "Description" ,
    "REPLY_TO_THIS_AD" : "Reply to this Ad" ,
    "MESSAGE" : "Message",
    "SEND_MESSAGE" : "Send message" ,

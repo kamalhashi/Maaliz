@@ -219,27 +219,19 @@
 
 				<div class="col-sm-12">
 					<h1>{{product.productTitle}}</h1>
-					<div class="row">	
-					    <div class="col-xs-12 col-xs-offset-2">
-					    	<a  class="property-img fancybox"  href ng-href="{{mainImageUrl}}"  fancyboxable="mainImage">
-								<img alt="" ng-src="{{mainImageUrl}}"  class="phone" width="100%;" >	
-								<span class="property-caption2">Click here to enlarge</span>
-															
-							</a>
+					<div class="image-container">
+					<a  class="property-img"   ng-href="{{mainImageUrl}}" rel="gallery1" ng-show="images.length >"  fancyboxable>
+								<img ng-src="{{mainImageUrl}}"   spinner-load />
+								<span class="property-caption2" ng-show="showCaptionImage">{{images.length}} {{'CLICK_ENLARGE' | translate}}</span>
+					</a>
+				</div>
 					
-						</div>
-						
-						
-					</div>
-						<slick  lazy-load="ondemand" autoplay=true autoplay-speed=2000  slides-to-show=4 slides-to-scroll=1  init-onload=true data="product" class="slider multiple-items">
-                    		 <div class="col-xs-3 phone-thumbs" ng-repeat="image in images track by $index"  ng-if="images.length > 1">
-                                <a   ng-href="{{image}}" rel="example_group" fancyboxable="image" >
-                                	 <img    ng-src="{{image}}"  class="phone-thumbs"  width="100%;" height="80" ng-click="setImage(image)"></img>
+				<div  style="display: none" ng-repeat="image in images | limitTo: (1 - images.length)""  ng-if="images.length > 1">
+                                <a   ng-href="{{image}}" rel="gallery1" fancyboxable >
+                                	 <img   alt="" ng-src="{{image}}"></img>
                         		</a>
-                        	</div>
-                        	
-                        	
-                       </slick>
+               </div>
+                    
                    
 
                    
