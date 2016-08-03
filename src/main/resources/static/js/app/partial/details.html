@@ -773,7 +773,7 @@
 				   </div>
 					<h2>{{'DESCRIPTION' | translate}}</h2>	 
 					<p>
-						<span ng-bind-html='toTrustedHTML( product.productDescription )'></span>
+						<span ng-bind-html="product.productDescription | trustAsHtml"></span>
 					</p>
 
 					<p>{{'AD_REF_NO' | translate}} {{product.productId}}</p>

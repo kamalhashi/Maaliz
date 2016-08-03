@@ -676,31 +676,14 @@
 								<div
 									ng-show="ad.categoriesEntity.lft >= categoryRange.JOB_MIN && ad.categoriesEntity.rgt <= categoryRange.JOB_MAX">
 									<div class="row">
-										<div class="col-sm-10">
-										   <table width="100%" >
-										     <tr>
-										         <td > 
-												    {{'MONTH_SALARY' | translate}} {{'CURRENCY_SYMBOL' | translate}}: <strong>
-												    {{constantMonthSalary[ad.monthSalary-1].name}}</strong>
-										          </td>
-										          <td class="flip pull-right">
-												  	{{'MINIMUM_WORK_EXPERIENCE' | translate}}: <strong>
-										 		  	{{constantWorkExperience[ad.workExperience-1].name}}</strong>
-										 	      </td>
-										      </tr>
-										      <tr >
-										         <td >
-													{{'MINIMUM_EDUCATION_LEVEL' | translate }}: <strong>
-										 			 {{constantEducationLevel[ad.educationLevel-1].name}}</strong>
-										 	      </td>
-										 	      <td class="flip pull-right">
-										 	         {{'EMPLOYMENT_TYPE' | translate}}: <strong>
-										 			 {{constantEmploymentType[ad.employmentType-1].name}}</strong>
-										 	      </td>
-										 	  </tr>
-										 	</table>
+										<div class="col-sm-9">
+										      <p dotdotdot ng-bind-html="ad.productDescription | trustAsHtml">
+										        <a href="javascript:void(0)" class="readmore">Read more &raquo;</a>
+										      
+										      </p>
+										  
 										 </div>	
-										<div class="col-sm-2" ng-show="ad.logoPhoto.length > 0 ">
+										<div class="col-sm-3" ng-show="ad.logoPhoto.length > 0 ">
 							           		<img class="logo-photo" 
 							           		   ng-src="{{bucketName.productLogo + ad.productId + '/' + ad.logoPhoto}}"
 							           		   ng-if="ad.logoPhoto.length > 0">

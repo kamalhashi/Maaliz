@@ -4,7 +4,7 @@ hashiApp.controller('DetailsController', function($scope, $location , $state, $s
 		categoryRange, productFactory, categoryFactory, cityFactory, profileFactory, flowFactory,auth, categoryName, ageSomali, ageEnglish,
 		lengthEnglish, lengthSomali, horsePowerEnglish, horsePowerSomali, noCylindersEnglish, noCylindersSomali, usageSomali, usageEnglish,
 		bodyTypeCarSomali, bodyTypeCarEnglish, sellerTypeEnglish, sellerTypeSomali,coloursEnglish, coloursSomali,numberOfTicketsEnglish, 
-		numberOfTicketsSomali, fuelTypeCarEnglish, fuelTypeCarSomali, transmissionCarEnglish , transmissionCarSomali, $sce,
+		numberOfTicketsSomali, fuelTypeCarEnglish, fuelTypeCarSomali, transmissionCarEnglish , transmissionCarSomali,
 		noBedroomsApartmentEnglish, noBedroomsApartmentSomali,ownerTypeEnglish, ownerTypeSomali, conditionSomali, conditionEnglish,
 		noBathroomsEnglish, noBathroomsSomali, furnishedEnglish, furnishedSomali, rentTimeEnglish, rentTimeSomali,
 		cameraBrand, warrantyEnglish, warrantySomali, computerBrand, computerHardDrive, computerProcessor, computerMemory,
@@ -444,10 +444,6 @@ hashiApp.controller('DetailsController', function($scope, $location , $state, $s
 			advBedroomMax: $scope.bedroomMax
 		} );
 
-	}
-
-	$scope.toTrustedHTML = function( html ){
-		return $sce.trustAsHtml( html );
 	}
 	//for scrolling #reply 
 	$scope.scrollTo = function(id) {

@@ -15,6 +15,22 @@ hashiApp.directive('emailAvailable', function($timeout, $q, $http) {
 	}
 });
 
+
+hashiApp.directive('dotdotdot', function(){
+    return {
+        restrict: 'A',
+        link: function(scope, element, attributes) {
+            element.dotdotdot({watch: true, wrap: 'letter', after: "a.readmore", height  : 20 * 3});
+        }
+    }
+});
+
+hashiApp.filter('trustAsHtml', function($sce) {
+	  return function(html) {
+	    return $sce.trustAsHtml(html);
+	  };
+});
+
 hashiApp.directive('spinnerLoad', [function spinnerLoad() {
     return {
         restrict: 'A',

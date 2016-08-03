@@ -1173,12 +1173,11 @@ div.editable {
   max-height: 300px;
 }
 
-/****Spinner font awsome align center****/
+/****Spinner font awsome align center detail.html waiting to load image has directive****/
 
 .spinner-middle {
    position:relative;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-   
+   top:50%;
+   left:50%;
+   transform:translate(-50%,-50%);   
 }
