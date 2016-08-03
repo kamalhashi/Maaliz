@@ -1008,7 +1008,6 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 		dispatcherDetailsFactory.forwardToDetailsPage(productId, categoryId ,categoryLft, categoryRgt);
 	}
 	$scope.listRootCategories= [];
-	$scope.listRootCategoriesIndex= [];
 	//get root categories of a category. to show the user 
 	$scope.getRootCategoriesByCategoryId= function (categoryId, index) {
 		console.log('categoryId'+ categoryId);
