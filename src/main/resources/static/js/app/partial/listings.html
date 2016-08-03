@@ -275,8 +275,12 @@
 									<div class="col-sm-8">
 
 										<p class="muted">
-											{{'POSTED' | translate}} <strong>
-											{{ad.created | date:'dd MMMM yyyy'}} </strong>
+											{{'POSTED' | translate}} <strong>{{ad.created | date:'dd MMMM yyyy'}} </strong>
+											 <ul class="list-inline" ng-init="listRootCategories[ad.productId] = getRootCategoriesByCategoryId (ad.categoriesEntity.categoryId, ad.productId)"> 
+      											  <li ng-repeat="category in listRootCategories[ad.productId]">
+              										 <strong> {{category.categoryName}} {{$last ? '' : '> '}} </strong>  
+       											 </li>
+ 											</ul> 
 										</p>
 										<br />
 									</div>
@@ -678,8 +682,7 @@
 									<div class="row">
 										<div class="col-sm-9">
 										      <p dotdotdot ng-bind-html="ad.productDescription | trustAsHtml">
-										        <a href="javascript:void(0)" class="readmore">Read more &raquo;</a>
-										      
+										        <a  class="readmore" href ng-click="forwardToDetailsPage(ad.productId, ad.categoriesEntity.categoryId, ad.categoriesEntity.lft, ad.categoriesEntity.rgt)" >Read more &raquo;</a>
 										      </p>
 										  
 										 </div>	

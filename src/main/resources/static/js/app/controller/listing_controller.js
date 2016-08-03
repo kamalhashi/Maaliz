@@ -1007,5 +1007,21 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 	$scope.forwardToDetailsPage = function (productId, categoryId ,categoryLft, categoryRgt){
 		dispatcherDetailsFactory.forwardToDetailsPage(productId, categoryId ,categoryLft, categoryRgt);
 	}
+	$scope.listRootCategories= [];
+	$scope.listRootCategoriesIndex= [];
+	//get root categories of a category. to show the user 
+	$scope.getRootCategoriesByCategoryId= function (categoryId, index) {
+		console.log('categoryId'+ categoryId);
+		var promise= categoryFactory.getRootCategoriesByCategoryId(categoryId);
+		var derivedPromise  = promise.then( function onfulFilled(response) {
+					var data = response.data;
+			        //Sets scope value asynchronously
+					$scope.listRootCategories[index]= data;
+					console.log(data[0].categoryName);
+			        //return value creates derived promise
+					return data;
+				});
+		return derivedPromise;
+	}
 
 });
