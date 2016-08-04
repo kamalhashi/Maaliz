@@ -272,13 +272,13 @@
 							<div class="col-sm-9">
 
 								<div class="row">
-									<div class="col-sm-8">
+									<div class="col-sm-12">
 
 										<p class="muted">
 											{{'POSTED' | translate}} <strong>{{ad.created | date:'dd MMMM yyyy'}} </strong>
 											 <ul class="list-inline" ng-init="listRootCategories[ad.productId] = getRootCategoriesByCategoryId (ad.categoriesEntity.categoryId, ad.productId)"> 
       											  <li ng-repeat="category in listRootCategories[ad.productId]">
-              										 <strong> {{category.categoryName}} {{$last ? '' : '> '}} </strong>  
+              										 {{category.categoryName}} {{$last ? '' : '> '}}  
        											 </li>
  											</ul> 
 										</p>
