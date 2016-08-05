@@ -5,7 +5,7 @@ import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="Dali", date="2016-07-25T12:07:14.468+0300")
+@Generated(value="Dali", date="2016-08-05T11:11:18.781+0300")
 @StaticMetamodel(MotorCar.class)
 public class MotorCar_ extends Product_ {
 	public static volatile SingularAttribute<MotorCar, Integer> yearMade;
@@ -16,6 +16,6 @@ public class MotorCar_ extends Product_ {
 	public static volatile SingularAttribute<MotorCar, Integer> transmissionType;
 	public static volatile SingularAttribute<MotorCar, Integer> fuelType;
 	public static volatile SingularAttribute<MotorCar, Integer> sellerType;
-	public static volatile ListAttribute<MotorCar, CarExtras> carExtras;
 	public static volatile SingularAttribute<MotorCar, Double> engineSize;
+	public static volatile ListAttribute<MotorCar, CarExtras> carExtras;
 }
