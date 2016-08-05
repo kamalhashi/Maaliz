@@ -11,8 +11,8 @@ import com.hashi.rest.domain.VerificationToken;
 import com.hashi.rest.enums.MailType;
 import com.hashi.rest.enums.Role;
 
-
 /*
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = UiApplication.class)
 @WebAppConfiguration
@@ -37,8 +37,6 @@ public class CategoriesRepositoryTest {
 	ProfileProductService profileProductService;
 	*/
 	
-	
-
 
 	//@Test
 	public void testName() throws IOException {
