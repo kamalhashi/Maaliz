@@ -109,31 +109,28 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 
   
 	$scope.basicSearch = function() {
-		$state.go('listing' , {searchType:'BasicSearch' , basicSelectedCityId: $scope.basicSelectedCityId, 
-			basicSelectedCategoryId:  $scope.basicSelectedCategory, basicSearchText: 
-				$scope.basicTextSearch});
+		$state.go('listing' , {"searchType":'BasicSearch' , "selectedCityId": $scope.basicSelectedCityId, 
+			"finalSelectedCategoryId":  $scope.basicSelectedCategory, selectedCategoryIdLevelOne:  $scope.basicSelectedCategory ,"searchText": $scope.basicTextSearch});
 	}
 
 
 	//when user submits
 	$scope.advanceSearch = function() {
-		$state.go('listing' , {searchType:typeOfAdvanceSearch() , advSelectedCityId : $scope.advSelectedCityId, advFinalSelectedCategoryId:  $scope.advFinalSelectedCategoryId, 
-			advSelectedCategoryIdLevelOne:  $scope.advSelectedCategoryIdLevelOne,
-			advSelectedCategoryIdLevelTwo:  $scope.advSelectedCategoryIdLevelTwo,
-			advSelectedCategoryIdLevelThree:  $scope.advSelectedCategoryIdLevelThree,
-			advSelectedCategoryIdLevelFour:  $scope.advSelectedCategoryIdLevelFour,
-			advSearchText:$scope.advTextSearch,
-			advPriceFrom: $scope.priceFrom,
-			advPriceTo:   $scope.priceTo,
-			advYearMin: $scope.yearMin,
-			advYearMax: $scope.yearMax,
-			advKMFrom: $scope.KMFrom,
-			advKMTo: $scope.KMTo,
-			advSellerType: $scope.selectedSellerType,
-			advBedroomMin: $scope.bedroomMin,
-			advBedroomMax: $scope.bedroomMax,
-			//basic parameters
-			basicSearchText: $scope.basicTextSearch,priceFrom: $scope.priceFrom, priceTo: $scope.priceTo, yearMin:$scope.yearMin, yearMax:$scope.yearMax} );
+		$state.go('listing' , {searchType:typeOfAdvanceSearch() , selectedCityId : $scope.advSelectedCityId, finalSelectedCategoryId:  $scope.advFinalSelectedCategoryId, 
+			selectedCategoryIdLevelOne:  $scope.advSelectedCategoryIdLevelOne,
+			selectedCategoryIdLevelTwo:  $scope.advSelectedCategoryIdLevelTwo,
+			selectedCategoryIdLevelThree:  $scope.advSelectedCategoryIdLevelThree,
+			selectedCategoryIdLevelFour:  $scope.advSelectedCategoryIdLevelFour,
+			searchText:$scope.advTextSearch,
+			priceFrom: $scope.priceFrom,
+			priceTo:   $scope.priceTo,
+			yearMin: $scope.yearMin,
+			yearMax: $scope.yearMax,
+			kmFrom: $scope.KMFrom,
+			kmTo: $scope.KMTo,
+			sellerType: $scope.selectedSellerType,
+			bedroomMin: $scope.bedroomMin,
+			bedroomMax: $scope.bedroomMax});
 	}
 
 	/**to get list of sub categories level two***/
