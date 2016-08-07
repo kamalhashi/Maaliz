@@ -89,39 +89,39 @@
                                 <li><a data-toggle="collapse" data-target=".navbar-collapse" ui-sref="register">{{'REGISTER' | translate}}</a></li>
                                 <li>
                                     <a  data-toggle="collapse" data-target=".navbar-collapse" 
-                                             ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 			 advFinalSelectedCategoryId:  4,
-								 		 	 advSelectedCategoryIdLevelOne: 4,
-										 	 advSelectedCategoryIdLevelTwo: 554})">
+                                             ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 			 finalSelectedCategoryId:  4,
+								 		 	 selectedCategoryIdLevelOne: 4,
+										 	 selectedCategoryIdLevelTwo: 554})">
 											{{'ITEM_FOR_SALE' | translate}}
 									</a>
                                 </li>
                                 <li>
                                 
                                 	 <a  data-toggle="collapse" data-target=".navbar-collapse" 
-                                	        ui-sref="listing ({searchType:'AdvanceSearchRentRes' , advSelectedCityId :0, 
-								  			advFinalSelectedCategoryId:  6, 
-								  			advSelectedCategoryIdLevelOne:  6,
-								  			advSelectedCategoryIdLevelTwo: 333})">
+                                	        ui-sref="listing ({searchType:'AdvanceSearchRentRes' , selectedCityId :0, 
+								  			finalSelectedCategoryId:  6, 
+								  			selectedCategoryIdLevelOne:  6,
+								  			selectedCategoryIdLevelTwo: 333})">
 									      {{'PROPERTY_FOR_RENT' | translate}}
 									      
 									 </a>
                                 </li>
                                 <li>
                                      <a  data-toggle="collapse" data-target=".navbar-collapse" 
-                                         ui-sref="listing ({searchType:'AdvanceSearchSaleRes' , advSelectedCityId :0,  
-										  advFinalSelectedCategoryId:  5, 
-								  		  advSelectedCategoryIdLevelOne:  5,
-								  		  advSelectedCategoryIdLevelTwo: 320})">
+                                         ui-sref="listing ({searchType:'AdvanceSearchSaleRes' , selectedCityId :0,  
+										  finalSelectedCategoryId:  5, 
+								  		  selectedCategoryIdLevelOne:  5,
+								  		  selectedCategoryIdLevelTwo: 320})">
 								          {{'PROPERTY_FOR_SALE' | translate }}
 									 </a>
                                 </li>
                                 <li>
                                 
                                        <a  data-toggle="collapse" data-target=".navbar-collapse" 
-                                       		ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								            advFinalSelectedCategoryId:  7, 
-								            advSelectedCategoryIdLevelOne:  7})" 
+                                       		ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								            finalSelectedCategoryId:  7, 
+								            selectedCategoryIdLevelOne:  7})" 
 								            data-toggle="collapse" 
 										    data-target=".navbar-collapse">
 								  			{{'JOB_VACANCIES' | translate}}
@@ -130,10 +130,10 @@
                                 </li>
                                 <li>
                                        <a  data-toggle="collapse" data-target=".navbar-collapse" 
-                                       	 	 ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 			 advFinalSelectedCategoryId: 8,
-								 		 	 advSelectedCategoryIdLevelOne: 8,
-										 	 advSelectedCategoryIdLevelTwo: 1589})"
+                                       	 	 ui-sref="listing ({searchType:'AdvanceSearchCommunity' , selectedCityId :0, 
+								 			 finalSelectedCategoryId: 8,
+								 		 	 selectedCategoryIdLevelOne: 8,
+										 	 selectedCategoryIdLevelTwo: 1589})"
 										 	 data-toggle="collapse" 
 										     data-target=".navbar-collapse">
 											{{'COMMUNITY' | translate}}
@@ -152,50 +152,50 @@
 											<div class="row" >
 												<ul class="col-sm-3 list-unstyled">
 													<li>
-													   <a   ui-sref="listing ({searchType:'AdvanceSearchCar' , advSelectedCityId :0, 
-								 						 advFinalSelectedCategoryId:  21, 
-								  						 advSelectedCategoryIdLevelOne:  3,
-								  						 advSelectedCategoryIdLevelTwo:  21,
-								  					     advSelectedCategoryIdLevelThree:  30})" >
+													   <a   ui-sref="listing ({searchType:'AdvanceSearchCar' , selectedCityId :0, 
+								 						 finalSelectedCategoryId:  21, 
+								  						 selectedCategoryIdLevelOne:  3,
+								  						 selectedCategoryIdLevelTwo:  21,
+								  					     selectedCategoryIdLevelThree:  30})" >
 								   						  {{'CARS_FOR_SALE' | translate}} <b> {{countCars}} </b>
 													   </a>
 													 
 													 </li>
 													 <li>
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchCarParts' , advSelectedCityId :0, 
-								  						   advFinalSelectedCategoryId:  22, 
-								  						   advSelectedCategoryIdLevelOne:  3,
-								  						   advSelectedCategoryIdLevelTwo: 22,
-								  						   advSelectedCategoryIdLevelThree: 150})" >
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchCarParts' , selectedCityId :0, 
+								  						   finalSelectedCategoryId:  22, 
+								  						   selectedCategoryIdLevelOne:  3,
+								  						   selectedCategoryIdLevelTwo: 22,
+								  						   selectedCategoryIdLevelThree: 150})" >
 									 						{{'SPARE_PARTS_ACCESSORIES' | translate}}  <b> {{countCarParts}}</b>
 						    							</a>
 													 </li>
 													 <li>
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchBoats' , advSelectedCityId :0, 
-								  						   advFinalSelectedCategoryId:  23, 
-								  						   advSelectedCategoryIdLevelOne:  3,
-								  						   advSelectedCategoryIdLevelTwo:  23})" >
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchBoats' , selectedCityId :0, 
+								  						   finalSelectedCategoryId:  23, 
+								  						   selectedCategoryIdLevelOne:  3,
+								  						   selectedCategoryIdLevelTwo:  23})" >
 								  
 								    					    {{'BOATS' | translate}} <b> {{countBoats}} </b>
 						   								</a> 
 													
 													</li>
 													<li>
-														<a  ui-sref="listing ({searchType:'AdvanceSearchHeavyVehicle' , advSelectedCityId :0, 
-								 							advFinalSelectedCategoryId:  24, 
-								  							advSelectedCategoryIdLevelOne:  3,
-								  							advSelectedCategoryIdLevelTwo:  24,
-								 							advSelectedCategoryIdLevelThree:  300})" >
+														<a  ui-sref="listing ({searchType:'AdvanceSearchHeavyVehicle' , selectedCityId :0, 
+								 							finalSelectedCategoryId:  24, 
+								  							selectedCategoryIdLevelOne:  3,
+								  							selectedCategoryIdLevelTwo:  24,
+								 							selectedCategoryIdLevelThree:  300})" >
 															{{'HEAVY_VEHICLES' | translate}}   <b> {{countHeavyVehicles}} </b>
 								 						</a>
 	
 													</li>
 													<li>
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchMotorcycle' , advSelectedCityId :0, 
-								 	 						advFinalSelectedCategoryId:  25, 
-								 	 						advSelectedCategoryIdLevelOne:  3,
-									  						advSelectedCategoryIdLevelTwo:  25,
-								 	 						advSelectedCategoryIdLevelThree:  310})" >
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchMotorcycle' , selectedCityId :0, 
+								 	 						finalSelectedCategoryId:  25, 
+								 	 						selectedCategoryIdLevelOne:  3,
+									  						selectedCategoryIdLevelTwo:  25,
+								 	 						selectedCategoryIdLevelThree:  310})" >
 								  
 								 	 						{{'MOTORCYCLES' | translate}}  <b> {{countMotorcycles}} </b>
 								  
@@ -220,67 +220,67 @@
 											<div class="row">
 												<ul class="col-sm-3 list-unstyled">
 													<li>
-													  <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 			 			 advFinalSelectedCategoryId:  555,
-								 		 				 advSelectedCategoryIdLevelOne: 4,
-										 	             advSelectedCategoryIdLevelTwo: 555,
-										 	  			 advSelectedCategoryIdLevelThree:  556})">
+													  <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 			 			 finalSelectedCategoryId:  555,
+								 		 				 selectedCategoryIdLevelOne: 4,
+										 	             selectedCategoryIdLevelTwo: 555,
+										 	  			 selectedCategoryIdLevelThree:  556})">
 								 		      				{{'BABY_ITEMS' | translate}} <b> {{countClassifiedBabyItems}} </b> 
 								  						</a>
 													</li>
 													<li>
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 					     advFinalSelectedCategoryId:  609,
-								 		 	 		     advSelectedCategoryIdLevelOne: 4,
-										 	 		     advSelectedCategoryIdLevelTwo: 609,
-										 	  		     advSelectedCategoryIdLevelThree:  610})">
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 					     finalSelectedCategoryId:  609,
+								 		 	 		     selectedCategoryIdLevelOne: 4,
+										 	 		     selectedCategoryIdLevelTwo: 609,
+										 	  		     selectedCategoryIdLevelThree:  610})">
 								 		      		     {{'BOOKS_ITMES' | translate}} <b> {{countClassifiedBooks}} </b> 
 								  				       </a>
 													</li>
 													<li>
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 			 			 advFinalSelectedCategoryId:  667,
-								 		 	 		     advSelectedCategoryIdLevelOne: 4,
-										 			     advSelectedCategoryIdLevelTwo: 667,
-										 	 		     advSelectedCategoryIdLevelThree:  668})">
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 			 			 finalSelectedCategoryId:  667,
+								 		 	 		     selectedCategoryIdLevelOne: 4,
+										 			     selectedCategoryIdLevelTwo: 667,
+										 	 		     selectedCategoryIdLevelThree:  668})">
 								 		                 {{'BUSINESS_INDUSTRIAL' | translate}} <b> {{countClassifiedBusinessIndustrial}} </b> 
 								  					   </a>
 												   </li>
 												  <li>
-													 <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 					    advFinalSelectedCategoryId:  765,
-								 		 	 		    advSelectedCategoryIdLevelOne: 4,
-										 	            advSelectedCategoryIdLevelTwo: 765,
-										 	            advSelectedCategoryIdLevelThree: 766})">
+													 <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 					    finalSelectedCategoryId:  765,
+								 		 	 		    selectedCategoryIdLevelOne: 4,
+										 	            selectedCategoryIdLevelTwo: 765,
+										 	            selectedCategoryIdLevelThree: 766})">
 								 		    	        {{'CAMERAS_IMAGING' | translate}} <b> {{countClassifiedCamera}} </b> 
 								  					  </a> 
 								  				   </li>
 												   <li>
-												      <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 						advFinalSelectedCategoryId:  838,
-								 		 	 			advSelectedCategoryIdLevelOne: 4,
-										 			    advSelectedCategoryIdLevelTwo: 838,
-										 	            advSelectedCategoryIdLevelThree: 839})">
+												      <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 						finalSelectedCategoryId:  838,
+								 		 	 			selectedCategoryIdLevelOne: 4,
+										 			    selectedCategoryIdLevelTwo: 838,
+										 	            selectedCategoryIdLevelThree: 839})">
 								 		     		  {{'CLOTHING_ACCESSORIES' | translate}} <b> {{countClassifiedClothing}} </b> 
 								  					</a>  
 												  </li>
 													<li>
 													
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 					     advFinalSelectedCategoryId:  920,
-								 		 	 			 advSelectedCategoryIdLevelOne: 4,
-										 				 advSelectedCategoryIdLevelTwo: 920,
-										 				 advSelectedCategoryIdLevelThree: 921})">
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 					     finalSelectedCategoryId:  920,
+								 		 	 			 selectedCategoryIdLevelOne: 4,
+										 				 selectedCategoryIdLevelTwo: 920,
+										 				 selectedCategoryIdLevelThree: 921})">
 								 		     		  	 {{'COLLECTIBLES' | translate}}  <b> {{countClassifiedCollectibles}} </b> 
 								  						</a> 
 													</li>
 													<li>
 													
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 						 advFinalSelectedCategoryId:  968,
-								 		 			     advSelectedCategoryIdLevelOne: 4,
-										 	 			 advSelectedCategoryIdLevelTwo: 968,
-										 	  			 advSelectedCategoryIdLevelThree: 969})">
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 						 finalSelectedCategoryId:  968,
+								 		 			     selectedCategoryIdLevelOne: 4,
+										 	 			 selectedCategoryIdLevelTwo: 968,
+										 	  			 selectedCategoryIdLevelThree: 969})">
 								 		      			 {{'COMPUTERS_NETWORK' | translate}}  <b> {{countClassifiedComputerNetwork}} </b> 
 								  					    </a> 
 													
@@ -291,66 +291,66 @@
 												<ul class="col-sm-3 list-unstyled">
 													<li>
 													
-													 	<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 						  advFinalSelectedCategoryId:  1096,
-								 		 				  advSelectedCategoryIdLevelOne: 4,
-										 				  advSelectedCategoryIdLevelTwo: 1086,
-										 				   advSelectedCategoryIdLevelThree: 1096})">
+													 	<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 						  finalSelectedCategoryId:  1096,
+								 		 				  selectedCategoryIdLevelOne: 4,
+										 				  selectedCategoryIdLevelTwo: 1086,
+										 				   selectedCategoryIdLevelThree: 1096})">
 								 		     		       {{'TELEVISION' | translate}}   <b> {{countClassifiedTV}} </b> 
 								  						</a>
 													</li>
 													
 													<li>
-													    <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 			 		      advFinalSelectedCategoryId:  1086,
-								 		 	 		      advSelectedCategoryIdLevelOne: 4,
-										 	 		      advSelectedCategoryIdLevelTwo: 1086,
-										 	  		      advSelectedCategoryIdLevelThree: 1087})">
+													    <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 			 		      finalSelectedCategoryId:  1086,
+								 		 	 		      selectedCategoryIdLevelOne: 4,
+										 	 		      selectedCategoryIdLevelTwo: 1086,
+										 	  		      selectedCategoryIdLevelThree: 1087})">
 								 		      			{{'ELECTRONICS' | translate}}  <b> {{countClassifiedElectronics}} </b> 
 								  						</a> 
 													</li>
 												    <li>
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 						  advFinalSelectedCategoryId:  1570,
-								 		 	 			  advSelectedCategoryIdLevelOne: 4,
-										 	 			  advSelectedCategoryIdLevelTwo: 1570,
-										 	  			  advSelectedCategoryIdLevelThree: 1571})">
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 						  finalSelectedCategoryId:  1570,
+								 		 	 			  selectedCategoryIdLevelOne: 4,
+										 	 			  selectedCategoryIdLevelTwo: 1570,
+										 	  			  selectedCategoryIdLevelThree: 1571})">
 								 		      			  {{'TICKETS_VOUCHERS' | translate}} <b> {{countClassifiedTicketsVouchers}} </b> 
 								  						</a>
 								  		  			</li>
 								  		  			<li>
-								  		  				<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 						  advFinalSelectedCategoryId:  1196,
-								 		 				  advSelectedCategoryIdLevelOne: 4,
-										 	 			  advSelectedCategoryIdLevelTwo: 1196,
-										 	 			  advSelectedCategoryIdLevelThree: 1197})">
+								  		  				<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 						  finalSelectedCategoryId:  1196,
+								 		 				  selectedCategoryIdLevelOne: 4,
+										 	 			  selectedCategoryIdLevelTwo: 1196,
+										 	 			  selectedCategoryIdLevelThree: 1197})">
 								 		       			 {{'FURNITURE' | translate}}    <b> {{countClassifiedFurniture}} </b> 
 								  						</a> 								  		  			
 								  		  			</li>
 								  		  			<li>
-								  		  				<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 						   advFinalSelectedCategoryId:  1265,
-								 		 				   advSelectedCategoryIdLevelOne: 4,
-										 	 			   advSelectedCategoryIdLevelTwo: 1265,
-										 	  			   advSelectedCategoryIdLevelThree: 1266})">
+								  		  				<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 						   finalSelectedCategoryId:  1265,
+								 		 				   selectedCategoryIdLevelOne: 4,
+										 	 			   selectedCategoryIdLevelTwo: 1265,
+										 	  			   selectedCategoryIdLevelThree: 1266})">
 								 		       			{{'GAMING' | translate}}  <b> {{countClassifiedGaming}} </b> 
 								  						</a>
 								  		  			</li>
 								  		  			<li>
-								  		  			   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 						   advFinalSelectedCategoryId: 1323,
-								 		 	 			   advSelectedCategoryIdLevelOne: 4,
-										 	 			   advSelectedCategoryIdLevelTwo: 1323,
-										 	  			   advSelectedCategoryIdLevelThree: 1324})">
+								  		  			   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 						   finalSelectedCategoryId: 1323,
+								 		 	 			   selectedCategoryIdLevelOne: 4,
+										 	 			   selectedCategoryIdLevelTwo: 1323,
+										 	  			   selectedCategoryIdLevelThree: 1324})">
 								 		       			  {{'HOME_APPLIANCES' | translate}} <b>{{countClassifiedHomeAppliances}} </b> 
 								  				        </a> 
 								  		  			</li>
 								  		  			<li>
-								  		  			   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 			 		     advFinalSelectedCategoryId:  1371,
-								 		 			     advSelectedCategoryIdLevelOne: 4,
-										 	 			 advSelectedCategoryIdLevelTwo: 1367,
-										 	  		     advSelectedCategoryIdLevelThree: 1371})">
+								  		  			   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 			 		     finalSelectedCategoryId:  1371,
+								 		 			     selectedCategoryIdLevelOne: 4,
+										 	 			 selectedCategoryIdLevelTwo: 1367,
+										 	  		     selectedCategoryIdLevelThree: 1371})">
 								 		     			 {{'WATCHES' | translate}} <b> {{countClassifiedWatches}} </b> 
 								  		  			   </a> 
 								  		  	       </li>
@@ -358,58 +358,58 @@
 								  		  		</ul>
 								  		  		<ul class="col-sm-3 list-unstyled"> 
 								  		  			<li>
-								  		  				<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 						   advFinalSelectedCategoryId:  1425,
-								 		 				   advSelectedCategoryIdLevelOne: 4,
-										 				   advSelectedCategoryIdLevelTwo: 1425})">
+								  		  				<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 						   finalSelectedCategoryId:  1425,
+								 		 				   selectedCategoryIdLevelOne: 4,
+										 				   selectedCategoryIdLevelTwo: 1425})">
 								 		     			   {{'MISCELLANEOUS' | translate}}  <b> {{countClassifiedMisc}} </b> 
 								  						</a>
 								  		  			</li> 
 								  		  			<li>
 								  		  			
-								  						<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 			 			  advFinalSelectedCategoryId:  1426,
-								 		 	 			  advSelectedCategoryIdLevelOne: 4,
-										 	 			  advSelectedCategoryIdLevelTwo: 1426,
-										 	 			  advSelectedCategoryIdLevelThree: 1427})">
+								  						<a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 			 			  finalSelectedCategoryId:  1426,
+								 		 	 			  selectedCategoryIdLevelOne: 4,
+										 	 			  selectedCategoryIdLevelTwo: 1426,
+										 	 			  selectedCategoryIdLevelThree: 1427})">
 								 		      			 {{'MOBILES_PDA' | translate}} <b> {{countClassifiedMobile}} </b> 
 								  					   </a>
 								  		  			</li>
 								  		  			<li>
-								  		  			    <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 			 			  advFinalSelectedCategoryId:  1470,
-								 		 	 			  advSelectedCategoryIdLevelOne: 4,
-										 	 			  advSelectedCategoryIdLevelTwo: 1470,
-										 	 			  advSelectedCategoryIdLevelThree: 1471})">
+								  		  			    <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 			 			  finalSelectedCategoryId:  1470,
+								 		 	 			  selectedCategoryIdLevelOne: 4,
+										 	 			  selectedCategoryIdLevelTwo: 1470,
+										 	 			  selectedCategoryIdLevelThree: 1471})">
 								 		      			   {{'PETS' | translate}} <b> {{countClassifiedPets}} </b> 
 								  						</a>
 								  		  			</li> 
 								  		  			<li>
-								  		  			     <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 							 advFinalSelectedCategoryId:  1488,
-								 		 					 advSelectedCategoryIdLevelOne: 4,
-										 					 advSelectedCategoryIdLevelTwo: 1488,
-										 	 				 advSelectedCategoryIdLevelThree: 1489})">
+								  		  			     <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 							 finalSelectedCategoryId:  1488,
+								 		 					 selectedCategoryIdLevelOne: 4,
+										 					 selectedCategoryIdLevelTwo: 1488,
+										 	 				 selectedCategoryIdLevelThree: 1489})">
 								 		      			    {{'SPORTS_EQUIPMENT' | translate}} <b> {{countClassifiedSportsEquipment}} </b> 
 								  						 </a>
 								  		  			</li>
 								  		  			
 								  		  			<li>
 								  		  			
-								  		  			   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 			 				advFinalSelectedCategoryId:  1577,
-								 		 	 				advSelectedCategoryIdLevelOne: 4,
-										 					advSelectedCategoryIdLevelTwo: 1577})">
+								  		  			   <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 			 				finalSelectedCategoryId:  1577,
+								 		 	 				selectedCategoryIdLevelOne: 4,
+										 					selectedCategoryIdLevelTwo: 1577})">
 								 		      				{{'TOYS' | translate}} <b> {{countClassifiedToys}} </b> 
 								  						</a>
 								  		  			</li>
 								  		  			
 								  		  			<li>
-								  					  <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , advSelectedCityId :0, 
-								 			 			advFinalSelectedCategoryId:  1372,
-								 		 	 		    advSelectedCategoryIdLevelOne: 4,
-										 	 		    advSelectedCategoryIdLevelTwo: 1367,
-										 	  			advSelectedCategoryIdLevelThree: 1372})">
+								  					  <a  ui-sref="listing ({searchType:'AdvanceSearchClassified' , selectedCityId :0, 
+								 			 			finalSelectedCategoryId:  1372,
+								 		 	 		    selectedCategoryIdLevelOne: 4,
+										 	 		    selectedCategoryIdLevelTwo: 1367,
+										 	  			selectedCategoryIdLevelThree: 1372})">
 								 		     		   {{'WOMEN_JEWELRY' | translate}} <b> {{countClassifiedWomenJewelry}} </b> 
 								  					</a> 
 								  		  		   <li> 
@@ -429,11 +429,11 @@
 											<div class="row">
 												<ul class="col-sm-3 list-unstyled">
 													<li>	
-														 <a  ui-sref="listing ({searchType:'AdvanceSearchRentRes' , advSelectedCityId :0, 
-								 						   advFinalSelectedCategoryId:  343, 
-								 						   advSelectedCategoryIdLevelOne:  6,
-														   advSelectedCategoryIdLevelTwo:  334,
-								 	 					   advSelectedCategoryIdLevelThree:  343})" >
+														 <a  ui-sref="listing ({searchType:'AdvanceSearchRentRes' , selectedCityId :0, 
+								 						   finalSelectedCategoryId:  343, 
+								 						   selectedCategoryIdLevelOne:  6,
+														   selectedCategoryIdLevelTwo:  334,
+								 	 					   selectedCategoryIdLevelThree:  343})" >
 								 					   		 {{'APARTMENT_FOR_RENT' | translate}} <b> {{countRentResApartment}} </b>
 								  						</a>
 								  					</li>
@@ -441,11 +441,11 @@
 													
 												
 													<li>
-													 <a  ui-sref="listing ({searchType:'AdvanceSearchRentRes' , advSelectedCityId :0, 
-								 					   advFinalSelectedCategoryId:  342, 
-								 					   advSelectedCategoryIdLevelOne:  6,
-										 			   advSelectedCategoryIdLevelTwo:  334,
-								 	 				   advSelectedCategoryIdLevelThree:  342})">
+													 <a  ui-sref="listing ({searchType:'AdvanceSearchRentRes' , selectedCityId :0, 
+								 					   finalSelectedCategoryId:  342, 
+								 					   selectedCategoryIdLevelOne:  6,
+										 			   selectedCategoryIdLevelTwo:  334,
+								 	 				   selectedCategoryIdLevelThree:  342})">
 								 		  				 {{'VILLA_FOR_RENT' | translate}} <b> {{countRentResVilla}} </b>
 								  					</a> 
 													
@@ -453,40 +453,40 @@
 													<li>
 													
 													  
-								  						 <a  ui-sref="listing ({searchType:'AdvanceSearchRentComm' , advSelectedCityId :0, 
-								 							 advFinalSelectedCategoryId:  335 ,
-								 		 					 advSelectedCategoryIdLevelOne: 6,
-										 	 			 	advSelectedCategoryIdLevelTwo: 335,
-										 			     	advSelectedCategoryIdLevelThree:  345})">
+								  						 <a  ui-sref="listing ({searchType:'AdvanceSearchRentComm' , selectedCityId :0, 
+								 							 finalSelectedCategoryId:  335 ,
+								 		 					 selectedCategoryIdLevelOne: 6,
+										 	 			 	selectedCategoryIdLevelTwo: 335,
+										 			     	selectedCategoryIdLevelThree:  345})">
 								 		  			  		 {{'COMMERCIAL_FOR_RENT' | translate}} <b> {{countRentComm}} </b>
 								  						</a>													
 													</li>
 													<li>
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchRentRoom' , advSelectedCityId :0, 
-								 						 advFinalSelectedCategoryId:  336 ,
-								 		 				 advSelectedCategoryIdLevelOne: 6,
-										 				 advSelectedCategoryIdLevelTwo: 336,
-										 	 			 advSelectedCategoryIdLevelThree:  350})">
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchRentRoom' , selectedCityId :0, 
+								 						 finalSelectedCategoryId:  336 ,
+								 		 				 selectedCategoryIdLevelOne: 6,
+										 				 selectedCategoryIdLevelTwo: 336,
+										 	 			 selectedCategoryIdLevelThree:  350})">
 								 		   					{{'ROOM_FOR_RENT' | translate}} <b> {{countRentRoom}} </b>
 								  						</a>
 													</li>
 													<li>
 													
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchRentShortMonthly' , advSelectedCityId :0, 
-								 			 			advFinalSelectedCategoryId:  338 ,
-								 		 				 advSelectedCategoryIdLevelOne: 6,
-										 				 advSelectedCategoryIdLevelTwo: 338,
-										 				  advSelectedCategoryIdLevelThree:  353})">
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchRentShortMonthly' , selectedCityId :0, 
+								 			 			finalSelectedCategoryId:  338 ,
+								 		 				 selectedCategoryIdLevelOne: 6,
+										 				 selectedCategoryIdLevelTwo: 338,
+										 				  selectedCategoryIdLevelThree:  353})">
 								 		     				 {{'SHORT_TERM_MONTHLY_RENT'  | translate}} <b> {{countRentShortMonthly}} </b>
 								  						</a>
 													
 													</li>
 													<li>
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchRentShortDaily' , advSelectedCityId :0, 
-								 						advFinalSelectedCategoryId:  339 ,
-								 		 				 advSelectedCategoryIdLevelOne: 6,
-										 				 advSelectedCategoryIdLevelTwo: 339,
-										 				  advSelectedCategoryIdLevelThree:  356})">
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchRentShortDaily' , selectedCityId :0, 
+								 						finalSelectedCategoryId:  339 ,
+								 		 				 selectedCategoryIdLevelOne: 6,
+										 				 selectedCategoryIdLevelTwo: 339,
+										 				  selectedCategoryIdLevelThree:  356})">
 								 		      			   {{'SHORT_TERM_DAILY_RENT' | translate}} <b> {{countRentShortDaily}} </b> 
 								  						</a> 
 													</li>
@@ -494,48 +494,48 @@
 												</ul>
 												<ul class="col-sm-3 list-unstyled">
 													<li>
-														<a  ui-sref="listing ({searchType:'AdvanceSearchSaleRes' , advSelectedCityId :0, 
-								 	 						advFinalSelectedCategoryId:  327, 
-								 							advSelectedCategoryIdLevelOne:  5,
-														    advSelectedCategoryIdLevelTwo:  321,
-								 						    advSelectedCategoryIdLevelThree:  327})" >
+														<a  ui-sref="listing ({searchType:'AdvanceSearchSaleRes' , selectedCityId :0, 
+								 	 						finalSelectedCategoryId:  327, 
+								 							selectedCategoryIdLevelOne:  5,
+														    selectedCategoryIdLevelTwo:  321,
+								 						    selectedCategoryIdLevelThree:  327})" >
 								 	 						{{'APARTMENT_FOR_SALE' | translate}} <b> {{countSaleResApartment}} </b>
 								 						 </a> 
 													</li>
 													<li>
-													    <a  ui-sref="listing ({searchType:'AdvanceSearchSaleRes' , advSelectedCityId :0, 
-								 						   advFinalSelectedCategoryId:  326, 
-								 						   advSelectedCategoryIdLevelOne:  5,
-														   advSelectedCategoryIdLevelTwo:  321,
-								 	 					   advSelectedCategoryIdLevelThree:  326})" >
+													    <a  ui-sref="listing ({searchType:'AdvanceSearchSaleRes' , selectedCityId :0, 
+								 						   finalSelectedCategoryId:  326, 
+								 						   selectedCategoryIdLevelOne:  5,
+														   selectedCategoryIdLevelTwo:  321,
+								 	 					   selectedCategoryIdLevelThree:  326})" >
 								 						  {{'VILLA_FOR_SALE' | translate}}  <b> {{countSaleResVilla}} </b>
 								  						</a> 
 													
 													</li>
 													<li>
-													 	<a  ui-sref="listing ({searchType:'AdvanceSearchSaleComm' , advSelectedCityId :0, 
-								 						  advFinalSelectedCategoryId:  322, 
-								 						  advSelectedCategoryIdLevelOne:  5,
-														  advSelectedCategoryIdLevelTwo:  322,
-								 						  advSelectedCategoryIdLevelThree:  328})" >
+													 	<a  ui-sref="listing ({searchType:'AdvanceSearchSaleComm' , selectedCityId :0, 
+								 						  finalSelectedCategoryId:  322, 
+								 						  selectedCategoryIdLevelOne:  5,
+														  selectedCategoryIdLevelTwo:  322,
+								 						  selectedCategoryIdLevelThree:  328})" >
 															{{'COMMERCIAL_FOR_SALE ' | translate}} <b> {{countSaleComm}} </b>
 														</a>
 													</li>
 													
 													<li>
 													
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchSaleUnits' , advSelectedCityId :0, 
-								 						 advFinalSelectedCategoryId:  323, 
-								 						 advSelectedCategoryIdLevelOne:  5,
-														 advSelectedCategoryIdLevelTwo:  323})" >
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchSaleUnits' , selectedCityId :0, 
+								 						 finalSelectedCategoryId:  323, 
+								 						 selectedCategoryIdLevelOne:  5,
+														 selectedCategoryIdLevelTwo:  323})" >
 														 {{'UNITS_FOR_SALE' | translate }} <b> {{countSaleUnits}} </b>
 													   </a> 
 													</li>
 													<li>
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchSaleLand' , advSelectedCityId :0, 
-								 	 					 advFinalSelectedCategoryId:  324, 
-								 	 					 advSelectedCategoryIdLevelOne:  5,
-														 advSelectedCategoryIdLevelTwo:  324})" >
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchSaleLand' , selectedCityId :0, 
+								 	 					 finalSelectedCategoryId:  324, 
+								 	 					 selectedCategoryIdLevelOne:  5,
+														 selectedCategoryIdLevelTwo:  324})" >
 														 {{'LAND_FOR_SALE' | translate}} <b> {{countSaleLand}} </b>
 							   						    </a>
 													</li>
@@ -555,59 +555,59 @@
 											<div class="row">
 												<ul class="col-sm-3 list-unstyled">
 													 <li>
-												    	 <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								 							 advFinalSelectedCategoryId:  385, 
-															 advSelectedCategoryIdLevelOne:  7,
-								  							 advSelectedCategoryIdLevelTwo:  385})" >
+												    	 <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								 							 finalSelectedCategoryId:  385, 
+															 selectedCategoryIdLevelOne:  7,
+								  							 selectedCategoryIdLevelTwo:  385})" >
 															 {{'JOB_CONSULTING' | translate}} <b> {{countJobConsulting}}  </b>
 														</a> 
 												  	 </li>
 												 	 <li>
-												  		<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								 							 advFinalSelectedCategoryId:  384, 
-								  							advSelectedCategoryIdLevelOne:  7,
-															  advSelectedCategoryIdLevelTwo:  384})" >
+												  		<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								 							 finalSelectedCategoryId:  384, 
+								  							selectedCategoryIdLevelOne:  7,
+															  selectedCategoryIdLevelTwo:  384})" >
 															{{'JOB_CONSTRUCTION'  | translate}} <b> {{countJobConstruction}} </b>
 														</a> 
 												   </li>
 												   <li>
-												  		<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								  							advFinalSelectedCategoryId:  376, 
-								  							advSelectedCategoryIdLevelOne:  7,
-								 							advSelectedCategoryIdLevelTwo:  376})" >
+												  		<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								  							finalSelectedCategoryId:  376, 
+								  							selectedCategoryIdLevelOne:  7,
+								 							selectedCategoryIdLevelTwo:  376})" >
 															{{'JOB_AIRLINES_AVIATION' | translate}} <b> {{countJobAirlinesAviation}} </b>
 														</a>
 												   </li>
 												   <li>
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								  							advFinalSelectedCategoryId:  408, 
-								  							advSelectedCategoryIdLevelOne:  7,
-								  							advSelectedCategoryIdLevelTwo:  408})" >
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								  							finalSelectedCategoryId:  408, 
+								  							selectedCategoryIdLevelOne:  7,
+								  							selectedCategoryIdLevelTwo:  408})" >
 															{{'JOB_MEDIA' | translate}}<b> {{countJobMedia}} </b>
 														</a>
 													</li>
 													<li>
-														<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								 							 advFinalSelectedCategoryId:  375, 
-								 							 advSelectedCategoryIdLevelOne:  7,
-								 							 advSelectedCategoryIdLevelTwo:  375})" >
+														<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								 							 finalSelectedCategoryId:  375, 
+								 							 selectedCategoryIdLevelOne:  7,
+								 							 selectedCategoryIdLevelTwo:  375})" >
 															{{'JOB_ACCOUNTING' | translate}} <b> {{countJobAccounting}} </b>
 														</a> 
 													</li>
 						
 												   	 <li>
-														<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								  							advFinalSelectedCategoryId: 380, 
-															advSelectedCategoryIdLevelOne:  7,
-								 							advSelectedCategoryIdLevelTwo:  380})" >
+														<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								  							finalSelectedCategoryId: 380, 
+															selectedCategoryIdLevelOne:  7,
+								 							selectedCategoryIdLevelTwo:  380})" >
 															{{'JOB_BANKING' | translate}}<b> {{countJobBankingFinance}} </b>
 														</a>
 												  	</li>
 												  	<li>
-												  		<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								    						 advFinalSelectedCategoryId:  395, 
-								    						 advSelectedCategoryIdLevelOne:  7,
-								     						advSelectedCategoryIdLevelTwo:  395})">
+												  		<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								    						 finalSelectedCategoryId:  395, 
+								    						 selectedCategoryIdLevelOne:  7,
+								     						selectedCategoryIdLevelTwo:  395})">
 															{{'JOB_GOVERNMENT_ADMIN' | translate}} <b> {{countJobGovAdmin}} </b>
 														</a> 
 												  	</li>
@@ -615,60 +615,60 @@
 												   </ul>
 												   <ul class="col-sm-3 list-unstyled">
 												     <li>
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								  					   		advFinalSelectedCategoryId:  422,
-								  							advSelectedCategoryIdLevelOne:  7,
-								  							advSelectedCategoryIdLevelTwo:  422})" >
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								  					   		finalSelectedCategoryId:  422,
+								  							selectedCategoryIdLevelOne:  7,
+								  							selectedCategoryIdLevelTwo:  422})" >
 															{{'JOB_SALES' | translate}} <b> {{countJobSales}} </b>
 														</a>
 													 </li>
 												  	  <li>
-												  		 <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								  							advFinalSelectedCategoryId:  387, 
-															advSelectedCategoryIdLevelOne:  7,
-								 							advSelectedCategoryIdLevelTwo:  387})" >
+												  		 <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								  							finalSelectedCategoryId:  387, 
+															selectedCategoryIdLevelOne:  7,
+								 							selectedCategoryIdLevelTwo:  387})" >
 															{{'JOB_EDUCATION' | translate}} <b> {{countJobEducation}} </b>
 														</a>
 												  	</li>
 												  	
 												  	<li>
-												  			<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								 								 advFinalSelectedCategoryId:  389, 
-								  								 advSelectedCategoryIdLevelOne:  7,
-								 								 advSelectedCategoryIdLevelTwo:  389})" >
+												  			<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								 								 finalSelectedCategoryId:  389, 
+								  								 selectedCategoryIdLevelOne:  7,
+								 								 selectedCategoryIdLevelTwo:  389})" >
 														  	 	{{'JOB_ENGINEERING' | translate}} <b> {{countJobEngineering}} </b>
 															</a> 
 												  	</li>
 												  	<li>
-													    	<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								  								advFinalSelectedCategoryId:  398, 
-								  								advSelectedCategoryIdLevelOne:  7,
-																advSelectedCategoryIdLevelTwo:  398})" >
+													    	<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								  								finalSelectedCategoryId:  398, 
+								  								selectedCategoryIdLevelOne:  7,
+																selectedCategoryIdLevelTwo:  398})" >
 																{{'JOB_HR_RECRUITMENT' | translate}}<b> {{countJobHRRecruitment}} </b>
 															</a> 
 													</li>
 													
 													<li>
-													   		<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								  								advFinalSelectedCategoryId: 413, 
-								 								advSelectedCategoryIdLevelOne:  7,
-								 								advSelectedCategoryIdLevelTwo:  413})" >
+													   		<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								  								finalSelectedCategoryId: 413, 
+								 								selectedCategoryIdLevelOne:  7,
+								 								selectedCategoryIdLevelTwo:  413})" >
 																{{'JOB_PUBLIC_RELATIONS' | translate}} <b> {{countJobPublicRelations}} </b>
 															</a>
 													</li>
 													<li>
-														 <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								   						    advFinalSelectedCategoryId:  392, 
-								    				        advSelectedCategoryIdLevelOne:  7,
-								    					    advSelectedCategoryIdLevelTwo:  392})" >
+														 <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								   						    finalSelectedCategoryId:  392, 
+								    				        selectedCategoryIdLevelOne:  7,
+								    					    selectedCategoryIdLevelTwo:  392})" >
 														   {{'JOB_EXECUTIVE' | translate}} <b> {{countJobExecutive}} </b>
 														 </a>
 													</li>
 													<li>
-														<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								 							advFinalSelectedCategoryId:  381, 
-								  							advSelectedCategoryIdLevelOne:  7,
-															advSelectedCategoryIdLevelTwo:  381})" >
+														<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								 							finalSelectedCategoryId:  381, 
+								  							selectedCategoryIdLevelOne:  7,
+															selectedCategoryIdLevelTwo:  381})" >
 															{{'JOB_BEAUTY' | translate}} <b> {{countJobBeauty}} </b>
 														</a> 
 													</li>
@@ -676,53 +676,53 @@
 												</ul>
 												<ul class="col-sm-3 list-unstyled">
 													<li>
-														<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								  							advFinalSelectedCategoryId:  410, 
-								  							advSelectedCategoryIdLevelOne:  7,
-								  							advSelectedCategoryIdLevelTwo:  410})" >
+														<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								  							finalSelectedCategoryId:  410, 
+								  							selectedCategoryIdLevelOne:  7,
+								  							selectedCategoryIdLevelTwo:  410})" >
 															{{'JOB_OIL_GAS' | translate}} <b> {{countJobOilGas}} </b>
 														</a> 
 													
 													</li>
 													<li>
-												  		<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								 							 advFinalSelectedCategoryId: 407, 
-								  							 advSelectedCategoryIdLevelOne:  7,
-								 							 advSelectedCategoryIdLevelTwo:  407})" >
+												  		<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								 							 finalSelectedCategoryId: 407, 
+								  							 selectedCategoryIdLevelOne:  7,
+								 							 selectedCategoryIdLevelTwo:  407})" >
 															{{'JOB_MARKETTING_ADVERTISEMENT' | translate}} <b> {{countJobMarkettingAdvertising}} </b>
 														</a>
 												  	</li>
 													
 													<li>
-														<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								  							advFinalSelectedCategoryId:  423, 
-															advSelectedCategoryIdLevelOne:  7,
-								  							advSelectedCategoryIdLevelTwo:  423})" >
+														<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								  							finalSelectedCategoryId:  423, 
+															selectedCategoryIdLevelOne:  7,
+								  							selectedCategoryIdLevelTwo:  423})" >
 															{{'JOB_SECRETARIAL' | translate}} <b> {{countJobSecretarial}} </b>
 														</a>
 												    </li>
 												    <li>
-														<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								  							advFinalSelectedCategoryId:  386, 
-								 							advSelectedCategoryIdLevelOne:  7,
-								 							advSelectedCategoryIdLevelTwo:  386})" >
+														<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								  							finalSelectedCategoryId:  386, 
+								 							selectedCategoryIdLevelOne:  7,
+								 							selectedCategoryIdLevelTwo:  386})" >
 															{{'JOB_CUSTOMER_SERVICE' | translate }} <b> {{countJobCustomerService}} </b>
 														</a>
 												   </li>
 												   <li>
-													  <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								  						   advFinalSelectedCategoryId:  378, 
-														   advSelectedCategoryIdLevelOne:  7,
-								 						   advSelectedCategoryIdLevelTwo:  378})" >
+													  <a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								  						   finalSelectedCategoryId:  378, 
+														   selectedCategoryIdLevelOne:  7,
+								 						   selectedCategoryIdLevelTwo:  378})" >
 														   {{'JOB_ART' | translate}} <b> {{countJobArtEntertainment}} </b>
 													  </a>
 													</li> 
 													
 													<li>
-														<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , advSelectedCityId :0, 
-								     						advFinalSelectedCategoryId:  396, 
-								     						advSelectedCategoryIdLevelOne:  7,
-								     						advSelectedCategoryIdLevelTwo:  396})" >
+														<a  ui-sref="listing ({searchType:'AdvanceSearchJob' , selectedCityId :0, 
+								     						finalSelectedCategoryId:  396, 
+								     						selectedCategoryIdLevelOne:  7,
+								     						selectedCategoryIdLevelTwo:  396})" >
 															{{'JOB_GRAPHIC_DESIGN' | translate}}  <b> {{countJobGraphicDesign}} </b>
 													 	</a>
 													</li>
@@ -745,50 +745,50 @@
 											<div class="row">
 												<ul class="col-sm-3 list-unstyled">
 												  <li>
-													     <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 							 advFinalSelectedCategoryId: 1590,
-								 		 	 				 advSelectedCategoryIdLevelOne: 8,
-								 		 					 advSelectedCategoryIdLevelTwo: 1590})">
+													     <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , selectedCityId :0, 
+								 							 finalSelectedCategoryId: 1590,
+								 		 	 				 selectedCategoryIdLevelOne: 8,
+								 		 					 selectedCategoryIdLevelTwo: 1590})">
 								 		     				{{'COMMUNITY_ACTIVITIES'  | translate}} <b> {{countCommunityActivities}} </b> 
 								  						</a>
 													</li>
 													<li>
-													    <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 							advFinalSelectedCategoryId: 1591 ,
-								 		 					advSelectedCategoryIdLevelOne: 8,
-										 	 				advSelectedCategoryIdLevelTwo: 1591})">
+													    <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , selectedCityId :0, 
+								 							finalSelectedCategoryId: 1591 ,
+								 		 					selectedCategoryIdLevelOne: 8,
+										 	 				selectedCategoryIdLevelTwo: 1591})">
 								 		     				{{'COMMUNITY_ARTISTS' | translate}} <b> {{countCommunityArtist}} </b> 
 								  						</a>
 													</li>
 													<li>
-														 <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 						   advFinalSelectedCategoryId: 1592 ,
-								 		 	 			   advSelectedCategoryIdLevelOne: 8,
-										 	 			   advSelectedCategoryIdLevelTwo: 1592})">
+														 <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , selectedCityId :0, 
+								 						   finalSelectedCategoryId: 1592 ,
+								 		 	 			   selectedCategoryIdLevelOne: 8,
+										 	 			   selectedCategoryIdLevelTwo: 1592})">
 								 		      			   {{'COMMUNITY_CAR_LIFT' | translate}}<b> {{countCommunityCarLift}} </b> 
 								  						</a>
 													</li>
 													<li>
-													     <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 							 advFinalSelectedCategoryId: 1593 ,
-								 		 					 advSelectedCategoryIdLevelOne: 8,
-										 					 advSelectedCategoryIdLevelTwo: 1593})">
+													     <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , selectedCityId :0, 
+								 							 finalSelectedCategoryId: 1593 ,
+								 		 					 selectedCategoryIdLevelOne: 8,
+										 					 selectedCategoryIdLevelTwo: 1593})">
 								 		      				{{'COMMUNITY_CHARITIES' | translate}} <b> {{countCommunityCharities}} </b> 
 								  						</a> 
 													</li>
 													<li>
-													   <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 			 				advFinalSelectedCategoryId: 1594 ,
-								 		 				    advSelectedCategoryIdLevelOne: 8,
-										 	 				advSelectedCategoryIdLevelTwo: 1594})">
+													   <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , selectedCityId :0, 
+								 			 				finalSelectedCategoryId: 1594 ,
+								 		 				    selectedCategoryIdLevelOne: 8,
+										 	 				selectedCategoryIdLevelTwo: 1594})">
 								 		     				{{'COMMUNITY_CHILDCARE' | translate}}  <b> {{countCommunityChildCare}} </b> 
 								  						</a>
 													</li>
 													<li>
-														<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 						    advFinalSelectedCategoryId: 1595 ,
-								 		 	 				advSelectedCategoryIdLevelOne: 8,
-										 				    advSelectedCategoryIdLevelTwo: 1595})">
+														<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , selectedCityId :0, 
+								 						    finalSelectedCategoryId: 1595 ,
+								 		 	 				selectedCategoryIdLevelOne: 8,
+										 				    selectedCategoryIdLevelTwo: 1595})">
 								 		     				{{'COMMUNITY_CLASSES' | translate}}  <b> {{countCommunityClasses}} </b> 
 								  						</a> 													
 													</li>
@@ -796,52 +796,52 @@
 												</ul>
 												<ul class="col-sm-3 list-unstyled">
 												    <li>
-												   	    <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 			 				advFinalSelectedCategoryId: 1597 ,
-								 		 	 				advSelectedCategoryIdLevelOne: 8,
-										 					advSelectedCategoryIdLevelTwo: 1597})">
+												   	    <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , selectedCityId :0, 
+								 			 				finalSelectedCategoryId: 1597 ,
+								 		 	 				selectedCategoryIdLevelOne: 8,
+										 					selectedCategoryIdLevelTwo: 1597})">
 								 		      				{{'COMMUNITY_DOMESTIC' | translate}}  <b> {{countCommunityDomestic}} </b> 
 								  						</a>
 												   </li>
 												   <li>
-												   		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 							advFinalSelectedCategoryId: 1604,
-								 		 	 				advSelectedCategoryIdLevelOne: 8,
-										 	 				advSelectedCategoryIdLevelTwo: 1604,
-										 	 				advSelectedCategoryIdLevelThree:  1607})">
+												   		<a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , selectedCityId :0, 
+								 							finalSelectedCategoryId: 1604,
+								 		 	 				selectedCategoryIdLevelOne: 8,
+										 	 				selectedCategoryIdLevelTwo: 1604,
+										 	 				selectedCategoryIdLevelThree:  1607})">
 								 		      				{{'COMMUNITY_SERVICES' | translate}}  <b> {{countCommunityServices}} </b> 
 								  						</a>  
 												   </li>
 												   <li>
-								  		  			   <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 			 				advFinalSelectedCategoryId: 1599,
-								 		 	 				advSelectedCategoryIdLevelOne: 8,
-										 	 				advSelectedCategoryIdLevelTwo: 1599})">
+								  		  			   <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , selectedCityId :0, 
+								 			 				finalSelectedCategoryId: 1599,
+								 		 	 				selectedCategoryIdLevelOne: 8,
+										 	 				selectedCategoryIdLevelTwo: 1599})">
 								 		      				{{'COMMUNITY_FREELANCERS' | translate}}  <b> {{countCommunityFreelancers}} </b> 
 								  						</a>
 								  		  			</li>
 												   <li>
-												      <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 			 			  advFinalSelectedCategoryId:  1619,
-								 		 	 			  advSelectedCategoryIdLevelOne: 8,
-										 	 			  advSelectedCategoryIdLevelTwo: 1619,
-										 	 			  advSelectedCategoryIdLevelThree:  1620})">
+												      <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , selectedCityId :0, 
+								 			 			  finalSelectedCategoryId:  1619,
+								 		 	 			  selectedCategoryIdLevelOne: 8,
+										 	 			  selectedCategoryIdLevelTwo: 1619,
+										 	 			  selectedCategoryIdLevelThree:  1620})">
 								 		     			  {{'COMMUNITY_LOST_FOUND' | translate}} <b> {{countCommunityLostFound}} </b> 
 								  					  </a> 
 												  </li>
 												  <li>
-												     <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 						 advFinalSelectedCategoryId: 1605,
-								 		 				 advSelectedCategoryIdLevelOne: 8,
-								 		 	 			 advSelectedCategoryIdLevelTwo: 1605})">
+												     <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , selectedCityId :0, 
+								 						 finalSelectedCategoryId: 1605,
+								 		 				 selectedCategoryIdLevelOne: 8,
+								 		 	 			 selectedCategoryIdLevelTwo: 1605})">
 								 		     			{{'COMMUNITY_SPORTS'  | translate}} <b> {{countCommunitySports}} </b> 
 								  					  </a> 
 												  </li>
 												  <li>
-												     <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , advSelectedCityId :0, 
-								 						 advFinalSelectedCategoryId: 1606,
-								 		 	 			advSelectedCategoryIdLevelOne: 8,
-								 		 	 			advSelectedCategoryIdLevelTwo: 1606})">
+												     <a  ui-sref="listing ({searchType:'AdvanceSearchCommunity' , selectedCityId :0, 
+								 						 finalSelectedCategoryId: 1606,
+								 		 	 			selectedCategoryIdLevelOne: 8,
+								 		 	 			selectedCategoryIdLevelTwo: 1606})">
 								 		     			{{'COMMUNITY_FREE_STUFF'  | translate}} <b> {{countCommunityFreeStuff}} </b> 
 								  					 </a>
 												   
