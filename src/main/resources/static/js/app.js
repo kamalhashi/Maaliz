@@ -399,31 +399,10 @@ hashiApp
 		}
 	})
 	.state('listing', {
-		url: "/listing",
-		params: {
-			searchType: null,
-			basicSelectedCategoryId: null,
-			basicSearchText: null,
-			basicSelectedCityId: null,
-			//advance search type parameters
-			advSelectedCityId: null, 
-			advFinalSelectedCategoryId: null, 
-			advSelectedCategoryIdLevelOne: null,
-			advSelectedCategoryIdLevelTwo: null,
-			advSelectedCategoryIdLevelThree: null,
-			advSelectedCategoryIdLevelFour: null,
-			advSearchText:null,
-			//searchAdvance Object Parameters
-			advPriceFrom: null,
-			advPriceTo:   null,
-			advYearMin: null,
-			advYearMax: null,
-			advKMFrom: null,
-			advKMTo: null,
-			advSellerType: null,
-			advBedroomMin: null,
-			advBedroomMax: null
-		  },
+		url: "/listing?searchType&selectedCityId&finalSelectedCategoryId&selectedCategoryIdLevelOne" +
+				"&selectedCategoryIdLevelTwo&selectedCategoryIdLevelThree&selectedCategoryIdLevelFour" +
+				"&searchText&priceFrom&priceTo&yearMin&yearMax&kmFrom&kmTo&sellerType&bedroomMin&bedroomMax"
+		 ,
 		templateUrl: "js/app/partial/listings.html",
 		controller: "ListingController"
       })
