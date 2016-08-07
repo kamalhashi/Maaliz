@@ -9,10 +9,10 @@
 				<h3 style="margin-top: 0">
 					<strong>{{'SEARCH' | translate}}</strong>
 				</h3>
-			
 					<div class="form-group">
-						<select class="form-control" ng-model="selectedCityId" 
-							ng-options="city.cityId as city.cityName for city in listCities">
+						<select class="form-control" ng-model="selectedCityObject" 
+							ng-options="city as city.cityName for city in listCities track by city.cityId"
+							ng-change="setSelectedCityId(selectedCityObject)">
 						</select>
 					</div>
 					<div class="form-group">
@@ -60,12 +60,12 @@
 						<div class="row">
 							<div class="col-xs-6">
 								<select class="form-control" name="selectYearMin"
-									ng-model="yearMin" ng-options="year for year in years">
+									ng-model="yearMin" ng-options="year for year in years track by year">
 								</select>
 							</div>
 							<div class="col-xs-6">
 								<select class="form-control" name="selectYearMax"
-									ng-model="yearMax" ng-options="year for year in years">
+									ng-model="yearMax" ng-options="year for year in years track by year">
 								</select>
 							</div>
 						</div>
@@ -85,10 +85,10 @@
 						<span>{{'SELLER_TYPE' | translate}}</span>
 						<div class="row">
 							<div class="col-xs-6">
-								<select ng-model="sellerType" class="form-control"
+								<select ng-model="selectedSellerTypeObject" class="form-control"
 									name="selectedSellerType"
-									ng-options="sellerType.id as sellerType.name for  sellerType in listSellerTypes">
-
+									ng-options="sellerType.name for sellerType in listSellerTypes track by sellerType.id"
+									ng-change="setSelectedSellerTypeId(selectedSellerTypeObject)">
 								</select>
 							</div>
 						</div>
@@ -158,9 +158,10 @@
 					<span>{{'SELLER_TYPE' | translate}}</span>
 					<div class="row">
 						<div class="col-xs-6">
-							<select ng-model="sellerType" class="form-control"
+							<select ng-model="selectedSellerTypeObject" class="form-control"
 								name="selectedSellerType"
-								ng-options="sellerType.id as sellerType.name for  sellerType in listSellerTypes">
+								ng-options="sellerType.id as sellerType.name for  sellerType in listSellerTypes track by sellerType.id"
+								ng-change="setSelectedSellerTypeId(selectedSellerTypeObject)">
 							</select>
 						</div>
 					</div>
