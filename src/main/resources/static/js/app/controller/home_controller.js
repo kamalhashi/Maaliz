@@ -301,6 +301,7 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 			$scope.showAdvanceSearchBoatsDiv= true;
 			return;
 		}else if(categoryId == categoryIdConstant.HEAVY_VEHICLE_CATEGORY_ID){
+			initializeYears();
 			$scope.showAdvanceSearchHeavyVehicleDiv= true;
 			return;
 		}else if(categoryId == categoryIdConstant.MOTORCYCLES_CATEGORY_ID){
