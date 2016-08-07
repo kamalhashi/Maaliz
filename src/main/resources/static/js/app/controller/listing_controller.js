@@ -214,7 +214,7 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 			yearMax: $scope.yearMax,
 			kmFrom: $scope.KMFrom,
 			kmTo: $scope.KMTo,
-			sellerType: $scope.selectedSellerType,
+			sellerType: $scope.sellerType,
 			bedroomMin: $scope.bedroomMin,
 			bedroomMax: $scope.bedroomMax},
             {notify: false});
