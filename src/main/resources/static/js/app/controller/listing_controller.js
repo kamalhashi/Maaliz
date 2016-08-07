@@ -1,7 +1,7 @@
 var hashiApp = angular.module('hashiApp') // gets it
 
 
-hashiApp.controller('ListingController', function($scope, $http, productFactory, $stateParams, categoryRange, bucketName,
+hashiApp.controller('ListingController', function($scope, $http, productFactory, $stateParams, $state, categoryRange, bucketName,
 		$window, cityFactory, categoryFactory, sellerTypeSearchSomali, sellerTypeSearchEnglish, usageEnglish, usageSomali, 
 		searchTypeConstant, categoryIdConstant, $translate, noBedroomsApartmentEnglish, noBedroomsApartmentSomali,
 		sellerTypeEnglish, sellerTypeSomali, coloursEnglish, coloursSomali, noBathroomsEnglish, noBathroomsSomali,
@@ -150,13 +150,13 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 			
 			
 			//default parameters that's needed 
-			$scope.selectedCityId=$stateParams.advSelectedCityId;
-			$scope.finalSelectedCategoryId = $stateParams.advFinalSelectedCategoryId;
-			$scope.selectedCategoryIdLevelOne=$stateParams.advSelectedCategoryIdLevelOne;
-			$scope.selectedCategoryIdLevelTwo=$stateParams.advSelectedCategoryIdLevelTwo;
-			$scope.selectedCategoryIdLevelThree=$stateParams.advSelectedCategoryIdLevelThree;
-			$scope.selectedCategoryIdLevelFour=$stateParams.advSelectedCategoryIdLevelFour;
-			$scope.searchText= $stateParams.advSearchText;
+			$scope.selectedCityId=$stateParams.selectedCityId;
+			$scope.finalSelectedCategoryId = $stateParams.finalSelectedCategoryId;
+			$scope.selectedCategoryIdLevelOne=$stateParams.selectedCategoryIdLevelOne;
+			$scope.selectedCategoryIdLevelTwo=$stateParams.selectedCategoryIdLevelTwo;
+			$scope.selectedCategoryIdLevelThree=$stateParams.selectedCategoryIdLevelThree;
+			$scope.selectedCategoryIdLevelFour=$stateParams.selectedCategoryIdLevelFour;
+			$scope.searchText= $stateParams.searchText;
 
 			initializeCities();
 			
@@ -202,6 +202,30 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 	$scope.search = function() {	
 		var searchObject = createSearchObject($scope.searchType);
 		advanceSearch($scope.selectedCityId, $scope.finalSelectedCategoryId, $scope.searchText, 0, searchObject);	
+	    $state.go('.', {searchType:$scope.searchType , selectedCityId : $scope.selectedCityId, finalSelectedCategoryId:  $scope.finalSelectedCategoryId, 
+			selectedCategoryIdLevelOne:  $scope.selectedCategoryIdLevelOne,
+			selectedCategoryIdLevelTwo:  $scope.selectedCategoryIdLevelTwo,
+			selectedCategoryIdLevelThree:  $scope.selectedCategoryIdLevelThree,
+			selectedCategoryIdLevelFour:  $scope.selectedCategoryIdLevelFour,
+			searchText:$scope.textSearch,
+			priceFrom: $scope.priceFrom,
+			priceTo:   $scope.priceTo,
+			yearMin: $scope.yearMin,
+			yearMax: $scope.yearMax,
+			kmFrom: $scope.KMFrom,
+			kmTo: $scope.KMTo,
+			sellerType: $scope.selectedSellerType,
+			bedroomMin: $scope.bedroomMin,
+			bedroomMax: $scope.bedroomMax},
+            {notify: false});
+	}
+	/**setting selected city id when drop down changes**/
+	$scope.setSelectedCityId=function (selectedCityObject){
+		$scope.selectedCityId= selectedCityObject.cityId;
+	}
+	/**setting selected sellerType id when drop down changes**/
+	$scope.setSelectedSellerTypeId=function (selectedSellerTypeObject){
+		$scope.sellerType= selectedSellerTypeObject.id;
 	}
 
 
@@ -386,6 +410,7 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 		cityFactory.getCities().success(
 				function(data) {
 					$scope.listCities= data;
+					$scope.selectedCityObject = $scope.listCities[$scope.selectedCityId];
 				});
 	}
 	//function to get city name by searching category id
@@ -693,93 +718,103 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 	function initializeSearchTypeFields(searchType){
 		switch(searchType) {
 		case searchTypeConstant.BASIC_SEARCH:
-			$scope.selectedCityId=$stateParams.basicSelectedCityId;
-			$scope.finalSelectedCategoryId = $stateParams.basicSelectedCategoryId;
-			$scope.selectedCategoryIdLevelOne=$stateParams.basicSelectedCategoryId;
-			$scope.searchText= $stateParams.basicSearchText;
+			$scope.selectedCityId=$stateParams.selectedCityId;
+			$scope.finalSelectedCategoryId = $stateParams.finalSelectedCategoryId;
+			$scope.selectedCategoryIdLevelOne=$stateParams.selectedCategoryIdLevelOne;
+			$scope.searchText= $stateParams.searchText;
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_CAR:
 			initializeYears();
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
-			$scope.yearMin = $stateParams.advYearMin;
-			$scope.yearMax = $stateParams.advYearMax;
-			$scope.KMFrom =$stateParams.advKMFrom;
-			$scope.KMTo = $stateParams.advKMTo;
-			$scope.sellerType = $stateParams.advSellerType;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
+			$scope.yearMin = $stateParams.yearMin;
+			$scope.yearMax = $stateParams.yearMax;
+			$scope.KMFrom =$stateParams.kmFrom;
+			$scope.KMTo = $stateParams.kmTo;
+			$scope.sellerType = $stateParams.sellerType;
+			/*****initializing object for selec drop down menu ****/
+			$scope.selectedSellerTypeObject = $scope.listSellerTypes[$stateParams.sellerType];
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_CAR_PARTS:
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
-			$scope.sellerType = $stateParams.advSellerType;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
+			$scope.sellerType = $stateParams.sellerType;
+			/*****initializing object for selec drop down menu ****/
+			$scope.selectedSellerTypeObject = $scope.listSellerTypes[$stateParams.sellerType];
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_BOATS:
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
-			$scope.sellerType = $stateParams.advSellerType;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
+			$scope.sellerType = $stateParams.sellerType;
+			/*****initializing object for selec drop down menu ****/
+			$scope.selectedSellerTypeObject = $scope.listSellerTypes[$stateParams.sellerType];
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_HEAVY_VEHICLE:
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
-			$scope.yearMin = $stateParams.advYearMin;
-			$scope.yearMax = $stateParams.advYearMax;
-			$scope.KMFrom =$stateParams.advKMFrom;
-			$scope.KMTo = $stateParams.advKMTo;
-			$scope.sellerType = $stateParams.advSellerType;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
+			$scope.yearMin = $stateParams.yearMin;
+			$scope.yearMax = $stateParams.yearMax;
+			$scope.KMFrom =$stateParams.kmFrom;
+			$scope.KMTo = $stateParams.kmTo;
+			$scope.sellerType = $stateParams.sellerType;
+			/*****initializing object for selec drop down menu ****/
+			$scope.selectedSellerTypeObject = $scope.listSellerTypes[$stateParams.sellerType];
 			initializeYears();
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_MOTORCYCLE:
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
-			$scope.sellerType = $stateParams.advSellerType;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
+			$scope.sellerType = $stateParams.sellerType;
+			/*****initializing object for selec drop down menu ****/
+			$scope.selectedSellerTypeObject = $scope.listSellerTypes[$stateParams.sellerType];
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_SALE_RES:
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
-			$scope.bedroomMax = $stateParams.advBedroomMax;
-			$scope.bedroomMin = $stateParams.advBedroomMin;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
+			$scope.bedroomMax = $stateParams.bedroomMax;
+			$scope.bedroomMin = $stateParams.bedroomMin;
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_SALE_COMM:
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_SALE_UNITS:
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_SALE_LAND:
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_RENT_RES:
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
-			$scope.bedroomMax = $stateParams.advBedroomMax;
-			$scope.bedroomMin = $stateParams.advBedroomMin;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
+			$scope.bedroomMax = $stateParams.bedroomMax;
+			$scope.bedroomMin = $stateParams.bedroomMin;
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_RENT_COMM:
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_RENT_ROOM:
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_DAILY:
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
-			$scope.bedroomMax = $stateParams.advBedroomMax;
-			$scope.bedroomMin = $stateParams.advBedroomMin;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
+			$scope.bedroomMax = $stateParams.bedroomMax;
+			$scope.bedroomMin = $stateParams.bedroomMin;
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_RENT_SHORT_MONTHLY:
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
-			$scope.bedroomMax = $stateParams.advBedroomMax;
-			$scope.bedroomMin = $stateParams.advBedroomMin;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
+			$scope.bedroomMax = $stateParams.bedroomMax;
+			$scope.bedroomMin = $stateParams.bedroomMin;
 			break;
 		case searchTypeConstant.ADVANCE_SEARCH_CLASSIFIED:
-			$scope.priceFrom= $stateParams.advPriceFrom;
-			$scope.priceTo = $stateParams.advPriceTo;
+			$scope.priceFrom= $stateParams.priceFrom;
+			$scope.priceTo = $stateParams.priceTo;
 			break;
 		default:
 			console.log('Default case setSearchType');
@@ -1010,13 +1045,11 @@ hashiApp.controller('ListingController', function($scope, $http, productFactory,
 	$scope.listRootCategories= [];
 	//get root categories of a category. to show the user 
 	$scope.getRootCategoriesByCategoryId= function (categoryId, index) {
-		console.log('categoryId'+ categoryId);
 		var promise= categoryFactory.getRootCategoriesByCategoryId(categoryId);
 		var derivedPromise  = promise.then( function onfulFilled(response) {
 					var data = response.data;
 			        //Sets scope value asynchronously
 					$scope.listRootCategories[index]= data;
-					console.log(data[0].categoryName);
 			        //return value creates derived promise
 					return data;
 				});

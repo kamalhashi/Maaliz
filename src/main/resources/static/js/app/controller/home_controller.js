@@ -278,7 +278,6 @@ hashiApp.controller('HomeController', function($scope, $http, $translate, cityFa
 			var currentYear = new Date().getFullYear();
 			var range = [];
 			for(var i=1900; i <currentYear + 2;i++) {
-				console.log("lopping" + i);
 				range.push(i);
 			}
 			$scope.years = range;
