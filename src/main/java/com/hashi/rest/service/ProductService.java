@@ -1,6 +1,7 @@
 package com.hashi.rest.service;
 
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -121,7 +122,11 @@ public interface  ProductService {
 	 */
 	public int updatePriorityForProduct(Product product, ProductPriority productPriority);
 
-	
+	/*
+	 * Find expired Products for purging products that expired
+	 */
+	public List<Product> findAllExpiredProducts(Date now);
+
 	
 
 }

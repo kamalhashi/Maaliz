@@ -4,6 +4,7 @@ package com.hashi.rest.service;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.Future;
 import java.util.logging.Level;
@@ -176,5 +177,10 @@ public class ProductServiceImpl implements ProductService {
 	public int updatePriorityForProduct(Product product,
 			ProductPriority productPriority) {
 		return productRepository.updatePriorityForProduct(product, productPriority);
+	}
+
+	@Override
+	public List<Product> findAllExpiredProducts(Date now) {
+		return productRepository.findProductsByExpiryDateLessThan(now);
 	}
 }

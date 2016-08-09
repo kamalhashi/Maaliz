@@ -1,9 +1,7 @@
 package com.hashi.repository;
+import java.util.Date;
 import java.util.List;
 
-import org.springframework.cache.annotation.CacheConfig;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,16 +10,11 @@ import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.EntityGraph.EntityGraphType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RestResource;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Repository;
-
-import com.hashi.rest.domain.Images;
 import com.hashi.rest.domain.Product;
-import com.hashi.rest.enums.ImageStatus;
 import com.hashi.rest.enums.ProductPriority;
 
 @Repository
@@ -65,10 +58,21 @@ public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpec
     		, nativeQuery = true)	
     public  List<Object> countCategoriesSomaliProductsByDepth(@Param("categoryId") Long categoryId, @Param("depth") Integer depth);
 
-
-    
     public  Page<Product> findAll(Specification<Product> spec, Pageable pageable);
     
     public List<Product> findProductsByUserUserId(Long userId);
+    /*
+     * find all expired products by comparing todays date
+     * @param Date now to be checked against products
+     * @return List of products 
+     */
+    public List<Product> findProductsByExpiryDateLessThan(Date now);
+    public void deleteProductByProductId(Long productId);
+    
+    /*
+     	@Modifying
+     	@Query("delete from VerificationToken t where t.expiryDate <= ?1")
+     	void deleteAllExpiredSince(Date now); 
+     */
 
 }
