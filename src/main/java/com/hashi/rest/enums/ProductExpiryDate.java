@@ -2,12 +2,12 @@ package com.hashi.rest.enums;
 
 public enum ProductExpiryDate {
 
-	PRIORITY_NORMAL(15) {
+	PRIORITY_NORMAL(60) {
 		public String description() {
 			return "Priority Level (0)";
 		}
 	},
-	PRIORITY_FEATURED(30) {
+	PRIORITY_FEATURED(60) {
 		public String description() {
 			return "Priority Level (1)";
 
