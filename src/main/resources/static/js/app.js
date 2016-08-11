@@ -431,7 +431,7 @@ hashiApp
 		templateUrl: "js/app/partial/error.html",
 		controller : 'PostAdJobController'
 	});
-
+	$locationProvider.hashPrefix('!');
 });
 
 hashiApp.run(function(auth, $rootScope, $state, editableOptions, $http, $location, $window, $translate) {
