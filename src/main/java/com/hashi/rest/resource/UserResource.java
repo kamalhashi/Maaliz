@@ -39,6 +39,7 @@ import com.hashi.rest.enums.Role;
 import com.hashi.rest.exception.UserNotFoundException;
 import com.hashi.rest.service.UserService;
 import com.hashi.rest.service.EmailService;
+import com.hashi.rest.vo.EmailAdPendingVO;
 
 
 
@@ -181,9 +182,12 @@ public class UserResource {
 	 */
 	@RequestMapping("/user")
 	@ResponseBody
-	public Principal user(Principal user) {    
+	public Principal user(Principal user) {   
+		//EmailAdPendingVO emailAdPending = new EmailAdPendingVO();
+		//emailService.sendEmailAdPending(userRepository.findOne(822L));
 		return user;
 	}
+	
 	
 	
 	/*

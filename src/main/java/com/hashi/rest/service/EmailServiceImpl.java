@@ -8,6 +8,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.event.SimpleApplicationEventMulticaster;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.core.task.AsyncTaskExecutor;
+import org.springframework.core.task.SyncTaskExecutor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,6 +25,7 @@ import com.hashi.rest.exception.VerificationNotFoundException;
 import com.hashi.rest.mail.MailEvent;
 import com.hashi.rest.mail.MailListener;
 import com.hashi.rest.resource.RegistrationController;
+import com.hashi.rest.vo.EmailAdPendingVO;
 import com.hashi.rest.vo.EmailEnquiryVo;
 import com.hashi.rest.vo.EmailReplyAdVO;
 import com.hashi.rest.vo.EmailReplyJobVO;
@@ -46,6 +48,8 @@ public class EmailServiceImpl implements EmailService {
 	private SimpleApplicationEventMulticaster simpleApplicationEventMulticaster;
 	@Autowired
 	private AsyncTaskExecutor asyncTaskExecutor;
+	@Autowired
+	private SyncTaskExecutor syncTaskExecutor;
 	@Autowired
 	ApplicationConfig config;
 	@Autowired
@@ -81,6 +85,18 @@ public class EmailServiceImpl implements EmailService {
 		simpleApplicationEventMulticaster.setTaskExecutor(asyncTaskExecutor);		
 		simpleApplicationEventMulticaster.multicastEvent(new MailEvent( new EmailVerificationVO(MailType.LOST_PASSWORD, LocaleContextHolder.getLocale(), user, token,config.getHostnameUrl())));				
 	}
+	
+	@Override
+	/*
+	 * (non-Javadoc)
+	 * @see com.hashi.rest.service.EmailService#sendEmailAdPending(com.hashi.rest.vo.EmailVO, java.lang.Long)
+	 * send email pending to the customer , to let them know their ad still pending
+	 * 
+	 */
+	public  void sendEmailAdPending(User user) {
+		simpleApplicationEventMulticaster.setTaskExecutor(syncTaskExecutor);		
+		simpleApplicationEventMulticaster.multicastEvent(new MailEvent( new EmailAdPendingVO(MailType.AD_PENDING, LocaleContextHolder.getLocale(), user, config.getHostnameUrl())));				
+	}
 
 	@Override
 	public <T extends EmailVO> void sendCustomerEnquiry(T t) {
@@ -89,4 +105,5 @@ public class EmailServiceImpl implements EmailService {
 		simpleApplicationEventMulticaster.setTaskExecutor(asyncTaskExecutor);		
 		simpleApplicationEventMulticaster.multicastEvent(new MailEvent( new EmailEnquiryVo(MailType.ENQUIRY, LocaleContextHolder.getLocale(), user)));						
 	}
+
 }

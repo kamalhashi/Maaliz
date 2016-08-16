@@ -36,6 +36,12 @@ public interface EmailService {
      */
     public <T extends EmailVO> void  sendEmailReplyJob(T   t, Long userId);
     
+    /*
+     * 
+     * Send ad email notification to the customer, to let them know their ad is pending.
+     */
+    public void  sendEmailAdPending(User user);
+    
     /**
      * 
      * send enquiry email 

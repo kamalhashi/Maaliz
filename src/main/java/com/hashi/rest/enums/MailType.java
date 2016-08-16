@@ -5,5 +5,6 @@ public enum MailType {
 	EMAIL_REGISTRATION,
 	REPLY_AD,
 	REPLY_JOB,
+	AD_PENDING,
 	ENQUIRY
 }

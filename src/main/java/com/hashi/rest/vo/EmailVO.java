@@ -16,7 +16,8 @@ import com.hashi.search.vo.AdvanceSearchCarParts;
 @JsonSubTypes(value = {
     @JsonSubTypes.Type(value = EmailReplyAdVO.class),
     @JsonSubTypes.Type(value = EmailVerificationVO.class),
-    @JsonSubTypes.Type(value = EmailReplyJobVO.class)
+    @JsonSubTypes.Type(value = EmailReplyJobVO.class),
+    @JsonSubTypes.Type(value = EmailAdPendingVO.class)
     
 })
 public class EmailVO {

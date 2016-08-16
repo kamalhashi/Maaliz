@@ -27,6 +27,7 @@ import com.hashi.config.ApplicationConfig;
 import com.hashi.rest.enums.MailType;
 import com.hashi.rest.exception.CustomMessagingException;
 import com.hashi.rest.exception.UserNotFoundException;
+import com.hashi.rest.vo.EmailAdPendingVO;
 import com.hashi.rest.vo.EmailEnquiryVo;
 import com.hashi.rest.vo.EmailReplyAdVO;
 import com.hashi.rest.vo.EmailReplyJobVO;
@@ -84,6 +85,9 @@ public class MailListener implements ApplicationListener<MailEvent>{
 		case ENQUIRY:
 			sendCustomerEnquiryEmail((EmailEnquiryVo) event.getEmailVO());
 			break;
+		case AD_PENDING:
+			sendAdPendingEmail((EmailAdPendingVO) event.getEmailVO());
+			break;
 		default:
 			break;
 		}
@@ -127,6 +131,14 @@ public class MailListener implements ApplicationListener<MailEvent>{
 		Map<String, String> resources = new HashMap<String, String>();
 		return sendEmail(emailEnquiryVo,  message.getMessage("email.emailCustomerEnquiry", null, emailEnquiryVo.getLocal()),
 				"customer_enquiry_email.html", resources);
+	}
+	
+	
+	public EmailVO sendAdPendingEmail(final EmailAdPendingVO emailEnquiryVo) {
+		System.out.println("sending the email huhahha");
+		Map<String, String> resources = new HashMap<String, String>();
+		return sendEmail(emailEnquiryVo,  message.getMessage("email.emailCustomerEnquiry", null, emailEnquiryVo.getLocal()),
+				"ad_pending_email.html", resources);
 	}
 
 
