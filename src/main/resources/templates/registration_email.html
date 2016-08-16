@@ -22,18 +22,15 @@
 
               <!-- MESSAGE -->
 
-              <p>Thanks for registering with <strong th:text="#{company.name}"></strong>. 
-                To complete your registration, please click <a th:href="@{${emailVO.getHostNameUrl()} + 'register_token?token=' + ${emailVO.getToken().getToken()} }">this link</a> to validate your email address.</p>
+             <p> </p>
+              Thanks for registering with <strong th:text="#{company.name}"></strong>.
+              <br></br> To complete your registration, please click <a th:href="@{${emailVO.getHostNameUrl()} + 'register_token?token=' + ${emailVO.getToken().getToken()} }">this link</a> to validate your email address.
 
      
 
               <!-- LEGALESE -->
 
               <div style="font-size: 12px;">
-                <p>Please don't reply to this automatically generated email.</p>
-
-                <p>What is this doing in my mailbox?</p>
-
 
                 <p>Thanks for registering with <strong th:text="#{company.name}"></strong>!</p>
               </div>
