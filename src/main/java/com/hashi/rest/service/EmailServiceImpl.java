@@ -49,8 +49,6 @@ public class EmailServiceImpl implements EmailService {
 	@Autowired
 	private AsyncTaskExecutor asyncTaskExecutor;
 	@Autowired
-	private SyncTaskExecutor syncTaskExecutor;
-	@Autowired
 	ApplicationConfig config;
 	@Autowired
 	MailListener mailListener;
@@ -94,7 +92,7 @@ public class EmailServiceImpl implements EmailService {
 	 * 
 	 */
 	public  void sendEmailAdPending(User user) {
-		simpleApplicationEventMulticaster.setTaskExecutor(syncTaskExecutor);		
+		simpleApplicationEventMulticaster.setTaskExecutor(asyncTaskExecutor);		
 		simpleApplicationEventMulticaster.multicastEvent(new MailEvent( new EmailAdPendingVO(MailType.AD_PENDING, LocaleContextHolder.getLocale(), user, config.getHostnameUrl())));				
 	}
 
