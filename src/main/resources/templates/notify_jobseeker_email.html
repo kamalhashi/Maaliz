@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Maaliz.com - Notification application sent</title>
+  </head>
+  <body style="margin: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333333; background-color: #F2F2F2;">
+    <table style="width: 100%; background-color: #F2F2F2; height: 100%;">
+      <tr><td style="width: 100%;">
+
+        <table style="background-color: #ffffff; border-radius: 10px; width: 935px;">
+          <tr>
+
+            <!-- HEADER MESSAGE -->
+            <td style="padding-left: 30px; padding-bottom: 20px; padding-top: 10px;"><h2> Dear <span th:text="${emailVO.getUser().getFirstname()}"></span>,
+            </h2></td>
+
+          </tr>
+
+          <tr>
+            <td style="padding-left: 30px; border-left: 2px solid #E7E7E8;">
+
+              <!-- MESSAGE -->
+                 <p>Thank you for your interest in the <strong th:text="${emailVO.getProductTitle()}"></strong> position. </p>
+                 <br>Good news. Your application has been sent directly to the employer successfully.</br>             
+                 <p>Thanks for using the <strong th:text="#{company.name}"> </strong></p>
+            </td>
+          </tr> 
+        </table>
+
+      </td></tr>
+    </table>
+  </body>
+</html>

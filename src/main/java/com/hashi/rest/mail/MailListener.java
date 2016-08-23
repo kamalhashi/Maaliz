@@ -29,6 +29,7 @@ import com.hashi.rest.exception.CustomMessagingException;
 import com.hashi.rest.exception.UserNotFoundException;
 import com.hashi.rest.vo.EmailAdPendingVO;
 import com.hashi.rest.vo.EmailEnquiryVo;
+import com.hashi.rest.vo.EmailNotificationJobSeekerVO;
 import com.hashi.rest.vo.EmailReplyAdVO;
 import com.hashi.rest.vo.EmailReplyJobVO;
 import com.hashi.rest.vo.EmailVO;
@@ -88,6 +89,9 @@ public class MailListener implements ApplicationListener<MailEvent>{
 		case AD_PENDING:
 			sendAdPendingEmail((EmailAdPendingVO) event.getEmailVO());
 			break;
+		case NOTIFY_JOBSEEKER:
+			sendNotificationJobSeekerEmail((EmailNotificationJobSeekerVO) event.getEmailVO());
+			break;
 		default:
 			break;
 		}
@@ -125,6 +129,12 @@ public class MailListener implements ApplicationListener<MailEvent>{
 		Map<String, String> resources = new HashMap<String, String>();
 		return sendEmail(emailReplyJobVO,  message.getMessage("email.emailReplyJob", null, emailReplyJobVO.getLocal()),
 				"reply_job_email.html", resources);
+	}
+	//send notification email to the jobSeeker once he apply the job.
+	public EmailVO sendNotificationJobSeekerEmail(final EmailNotificationJobSeekerVO emailReplyJobVO) {
+		Map<String, String> resources = new HashMap<String, String>();
+		return sendEmail(emailReplyJobVO,  message.getMessage("email.emailNotificationJobSeeker", null, emailReplyJobVO.getLocal()) + emailReplyJobVO.getProductTitle(),
+				"notify_jobseeker_email.html", resources);
 	}
 	
 	public EmailVO sendCustomerEnquiryEmail(final EmailEnquiryVo emailEnquiryVo) {

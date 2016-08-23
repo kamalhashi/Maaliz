@@ -32,9 +32,15 @@ public interface EmailService {
     
     /*
      * 
-     * Send reply email to job.
+     * Send notification email to the employer, to notify someone has applied its job.
      */
-    public <T extends EmailVO> void  sendEmailReplyJob(T   t, Long userId);
+    public <T extends EmailVO> void  sendNotificationJobEmployerEmail(T   t, Long userId);
+    
+    /*
+     * 
+     * Send notification email to the jobseeker, to notify his application has been sent to the employer
+     */
+    public <T extends EmailVO>  void  sendNotificationJobSeekerEmail(Long userId, String productTitle);
     
     /*
      * 

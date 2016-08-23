@@ -301,34 +301,32 @@
 							</div>
 							
 							<div class="row">
-								<div class="col-sm-5">
-									<div class="form-group has-feedback"
-										ng-class="{ 'has-error': postAdForm.selectCompanySize.$touched && 
-									    postAdForm.selectCompanySize.$invalid ||
-						        		postAdForm.$submitted && postAdForm.selectCompanySize.$invalid ,
-						         		'has-success': !postAdForm.selectCompanySize.$invalid}">
+							    <div class="col-sm-5">
+										<div class="form-group has-feedback"
+										ng-class="{ 'has-error': postAdForm.inputCompanyName.$touched && 
+									    postAdForm.inputCompanyName.$invalid ||
+						        		postAdForm.$submitted && postAdForm.inputCompanyName.$invalid ,
+						         		'has-success': !postAdForm.inputCompanyName.$invalid}">
               
-										<label for="selectCompanySize" class="control-label">{{'COMPANY_SIZE' | translate}}</label> 
-										<select class="form-control"  ng-model="ad.companySize"
-											name="selectCompanySize"
-											ng-options="companySize.id as companySize.name for companySize in constantCompanySize"
+										<label for="inputCompanyName" class="control-label">{{'COMPANY_NAME' | translate }}</label> 
+										<input class="form-control"  ng-model="ad.companyName"
+											name="inputCompanyName"
 											required>
-										</select> 
 										
 										<span class="glyphicon glyphicon-ok form-control-feedback"
-											ng-show="postAdForm.selectCompanySize.$touched && !postAdForm.selectCompanySize.$invalid">
+											ng-show="postAdForm.inputCompanyName.$touched && !postAdForm.inputCompanyName.$invalid">
 										</span> <span
 											class="glyphicon glyphicon-remove form-control-feedback"
-											ng-show="postAdForm.selectCompanySize.$touched && postAdForm.selectCompanySize.$invalid || postAdForm.$submitted &&  postAdForm.selectCompanySize.$invalid">
+											ng-show="postAdForm.inputCompanyName.$touched && postAdForm.inputCompanyName.$invalid || postAdForm.$submitted &&  postAdForm.inputCompanyName.$invalid">
 										</span>
 										<div class="help-block with-errors"
-											ng-messages="postAdForm.selectCompanySize.$error"
-											ng-show="postAdForm.selectCompanySize.$touched || postAdForm.$submitted">
+											ng-messages="postAdForm.inputCompanyName.$error"
+											ng-show="postAdForm.inputCompanyName.$touched || postAdForm.$submitted">
 											<div ng-messages-include="messages.html"></div>
 										</div>
-									</div>
-								</div>
-
+									</div>	
+								</div>	
+								
 								<div class="col-sm-5 col-sm-offset-2">
 										<div class="form-group has-feedback"
 										ng-class="{ 'has-error': postAdForm.selectListedBy.$touched && 
@@ -359,60 +357,7 @@
 							</div>
 							
 							
-							<div class="row">
-								<div class="col-sm-5">
-									<div class="form-group has-feedback"
-										ng-class="{ 'has-error': postAdForm.inputBenefits.$touched && 
-									    postAdForm.inputBenefits.$invalid ||
-						        		postAdForm.$submitted && postAdForm.inputBenefits.$invalid ,
-						         		'has-success': !postAdForm.inputBenefits.$invalid}">
-              
-										<label for="inputBenefits" class="control-label">{{'BENEFITS' | translate }}</label> 
-										<input class="form-control"  ng-model="ad.benefits" 
-											name="inputBenefits"
-											placeholder="{{'BENEFITS_DESC' | translate}}"
-											required>
-										
-										<span class="glyphicon glyphicon-ok form-control-feedback"
-											ng-show="postAdForm.inputBenefits.$touched && !postAdForm.inputBenefits.$invalid">
-										</span> <span
-											class="glyphicon glyphicon-remove form-control-feedback"
-											ng-show="postAdForm.inputBenefits.$touched && postAdForm.inputBenefits.$invalid || postAdForm.$submitted &&  postAdForm.inputBenefits.$invalid">
-										</span>
-										<div class="help-block with-errors"
-											ng-messages="postAdForm.inputBenefits.$error"
-											ng-show="postAdForm.inputBenefits.$touched || postAdForm.$submitted">
-											<div ng-messages-include="messages.html"></div>
-										</div>
-									</div>
-								</div>
-
-								<div class="col-sm-5 col-sm-offset-2">
-										<div class="form-group has-feedback"
-										ng-class="{ 'has-error': postAdForm.inputCompanyName.$touched && 
-									    postAdForm.inputCompanyName.$invalid ||
-						        		postAdForm.$submitted && postAdForm.inputCompanyName.$invalid ,
-						         		'has-success': !postAdForm.inputCompanyName.$invalid}">
-              
-										<label for="inputCompanyName" class="control-label">{{'COMPANY_NAME' | translate }}</label> 
-										<input class="form-control"  ng-model="ad.companyName"
-											name="inputCompanyName"
-											required>
-										
-										<span class="glyphicon glyphicon-ok form-control-feedback"
-											ng-show="postAdForm.inputCompanyName.$touched && !postAdForm.inputCompanyName.$invalid">
-										</span> <span
-											class="glyphicon glyphicon-remove form-control-feedback"
-											ng-show="postAdForm.inputCompanyName.$touched && postAdForm.inputCompanyName.$invalid || postAdForm.$submitted &&  postAdForm.inputCompanyName.$invalid">
-										</span>
-										<div class="help-block with-errors"
-											ng-messages="postAdForm.inputCompanyName.$error"
-											ng-show="postAdForm.inputCompanyName.$touched || postAdForm.$submitted">
-											<div ng-messages-include="messages.html"></div>
-										</div>
-									</div>	
-								</div>								
-							</div>
+							
 							
 							
 							<div class="row">

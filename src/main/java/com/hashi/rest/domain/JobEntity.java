@@ -29,14 +29,10 @@ public class JobEntity extends Product {
 	private Integer cvRequired;
 	@Column(name = "MONTHLY_SALARY")
 	private Integer monthSalary;
-	@Column(name = "BENEFITS")
-	private String benefits;
 	@Column(name = "COMPANY_NAME")
 	private String companyName;
 	@Column(name = "JOB_LOCATION")
 	private String jobLocation;
-	@Column(name = "COMPANY_SIZE")
-	private Integer companySize;
 	@Column(name = "LISTED_BY")
 	private Integer listedBy;
 	@Temporal(TemporalType.DATE)
@@ -79,23 +75,11 @@ public class JobEntity extends Product {
 	public void setMonthSalary(Integer monthSalary) {
 		this.monthSalary = monthSalary;
 	}
-	public String getBenefits() {
-		return benefits;
-	}
-	public void setBenefits(String benefits) {
-		this.benefits = benefits;
-	}
 	public String getCompanyName() {
 		return companyName;
 	}
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
-	}
-	public Integer getCompanySize() {
-		return companySize;
-	}
-	public void setCompanySize(Integer companySize) {
-		this.companySize = companySize;
 	}
 	public Integer getListedBy() {
 		return listedBy;

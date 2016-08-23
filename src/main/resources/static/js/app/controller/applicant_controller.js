@@ -1,10 +1,10 @@
 var hashiApp = angular.module('hashiApp') // gets it
 
 hashiApp.controller('ApplicantController', function($scope , $translate,
-		applicantFactory, auth, promiseObj) {
+		applicantFactory, auth, promiseObj, bucketName) {
 
 	/*********Advance search variables**********************/
-
+	$scope.bucketName= bucketName;
 	$scope.oneAtATime = true;
 	$scope.selectedProductId;
 	$scope.currentPage = 1;

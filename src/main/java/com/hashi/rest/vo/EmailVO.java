@@ -1,23 +1,19 @@
 package com.hashi.rest.vo;
 
-import java.io.Serializable;
 import java.util.Locale;
-
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.hashi.rest.domain.MotorCar;
-import com.hashi.rest.domain.MotorCycles;
 import com.hashi.rest.domain.User;
 import com.hashi.rest.enums.MailType;
-import com.hashi.search.vo.AdvanceSearchCar;
-import com.hashi.search.vo.AdvanceSearchCarParts;
+
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
 @JsonSubTypes(value = {
     @JsonSubTypes.Type(value = EmailReplyAdVO.class),
     @JsonSubTypes.Type(value = EmailVerificationVO.class),
     @JsonSubTypes.Type(value = EmailReplyJobVO.class),
-    @JsonSubTypes.Type(value = EmailAdPendingVO.class)
+    @JsonSubTypes.Type(value = EmailAdPendingVO.class),
+    @JsonSubTypes.Type(value = EmailNotificationJobSeekerVO.class)
     
 })
 public class EmailVO {

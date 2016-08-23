@@ -8,25 +8,21 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.event.SimpleApplicationEventMulticaster;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.core.task.AsyncTaskExecutor;
-import org.springframework.core.task.SyncTaskExecutor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.hashi.config.ApplicationConfig;
+import com.hashi.repository.ProductRepository;
 import com.hashi.repository.UserRepository;
 import com.hashi.repository.VerificationTokenRepository;
 import com.hashi.rest.domain.User;
 import com.hashi.rest.domain.VerificationToken;
 import com.hashi.rest.enums.MailType;
-import com.hashi.rest.exception.AlreadyVerifiedException;
-import com.hashi.rest.exception.EmailNotFoundException;
-import com.hashi.rest.exception.TokenHasExpiredException;
-import com.hashi.rest.exception.VerificationNotFoundException;
 import com.hashi.rest.mail.MailEvent;
 import com.hashi.rest.mail.MailListener;
 import com.hashi.rest.resource.RegistrationController;
 import com.hashi.rest.vo.EmailAdPendingVO;
 import com.hashi.rest.vo.EmailEnquiryVo;
+import com.hashi.rest.vo.EmailNotificationJobSeekerVO;
 import com.hashi.rest.vo.EmailReplyAdVO;
 import com.hashi.rest.vo.EmailReplyJobVO;
 import com.hashi.rest.vo.EmailVO;
@@ -42,6 +38,8 @@ public class EmailServiceImpl implements EmailService {
 	private VerificationTokenRepository verificationRepository;
 	@Autowired
 	private UserRepository userRepository;
+	@Autowired
+	private ProductRepository productRepository;
 	@Autowired
 	private MessageSource message;
 	@Autowired
@@ -63,7 +61,7 @@ public class EmailServiceImpl implements EmailService {
 	}
 
 	@Override
-	public <T extends EmailVO> void sendEmailReplyJob(T t, Long userId) {
+	public <T extends EmailVO> void sendNotificationJobEmployerEmail(T t, Long userId) {
 		t.setLocal(LocaleContextHolder.getLocale());
 	    t.setUser(userRepository.findByUserId(userId));
 	    ((EmailReplyJobVO)t).setHostNameUrl(config.getHostnameUrl());
@@ -102,6 +100,12 @@ public class EmailServiceImpl implements EmailService {
 		user.setEmail(config.getEmailFromAddress());
 		simpleApplicationEventMulticaster.setTaskExecutor(asyncTaskExecutor);		
 		simpleApplicationEventMulticaster.multicastEvent(new MailEvent( new EmailEnquiryVo(MailType.ENQUIRY, LocaleContextHolder.getLocale(), user)));						
+	}
+
+	@Override
+	public <T extends EmailVO> void sendNotificationJobSeekerEmail(Long userId, String productTitle) {
+		simpleApplicationEventMulticaster.setTaskExecutor(asyncTaskExecutor);		
+		simpleApplicationEventMulticaster.multicastEvent(new MailEvent( new EmailNotificationJobSeekerVO(MailType.NOTIFY_JOBSEEKER, LocaleContextHolder.getLocale(), userRepository.findByUserId(userId), productTitle)));				
 	}
 
 }

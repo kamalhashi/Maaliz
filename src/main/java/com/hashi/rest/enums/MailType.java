@@ -6,5 +6,6 @@ public enum MailType {
 	REPLY_AD,
 	REPLY_JOB,
 	AD_PENDING,
-	ENQUIRY
+	ENQUIRY,
+	NOTIFY_JOBSEEKER
 }

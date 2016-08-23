@@ -149,7 +149,10 @@ public class ProfileProductResource {
 			}
 			
 			//send email when the process finishes to the emplyer
-			emailService.sendEmailReplyJob(replyJob, employerUserId);
+			emailService.sendNotificationJobEmployerEmail(replyJob, employerUserId);
+			//send email when the process finishes to the job-seeker
+			emailService.sendNotificationJobSeekerEmail(jobSeekerUserId, replyJob.getProductTitle());
+
 		}else{ //there's another case where the user has profile and applied the job 
 			Profile profile= profileService.findProfileByProfileId(profileId);
 			/*if the user has applied the job then don't allow the same user to apply the job multiple times.
@@ -171,7 +174,10 @@ public class ProfileProductResource {
 				 }else{
 					 amazonS3Service.asyncDeleteS3Directory(jobSeekerUserId, config.getBucketProfileCV());
 				 }
-				 emailService.sendEmailReplyJob(replyJob, employerUserId);
+				 //send email when the process finishes to the employer
+				 emailService.sendNotificationJobEmployerEmail(replyJob, employerUserId);
+				 //send email when the process finishes to the job-seeker
+				 emailService.sendNotificationJobSeekerEmail(jobSeekerUserId, replyJob.getProductTitle());
 			 }
 		}
 		return	new ResponseEntity<ProfileProduct>(profileProduct, HttpStatus.CREATED); 
