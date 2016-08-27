@@ -628,11 +628,12 @@
                             	    <div class="col-sm-10">
                             	    
                                 		 <input places-auto-complete
-    									  ng-model="address"
-    									  class="form-control"
-    									  component-restrictions="{country:'ae'}"
-										  placeholder="Enter a location"
-    									  on-place-changed="placeChanged()" />
+                                		 	name="inputNeighbourhood" 
+    									    ng-model="address"
+    									    class="form-control"
+    									    component-restrictions="{country:'ae'}"
+										    placeholder="Enter a location"
+    									    on-place-changed="placeChanged()" />
 										
 										<span class="glyphicon glyphicon-ok form-control-feedback"
 											ng-show="postAdForm.inputNeighbourhoodComplete.$touched && !postAdForm.inputNeighbourhood.$invalid">
