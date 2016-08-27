@@ -299,27 +299,10 @@ hashiApp.controller('PostAdSaleUnitsController', function($scope, $state, auth,c
 		fileUploaderFactory.fileUploadedSuccessfully(file, index);
 	}	
 
-	$scope.addMarker = function(event) {
-		$scope.ad.location=mapFactory.addMarker(event);
+	$scope.placeChanged = function() {
+		$scope.ad.location= mapFactory.placeChanged(this.getPlace());
+		$scope.ad.neighbourhood= $scope.ad.location.neighborhood
 	};
-	
-/****autocomplete neightbourhood**/
-	
-	$scope.selectedNeighbourhood= function(selected) {
-		if(selected){
-			if (typeof selected.originalObject.neighbourhoodName != "undefined") {
-				$scope.ad.neighbourhood=selected.originalObject.neighbourhoodName;
-				return;
-			}else{
-				$scope.ad.neighbourhood=selected.originalObject;
-				return;
-			}
-		}else{
-			$scope.ad.neighbourhood = null;
-		}
-		return;
-	}
-	
 
 });
 

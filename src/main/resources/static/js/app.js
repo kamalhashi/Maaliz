@@ -429,7 +429,7 @@ hashiApp
       .state('error', {
 		url: "/error",
 		templateUrl: "js/app/partial/error.html",
-		controller : 'PostAdJobController'
+		controller : 'ErrorController'
 	});
 	$locationProvider.hashPrefix('!');
 });

@@ -532,23 +532,13 @@
 
                             		<label for="inputNeighbourhood" class="col-sm-2 control-label">{{'NEIGHBOURHOOD' | translate}}</label>
                             	    <div class="col-sm-10">
-                                		<input type="hidden" class="form-control" 
-                                			name="inputNeighbourhood" 
-                                		    ng-model="ad.neighbourhood"
-                                		    required>
-                                		
-										<angucomplete-alt input-class="form-control"
-											placeholder="enter your area here" 
-											selected-object="selectedNeighbourhood"
-											remote-url="http://maaliz-uae-rest.cfapps.io/autocomplete/neighbourhood/"
-											title-field="neighbourhoodName" minlength="1" 		
-											field-required="true" type="text"
-											input-name="inputNeighbourhoodComplete" 
-											override-suggestions="true"
-											initial-value="ad.neighbourhood"
-											clear-selected="true"
-											match-class="highlight">
-										</angucomplete-alt>
+                                		<input places-auto-complete
+											name="inputNeighbourhood" 
+    									    ng-model="address"
+    									    class="form-control"
+    									    component-restrictions="{country:'ae'}"
+										    placeholder="Enter a location"
+    									    on-place-changed="placeChanged()" />
 										
 										<span class="glyphicon glyphicon-ok form-control-feedback"
 											ng-show="postAdForm.inputNeighbourhoodComplete.$touched && !postAdForm.inputNeighbourhood.$invalid">
@@ -565,18 +555,16 @@
                         	      </div>
                               </div>
 							<div>
-								<map center="{{ad.location.latitude}}, {{ad.location.longtitude}}" zoom="9"
-									on-click="addMarker()">
-									<marker
-										position="{{ad.location.latitude}}, {{ad.location.longtitude}}"></marker>
+								<map center="{{ad.location.latitude}}, {{ad.location.longtitude}}">
+									<marker position="{{ad.location.latitude}}, {{ad.location.longtitude}}"></marker>
 								</map>
 							</div>
 
 							<br />
 							<p>
 								<strong class="text-primary">{{'YOUR_AD_LOCATION' | translate}}</strong>
-								{{ad.location.country}}, {{ad.location.region}}, {{ad.location.city}}, 
-								{{!ad.location.city ? '' : ', '}}  {{ad.location.routeName}}
+								{{ad.location.neighborhood}}, {{ad.location.city}} 
+								{{!ad.location.city ? '' : ', '}}  {{ad.location.country}}
 							</p>
 						</div>
 					</div>

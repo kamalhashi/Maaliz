@@ -1,6 +1,32 @@
-<div style="margin-bottom: 200px; border: 1px solid #ccc;" dotdotdot>
+
+<div>
+
+  
+  Enter an address: <br/>
+  <input places-auto-complete size=80
+    ng-model="address"
+    component-restrictions="{country:'ae'}"
+    on-place-changed="placeChanged()" /> <br/>
+  <div>
+    Address = {{place.formatted_address}} <br/>
+    Latitude: {{ad.location.latitude}}<br/>
+    Longtitude: {{ad.location.longtitude}}<br/>
+     Country: {{ad.location.country}}<br/>
+     City: {{ad.location.city}}<br/>
+     Neighborhood: {{ad.location.neighborhood}}<br/>
+     Route Name: {{ad.location.routeName}}<br/>
+  </div>
+     address : {{address}}
+  <map center="{{ad.location.latitude}}, {{ad.location.longtitude}}">
+		<marker
+				position="{{ad.location.latitude}}, {{ad.location.longtitude}}">
+	    </marker>
+  </map>
 
 </div>
-
-
-<a href="https://www.roberthalf.ae/job-search/dubai/finance-manager/6310-AEen?keywords=&location=" class="btn btn-primary btn-lg btn-post" >Apply now</a>
+</p>
+</p>
+</p>
+</p>
+</p></p>
+</p></p>

@@ -92,7 +92,7 @@ public class ProductSpecification {
 				// check the city name and then load products related to that city
 				if (cityId > 0) {
 					Path<Locations> location = root.get(Product_.location);
-					Path<String> region = location.get(Locations_.region);
+					Path<String> region = location.get(Locations_.city);
 					predicates.add(cb.equal(cb.upper(region), cityEnglishRepository.findByCityId(cityId).getCityName()
 							.toUpperCase()));
 				}
@@ -143,7 +143,7 @@ public class ProductSpecification {
 				// check the city name and then load products related to that city
 				if (cityId > 0) {
 					Path<Locations> location = root.get(Product_.location);
-					Path<String> region = location.get(Locations_.region);
+					Path<String> region = location.get(Locations_.city);
 					predicates.add(cb.equal(cb.upper(region), cityEnglishRepository.findByCityId(cityId).getCityName()
 							.toUpperCase()));
 				}
@@ -357,7 +357,7 @@ public class ProductSpecification {
 				// check the city name and then load products related to that city
 				if (cityId > 0) {
 					Path<Locations> location = root.get(Product_.location);
-					Path<String> region = location.get(Locations_.region);
+					Path<String> region = location.get(Locations_.city);
 					predicates.add(cb.equal(cb.upper(region), cityEnglishRepository.findByCityId(cityId).getCityName()
 							.toUpperCase()));
 				}

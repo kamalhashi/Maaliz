@@ -1,6 +1,5 @@
 package com.hashi.rest.domain;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,12 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import org.springframework.cache.annotation.Cacheable;
-
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
@@ -27,15 +22,12 @@ public class Locations {
 
 	@Column(name = "COUNTRY")
 	private String country;
+	
+	@Column(name = "NEIGHBORHOOD")
+	private String neighborhood;
 
 	@Column(name = "CITY")
 	private String city;
-
-	@Column(name = "REGION")
-	private String region;
-
-	@Column(name = "ROUTE_NAME")
-	private String routeName;
 
 	@Column(name = "LATITUDE")
 	private double latitude;
@@ -72,15 +64,6 @@ public class Locations {
 		this.city = city;
 	}
 
-
-	public String getRouteName() {
-		return routeName;
-	}
-
-	public void setRouteName(String routeName) {
-		this.routeName = routeName;
-	}
-
 	public double getLatitude() {
 		return latitude;
 	}
@@ -113,12 +96,12 @@ public class Locations {
 		this.locationId = locationId;
 	}
 
-	public String getRegion() {
-		return region;
+	public String getNeighborhood() {
+		return neighborhood;
 	}
 
-	public void setRegion(String region) {
-		this.region = region;
+	public void setNeighborhood(String neighborhood) {
+		this.neighborhood = neighborhood;
 	}
 
 }
