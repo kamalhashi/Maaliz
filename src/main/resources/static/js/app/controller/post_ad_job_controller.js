@@ -210,8 +210,8 @@ hashiApp.controller('PostAdJobController', function($scope, $state, auth,categor
 		$scope.logoImage= file;
 	}	
 
-	$scope.addMarker = function(event) {
-		$scope.ad.location=mapFactory.addMarker(event);
+	$scope.placeChanged = function() {
+		$scope.ad.location= mapFactory.placeChanged(this.getPlace());
 	};
 	
 	/********Date Picker *****************/

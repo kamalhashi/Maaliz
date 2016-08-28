@@ -412,9 +412,14 @@
 						         		'has-success': !postAdForm.inputJobLocation.$invalid}">
               
 										<label for="inputJobLocation" class="control-label">{{'LOCATION_JOB' | translate}}</label> 
-										<input class="form-control"  ng-model="ad.jobLocation"
-											name="inputJobLocation"
-											required>
+										<input places-auto-complete
+                                			name="inputNeighbourhood" 
+    									    ng-model="ad.jobLocation"
+    									    class="form-control"
+    									    component-restrictions="{country:'ae'}"
+										    placeholder="Enter a location"
+    									    on-place-changed="placeChanged()" 
+    									    required/>
 										
 										<span class="glyphicon glyphicon-ok form-control-feedback"
 											ng-show="postAdForm.inputJobLocation.$touched && !postAdForm.inputJobLocation.$invalid">

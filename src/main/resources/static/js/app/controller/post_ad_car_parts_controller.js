@@ -306,8 +306,8 @@ hashiApp.controller('PostAdCarPartsController', function($scope, $state, auth,ca
 		fileUploaderFactory.fileUploadedSuccessfully(file, index);
 	}	
 
-	$scope.addMarker = function(event) {
-		$scope.ad.location=mapFactory.addMarker(event);
+	$scope.placeChanged = function() {
+		$scope.ad.location= mapFactory.placeChanged(this.getPlace());
 	};
 	
 

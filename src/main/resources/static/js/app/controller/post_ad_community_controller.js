@@ -291,11 +291,8 @@ hashiApp.controller('PostAdCommunityController', function($scope, $state, auth,c
 	$scope.fileUploadedSuccessfully  = function(file, index)	{
 		fileUploaderFactory.fileUploadedSuccessfully(file, index);
 	}	
-
-	$scope.addMarker = function(event) {
-		$scope.ad.location=mapFactory.addMarker(event);
+	$scope.placeChanged = function() {
+		$scope.ad.location= mapFactory.placeChanged(this.getPlace());
 	};
-
-
 });
 

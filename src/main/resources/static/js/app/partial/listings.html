@@ -712,7 +712,7 @@
 							<div class="col-sm-8">
 								<p class="muted">
 									<i class="fa fa-map-marker"> </i> <strong> {{'LOCATION' | translate}}: </strong>
-									{{ad.location.neighborhood}} , {{!ad.location.city ? '' : ', '}}
+									{{ad.location.neighborhood}} {{!ad.location.city ? '' : ', '}}
 							        {{ad.location.city}}  {{!ad.location.country? '' : ', '}}
 									{{ad.location.country}}
 								</p>
