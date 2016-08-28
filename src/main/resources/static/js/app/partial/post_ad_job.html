@@ -356,12 +356,38 @@
 								</div>								
 							</div>
 							
-							
-							
-							
-							
 							<div class="row">
-								<div class="col-sm-5">
+							    <div class="col-sm-5">
+								   <div class="form-group has-feedback"
+										ng-class="{ 'has-error': postAdForm.inputJobLocation.$touched && 
+									    postAdForm.inputJobLocation.$invalid ||
+						        		postAdForm.$submitted && postAdForm.inputJobLocation.$invalid ,
+						         		'has-success': !postAdForm.inputJobLocation.$invalid}">
+              
+										<label for="inputJobLocation" class="control-label">{{'LOCATION_JOB' | translate}}</label> 
+										<input places-auto-complete
+                                			name="inputJobLocation" 
+    									    ng-model="ad.jobLocation"
+    									    class="form-control"
+    									    component-restrictions="{country:'ae'}"
+										    placeholder="Enter a location"
+    									    on-place-changed="placeChanged()" 
+    									    required/>
+										
+										<span class="glyphicon glyphicon-ok form-control-feedback"
+											ng-show="postAdForm.inputJobLocation.$touched && !postAdForm.inputJobLocation.$invalid">
+										</span> <span
+											class="glyphicon glyphicon-remove form-control-feedback"
+											ng-show="postAdForm.inputJobLocation.$touched && postAdForm.inputJobLocation.$invalid || postAdForm.$submitted &&  postAdForm.inputJobLocation.$invalid">
+										</span>
+										<div class="help-block with-errors"
+											ng-messages="postAdForm.inputJobLocation.$error"
+											ng-show="postAdForm.inputJobLocation.$touched || postAdForm.$submitted">
+											<div ng-messages-include="messages.html"></div>
+										</div>
+									</div>	
+								</div>
+								<div class="col-sm-5 col-sm-offset-2">
 								  	<div class="form-group has-feedback"
 										ng-class="{ 'has-error': postAdForm.inputClosingDate.$touched && 
 									     postAdForm.inputClosingDate.$invalid ||
@@ -402,37 +428,6 @@
 											<div ng-messages-include="messages.html"></div>
 										</div>
 									</div>
-								</div>	
-								
-							   <div class="col-sm-5 col-sm-offset-2">
-										<div class="form-group has-feedback"
-										ng-class="{ 'has-error': postAdForm.inputJobLocation.$touched && 
-									    postAdForm.inputJobLocation.$invalid ||
-						        		postAdForm.$submitted && postAdForm.inputJobLocation.$invalid ,
-						         		'has-success': !postAdForm.inputJobLocation.$invalid}">
-              
-										<label for="inputJobLocation" class="control-label">{{'LOCATION_JOB' | translate}}</label> 
-										<input places-auto-complete
-                                			name="inputNeighbourhood" 
-    									    ng-model="ad.jobLocation"
-    									    class="form-control"
-    									    component-restrictions="{country:'ae'}"
-										    placeholder="Enter a location"
-    									    on-place-changed="placeChanged()" 
-    									    required/>
-										
-										<span class="glyphicon glyphicon-ok form-control-feedback"
-											ng-show="postAdForm.inputJobLocation.$touched && !postAdForm.inputJobLocation.$invalid">
-										</span> <span
-											class="glyphicon glyphicon-remove form-control-feedback"
-											ng-show="postAdForm.inputJobLocation.$touched && postAdForm.inputJobLocation.$invalid || postAdForm.$submitted &&  postAdForm.inputJobLocation.$invalid">
-										</span>
-										<div class="help-block with-errors"
-											ng-messages="postAdForm.inputJobLocation.$error"
-											ng-show="postAdForm.inputJobLocation.$touched || postAdForm.$submitted">
-											<div ng-messages-include="messages.html"></div>
-										</div>
-									</div>	
 								</div>						
 							</div>
 						</div>
@@ -496,18 +491,16 @@
 						</div>
 						<div class="panel-body">
 							<div>
-								<map center="{{ad.location.latitude}}, {{ad.location.longtitude}}" zoom="9"
-									on-click="addMarker()">
-									<marker
-										position="{{ad.location.latitude}}, {{ad.location.longtitude}}"></marker>
+								<map center="{{ad.location.latitude}}, {{ad.location.longtitude}}">
+									    <marker position="{{ad.location.latitude}}, {{ad.location.longtitude}}"></marker>
 								</map>
 							</div>
 
 							<br />
 							<p>
 								<strong class="text-primary">{{'YOUR_AD_LOCATION' | translate}}</strong>
-								{{ad.location.country}},  {{ad.location.region}}, {{ad.location.city}}
-								{{!ad.location.city ? '' : ', '}} {{ad.location.routeName}}
+								{{ad.location.neighborhood}}, {{ad.location.city}} 
+								{{!ad.location.city ? '' : ', '}}  {{ad.location.country}}
 							</p>
 						</div>
 					</div>
